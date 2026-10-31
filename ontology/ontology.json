@@ -731,11 +731,15 @@
       "associated_concepts": [
         "sujeeth_foundation",
         "career_circle_program",
+        "weekly meetings",
+        "partnership",
         "volunteer",
         "spotlight",
-        "testimonial",
-        "impact_report",
-        "resume_resource"
+        "students",
+        "career mentors",
+        "donors",
+        "donations",
+        "resources"
       ],
       "crawl_policy": {
         "mode": "domain",
@@ -751,7 +755,9 @@
       "associated_concepts": [
         "testimonial",
         "impact_report",
-        "resume_resource"
+        "circle",
+        "sessions",
+        "weekly meetings"
       ],
       "crawl_policy": {
         "mode": "domain",
@@ -766,7 +772,8 @@
       "search_enabled": true,
       "associated_concepts": [
         "leadership",
-        "career_development"
+        "career_development",
+        "week_1"
       ],
       "crawl_policy": {
         "mode": "domain",
@@ -781,8 +788,7 @@
       "search_enabled": true,
       "associated_concepts": [
         "growth_mindset",
-        "student",
-        "week"
+        "week_1"
       ],
       "crawl_policy": {
         "mode": "domain",
@@ -798,7 +804,7 @@
       "associated_concepts": [
         "grit",
         "career_development",
-        "student"
+        "week_2"        
       ],
       "crawl_policy": {
         "mode": "domain",
@@ -814,7 +820,10 @@
       "associated_concepts": [
         "career_development",
         "resume_resource",
-        "student"
+        "student",
+        "week_2",
+        "week_5",
+        "week_3"
       ],
       "crawl_policy": {
         "mode": "domain",
@@ -830,7 +839,9 @@
       "associated_concepts": [
         "leadership",
         "purpose",
-        "career_development"
+        "career_development",
+        "week_2",
+        "week_3"
       ],
       "crawl_policy": {
         "mode": "domain",
@@ -846,7 +857,8 @@
       "associated_concepts": [
         "resume_resource",
         "career_development",
-        "week_3"
+        "week_3",
+        "week_5"
       ],
       "crawl_policy": {
         "mode": "domain",
@@ -862,7 +874,7 @@
       "associated_concepts": [
         "networking",
         "career_development",
-        "week_2"
+        "week_4"
       ],
       "crawl_policy": {
         "mode": "domain",
@@ -877,7 +889,8 @@
       "search_enabled": true,
       "associated_concepts": [
         "networking",
-        "career_development"
+        "career_development",
+        "week_4"
       ],
       "crawl_policy": {
         "mode": "domain",
@@ -909,7 +922,7 @@
       "associated_concepts": [
         "motivation",
         "career_development",
-        "week_4"
+        "week_6"
       ],
       "crawl_policy": {
         "mode": "domain",
@@ -925,7 +938,7 @@
       "associated_concepts": [
         "appreciation",
         "leadership",
-        "week_6"
+        "week_5"
       ],
       "crawl_policy": {
         "mode": "domain",
