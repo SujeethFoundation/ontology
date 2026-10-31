@@ -1,7 +1,7 @@
 {
-  "ontology_version": "1.1.0",
+  "ontology_version": "1.3.0",
   "last_updated": "2026-10-31",
-  "description": "Sujeeth Foundation domain ontology and governance configuration.",
+  "description": "Sujeeth Foundation domain ontology and governance configuration, including validated concepts used to associate approved external domains.",
   "classes": [
     {
       "id": "sujeeth_foundation",
@@ -135,6 +135,186 @@
       "id": "donation",
       "name": "Donation",
       "definition": "A contribution made to Sujeeth Foundation."
+    },
+    {
+      "id": "resume_resource",
+      "name": "Resume Resource",
+      "aliases": [
+        "resume writing",
+        "resume builder",
+        "CV writing",
+        "curriculum vitae",
+        "resume preparation",
+        "resume development",
+        "job application resume",
+        "resume template",
+        "resume tips"
+      ],
+      "definition": "A learning resource that helps students create, improve, format, or tailor a resume or curriculum vitae for employment opportunities."
+    },
+    {
+      "id": "career_development",
+      "name": "Career Development",
+      "aliases": [
+        "career planning",
+        "professional development",
+        "career growth",
+        "career readiness",
+        "career exploration",
+        "career advancement",
+        "job search",
+        "employment preparation",
+        "workplace skills"
+      ],
+      "definition": "Learning and activities that help a person explore career options, build professional skills, prepare for employment, and progress in a career."
+    },
+    {
+      "id": "leadership",
+      "name": "Leadership",
+      "aliases": [
+        "leading",
+        "leadership skills",
+        "leading people",
+        "team leadership"
+      ],
+      "definition": "The knowledge and practices involved in guiding, influencing, and supporting people or teams toward shared goals."
+    },
+    {
+      "id": "growth_mindset",
+      "name": "Growth Mindset",
+      "aliases": [
+        "growth mindset",
+        "learning mindset",
+        "developing abilities",
+        "learning from mistakes"
+      ],
+      "definition": "The belief that abilities and skills can be developed through effort, learning, feedback, and practice."
+    },
+    {
+      "id": "grit",
+      "name": "Grit",
+      "aliases": [
+        "perseverance",
+        "passion and perseverance",
+        "persistence",
+        "long term perseverance"
+      ],
+      "definition": "Perseverance and sustained commitment toward long-term goals despite challenges or setbacks."
+    },
+    {
+      "id": "purpose",
+      "name": "Purpose",
+      "aliases": [
+        "sense of purpose",
+        "personal purpose",
+        "meaningful work",
+        "why"
+      ],
+      "definition": "A person's sense of meaning, direction, and motivation that informs goals and choices."
+    },
+    {
+      "id": "networking",
+      "name": "Networking",
+      "aliases": [
+        "professional networking",
+        "building relationships",
+        "career connections",
+        "networking skills"
+      ],
+      "definition": "Building and maintaining professional relationships that support learning, collaboration, and career opportunities."
+    },
+    {
+      "id": "innovation",
+      "name": "Innovation",
+      "aliases": [
+        "innovative thinking",
+        "experimentation",
+        "new ideas",
+        "creative problem solving"
+      ],
+      "definition": "Developing, testing, and applying new ideas or approaches to create value or solve problems."
+    },
+    {
+      "id": "motivation",
+      "name": "Motivation",
+      "aliases": [
+        "motivating",
+        "intrinsic motivation",
+        "drive",
+        "what motivates people"
+      ],
+      "definition": "The internal and external factors that initiate, direct, and sustain goal-oriented behavior."
+    },
+    {
+      "id": "appreciation",
+      "name": "Appreciation",
+      "aliases": [
+        "gratitude",
+        "recognition",
+        "expressing appreciation",
+        "acknowledgment"
+      ],
+      "definition": "Recognizing and expressing the value of people, contributions, and positive experiences."
+    },
+    {
+      "id": "week_1",
+      "name": "Week 1",
+      "aliases": [
+        "program week 1",
+        "week number 1",
+        "week 1 content"
+      ],
+      "definition": "The 1st week in the six-week Career Circle Program."
+    },
+    {
+      "id": "week_2",
+      "name": "Week 2",
+      "aliases": [
+        "program week 2",
+        "week number 2",
+        "week 2 content"
+      ],
+      "definition": "The 2nd week in the six-week Career Circle Program."
+    },
+    {
+      "id": "week_3",
+      "name": "Week 3",
+      "aliases": [
+        "program week 3",
+        "week number 3",
+        "week 3 content"
+      ],
+      "definition": "The 3rd week in the six-week Career Circle Program."
+    },
+    {
+      "id": "week_4",
+      "name": "Week 4",
+      "aliases": [
+        "program week 4",
+        "week number 4",
+        "week 4 content"
+      ],
+      "definition": "The 4th week in the six-week Career Circle Program."
+    },
+    {
+      "id": "week_5",
+      "name": "Week 5",
+      "aliases": [
+        "program week 5",
+        "week number 5",
+        "week 5 content"
+      ],
+      "definition": "The 5th week in the six-week Career Circle Program."
+    },
+    {
+      "id": "week_6",
+      "name": "Week 6",
+      "aliases": [
+        "program week 6",
+        "week number 6",
+        "week 6 content"
+      ],
+      "definition": "The 6th week in the six-week Career Circle Program."
     }
   ],
   "relationships": [
@@ -399,6 +579,46 @@
       "aliases": [
         "Semester"
       ]
+    },
+    {
+      "preferred": "Resume Resource",
+      "aliases": [
+        "resume writing",
+        "resume builder",
+        "CV writing",
+        "curriculum vitae",
+        "resume preparation"
+      ]
+    },
+    {
+      "preferred": "Career Development",
+      "aliases": [
+        "career planning",
+        "professional development",
+        "career readiness",
+        "career growth"
+      ]
+    },
+    {
+      "preferred": "Growth Mindset",
+      "aliases": [
+        "learning mindset",
+        "developing abilities"
+      ]
+    },
+    {
+      "preferred": "Grit",
+      "aliases": [
+        "perseverance",
+        "persistence"
+      ]
+    },
+    {
+      "preferred": "Networking",
+      "aliases": [
+        "professional networking",
+        "career connections"
+      ]
     }
   ],
   "program_structure": [
@@ -514,8 +734,7 @@
         "volunteer",
         "spotlight",
         "testimonial",
-        "impact_report",
-        "donation"
+        "impact_report"
       ],
       "crawl_policy": {
         "mode": "domain",
@@ -715,5 +934,11 @@
         "respect_robots_txt": true
       }
     }
-  ]
+  ],
+  "concept_integrity": {
+    "domain_association_field": "associated_concepts",
+    "all_domain_concepts_must_match_class_ids": true,
+    "unresolved_domain_concepts": [],
+    "validation_note": "Every associated_concepts value in every domain must reference a class id in classes."
+  }
 }

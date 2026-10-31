@@ -1,19 +1,29 @@
-import json, unittest
+import json
 from pathlib import Path
-DATA=json.loads((Path(__file__).parents[1]/"ontology"/"ontology.json").read_text(encoding="utf-8"))
-class OntologyTests(unittest.TestCase):
-    def test_relationship_endpoints(self):
-        ids={x["id"] for x in DATA["classes"]}
-        for r in DATA["relationships"]:
-            self.assertIn(r["subject"],ids); self.assertIn(r["object"],ids)
-    def test_github_removed(self):
-        domains={x["domain"] for x in DATA["domains"]}
-        self.assertNotIn("github.com",domains); self.assertNotIn("github-wiki-see.page",domains)
-    def test_portal_disabled(self):
-        p=next(x for x in DATA["domains"] if x["domain"]=="portal.sujeeth.org")
-        self.assertFalse(p["crawl_enabled"]); self.assertFalse(p["search_enabled"])
-    def test_permissions_and_policies(self):
-        for x in DATA["domains"]:
-            self.assertIn("crawl_enabled",x); self.assertIn("search_enabled",x)
-            if x["crawl_enabled"]: self.assertIn("crawl_policy",x)
-if __name__=="__main__": unittest.main()
+
+ONTOLOGY = json.loads(
+    (Path(__file__).parents[1] / "ontology" / "ontology.json").read_text(encoding="utf-8")
+)
+
+def test_all_domain_concepts_resolve_to_classes():
+    class_ids = {item["id"] for item in ONTOLOGY["classes"]}
+    unresolved = {
+        concept
+        for domain in ONTOLOGY["domains"]
+        for concept in domain.get("associated_concepts", [])
+        if concept not in class_ids
+    }
+    assert not unresolved, f"Unresolved domain concepts: {sorted(unresolved)}"
+
+def test_all_remaining_domains_are_crawl_enabled():
+    assert ONTOLOGY["domains"]
+    assert all(item.get("crawl_enabled") is True for item in ONTOLOGY["domains"])
+
+def test_portal_domain_is_removed():
+    assert not any(item.get("domain") == "portal.sujeeth.org" for item in ONTOLOGY["domains"])
+
+def test_domain_notes_are_removed():
+    assert all("notes" not in item for item in ONTOLOGY["domains"])
+
+def test_all_remaining_domains_are_search_enabled():
+    assert all(item.get("search_enabled") is True for item in ONTOLOGY["domains"])

@@ -55,3 +55,26 @@ Invoke-RestMethod -Method Post -Uri "http://localhost:7071/api/ontology/domain-r
 
 ## Governance and deployment
 Edit `ontology/ontology.json`, increment `ontology_version`, review, test, and deploy. Do not expose write endpoints. The crawler should periodically retrieve manifests and reconcile indexed content when domains are disabled or policies change. `max_pages` is an ontology-governed operational limit, not a separately maintained URL list. Confirm domain ownership, relevance, public access, robots.txt, and site terms before production crawling. Never crawl private/authenticated content without explicit authorization.
+
+
+## Version 1.2.0 changes
+
+- Added canonical ontology classes for every concept referenced by domain records.
+- Added Resume Resource, Career Development, Leadership, Growth Mindset, Grit,
+  Purpose, Networking, Innovation, Motivation, Appreciation, and Week 1–Week 6.
+- Added aliases and preferred terminology to support query-to-concept matching.
+- Added ontology integrity tests ensuring every domain-associated concept maps
+  to a canonical class ID.
+- Preserved all existing domain search/crawl permissions. Crawl remains disabled
+  for all domains pending review; the portal remains disabled for search and crawl.
+
+
+## Version 1.3.0 changes
+
+- Enabled `crawl_enabled` for all 13 remaining domain records.
+- Removed `portal.sujeeth.org` from the ontology domain registry.
+- Removed the `notes` field from every domain record.
+- Preserved the existing `search_enabled` values and per-domain crawl policies.
+- Confirmed that every domain-associated concept references a defined ontology class.
+
+**Operational caution:** Enabling crawl permission in ontology authorizes the crawler to attempt these domains. It does not itself start a crawl. The crawler must still respect each site's robots.txt, terms, rate limits, and technical safeguards. Review the domain policies before running a full refresh.
