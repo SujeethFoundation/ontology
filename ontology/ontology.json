@@ -1,0 +1,719 @@
+{
+  "ontology_version": "1.1.0",
+  "last_updated": "2026-10-31",
+  "description": "Sujeeth Foundation domain ontology and governance configuration.",
+  "classes": [
+    {
+      "id": "sujeeth_foundation",
+      "name": "Sujeeth Foundation",
+      "definition": "The nonprofit organization delivering the Career Circle Program and providing books to students."
+    },
+    {
+      "id": "partner",
+      "name": "Partner",
+      "definition": "An institution working with Sujeeth Foundation through a Partnership."
+    },
+    {
+      "id": "partnership",
+      "name": "Partnership",
+      "definition": "A semester-specific relationship between Sujeeth Foundation and one Partner institution."
+    },
+    {
+      "id": "career_circle_program",
+      "name": "Career Circle Program",
+      "definition": "The Foundation program delivered through Partnerships."
+    },
+    {
+      "id": "academic_period",
+      "name": "Academic Period",
+      "aliases": [
+        "Semester"
+      ],
+      "definition": "The semester in which a Partnership operates."
+    },
+    {
+      "id": "circle",
+      "name": "Circle",
+      "definition": "A cohort hosted by a Partnership and containing six individual Sessions."
+    },
+    {
+      "id": "session",
+      "name": "Session",
+      "definition": "One weekly meeting within a Circle."
+    },
+    {
+      "id": "week",
+      "name": "Week",
+      "definition": "One of the six program weeks."
+    },
+    {
+      "id": "student",
+      "name": "Student",
+      "definition": "A student participating in a Circle."
+    },
+    {
+      "id": "career_mentor",
+      "name": "Career Mentor",
+      "definition": "A volunteer who leads Sessions and guides Students."
+    },
+    {
+      "id": "volunteer",
+      "name": "Volunteer",
+      "definition": "A person volunteering with the Foundation or a Partner."
+    },
+    {
+      "id": "community_manager",
+      "name": "Community Manager",
+      "definition": "A role supporting coordination between a Partner and Volunteers; cannot lead a Circle."
+    },
+    {
+      "id": "resource",
+      "name": "Resource",
+      "definition": "Learning material supporting one or more program Weeks."
+    },
+    {
+      "id": "book",
+      "name": "Book",
+      "definition": "A catalogued book that is also a Resource."
+    },
+    {
+      "id": "book_request",
+      "name": "Book Request",
+      "definition": "A Student request for a catalogued Book."
+    },
+    {
+      "id": "substitute_request",
+      "name": "Substitute Request",
+      "definition": "A request by a Mentor for another Volunteer to cover a Session."
+    },
+    {
+      "id": "onboarding_survey",
+      "name": "Onboarding Survey",
+      "definition": "The onboarding survey completed by a Student."
+    },
+    {
+      "id": "feedback_survey",
+      "name": "Feedback Survey",
+      "definition": "The feedback survey completed by a Student."
+    },
+    {
+      "id": "presentation",
+      "name": "Presentation",
+      "definition": "A presentation or Sway resource associated with program content."
+    },
+    {
+      "id": "recording",
+      "name": "Recording",
+      "definition": "A recording associated with a Session."
+    },
+    {
+      "id": "agenda",
+      "name": "Agenda",
+      "definition": "The agenda for a program Week or Session."
+    },
+    {
+      "id": "spotlight",
+      "name": "Spotlight",
+      "definition": "A feature highlighting one Volunteer."
+    },
+    {
+      "id": "testimonial",
+      "name": "Testimonial",
+      "definition": "A quotation from one Student."
+    },
+    {
+      "id": "impact_report",
+      "name": "Impact Report",
+      "definition": "A report describing Foundation impact."
+    },
+    {
+      "id": "donor",
+      "name": "Donor",
+      "definition": "A person or organization making Donations to the Foundation."
+    },
+    {
+      "id": "donation",
+      "name": "Donation",
+      "definition": "A contribution made to Sujeeth Foundation."
+    }
+  ],
+  "relationships": [
+    {
+      "id": "foundation_delivers_program",
+      "subject": "sujeeth_foundation",
+      "predicate": "delivers",
+      "object": "career_circle_program",
+      "cardinality": "1:N",
+      "definition": "The Foundation delivers the Career Circle Program."
+    },
+    {
+      "id": "foundation_forms_partnership",
+      "subject": "sujeeth_foundation",
+      "predicate": "forms",
+      "object": "partnership",
+      "cardinality": "1:N",
+      "definition": "The Foundation forms Partnerships with Partner institutions."
+    },
+    {
+      "id": "partnership_with_partner",
+      "subject": "partnership",
+      "predicate": "is_with",
+      "object": "partner",
+      "cardinality": "N:1",
+      "definition": "Each Partnership is with exactly one Partner."
+    },
+    {
+      "id": "partnership_in_period",
+      "subject": "partnership",
+      "predicate": "occurs_in",
+      "object": "academic_period",
+      "cardinality": "N:1",
+      "definition": "Each Partnership belongs to exactly one Academic Period."
+    },
+    {
+      "id": "partnership_hosts_circle",
+      "subject": "partnership",
+      "predicate": "hosts",
+      "object": "circle",
+      "cardinality": "1:N",
+      "definition": "A Partnership can host multiple Circles."
+    },
+    {
+      "id": "circle_contains_session",
+      "subject": "circle",
+      "predicate": "contains",
+      "object": "session",
+      "cardinality": "1:6",
+      "definition": "Each Circle contains exactly six Sessions."
+    },
+    {
+      "id": "session_maps_week",
+      "subject": "session",
+      "predicate": "corresponds_to",
+      "object": "week",
+      "cardinality": "N:1",
+      "definition": "Each Session corresponds to one program Week."
+    },
+    {
+      "id": "session_has_recording",
+      "subject": "session",
+      "predicate": "has",
+      "object": "recording",
+      "cardinality": "1:1",
+      "definition": "Each Session has one Recording."
+    },
+    {
+      "id": "student_attends_circle",
+      "subject": "student",
+      "predicate": "attends",
+      "object": "circle",
+      "cardinality": "N:1",
+      "definition": "A Student attends a Circle."
+    },
+    {
+      "id": "mentor_leads_session",
+      "subject": "career_mentor",
+      "predicate": "leads",
+      "object": "session",
+      "cardinality": "1:N",
+      "definition": "A Career Mentor leads Sessions."
+    },
+    {
+      "id": "mentor_guides_student",
+      "subject": "career_mentor",
+      "predicate": "guides",
+      "object": "student",
+      "cardinality": "N:N",
+      "definition": "Career Mentors guide Students."
+    },
+    {
+      "id": "community_manager_supports_partner",
+      "subject": "community_manager",
+      "predicate": "supports",
+      "object": "partner",
+      "cardinality": "N:N",
+      "definition": "Community Managers coordinate with Partner institutions."
+    },
+    {
+      "id": "community_manager_supports_volunteer",
+      "subject": "community_manager",
+      "predicate": "supports",
+      "object": "volunteer",
+      "cardinality": "N:N",
+      "definition": "Community Managers coordinate with Volunteers."
+    },
+    {
+      "id": "resource_supports_week",
+      "subject": "resource",
+      "predicate": "supports",
+      "object": "week",
+      "cardinality": "N:N",
+      "definition": "A Resource can support one or more Weeks."
+    },
+    {
+      "id": "book_is_resource",
+      "subject": "book",
+      "predicate": "is_a",
+      "object": "resource",
+      "cardinality": "N:1",
+      "definition": "A Book is a type of Resource."
+    },
+    {
+      "id": "student_completes_onboarding",
+      "subject": "student",
+      "predicate": "completes",
+      "object": "onboarding_survey",
+      "cardinality": "1:1",
+      "definition": "Each Student completes one Onboarding Survey."
+    },
+    {
+      "id": "student_completes_feedback",
+      "subject": "student",
+      "predicate": "completes",
+      "object": "feedback_survey",
+      "cardinality": "1:1",
+      "definition": "Each Student completes one Feedback Survey."
+    },
+    {
+      "id": "student_requests_book",
+      "subject": "student",
+      "predicate": "makes",
+      "object": "book_request",
+      "cardinality": "1:0..6",
+      "definition": "A Student can make up to six qualifying Book Requests."
+    },
+    {
+      "id": "book_request_for_book",
+      "subject": "book_request",
+      "predicate": "requests",
+      "object": "book",
+      "cardinality": "N:1",
+      "definition": "Each Book Request references one catalogued Book."
+    },
+    {
+      "id": "book_request_for_partnership",
+      "subject": "book_request",
+      "predicate": "reported_under",
+      "object": "partnership",
+      "cardinality": "N:1",
+      "definition": "A Book Request is associated with a Partnership for reporting, not fulfillment."
+    },
+    {
+      "id": "mentor_makes_substitute_request",
+      "subject": "career_mentor",
+      "predicate": "makes",
+      "object": "substitute_request",
+      "cardinality": "1:N",
+      "definition": "A Mentor may request substitute coverage for a Session."
+    },
+    {
+      "id": "spotlight_features_volunteer",
+      "subject": "spotlight",
+      "predicate": "features",
+      "object": "volunteer",
+      "cardinality": "1:1",
+      "definition": "A Spotlight features one Volunteer."
+    },
+    {
+      "id": "testimonial_quotes_student",
+      "subject": "testimonial",
+      "predicate": "quotes",
+      "object": "student",
+      "cardinality": "1:1",
+      "definition": "A Testimonial quotes one Student."
+    },
+    {
+      "id": "donor_makes_donation",
+      "subject": "donor",
+      "predicate": "makes",
+      "object": "donation",
+      "cardinality": "1:N",
+      "definition": "A Donor makes Donations to the Foundation."
+    },
+    {
+      "id": "foundation_receives_donation",
+      "subject": "donation",
+      "predicate": "received_by",
+      "object": "sujeeth_foundation",
+      "cardinality": "N:1",
+      "definition": "Donations are made to the Foundation, not to a Partner or Circle."
+    }
+  ],
+  "business_rules": [
+    {
+      "id": "br_partnership_semester",
+      "rule": "A Partnership represents a relationship between the Foundation and one Partner institution for one Academic Period."
+    },
+    {
+      "id": "br_partner_multiple_partnerships",
+      "rule": "A Partner may have multiple Partnerships in the same Academic Period."
+    },
+    {
+      "id": "br_circle_six_sessions",
+      "rule": "Each Circle contains exactly six individual Sessions, one for each program Week."
+    },
+    {
+      "id": "br_community_manager_no_lead",
+      "rule": "A Community Manager cannot lead a Circle. A person serving separately as a Career Mentor may lead Sessions in that Mentor capacity."
+    },
+    {
+      "id": "br_book_limit",
+      "rule": "A Student may request up to six distinct book titles. Cancelled Book Requests do not count toward the limit."
+    },
+    {
+      "id": "br_book_request_partnership",
+      "rule": "A Book Request references one catalogued Book and is associated with a Partnership for reporting only; the Partner is not involved in fulfillment."
+    },
+    {
+      "id": "br_substitute",
+      "rule": "A Substitute Request is made by a Mentor for one Session and is covered by another Volunteer."
+    },
+    {
+      "id": "br_donation",
+      "rule": "Donations are made to the Foundation and are not associated with a Partner or Circle."
+    }
+  ],
+  "preferred_terminology": [
+    {
+      "preferred": "Book Request",
+      "avoid": [
+        "Book Order"
+      ]
+    },
+    {
+      "preferred": "Impact Report",
+      "avoid": [
+        "Case Study"
+      ]
+    },
+    {
+      "preferred": "Circle",
+      "definition": "A cohort of students participating together."
+    },
+    {
+      "preferred": "Session",
+      "definition": "One weekly meeting within a Circle."
+    },
+    {
+      "preferred": "Academic Period",
+      "aliases": [
+        "Semester"
+      ]
+    }
+  ],
+  "program_structure": [
+    {
+      "week": 1,
+      "name": "Week 1"
+    },
+    {
+      "week": 2,
+      "name": "Week 2"
+    },
+    {
+      "week": 3,
+      "name": "Week 3"
+    },
+    {
+      "week": 4,
+      "name": "Week 4"
+    },
+    {
+      "week": 5,
+      "name": "Week 5"
+    },
+    {
+      "week": 6,
+      "name": "Week 6"
+    }
+  ],
+  "dataverse_mappings": [
+    {
+      "table": "mshied_scholarship",
+      "maps_to": "Partnership"
+    },
+    {
+      "table": "suj_circle",
+      "maps_to": "Circle"
+    },
+    {
+      "table": "suj_studentonboarding",
+      "maps_to": "Onboarding Survey"
+    },
+    {
+      "table": "suj_feedback",
+      "maps_to": "Feedback Survey"
+    },
+    {
+      "table": "suj_volunteer",
+      "maps_to": "Volunteer"
+    },
+    {
+      "table": "suj_substitute",
+      "maps_to": "Substitute Request"
+    },
+    {
+      "table": "suj_circlenotes",
+      "maps_to": "Circle Notes"
+    },
+    {
+      "table": "suj_book",
+      "maps_to": "Book"
+    },
+    {
+      "table": "suj_bookrequest",
+      "maps_to": "Book Request"
+    },
+    {
+      "table": "suj_portalfeedback",
+      "maps_to": "Portal Feedback"
+    },
+    {
+      "table": "contact",
+      "maps_to": "Student / Contact"
+    },
+    {
+      "table": "account",
+      "maps_to": "Partner institution"
+    },
+    {
+      "table": "mshied_program",
+      "maps_to": "Career Circle Program"
+    },
+    {
+      "table": "mshied_academicperiod",
+      "maps_to": "Academic Period"
+    }
+  ],
+  "schema_gaps": [
+    {
+      "id": "gap_circle_session_relationship",
+      "description": "Confirm the Dataverse representation of the six Session records belonging to each Circle."
+    },
+    {
+      "id": "gap_recording_mapping",
+      "description": "Confirm the Dataverse table or external system storing Session recordings."
+    },
+    {
+      "id": "gap_donation_mapping",
+      "description": "Confirm the Dataverse table and fields representing Donations."
+    },
+    {
+      "id": "gap_mentor_role",
+      "description": "Confirm how Career Mentor and Community Manager roles are represented and whether one person can hold both roles."
+    }
+  ],
+  "domains": [
+    {
+      "domain": "sujeeth.org",
+      "crawl_enabled": true,
+      "search_enabled": true,
+      "associated_concepts": [
+        "sujeeth_foundation",
+        "career_circle_program",
+        "volunteer",
+        "spotlight",
+        "testimonial",
+        "impact_report",
+        "donation"
+      ],
+      "crawl_policy": {
+        "mode": "domain",
+        "refresh_interval_days": 14,
+        "max_pages": 250,
+        "respect_robots_txt": true
+      }
+    },
+    {
+      "domain": "topics.sujeeth.org",
+      "crawl_enabled": true,
+      "search_enabled": true,
+      "associated_concepts": [
+        "testimonial",
+        "impact_report",
+        "resume_resource"
+      ],
+      "crawl_policy": {
+        "mode": "domain",
+        "refresh_interval_days": 30,
+        "max_pages": 150,
+        "respect_robots_txt": true
+      }
+    },
+    {
+      "domain": "brenebrown.com",
+      "crawl_enabled": true,
+      "search_enabled": true,
+      "associated_concepts": [
+        "leadership",
+        "career_development",
+        "volunteer"
+      ],
+      "crawl_policy": {
+        "mode": "domain",
+        "refresh_interval_days": 60,
+        "max_pages": 40,
+        "respect_robots_txt": true
+      }
+    },
+    {
+      "domain": "mindsetworks.com",
+      "crawl_enabled": true,
+      "search_enabled": true,
+      "associated_concepts": [
+        "growth_mindset",
+        "student",
+        "week"
+      ],
+      "crawl_policy": {
+        "mode": "domain",
+        "refresh_interval_days": 60,
+        "max_pages": 40,
+        "respect_robots_txt": true
+      }
+    },
+    {
+      "domain": "angeladuckworth.com",
+      "crawl_enabled": true,
+      "search_enabled": true,
+      "associated_concepts": [
+        "grit",
+        "career_development",
+        "student"
+      ],
+      "crawl_policy": {
+        "mode": "domain",
+        "refresh_interval_days": 60,
+        "max_pages": 40,
+        "respect_robots_txt": true
+      }
+    },
+    {
+      "domain": "students.linkedin.com",
+      "crawl_enabled": true,
+      "search_enabled": true,
+      "associated_concepts": [
+        "career_development",
+        "resume_resource",
+        "student"
+      ],
+      "crawl_policy": {
+        "mode": "domain",
+        "refresh_interval_days": 30,
+        "max_pages": 40,
+        "respect_robots_txt": true
+      }
+    },
+    {
+      "domain": "simonsinek.com",
+      "crawl_enabled": true,
+      "search_enabled": true,
+      "associated_concepts": [
+        "leadership",
+        "purpose",
+        "career_development"
+      ],
+      "crawl_policy": {
+        "mode": "domain",
+        "refresh_interval_days": 60,
+        "max_pages": 40,
+        "respect_robots_txt": true
+      }
+    },
+    {
+      "domain": "tealhq.com",
+      "crawl_enabled": true,
+      "search_enabled": true,
+      "associated_concepts": [
+        "resume_resource",
+        "career_development",
+        "week_3"
+      ],
+      "crawl_policy": {
+        "mode": "domain",
+        "refresh_interval_days": 30,
+        "max_pages": 50,
+        "respect_robots_txt": true
+      }
+    },
+    {
+      "domain": "workingoutloud.com",
+      "crawl_enabled": true,
+      "search_enabled": true,
+      "associated_concepts": [
+        "networking",
+        "career_development",
+        "week_2"
+      ],
+      "crawl_policy": {
+        "mode": "domain",
+        "refresh_interval_days": 60,
+        "max_pages": 40,
+        "respect_robots_txt": true
+      }
+    },
+    {
+      "domain": "youspot.com",
+      "crawl_enabled": true,
+      "search_enabled": true,
+      "associated_concepts": [
+        "networking",
+        "career_development"
+      ],
+      "crawl_policy": {
+        "mode": "domain",
+        "refresh_interval_days": 60,
+        "max_pages": 40,
+        "respect_robots_txt": true
+      }
+    },
+    {
+      "domain": "theleanstartup.com",
+      "crawl_enabled": true,
+      "search_enabled": true,
+      "associated_concepts": [
+        "innovation",
+        "career_development",
+        "week_5"
+      ],
+      "crawl_policy": {
+        "mode": "domain",
+        "refresh_interval_days": 60,
+        "max_pages": 40,
+        "respect_robots_txt": true
+      }
+    },
+    {
+      "domain": "danpink.com",
+      "crawl_enabled": true,
+      "search_enabled": true,
+      "associated_concepts": [
+        "motivation",
+        "career_development",
+        "week_4"
+      ],
+      "crawl_policy": {
+        "mode": "domain",
+        "refresh_interval_days": 60,
+        "max_pages": 40,
+        "respect_robots_txt": true
+      }
+    },
+    {
+      "domain": "mike-robbins.com",
+      "crawl_enabled": true,
+      "search_enabled": true,
+      "associated_concepts": [
+        "appreciation",
+        "leadership",
+        "week_6"
+      ],
+      "crawl_policy": {
+        "mode": "domain",
+        "refresh_interval_days": 60,
+        "max_pages": 40,
+        "respect_robots_txt": true
+      }
+    }
+  ]
+}
