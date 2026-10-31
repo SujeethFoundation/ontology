@@ -734,7 +734,8 @@
         "volunteer",
         "spotlight",
         "testimonial",
-        "impact_report"
+        "impact_report",
+        "resume_resource"
       ],
       "crawl_policy": {
         "mode": "domain",
@@ -765,8 +766,7 @@
       "search_enabled": true,
       "associated_concepts": [
         "leadership",
-        "career_development",
-        "volunteer"
+        "career_development"
       ],
       "crawl_policy": {
         "mode": "domain",
