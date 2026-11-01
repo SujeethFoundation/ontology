@@ -783,7 +783,7 @@
       }
     },
     {
-      "domain": "mindsetworks.com",
+      "domain": "blog.mindsetworks.com",
       "crawl_enabled": true,
       "search_enabled": true,
       "associated_concepts": [
@@ -900,7 +900,7 @@
       }
     },
     {
-      "domain": "theleanstartup.com",
+      "domain": "www.startuplessonslearned.com",
       "crawl_enabled": true,
       "search_enabled": true,
       "associated_concepts": [
@@ -916,7 +916,7 @@
       }
     },
     {
-      "domain": "danpink.com",
+      "domain": "danielpink.substack.com",
       "crawl_enabled": true,
       "search_enabled": true,
       "associated_concepts": [
