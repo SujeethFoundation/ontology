@@ -7,8 +7,10 @@ Python Azure Functions v2 API. `ontology/ontology.json` is the canonical source 
 - Domain crawling and search permissions are controlled only by the ontology.
 - The crawler reads `GET /api/ontology/crawl-manifest`; search reads `GET /api/ontology/search-manifest`.
 - `crawl_enabled` and `search_enabled` are independent.
-- All domains are initially `crawl_enabled=false` pending domain-specific review; enable crawling only by changing the ontology after review.
-- `portal.sujeeth.org` is disabled for both crawling and search until its public-content boundary and authorization are established.
+- As of 1.3.0 all 13 domains in the registry are `crawl_enabled` and `search_enabled`. Turn a domain off by changing its flags here after review.
+- `portal.sujeeth.org` is not in the registry. Add it back only after its public-content boundary and authorization are established.
+- A domain's `associated_concepts` must be exact class IDs (for example `donation`, not "donations"). Names that match no class are silently ignored by the services. The test suite enforces this.
+- Crawl size limits (page cap, depth) are not part of the ontology. They are settings of the websearch app.
 - Ontology is a conceptual model, not live operational Dataverse data.
 - Crawler must still respect robots.txt, site terms, privacy, rate limits, and safe URL restrictions.
 
@@ -27,6 +29,13 @@ All routes are prefixed by `/api` and require a Function key by default:
 - POST `/api/ontology/domain-resolution`
 - POST `/api/ontology/validate-domains`
 - GET `/api/ontology/crawl-manifest`, `/api/ontology/search-manifest`
+
+## Tests
+```powershell
+pip install pytest
+python -m pytest -q tests
+```
+The tests check that every domain concept maps to a class ID, that the registry contains no `portal.sujeeth.org` or `notes` fields, and that every domain is crawl- and search-enabled. Update them if you intentionally change those rules.
 
 ## Local setup (Windows PowerShell)
 ```powershell
@@ -54,7 +63,7 @@ Invoke-RestMethod -Method Post -Uri "http://localhost:7071/api/ontology/domain-r
 ```
 
 ## Governance and deployment
-Edit `ontology/ontology.json`, increment `ontology_version`, review, test, and deploy. Do not expose write endpoints. The crawler should periodically retrieve manifests and reconcile indexed content when domains are disabled or policies change. `max_pages` is an ontology-governed operational limit, not a separately maintained URL list. Confirm domain ownership, relevance, public access, robots.txt, and site terms before production crawling. Never crawl private/authenticated content without explicit authorization.
+Edit `ontology/ontology.json`, increment `ontology_version`, review, test, and deploy. Do not expose write endpoints. The crawler should periodically retrieve manifests and reconcile indexed content when domains are disabled or policies change. Crawl size limits are not set in the ontology; the websearch app's `MAX_PAGES_PER_DOMAIN` setting controls them, and the ontology only decides which domains may be crawled. Confirm domain ownership, relevance, public access, robots.txt, and site terms before production crawling. Never crawl private/authenticated content without explicit authorization.
 
 
 ## Version 1.2.0 changes
@@ -78,3 +87,21 @@ Edit `ontology/ontology.json`, increment `ontology_version`, review, test, and d
 - Confirmed that every domain-associated concept references a defined ontology class.
 
 **Operational caution:** Enabling crawl permission in ontology authorizes the crawler to attempt these domains. It does not itself start a crawl. The crawler must still respect each site's robots.txt, terms, rate limits, and technical safeguards. Review the domain policies before running a full refresh.
+
+
+## Version 1.3.1 changes
+
+- Added aliases to the `donation` class (donate, donates, donated, donating, donations, gofundme, make a gift, monthly gift), so queries and page text using those words map to it.
+- Replaced display names in `sujeeth.org` and `topics.sujeeth.org` `associated_concepts` with class IDs: `student`, `career_mentor`, `donor`, `donation`, `resource`, and `session`. Before this, those concepts were ignored, so content could not be tagged with them and queries about them found no domain.
+- Removed "weekly meetings" from both domains. No class has that name, so it was already ignored. Add a class first if you want it back.
+
+## Version 1.3.2 changes
+
+- Removed `max_pages` from every domain's `crawl_policy`. Page limits are now set only in the websearch app.
+
+## Version 1.3.3 changes
+
+- Removed `refresh_interval_days` from every `crawl_policy`. Nothing read it. Crawl timing is set by the schedules in the websearch app.
+- `crawl_policy` now holds `mode` and `respect_robots_txt`.
+
+**After deploying an ontology change:** restart the websearch app (it caches the ontology in memory). If aliases or domain concepts changed, run the websearch re-tag (`POST /api/index/retag-preview`, then `POST /api/index/retag`) so existing chunks pick up the new tags.
