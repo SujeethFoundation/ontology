@@ -11,7 +11,7 @@ Python Azure Functions v2 API. `ontology/ontology.json` is the canonical source 
 - `portal.sujeeth.org` is not in the registry. Add it back only after its public-content boundary and authorization are established.
 - A domain's `associated_concepts` must be exact class IDs (for example `donation`, not "donations"). Names that match no class are silently ignored by the services. The test suite enforces this.
 - Crawl size limits (page cap, depth) are not part of the ontology. They are settings of the websearch app.
-- A domain's `crawl_policy.exclude_paths` lists path prefixes the crawler must not fetch, for example `["/job", "/jobs"]`. A rule matches that path and everything beneath it on whole path segments (`/job` matches `/job/x`, not `/jobs`). Use it to keep a section of an approved site out of the index.
+- A domain's `crawl_policy.exclude_paths` lists path prefixes the crawler must not fetch, for example `["/job", "/jobs"]`. A rule matches that path and everything beneath it on whole path segments (`/job` matches `/job/x`, not `/jobs`). A `*` matches any characters within one path segment, so `/career-paths/*-certifications` matches `/career-paths/snowflake-developer-certifications` but not `/career-paths/certifications-guide`. Use it to keep a section of an approved site out of the index.
 - Ontology is a conceptual model, not live operational Dataverse data.
 - Crawler must still respect robots.txt, site terms, privacy, rate limits, and safe URL restrictions.
 
@@ -112,5 +112,11 @@ Edit `ontology/ontology.json`, increment `ontology_version`, review, test, and d
 ## Version 1.3.5 changes
 
 - Extended `tealhq.com`'s `exclude_paths` to `/job`, `/jobs`, `/cv-examples`, and `/resume-synonyms`. A count of stored chunks showed job and jobs pages at about 45,000 chunks, CV examples at about 4,500, and resume synonym lists at about 5,500, out of 113,000 for the site.
+
+## Version 1.3.6 changes
+
+- Tightened the index to fit its size limits (the 300 MB vector quota and 1 GB storage quota of the search service). A count of stored chunks showed 76,841, with `tealhq.com` at 57,680.
+- `tealhq.com` now also excludes `/resume-examples` and `/cover-letter-examples` (about 17,200 chunks of near-duplicate per-job-title examples), `/resume-template`, `/resume-templates`, `/job-categories`, `/tool` (about 800), and `/career-paths/*-certifications` (6,838 chunks of per-role certification guides). Interview-question and career-guide pages under `/career-paths`, and `/post`, are kept.
+- `mike-robbins.com` excludes `/tag`, `/category`, and `/linked_podcast_category`, which are archive pages that repeat post excerpts (about 800 chunks).
 
 **After deploying an ontology change:** restart the websearch app (it caches the ontology in memory). If `exclude_paths` changed, run the websearch purge to remove what was stored before. If aliases or domain concepts changed, run the websearch re-tag (`POST /api/index/retag-preview`, then `POST /api/index/retag`) so existing chunks pick up the new tags.
