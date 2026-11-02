@@ -115,6 +115,10 @@ Edit `ontology/ontology.json`, increment `ontology_version`, review, test, and d
 
 ## Version 1.3.6 changes
 
+- Replaced `danielpink.substack.com` with `amycedmondson.com`, linked to `growth_mindset`, `leadership`, and `week_6`. The Substack site's `robots.txt` refused the crawler, so its job finished with one page skipped as `robots_denied` and nothing stored.
+
+## Version 1.3.7 changes
+
 - Tightened the index to fit its size limits (the 300 MB vector quota and 1 GB storage quota of the search service). A count of stored chunks showed 76,841, with `tealhq.com` at 57,680.
 - `tealhq.com` now also excludes `/resume-examples` and `/cover-letter-examples` (about 17,200 chunks of near-duplicate per-job-title examples), `/resume-template`, `/resume-templates`, `/job-categories`, `/tool` (about 800), and `/career-paths/*-certifications` (6,838 chunks of per-role certification guides). Interview-question and career-guide pages under `/career-paths`, and `/post`, are kept.
 - `mike-robbins.com` excludes `/tag`, `/category`, and `/linked_podcast_category`, which are archive pages that repeat post excerpts (about 800 chunks).
