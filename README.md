@@ -109,4 +109,8 @@ Edit `ontology/ontology.json`, increment `ontology_version`, review, test, and d
 
 - Added `crawl_policy.exclude_paths` for `tealhq.com`: `/job` and `/jobs`. TealHQ's job listings were about 78% of the indexed pages and are not relevant to students. The websearch app skips these paths when crawling and can purge what was already stored (`POST /api/index/purge-preview`, then `POST /api/index/purge`).
 
+## Version 1.3.5 changes
+
+- Extended `tealhq.com`'s `exclude_paths` to `/job`, `/jobs`, `/cv-examples`, and `/resume-synonyms`. A count of stored chunks showed job and jobs pages at about 45,000 chunks, CV examples at about 4,500, and resume synonym lists at about 5,500, out of 113,000 for the site.
+
 **After deploying an ontology change:** restart the websearch app (it caches the ontology in memory). If `exclude_paths` changed, run the websearch purge to remove what was stored before. If aliases or domain concepts changed, run the websearch re-tag (`POST /api/index/retag-preview`, then `POST /api/index/retag`) so existing chunks pick up the new tags.
