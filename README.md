@@ -11,6 +11,7 @@ Python Azure Functions v2 API. `ontology/ontology.json` is the canonical source 
 - `portal.sujeeth.org` is not in the registry. Add it back only after its public-content boundary and authorization are established.
 - A domain's `associated_concepts` must be exact class IDs (for example `donation`, not "donations"). Names that match no class are silently ignored by the services. The test suite enforces this.
 - Crawl size limits (page cap, depth) are not part of the ontology. They are settings of the websearch app.
+- A domain's `crawl_policy.exclude_paths` lists path prefixes the crawler must not fetch, for example `["/job", "/jobs"]`. A rule matches that path and everything beneath it on whole path segments (`/job` matches `/job/x`, not `/jobs`). Use it to keep a section of an approved site out of the index.
 - Ontology is a conceptual model, not live operational Dataverse data.
 - Crawler must still respect robots.txt, site terms, privacy, rate limits, and safe URL restrictions.
 
@@ -104,4 +105,8 @@ Edit `ontology/ontology.json`, increment `ontology_version`, review, test, and d
 - Removed `refresh_interval_days` from every `crawl_policy`. Nothing read it. Crawl timing is set by the schedules in the websearch app.
 - `crawl_policy` now holds `mode` and `respect_robots_txt`.
 
-**After deploying an ontology change:** restart the websearch app (it caches the ontology in memory). If aliases or domain concepts changed, run the websearch re-tag (`POST /api/index/retag-preview`, then `POST /api/index/retag`) so existing chunks pick up the new tags.
+## Version 1.3.4 changes
+
+- Added `crawl_policy.exclude_paths` for `tealhq.com`: `/job` and `/jobs`. TealHQ's job listings were about 78% of the indexed pages and are not relevant to students. The websearch app skips these paths when crawling and can purge what was already stored (`POST /api/index/purge-preview`, then `POST /api/index/purge`).
+
+**After deploying an ontology change:** restart the websearch app (it caches the ontology in memory). If `exclude_paths` changed, run the websearch purge to remove what was stored before. If aliases or domain concepts changed, run the websearch re-tag (`POST /api/index/retag-preview`, then `POST /api/index/retag`) so existing chunks pick up the new tags.

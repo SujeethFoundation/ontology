@@ -27,3 +27,12 @@ def test_domain_notes_are_removed():
 
 def test_all_remaining_domains_are_search_enabled():
     assert all(item.get("search_enabled") is True for item in ONTOLOGY["domains"])
+
+
+def test_exclude_paths_are_clean_path_prefixes():
+    for domain in ONTOLOGY["domains"]:
+        paths = domain.get("crawl_policy", {}).get("exclude_paths", [])
+        assert isinstance(paths, list), domain["domain"]
+        for path in paths:
+            assert isinstance(path, str) and path.startswith("/"), (domain["domain"], path)
+            assert path.strip("/"), f"{domain['domain']}: a bare '/' would exclude the whole site"
