@@ -54,3 +54,14 @@ def test_quick_links_are_well_formed():
         assert link["concepts"], link["id"]
         unresolved = [c for c in link["concepts"] if c not in class_ids]
         assert not unresolved, (link["id"], unresolved)
+
+
+def test_spotlight_connects_to_career_development():
+    class_ids = {item["id"] for item in ONTOLOGY["classes"]}
+    assert {"spotlight", "career_development"} <= class_ids
+    assert any(
+        r["subject"] == "spotlight" and r["object"] == "career_development"
+        for r in ONTOLOGY["relationships"]
+    )
+    sujeeth = next(d for d in ONTOLOGY["domains"] if d["domain"] == "sujeeth.org")
+    assert {"spotlight", "career_development"} <= set(sujeeth["associated_concepts"])

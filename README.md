@@ -124,3 +124,10 @@ Edit `ontology/ontology.json`, increment `ontology_version`, review, test, and d
 - `mike-robbins.com` excludes `/tag`, `/category`, and `/linked_podcast_category`, which are archive pages that repeat post excerpts (about 800 chunks).
 
 **After deploying an ontology change:** restart the websearch app (it caches the ontology in memory). If `exclude_paths` changed, run the websearch purge to remove what was stored before. If aliases or domain concepts changed, run the websearch re-tag (`POST /api/index/retag-preview`, then `POST /api/index/retag`) so existing chunks pick up the new tags.
+
+## Version 1.4.2 changes
+
+- Connected `spotlight` and `career_development`. Added the relationship `spotlight_illustrates_career_development` (N:N) and added `career_development` to the `sujeeth.org` domain's `associated_concepts`, so career questions search Spotlight stories on sujeeth.org. Domain resolution reads only `associated_concepts`; the relationship documents the link and appears in the concept-relationship endpoints.
+- Added the aliases `sales career`, `sales jobs`, `get a job in sales`, and `entry-level sales` to `career_development`.
+
+**After deploying:** restart the websearch app (it caches the ontology in memory). If the search service stores aliases, reindex them.

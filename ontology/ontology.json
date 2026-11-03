@@ -1,6 +1,6 @@
 {
-  "ontology_version": "1.4.1",
-  "last_updated": "2026-11-02",
+  "ontology_version": "1.4.2",
+  "last_updated": "2026-11-03",
   "description": "Sujeeth Foundation domain ontology and governance configuration, including validated concepts used to associate approved external domains.",
   "classes": [
     {
@@ -165,7 +165,11 @@
         "career advancement",
         "job search",
         "employment preparation",
-        "workplace skills"
+        "workplace skills",
+        "sales career",
+        "sales jobs",
+        "get a job in sales",
+        "entry-level sales"
       ],
       "definition": "Learning and activities that help a person explore career options, build professional skills, prepare for employment, and progress in a career."
     },
@@ -496,6 +500,14 @@
       "definition": "A Spotlight features one Volunteer."
     },
     {
+      "id": "spotlight_illustrates_career_development",
+      "subject": "spotlight",
+      "predicate": "illustrates",
+      "object": "career_development",
+      "cardinality": "N:N",
+      "definition": "A Spotlight illustrates Career Development through one Volunteer's career path, and Career Development questions can draw on Spotlights."
+    },
+    {
       "id": "testimonial_quotes_student",
       "subject": "testimonial",
       "predicate": "quotes",
@@ -735,6 +747,7 @@
         "partnership",
         "volunteer",
         "spotlight",
+        "career_development",
         "student",
         "career_mentor",
         "donor",
