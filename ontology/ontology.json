@@ -1,5 +1,5 @@
 {
-  "ontology_version": "1.4.2",
+  "ontology_version": "1.4.3",
   "last_updated": "2026-11-03",
   "description": "Sujeeth Foundation domain ontology and governance configuration, including validated concepts used to associate approved external domains.",
   "classes": [
@@ -166,10 +166,11 @@
         "job search",
         "employment preparation",
         "workplace skills",
-        "sales career",
-        "sales jobs",
-        "get a job in sales",
-        "entry-level sales"
+        "job",
+        "jobs",
+        "careers",
+        "become",
+        "hired"
       ],
       "definition": "Learning and activities that help a person explore career options, build professional skills, prepare for employment, and progress in a career."
     },
