@@ -36,3 +36,16 @@ def test_exclude_paths_are_clean_path_prefixes():
         for path in paths:
             assert isinstance(path, str) and path.startswith("/"), (domain["domain"], path)
             assert path.strip("/"), f"{domain['domain']}: a bare '/' would exclude the whole site"
+
+def test_quick_links_are_well_formed():
+    class_ids = {item["id"] for item in ONTOLOGY["classes"]}
+    links = ONTOLOGY.get("quick_links", [])
+    assert links
+    ids = [link["id"] for link in links]
+    assert len(ids) == len(set(ids)), "quick_links ids must be unique"
+    for link in links:
+        assert link["title"].strip() and link["description"].strip(), link["id"]
+        assert link["url"].startswith("https://"), link["id"]
+        assert link["concepts"], link["id"]
+        unresolved = [c for c in link["concepts"] if c not in class_ids]
+        assert not unresolved, (link["id"], unresolved)

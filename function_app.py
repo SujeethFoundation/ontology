@@ -104,6 +104,7 @@ simple_route("ontology/terminology","preferred_terminology")
 simple_route("ontology/program-structure","program_structure")
 simple_route("ontology/dataverse-mappings","dataverse_mappings")
 simple_route("ontology/schema-gaps","schema_gaps")
+simple_route("ontology/quick-links","quick_links")
 
 @app.route(route="ontology/domains", methods=["GET"])
 def domains(req):
