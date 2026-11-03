@@ -15,9 +15,14 @@ def test_all_domain_concepts_resolve_to_classes():
     }
     assert not unresolved, f"Unresolved domain concepts: {sorted(unresolved)}"
 
-def test_all_remaining_domains_are_crawl_enabled():
+def test_all_remaining_domains_are_crawl_enabled_unless_manual_only():
     assert ONTOLOGY["domains"]
-    assert all(item.get("crawl_enabled") is True for item in ONTOLOGY["domains"])
+    for item in ONTOLOGY["domains"]:
+        if item.get("manual_only") is True:
+            # Pages come from POST /api/index/page, so the crawler must never visit the domain.
+            assert item.get("crawl_enabled") is False, item["domain"]
+        else:
+            assert item.get("crawl_enabled") is True, item["domain"]
 
 def test_portal_domain_is_removed():
     assert not any(item.get("domain") == "portal.sujeeth.org" for item in ONTOLOGY["domains"])
