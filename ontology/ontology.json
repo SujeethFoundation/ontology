@@ -1,6 +1,6 @@
 {
-  "ontology_version": "1.4.3",
-  "last_updated": "2026-11-03",
+  "ontology_version": "1.4.4",
+  "last_updated": "2026-11-04",
   "description": "Sujeeth Foundation domain ontology and governance configuration, including validated concepts used to associate approved external domains.",
   "classes": [
     {
@@ -767,6 +767,21 @@
       "manual_only": true,
       "associated_concepts": [
         "sujeeth_foundation"
+      ],
+      "crawl_policy": {
+        "mode": "manual",
+        "respect_robots_txt": true
+      }
+    },
+    {
+      "domain": "portal.sujeeth.org",
+      "crawl_enabled": false,
+      "search_enabled": true,
+      "manual_only": true,
+      "associated_concepts": [
+        "sujeeth_foundation",
+        "book",
+        "resource"
       ],
       "crawl_policy": {
         "mode": "manual",
