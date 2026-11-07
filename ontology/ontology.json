@@ -963,6 +963,17 @@
         "respect_robots_txt": true,
         "exclude_paths": ["/tag", "/category", "/linked_podcast_category"]
       }
+    },
+        {
+      "domain": "theleanstartup.com",
+      "crawl_enabled": true,
+      "search_enabled": true,
+      "associated_concepts": ["innovation", "career_development"],
+      "crawl_policy": {
+        "mode": "domain",
+        "respect_robots_txt": true,
+        "exclude_paths": ["/*"]
+      }
     }
   ],
   "quick_links": [
