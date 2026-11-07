@@ -1,45 +1,81 @@
 {
-  "ontology_version": "1.4.4",
-  "last_updated": "2026-11-04",
+  "ontology_version": "1.5.0",
+  "last_updated": "2026-11-07",
   "description": "Sujeeth Foundation domain ontology and governance configuration, including validated concepts used to associate approved external domains.",
   "classes": [
     {
       "id": "sujeeth_foundation",
       "name": "Sujeeth Foundation",
-      "definition": "The nonprofit organization delivering the Career Circle Program and providing books to students."
+      "definition": "The nonprofit organization delivering the Career Circle Program and providing books to students.",
+      "aliases": [
+        "the Foundation",
+        "Sujeeth",
+        "about the Foundation",
+        "who we are"
+      ]
     },
     {
       "id": "partner",
       "name": "Partner",
-      "definition": "An institution working with Sujeeth Foundation through a Partnership."
+      "definition": "An institution working with Sujeeth Foundation through a Partnership.",
+      "aliases": [
+        "partner institution",
+        "partner school",
+        "campus partner",
+        "partners"
+      ]
     },
     {
       "id": "partnership",
       "name": "Partnership",
-      "definition": "A semester-specific relationship between Sujeeth Foundation and one Partner institution."
+      "definition": "A semester-specific relationship between Sujeeth Foundation and one Partner institution.",
+      "aliases": [
+        "partnerships",
+        "partner with us",
+        "bring Career Circles to campus",
+        "school partnership"
+      ]
     },
     {
       "id": "career_circle_program",
       "name": "Career Circle Program",
-      "definition": "The Foundation program delivered through Partnerships."
+      "definition": "The Foundation program delivered through Partnerships.",
+      "aliases": [
+        "Career Circles",
+        "Career Circle program",
+        "six-week program",
+        "how the program works"
+      ]
     },
     {
       "id": "academic_period",
       "name": "Academic Period",
       "aliases": [
-        "Semester"
+        "Semester",
+        "academic term",
+        "semester dates"
       ],
       "definition": "The semester in which a Partnership operates."
     },
     {
       "id": "circle",
       "name": "Circle",
-      "definition": "A cohort hosted by a Partnership and containing six individual Sessions."
+      "definition": "A cohort hosted by a Partnership and containing six individual Sessions.",
+      "aliases": [
+        "cohort",
+        "club",
+        "circles"
+      ]
     },
     {
       "id": "session",
       "name": "Session",
-      "definition": "One weekly meeting within a Circle."
+      "definition": "One weekly meeting within a Circle.",
+      "aliases": [
+        "weekly session",
+        "weekly meeting",
+        "sessions"
+      ]
     },
     {
       "id": "week",
@@ -49,93 +85,214 @@
     {
       "id": "student",
       "name": "Student",
-      "definition": "A student participating in a Circle."
+      "definition": "A student participating in a Circle.",
+      "aliases": [
+        "students",
+        "participant",
+        "participants",
+        "mentee",
+        "mentees",
+        "college student"
+      ]
     },
     {
       "id": "career_mentor",
       "name": "Career Mentor",
-      "definition": "A volunteer who leads Sessions and guides Students."
+      "definition": "A volunteer who leads Sessions and guides Students.",
+      "aliases": [
+        "mentor",
+        "mentors",
+        "mentoring",
+        "career mentors",
+        "session leader",
+        "mentor FAQ"
+      ]
     },
     {
       "id": "volunteer",
       "name": "Volunteer",
-      "definition": "A person volunteering with the Foundation or a Partner."
+      "definition": "A person volunteering with the Foundation or a Partner.",
+      "aliases": [
+        "volunteers",
+        "volunteering",
+        "volunteer application",
+        "apply to volunteer",
+        "become a volunteer",
+        "sign up to volunteer",
+        "become a mentor"
+      ]
     },
     {
       "id": "community_manager",
       "name": "Community Manager",
-      "definition": "A role supporting coordination between a Partner and Volunteers; cannot lead a Circle."
+      "definition": "A role supporting coordination between a Partner and Volunteers; cannot lead a Circle.",
+      "aliases": [
+        "community managers"
+      ]
     },
     {
       "id": "resource",
       "name": "Resource",
-      "definition": "Learning material supporting one or more program Weeks."
+      "definition": "Learning material supporting one or more program Weeks.",
+      "aliases": [
+        "resources",
+        "learning materials",
+        "reading and tools"
+      ]
     },
     {
       "id": "book",
       "name": "Book",
-      "definition": "A catalogued book that is also a Resource."
+      "definition": "A catalogued book that is also a Resource.",
+      "aliases": [
+        "books",
+        "free books",
+        "book catalog",
+        "reading list"
+      ]
     },
     {
       "id": "book_request",
       "name": "Book Request",
-      "definition": "A Student request for a catalogued Book."
+      "definition": "A Student request for a catalogued Book.",
+      "aliases": [
+        "request a book",
+        "book requests",
+        "free book",
+        "book limit",
+        "book order",
+        "order a book"
+      ]
     },
     {
       "id": "substitute_request",
       "name": "Substitute Request",
-      "definition": "A request by a Mentor for another Volunteer to cover a Session."
+      "definition": "A request by a Mentor for another Volunteer to cover a Session.",
+      "aliases": [
+        "substitute",
+        "substitutes",
+        "need a substitute",
+        "cover a session",
+        "session coverage",
+        "substitute mentor"
+      ]
     },
     {
       "id": "onboarding_survey",
       "name": "Onboarding Survey",
-      "definition": "The onboarding survey completed by a Student."
+      "definition": "The onboarding survey completed by a Student.",
+      "aliases": [
+        "student onboarding",
+        "intake survey",
+        "onboarding form"
+      ]
     },
     {
       "id": "feedback_survey",
       "name": "Feedback Survey",
-      "definition": "The feedback survey completed by a Student."
+      "definition": "The feedback survey completed by a Student.",
+      "aliases": [
+        "student feedback",
+        "feedback form",
+        "end of program survey"
+      ]
     },
     {
       "id": "presentation",
       "name": "Presentation",
-      "definition": "A presentation or Sway resource associated with program content."
+      "definition": "A presentation or Sway resource associated with program content.",
+      "aliases": [
+        "slides",
+        "slide deck",
+        "session slides",
+        "sway"
+      ]
     },
     {
       "id": "recording",
       "name": "Recording",
-      "definition": "A recording associated with a Session."
+      "definition": "A recording associated with a Session.",
+      "aliases": [
+        "recordings",
+        "session recording",
+        "watch a session",
+        "session video"
+      ]
     },
     {
       "id": "agenda",
       "name": "Agenda",
-      "definition": "The agenda for a program Week or Session."
+      "definition": "The agenda for a program Week or Session.",
+      "aliases": [
+        "session agenda",
+        "weekly agenda",
+        "session plan"
+      ]
     },
     {
       "id": "spotlight",
       "name": "Spotlight",
-      "definition": "A feature highlighting one Volunteer."
+      "definition": "A feature highlighting one Volunteer.",
+      "aliases": [
+        "spotlights",
+        "volunteer spotlight",
+        "mentor spotlight",
+        "mentor story"
+      ]
     },
     {
       "id": "testimonial",
       "name": "Testimonial",
-      "definition": "A quotation from one Student."
+      "definition": "A quotation from one Student.",
+      "aliases": [
+        "testimonials",
+        "student quote",
+        "student story",
+        "what students say"
+      ]
     },
     {
       "id": "impact_report",
       "name": "Impact Report",
-      "definition": "A report describing Foundation impact."
+      "definition": "A report describing Foundation impact.",
+      "aliases": [
+        "annual report",
+        "impact",
+        "program results"
+      ]
     },
     {
       "id": "donor",
       "name": "Donor",
-      "definition": "A person or organization making Donations to the Foundation."
+      "definition": "A person or organization making Donations to the Foundation.",
+      "aliases": [
+        "donors",
+        "supporter",
+        "supporters",
+        "sponsor",
+        "sponsors"
+      ]
     },
     {
       "id": "donation",
       "name": "Donation",
       "definition": "A contribution made to Sujeeth Foundation.",
-      "aliases": ["donate", "donates", "donated", "donating", "donations", "gofundme", "make a gift", "monthly gift"]
+      "aliases": [
+        "donate",
+        "donates",
+        "donated",
+        "donating",
+        "donations",
+        "gofundme",
+        "make a gift",
+        "monthly gift",
+        "giving",
+        "contribute",
+        "contribution",
+        "ways to give",
+        "tax-deductible gift",
+        "support the Foundation"
+      ]
     },
     {
       "id": "resume_resource",
@@ -149,7 +306,13 @@
         "resume development",
         "job application resume",
         "resume template",
-        "resume tips"
+        "resume tips",
+        "base resume",
+        "resume review",
+        "resume format",
+        "resume examples",
+        "ATS resume",
+        "applicant tracking system"
       ],
       "definition": "A learning resource that helps students create, improve, format, or tailor a resume or curriculum vitae for employment opportunities."
     },
@@ -169,8 +332,11 @@
         "job",
         "jobs",
         "careers",
-        "become",
-        "hired"
+        "hired",
+        "what career should I choose",
+        "what do I want to be",
+        "first job",
+        "entry-level job"
       ],
       "definition": "Learning and activities that help a person explore career options, build professional skills, prepare for employment, and progress in a career."
     },
@@ -178,10 +344,13 @@
       "id": "leadership",
       "name": "Leadership",
       "aliases": [
-        "leading",
         "leadership skills",
         "leading people",
-        "team leadership"
+        "team leadership",
+        "leader",
+        "leaders",
+        "inspire others",
+        "being a leader"
       ],
       "definition": "The knowledge and practices involved in guiding, influencing, and supporting people or teams toward shared goals."
     },
@@ -189,10 +358,12 @@
       "id": "growth_mindset",
       "name": "Growth Mindset",
       "aliases": [
-        "growth mindset",
         "learning mindset",
         "developing abilities",
-        "learning from mistakes"
+        "learning from mistakes",
+        "mindset",
+        "fixed mindset",
+        "Carol Dweck"
       ],
       "definition": "The belief that abilities and skills can be developed through effort, learning, feedback, and practice."
     },
@@ -203,7 +374,9 @@
         "perseverance",
         "passion and perseverance",
         "persistence",
-        "long term perseverance"
+        "long term perseverance",
+        "resilience",
+        "stick with it"
       ],
       "definition": "Perseverance and sustained commitment toward long-term goals despite challenges or setbacks."
     },
@@ -214,7 +387,12 @@
         "sense of purpose",
         "personal purpose",
         "meaningful work",
-        "why"
+        "ikigai",
+        "find your why",
+        "start with why",
+        "life purpose",
+        "finding purpose",
+        "personal values"
       ],
       "definition": "A person's sense of meaning, direction, and motivation that informs goals and choices."
     },
@@ -225,7 +403,12 @@
         "professional networking",
         "building relationships",
         "career connections",
-        "networking skills"
+        "networking skills",
+        "informational interview",
+        "informational interviews",
+        "networking event",
+        "building a network",
+        "working out loud"
       ],
       "definition": "Building and maintaining professional relationships that support learning, collaboration, and career opportunities."
     },
@@ -236,7 +419,11 @@
         "innovative thinking",
         "experimentation",
         "new ideas",
-        "creative problem solving"
+        "creative problem solving",
+        "entrepreneurship",
+        "startups",
+        "lean startup",
+        "build-measure-learn"
       ],
       "definition": "Developing, testing, and applying new ideas or approaches to create value or solve problems."
     },
@@ -244,10 +431,11 @@
       "id": "motivation",
       "name": "Motivation",
       "aliases": [
-        "motivating",
         "intrinsic motivation",
-        "drive",
-        "what motivates people"
+        "what motivates people",
+        "staying motivated",
+        "self motivation",
+        "what drives you"
       ],
       "definition": "The internal and external factors that initiate, direct, and sustain goal-oriented behavior."
     },
@@ -258,7 +446,9 @@
         "gratitude",
         "recognition",
         "expressing appreciation",
-        "acknowledgment"
+        "acknowledgment",
+        "thank you notes",
+        "showing appreciation"
       ],
       "definition": "Recognizing and expressing the value of people, contributions, and positive experiences."
     },
@@ -268,9 +458,16 @@
       "aliases": [
         "program week 1",
         "week number 1",
-        "week 1 content"
+        "week 1 content",
+        "week one",
+        "wk 1",
+        "session 1",
+        "week 1 session",
+        "self-assessment",
+        "self assessment",
+        "coat of arms"
       ],
-      "definition": "The 1st week in the six-week Career Circle Program."
+      "definition": "Week 1 of the six-week Career Circle Program: Self-Assessment. Understand strengths, goals, and growth areas; build trust and a personal narrative."
     },
     {
       "id": "week_2",
@@ -278,9 +475,15 @@
       "aliases": [
         "program week 2",
         "week number 2",
-        "week 2 content"
+        "week 2 content",
+        "week two",
+        "wk 2",
+        "session 2",
+        "week 2 session",
+        "research and exploration",
+        "research & exploration"
       ],
-      "definition": "The 2nd week in the six-week Career Circle Program."
+      "definition": "Week 2 of the six-week Career Circle Program: Research & Exploration. Explore industries, roles, and companies that fit your goals."
     },
     {
       "id": "week_3",
@@ -288,9 +491,15 @@
       "aliases": [
         "program week 3",
         "week number 3",
-        "week 3 content"
+        "week 3 content",
+        "week three",
+        "wk 3",
+        "session 3",
+        "week 3 session",
+        "resume and preparation",
+        "resume & preparation"
       ],
-      "definition": "The 3rd week in the six-week Career Circle Program."
+      "definition": "Week 3 of the six-week Career Circle Program: Resume & Preparation. Build a base resume and a LinkedIn profile that match your target roles."
     },
     {
       "id": "week_4",
@@ -298,9 +507,15 @@
       "aliases": [
         "program week 4",
         "week number 4",
-        "week 4 content"
+        "week 4 content",
+        "week four",
+        "wk 4",
+        "session 4",
+        "week 4 session",
+        "networking week",
+        "work out loud"
       ],
-      "definition": "The 4th week in the six-week Career Circle Program."
+      "definition": "Week 4 of the six-week Career Circle Program: Networking. Build professional relationships through generosity and visibility."
     },
     {
       "id": "week_5",
@@ -308,9 +523,16 @@
       "aliases": [
         "program week 5",
         "week number 5",
-        "week 5 content"
+        "week 5 content",
+        "week five",
+        "wk 5",
+        "session 5",
+        "week 5 session",
+        "applications and interviews",
+        "applications & interviews",
+        "how many jobs should I apply to"
       ],
-      "definition": "The 5th week in the six-week Career Circle Program."
+      "definition": "Week 5 of the six-week Career Circle Program: Applications & Interviews. Choose an application strategy and tell your experience well in interviews."
     },
     {
       "id": "week_6",
@@ -318,9 +540,150 @@
       "aliases": [
         "program week 6",
         "week number 6",
-        "week 6 content"
+        "week 6 content",
+        "week six",
+        "wk 6",
+        "session 6",
+        "week 6 session",
+        "follow-up and negotiation",
+        "follow-up & negotiation",
+        "ultimate guide to following up"
       ],
-      "definition": "The 6th week in the six-week Career Circle Program."
+      "definition": "Week 6 of the six-week Career Circle Program: Follow-up & Negotiation. Follow up after interviews, negotiate offers, and build relationships beyond transactions."
+    },
+    {
+      "id": "program_statistics",
+      "name": "Program Statistics",
+      "aliases": [
+        "how many students",
+        "number of students",
+        "how many circles",
+        "how many mentors",
+        "placement rate",
+        "impact numbers",
+        "statistics",
+        "stats",
+        "by the numbers"
+      ],
+      "definition": "Counts and rates describing Foundation reach and results. The authoritative sources are sujeeth.org and topics.sujeeth.org; no other domain is."
+    },
+    {
+      "id": "circle_notes",
+      "name": "Circle Notes",
+      "aliases": [
+        "circle notes",
+        "session notes"
+      ],
+      "definition": "Notes recorded about a Circle (Dataverse table suj_circlenotes)."
+    },
+    {
+      "id": "portal_feedback",
+      "name": "Portal Feedback",
+      "aliases": [
+        "portal feedback",
+        "portal feedback form",
+        "report a portal problem"
+      ],
+      "definition": "Feedback submitted about the student portal (Dataverse table suj_portalfeedback)."
+    },
+    {
+      "id": "follow_up",
+      "name": "Follow-up",
+      "aliases": [
+        "follow up after interview",
+        "interview follow-up",
+        "follow-up email",
+        "interview thank-you note",
+        "following up"
+      ],
+      "definition": "Staying in touch after interviews and networking conversations in a way that builds the relationship (Week 6)."
+    },
+    {
+      "id": "job_application_strategy",
+      "name": "Job Application Strategy",
+      "aliases": [
+        "how many jobs to apply to",
+        "tailor each application",
+        "mass applying",
+        "application strategy",
+        "applying to jobs"
+      ],
+      "definition": "Choosing how many roles to apply to and how much to personalize each application (Week 5)."
+    },
+    {
+      "id": "learning_from_regret",
+      "name": "Learning from Regret",
+      "aliases": [
+        "power of regret",
+        "Daniel Pink",
+        "learning from regret",
+        "career regret",
+        "learning from failure",
+        "intelligent failure"
+      ],
+      "definition": "Using regret as information for braver, more authentic career choices (Week 6)."
+    },
+    {
+      "id": "salary_negotiation",
+      "name": "Salary Negotiation",
+      "aliases": [
+        "negotiate salary",
+        "salary negotiation",
+        "negotiating pay",
+        "compensation",
+        "job offer negotiation",
+        "counteroffer"
+      ],
+      "definition": "Preparing for and conducting a conversation about pay and terms in a job offer."
+    },
+    {
+      "id": "interviewing",
+      "name": "Interviewing",
+      "aliases": [
+        "job interview",
+        "interview prep",
+        "interview questions",
+        "behavioral interview",
+        "mock interview",
+        "STAR method"
+      ],
+      "definition": "Preparing for and performing well in job interviews."
+    },
+    {
+      "id": "linkedin_profile",
+      "name": "LinkedIn Profile",
+      "aliases": [
+        "LinkedIn profile",
+        "LinkedIn headline",
+        "LinkedIn summary",
+        "LinkedIn tips",
+        "personal brand",
+        "online presence"
+      ],
+      "definition": "Building a professional LinkedIn profile and presence as a student or early-career professional."
+    },
+    {
+      "id": "psychological_safety",
+      "name": "Psychological Safety",
+      "aliases": [
+        "psychological safety",
+        "speaking up",
+        "safe to speak up",
+        "fearless organization"
+      ],
+      "definition": "A team climate where people can raise questions, ideas, and mistakes without fear of embarrassment or punishment."
+    },
+    {
+      "id": "vulnerability_courage",
+      "name": "Vulnerability and Courage",
+      "aliases": [
+        "vulnerability",
+        "daring greatly",
+        "shame",
+        "belonging",
+        "brave leadership"
+      ],
+      "definition": "Showing up honestly, taking risks, and handling fear of failure or judgment."
     }
   ],
   "relationships": [
@@ -531,6 +894,206 @@
       "object": "sujeeth_foundation",
       "cardinality": "N:1",
       "definition": "Donations are made to the Foundation, not to a Partner or Circle."
+    },
+    {
+      "id": "mentor_is_volunteer",
+      "subject": "career_mentor",
+      "predicate": "is_a",
+      "object": "volunteer",
+      "cardinality": "N:1",
+      "definition": "A Career Mentor is a Volunteer who leads Sessions."
+    },
+    {
+      "id": "presentation_is_resource",
+      "subject": "presentation",
+      "predicate": "is_a",
+      "object": "resource",
+      "cardinality": "N:1",
+      "definition": "A Presentation is a type of Resource."
+    },
+    {
+      "id": "resume_resource_is_resource",
+      "subject": "resume_resource",
+      "predicate": "is_a",
+      "object": "resource",
+      "cardinality": "N:1",
+      "definition": "A Resume Resource is a type of Resource."
+    },
+    {
+      "id": "agenda_describes_week",
+      "subject": "agenda",
+      "predicate": "describes",
+      "object": "week",
+      "cardinality": "N:N",
+      "definition": "An Agenda describes one program Week or Session."
+    },
+    {
+      "id": "impact_report_reports_statistics",
+      "subject": "impact_report",
+      "predicate": "reports",
+      "object": "program_statistics",
+      "cardinality": "N:N",
+      "definition": "An Impact Report presents Program Statistics."
+    },
+    {
+      "id": "appreciation_illustrates_follow_up",
+      "subject": "appreciation",
+      "predicate": "illustrates",
+      "object": "follow_up",
+      "cardinality": "N:N",
+      "definition": "Appreciation content illustrates effective follow-up (thank-yous, recognition)."
+    },
+    {
+      "id": "circle_has_notes",
+      "subject": "circle",
+      "predicate": "has",
+      "object": "circle_notes",
+      "cardinality": "1:N",
+      "definition": "A Circle can have Circle Notes."
+    },
+    {
+      "id": "vulnerability_courage_illustrates_week_1",
+      "subject": "vulnerability_courage",
+      "predicate": "illustrates",
+      "object": "week_1",
+      "cardinality": "N:N",
+      "definition": "Vulnerability Courage content is used in Week 1: Self-Assessment."
+    },
+    {
+      "id": "grit_illustrates_week_1",
+      "subject": "grit",
+      "predicate": "illustrates",
+      "object": "week_1",
+      "cardinality": "N:N",
+      "definition": "Grit content is used in Week 1: Self-Assessment."
+    },
+    {
+      "id": "growth_mindset_illustrates_week_1",
+      "subject": "growth_mindset",
+      "predicate": "illustrates",
+      "object": "week_1",
+      "cardinality": "N:N",
+      "definition": "Growth Mindset content is used in Week 1: Self-Assessment."
+    },
+    {
+      "id": "purpose_illustrates_week_2",
+      "subject": "purpose",
+      "predicate": "illustrates",
+      "object": "week_2",
+      "cardinality": "N:N",
+      "definition": "Purpose content is used in Week 2: Research & Exploration."
+    },
+    {
+      "id": "resume_resource_illustrates_week_3",
+      "subject": "resume_resource",
+      "predicate": "illustrates",
+      "object": "week_3",
+      "cardinality": "N:N",
+      "definition": "Resume Resource content is used in Week 3: Resume & Preparation."
+    },
+    {
+      "id": "linkedin_profile_illustrates_week_3",
+      "subject": "linkedin_profile",
+      "predicate": "illustrates",
+      "object": "week_3",
+      "cardinality": "N:N",
+      "definition": "Linkedin Profile content is used in Week 3: Resume & Preparation."
+    },
+    {
+      "id": "purpose_illustrates_week_3",
+      "subject": "purpose",
+      "predicate": "illustrates",
+      "object": "week_3",
+      "cardinality": "N:N",
+      "definition": "Purpose content is used in Week 3: Resume & Preparation."
+    },
+    {
+      "id": "networking_illustrates_week_4",
+      "subject": "networking",
+      "predicate": "illustrates",
+      "object": "week_4",
+      "cardinality": "N:N",
+      "definition": "Networking content is used in Week 4: Networking."
+    },
+    {
+      "id": "grit_illustrates_week_4",
+      "subject": "grit",
+      "predicate": "illustrates",
+      "object": "week_4",
+      "cardinality": "N:N",
+      "definition": "Grit content is used in Week 4: Networking."
+    },
+    {
+      "id": "interviewing_illustrates_week_5",
+      "subject": "interviewing",
+      "predicate": "illustrates",
+      "object": "week_5",
+      "cardinality": "N:N",
+      "definition": "Interviewing content is used in Week 5: Applications & Interviews."
+    },
+    {
+      "id": "job_application_strategy_illustrates_week_5",
+      "subject": "job_application_strategy",
+      "predicate": "illustrates",
+      "object": "week_5",
+      "cardinality": "N:N",
+      "definition": "Job Application Strategy content is used in Week 5: Applications & Interviews."
+    },
+    {
+      "id": "innovation_illustrates_week_5",
+      "subject": "innovation",
+      "predicate": "illustrates",
+      "object": "week_5",
+      "cardinality": "N:N",
+      "definition": "Innovation content is used in Week 5: Applications & Interviews."
+    },
+    {
+      "id": "grit_illustrates_week_5",
+      "subject": "grit",
+      "predicate": "illustrates",
+      "object": "week_5",
+      "cardinality": "N:N",
+      "definition": "Grit content is used in Week 5: Applications & Interviews."
+    },
+    {
+      "id": "purpose_illustrates_week_5",
+      "subject": "purpose",
+      "predicate": "illustrates",
+      "object": "week_5",
+      "cardinality": "N:N",
+      "definition": "Purpose content is used in Week 5: Applications & Interviews."
+    },
+    {
+      "id": "follow_up_illustrates_week_6",
+      "subject": "follow_up",
+      "predicate": "illustrates",
+      "object": "week_6",
+      "cardinality": "N:N",
+      "definition": "Follow Up content is used in Week 6: Follow-up & Negotiation."
+    },
+    {
+      "id": "salary_negotiation_illustrates_week_6",
+      "subject": "salary_negotiation",
+      "predicate": "illustrates",
+      "object": "week_6",
+      "cardinality": "N:N",
+      "definition": "Salary Negotiation content is used in Week 6: Follow-up & Negotiation."
+    },
+    {
+      "id": "learning_from_regret_illustrates_week_6",
+      "subject": "learning_from_regret",
+      "predicate": "illustrates",
+      "object": "week_6",
+      "cardinality": "N:N",
+      "definition": "Learning From Regret content is used in Week 6: Follow-up & Negotiation."
+    },
+    {
+      "id": "appreciation_illustrates_week_6",
+      "subject": "appreciation",
+      "predicate": "illustrates",
+      "object": "week_6",
+      "cardinality": "N:N",
+      "definition": "Appreciation content is used in Week 6: Follow-up & Negotiation."
     }
   ],
   "business_rules": [
@@ -565,6 +1128,10 @@
     {
       "id": "br_donation",
       "rule": "Donations are made to the Foundation and are not associated with a Partner or Circle."
+    },
+    {
+      "id": "br_program_statistics_source",
+      "rule": "Program statistics come only from sujeeth.org and topics.sujeeth.org. Do not total them from Dataverse rows, and do not take them from Candid, third-party sites, or older documents."
     }
   ],
   "preferred_terminology": [
@@ -633,32 +1200,88 @@
         "professional networking",
         "career connections"
       ]
+    },
+    {
+      "preferred": "Plain, specific wording",
+      "avoid": [
+        "holistic",
+        "transformative",
+        "leverage",
+        "stakeholders",
+        "outcomes-based",
+        "best practices",
+        "unlock the potential"
+      ],
+      "note": "Brand guide ban list (nonprofit-speak). Applies to generated copy."
     }
   ],
   "program_structure": [
     {
       "week": 1,
-      "name": "Week 1"
+      "name": "Week 1",
+      "theme": "Self-Assessment",
+      "objective": "Understand strengths, goals, and growth areas; build trust and a personal narrative.",
+      "frameworks": [
+        "Vulnerability and trust (Brene Brown clip)",
+        "Coat of Arms exercise"
+      ],
+      "presentation_quick_link": "week_1_presentation"
     },
     {
       "week": 2,
-      "name": "Week 2"
+      "name": "Week 2",
+      "theme": "Research & Exploration",
+      "objective": "Explore industries, roles, and companies that fit your goals.",
+      "frameworks": [
+        "Ikigai",
+        "Connecting with hiring managers (LinkedIn Learning video)"
+      ],
+      "presentation_quick_link": "week_2_presentation"
     },
     {
       "week": 3,
-      "name": "Week 3"
+      "name": "Week 3",
+      "theme": "Resume & Preparation",
+      "objective": "Build a base resume and a LinkedIn profile that match your target roles.",
+      "frameworks": [
+        "Base resume",
+        "The Origin of Why (Simon Sinek)"
+      ],
+      "presentation_quick_link": "week_3_presentation"
     },
     {
       "week": 4,
-      "name": "Week 4"
+      "name": "Week 4",
+      "theme": "Networking",
+      "objective": "Build professional relationships through generosity and visibility.",
+      "frameworks": [
+        "Work Out Loud (John Stepper)",
+        "Social media best practices"
+      ],
+      "presentation_quick_link": "week_4_presentation"
     },
     {
       "week": 5,
-      "name": "Week 5"
+      "name": "Week 5",
+      "theme": "Applications & Interviews",
+      "objective": "Choose an application strategy and tell your experience well in interviews.",
+      "frameworks": [
+        "STAR storytelling",
+        "Lean Startup (each application as an experiment)",
+        "Start with Why"
+      ],
+      "presentation_quick_link": "week_5_presentation"
     },
     {
       "week": 6,
-      "name": "Week 6"
+      "name": "Week 6",
+      "theme": "Follow-up & Negotiation",
+      "objective": "Follow up after interviews, negotiate offers, and build relationships beyond transactions.",
+      "frameworks": [
+        "The Power of Regret (Daniel Pink)",
+        "Ultimate Guide to Following Up"
+      ],
+      "presentation_quick_link": "week_6_presentation"
     }
   ],
   "dataverse_mappings": [
@@ -668,7 +1291,8 @@
     },
     {
       "table": "suj_circle",
-      "maps_to": "Circle"
+      "maps_to": "Circle",
+      "notes": "Active Circles have statecode = 0; start date is suj_start."
     },
     {
       "table": "suj_studentonboarding",
@@ -704,7 +1328,11 @@
     },
     {
       "table": "contact",
-      "maps_to": "Student / Contact"
+      "maps_to": "Student / Contact",
+      "also_maps_to": [
+        "Career Mentor"
+      ],
+      "notes": "Career Mentors are contact rows with suj_ismentor = true, linked to a Circle through the suj_circle field; employer is in jobtitle."
     },
     {
       "table": "account",
@@ -753,12 +1381,29 @@
         "career_mentor",
         "donor",
         "donation",
-        "resource"
+        "resource",
+        "circle",
+        "session",
+        "agenda",
+        "testimonial",
+        "impact_report",
+        "program_statistics",
+        "partner",
+        "book",
+        "week_1",
+        "week_2",
+        "week_3",
+        "week_4",
+        "week_5",
+        "week_6"
       ],
       "crawl_policy": {
         "mode": "domain",
         "respect_robots_txt": true
-      }
+      },
+      "authoritative_for": [
+        "program_statistics"
+      ]
     },
     {
       "domain": "app.candid.org",
@@ -781,7 +1426,10 @@
       "associated_concepts": [
         "sujeeth_foundation",
         "book",
-        "resource"
+        "resource",
+        "recording",
+        "session",
+        "book_request"
       ],
       "crawl_policy": {
         "mode": "manual",
@@ -796,12 +1444,16 @@
         "testimonial",
         "impact_report",
         "circle",
-        "session"
+        "session",
+        "program_statistics"
       ],
       "crawl_policy": {
         "mode": "domain",
         "respect_robots_txt": true
-      }
+      },
+      "authoritative_for": [
+        "program_statistics"
+      ]
     },
     {
       "domain": "brenebrown.com",
@@ -810,7 +1462,8 @@
       "associated_concepts": [
         "leadership",
         "career_development",
-        "week_1"
+        "week_1",
+        "vulnerability_courage"
       ],
       "crawl_policy": {
         "mode": "domain",
@@ -837,7 +1490,9 @@
       "associated_concepts": [
         "grit",
         "career_development",
-        "week_2"        
+        "week_1",
+        "week_4",
+        "week_5"
       ],
       "crawl_policy": {
         "mode": "domain",
@@ -851,10 +1506,11 @@
       "associated_concepts": [
         "career_development",
         "resume_resource",
-        "student",
         "week_2",
-        "week_5",
-        "week_3"
+        "week_3",
+        "linkedin_profile",
+        "interviewing",
+        "week_4"
       ],
       "crawl_policy": {
         "mode": "domain",
@@ -870,7 +1526,8 @@
         "purpose",
         "career_development",
         "week_2",
-        "week_3"
+        "week_3",
+        "week_5"
       ],
       "crawl_policy": {
         "mode": "domain",
@@ -885,12 +1542,17 @@
         "resume_resource",
         "career_development",
         "week_3",
-        "week_5"
+        "week_5",
+        "interviewing",
+        "linkedin_profile",
+        "job_application_strategy"
       ],
       "crawl_policy": {
         "mode": "domain",
         "respect_robots_txt": true,
-        "include_paths": ["/post"]
+        "include_paths": [
+          "/post"
+        ]
       }
     },
     {
@@ -918,7 +1580,10 @@
       ],
       "crawl_policy": {
         "mode": "domain",
-        "respect_robots_txt": true
+        "respect_robots_txt": true,
+        "exclude_paths": [
+          "/docs"
+        ]
       }
     },
     {
@@ -942,7 +1607,9 @@
       "associated_concepts": [
         "growth_mindset",
         "leadership",
-        "week_6"
+        "week_6",
+        "psychological_safety",
+        "learning_from_regret"
       ],
       "crawl_policy": {
         "mode": "domain",
@@ -956,59 +1623,92 @@
       "associated_concepts": [
         "appreciation",
         "leadership",
+        "week_6",
+        "follow_up"
+      ],
+      "crawl_policy": {
+        "mode": "domain",
+        "respect_robots_txt": true,
+        "exclude_paths": [
+          "/tag",
+          "/category",
+          "/linked_podcast_category"
+        ]
+      }
+    },
+    {
+      "domain": "pon.harvard.edu",
+      "crawl_enabled": true,
+      "search_enabled": true,
+      "associated_concepts": [
+        "career_development",
+        "week_6",
+        "salary_negotiation"
+      ],
+      "crawl_policy": {
+        "mode": "domain",
+        "respect_robots_txt": true,
+        "include_paths": [
+          "/category/daily/salary-negotiations",
+          "/daily/salary-negotiations"
+        ]
+      }
+    },
+    {
+      "domain": "characterlab.org",
+      "crawl_enabled": true,
+      "search_enabled": true,
+      "associated_concepts": [
+        "grit",
+        "growth_mindset",
+        "purpose",
+        "appreciation",
+        "motivation",
+        "week_1",
+        "week_4",
         "week_5"
       ],
       "crawl_policy": {
         "mode": "domain",
         "respect_robots_txt": true,
-        "exclude_paths": ["/tag", "/category", "/linked_podcast_category"]
+        "include_paths": [
+          "/playbooks",
+          "/tips-of-the-week",
+          "/resources",
+          "/activities",
+          "/character"
+        ],
+        "exclude_paths": [
+          "/playbooks/*/*-endnotes",
+          "/tips-of-the-week/category"
+        ]
       }
     },
-        {
-      "domain": "theleanstartup.com",
+    {
+      "domain": "www.themuse.com",
       "crawl_enabled": true,
       "search_enabled": true,
-      "associated_concepts": ["innovation", "career_development"],
+      "associated_concepts": [
+        "career_development",
+        "resume_resource",
+        "networking",
+        "week_3",
+        "week_4",
+        "week_5",
+        "week_6",
+        "interviewing",
+        "salary_negotiation",
+        "follow_up",
+        "job_application_strategy"
+      ],
       "crawl_policy": {
         "mode": "domain",
         "respect_robots_txt": true,
-        "exclude_paths": ["/*"]
+        "include_paths": [
+          "/advice"
+        ]
       }
-    },
-    {
-    "domain": "pon.harvard.edu",
-    "crawl_enabled": true,
-    "search_enabled": true,
-    "associated_concepts": ["career_development", "week_6"],
-    "crawl_policy": {
-      "mode": "domain",
-      "respect_robots_txt": true,
-      "include_paths": ["/category/daily/salary-negotiations", "/daily/salary-negotiations"]
-      }
-    },
-    {
-    "domain": "characterlab.org",
-    "crawl_enabled": true,
-    "search_enabled": true,
-    "associated_concepts": ["grit", "growth_mindset", "purpose", "appreciation", "motivation", "week_1", "week_2", "week_6"],
-    "crawl_policy": {
-      "mode": "domain",
-      "respect_robots_txt": true,
-      "include_paths": ["/playbooks", "/tips-of-the-week", "/resources", "/activities", "/character"],
-      "exclude_paths": ["/playbooks/*/*-endnotes", "/tips-of-the-week/category"]
-      }
-    },
-    {
-    "domain": "www.themuse.com",
-    "crawl_enabled": true,
-    "search_enabled": true,
-    "associated_concepts": ["career_development", "resume_resource", "networking", "week_3", "week_4", "week_5", "week_6"],
-    "crawl_policy": {
-      "mode": "domain",
-      "respect_robots_txt": true,
-      "include_paths": ["/advice"]
     }
-  }
   ],
   "quick_links": [
     {
@@ -1016,7 +1716,10 @@
       "title": "Week 1 presentation",
       "url": "https://go.sujeeth.org/week1",
       "kind": "presentation",
-      "concepts": ["week_1", "presentation"],
+      "concepts": [
+        "week_1",
+        "presentation"
+      ],
       "description": "Slides for Week 1 of the Career Circle Program."
     },
     {
@@ -1024,7 +1727,10 @@
       "title": "Week 2 presentation",
       "url": "https://go.sujeeth.org/week2",
       "kind": "presentation",
-      "concepts": ["week_2", "presentation"],
+      "concepts": [
+        "week_2",
+        "presentation"
+      ],
       "description": "Slides for Week 2 of the Career Circle Program."
     },
     {
@@ -1032,7 +1738,10 @@
       "title": "Week 3 presentation",
       "url": "https://go.sujeeth.org/week3",
       "kind": "presentation",
-      "concepts": ["week_3", "presentation"],
+      "concepts": [
+        "week_3",
+        "presentation"
+      ],
       "description": "Slides for Week 3 of the Career Circle Program."
     },
     {
@@ -1040,7 +1749,10 @@
       "title": "Week 4 presentation",
       "url": "https://go.sujeeth.org/week4",
       "kind": "presentation",
-      "concepts": ["week_4", "presentation"],
+      "concepts": [
+        "week_4",
+        "presentation"
+      ],
       "description": "Slides for Week 4 of the Career Circle Program."
     },
     {
@@ -1048,7 +1760,10 @@
       "title": "Week 5 presentation",
       "url": "https://go.sujeeth.org/week5",
       "kind": "presentation",
-      "concepts": ["week_5", "presentation"],
+      "concepts": [
+        "week_5",
+        "presentation"
+      ],
       "description": "Slides for Week 5 of the Career Circle Program."
     },
     {
@@ -1056,7 +1771,10 @@
       "title": "Week 6 presentation",
       "url": "https://go.sujeeth.org/week6",
       "kind": "presentation",
-      "concepts": ["week_6", "presentation"],
+      "concepts": [
+        "week_6",
+        "presentation"
+      ],
       "description": "Slides for Week 6 of the Career Circle Program."
     },
     {
@@ -1064,7 +1782,10 @@
       "title": "Session recordings (student portal)",
       "url": "https://portal.sujeeth.org",
       "kind": "recording",
-      "concepts": ["recording", "session"],
+      "concepts": [
+        "recording",
+        "session"
+      ],
       "description": "Where students find Session recordings."
     },
     {
@@ -1072,7 +1793,9 @@
       "title": "The Sujeeth Foundation on Candid",
       "url": "https://app.candid.org/profile/15027428/the-sujeeth-foundation-93-1506908",
       "kind": "profile",
-      "concepts": ["sujeeth_foundation"],
+      "concepts": [
+        "sujeeth_foundation"
+      ],
       "description": "Candid profile with the Foundation's EIN and mission. Use for mission and organization details; program statistics come from sujeeth.org."
     }
   ],
