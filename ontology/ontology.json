@@ -974,7 +974,18 @@
         "respect_robots_txt": true,
         "exclude_paths": ["/*"]
       }
+    },
+    {
+    "domain": "indeed.com",
+    "crawl_enabled": true,
+    "search_enabled": true,
+    "associated_concepts": ["career_development", "resume_resource", "networking", "student"],
+    "crawl_policy": {
+      "mode": "domain",
+      "respect_robots_txt": true,
+      "include_paths": ["/career-advice"]
     }
+  }
   ],
   "quick_links": [
     {
