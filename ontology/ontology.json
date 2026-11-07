@@ -890,7 +890,7 @@
       "crawl_policy": {
         "mode": "domain",
         "respect_robots_txt": true,
-        "exclude_paths": ["/job", "/jobs", "/cv-examples", "/resume-synonyms", "/resume-examples", "/cover-letter-examples", "/resume-template", "/resume-templates", "/job-categories", "/tool", "/career-paths/*-certifications"]
+        "include_paths": ["/post"]
       }
     },
     {
