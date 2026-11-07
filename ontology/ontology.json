@@ -976,16 +976,28 @@
       }
     },
     {
-    "domain": "indeed.com",
+    "domain": "pon.harvard.edu",
     "crawl_enabled": true,
     "search_enabled": true,
-    "associated_concepts": ["career_development", "resume_resource", "networking", "student"],
+    "associated_concepts": ["career_development", "week_6"],
     "crawl_policy": {
       "mode": "domain",
       "respect_robots_txt": true,
-      "include_paths": ["/career-advice"]
+      "include_paths": ["/category/daily/salary-negotiations", "/daily/salary-negotiations"]
+      }
+    },
+    {
+    "domain": "characterlab.org",
+    "crawl_enabled": true,
+    "search_enabled": true,
+    "associated_concepts": ["grit", "growth_mindset", "purpose", "appreciation", "motivation", "week_1", "week_2", "week_6"],
+    "crawl_policy": {
+      "mode": "domain",
+      "respect_robots_txt": true,
+      "include_paths": ["/playbooks", "/tips-of-the-week", "/resources", "/activities", "/character"],
+      "exclude_paths": ["/playbooks/*/*-endnotes", "/tips-of-the-week/category"]
+      }
     }
-  }
   ],
   "quick_links": [
     {
