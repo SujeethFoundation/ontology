@@ -997,7 +997,18 @@
       "include_paths": ["/playbooks", "/tips-of-the-week", "/resources", "/activities", "/character"],
       "exclude_paths": ["/playbooks/*/*-endnotes", "/tips-of-the-week/category"]
       }
+    },
+    {
+    "domain": "www.themuse.com",
+    "crawl_enabled": true,
+    "search_enabled": true,
+    "associated_concepts": ["career_development", "resume_resource", "networking", "week_3", "week_4", "week_5", "week_6"],
+    "crawl_policy": {
+      "mode": "domain",
+      "respect_robots_txt": true,
+      "include_paths": ["/advice"]
     }
+  }
   ],
   "quick_links": [
     {
