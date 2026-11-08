@@ -21,6 +21,10 @@ It is loaded only when CHAT_ENABLED=true. Settings (application settings of the 
                            (it waits as the model asks, and all chats on the instance pause together).
   CHAT_MODEL_RETRIES (1)   Quick retries for connection problems and server errors.
   CHAT_MAX_MESSAGE_CHARS (2000), CHAT_MAX_HISTORY_MESSAGES (12), CHAT_TIMEOUT_SECONDS (90)
+  CHAT_SEND_CORS_HEADERS (true)  When the Function App's own CORS list already allows the page (portal > API > CORS), the platform
+                                 adds the CORS headers itself. Set this to false so the route does not add them a second time
+                                 (a browser rejects a response whose Access-Control-Allow-Origin appears twice). The route still
+                                 refuses any page that is not in CHAT_ALLOWED_ORIGINS.
   CHAT_LOG_ERROR_DETAIL (false)  Set to true while diagnosing: failures also log the error's text (first 300 characters).
                                  Off by default, because an error's text can echo part of what a visitor wrote.
 
@@ -77,6 +81,7 @@ QUEUE_SECONDS = _int("CHAT_QUEUE_SECONDS", 25)
 MODEL_RETRIES = max(0, _int("CHAT_MODEL_RETRIES", 1))
 RATE_LIMIT_WAIT_SECONDS = max(0, _int("CHAT_RATE_LIMIT_WAIT_SECONDS", 40))
 LOG_ERROR_DETAIL = (os.getenv("CHAT_LOG_ERROR_DETAIL") or "").strip().lower() in ("1", "true", "yes")
+SEND_CORS_HEADERS = (os.getenv("CHAT_SEND_CORS_HEADERS") or "true").strip().lower() not in ("0", "false", "no")
 MAX_MESSAGE_CHARS = _int("CHAT_MAX_MESSAGE_CHARS", 2000)
 MAX_HISTORY_MESSAGES = _int("CHAT_MAX_HISTORY_MESSAGES", 12)
 TIMEOUT_SECONDS = _int("CHAT_TIMEOUT_SECONDS", 90)
@@ -143,6 +148,8 @@ def client_ip(req):
 
 
 def cors_headers(origin):
+    if not SEND_CORS_HEADERS:
+        return {}
     if origin and origin.rstrip("/").lower() in ALLOWED_ORIGINS:
         return {"Access-Control-Allow-Origin": origin, "Vary": "Origin"}
     return {"Vary": "Origin"}
@@ -274,9 +281,9 @@ async def chat(req: func.HttpRequest) -> func.HttpResponse:
     global _in_flight
     origin = req.headers.get("origin")
     if req.method == "OPTIONS":
-        return func.HttpResponse(status_code=204, headers={
-            **cors_headers(origin), "Access-Control-Allow-Methods": "POST, OPTIONS",
-            "Access-Control-Allow-Headers": "Content-Type", "Access-Control-Max-Age": "86400"})
+        preflight = ({"Access-Control-Allow-Methods": "POST, OPTIONS", "Access-Control-Allow-Headers": "Content-Type",
+                      "Access-Control-Max-Age": "86400"} if SEND_CORS_HEADERS else {})
+        return func.HttpResponse(status_code=204, headers={**cors_headers(origin), **preflight})
 
     # Browsers always send Origin on a cross-site POST. This keeps other websites from using the route in a page.
     # It does not stop a script that sets its own headers, which is what the limits are for.
