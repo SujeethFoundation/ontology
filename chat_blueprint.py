@@ -19,6 +19,8 @@ It is loaded only when CHAT_ENABLED=true. Settings (application settings of the 
   CHAT_QUEUE_SECONDS (25)  How long a chat waits for a free slot before it is told the assistant is busy.
   CHAT_MODEL_RETRIES (3)   Times to retry when the model says it is over its token limit (honors its Retry-After).
   CHAT_MAX_MESSAGE_CHARS (2000), CHAT_MAX_HISTORY_MESSAGES (12), CHAT_TIMEOUT_SECONDS (90)
+  CHAT_LOG_ERROR_DETAIL (false)  Set to true while diagnosing: failures also log the error's text (first 300 characters).
+                                 Off by default, because an error's text can echo part of what a visitor wrote.
 
 How it scales: Flex Consumption adds instances when an instance's requests in flight reach its per-instance HTTP
 concurrency (a Python app's default is 1; see the README for the setting). A chat that is waiting for a slot is
@@ -70,6 +72,7 @@ GLOBAL_PER_HOUR = _int("CHAT_GLOBAL_PER_HOUR", 600)
 MAX_CONCURRENT = max(1, _int("CHAT_MAX_CONCURRENT", 8))
 QUEUE_SECONDS = _int("CHAT_QUEUE_SECONDS", 25)
 MODEL_RETRIES = max(0, _int("CHAT_MODEL_RETRIES", 3))
+LOG_ERROR_DETAIL = (os.getenv("CHAT_LOG_ERROR_DETAIL") or "").strip().lower() in ("1", "true", "yes")
 MAX_MESSAGE_CHARS = _int("CHAT_MAX_MESSAGE_CHARS", 2000)
 MAX_HISTORY_MESSAGES = _int("CHAT_MAX_HISTORY_MESSAGES", 12)
 TIMEOUT_SECONDS = _int("CHAT_TIMEOUT_SECONDS", 90)
@@ -280,7 +283,8 @@ async def chat(req: func.HttpRequest) -> func.HttpResponse:
         text = await asyncio.wait_for(asyncio.shield(future), TIMEOUT_SECONDS + 5)
     except Exception as exc:  # the visitor sees a friendly line; the log has the cause
         status, key, note = explain(exc)
-        log.error("chat %s failed: %s", request_id, note)
+        detail = f" | {type(exc).__name__}: {str(exc)[:300]}" if LOG_ERROR_DETAIL else ""
+        log.error("chat %s failed: %s%s", request_id, note, detail)
         return reply_json(status, {"error": FRIENDLY[key]}, origin)
 
     # Log sizes and timing only. Visitors may paste resumes, so message text is never logged.

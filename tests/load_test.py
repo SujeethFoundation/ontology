@@ -99,14 +99,40 @@ def main():
                 time.sleep(random.uniform(0.5, 1.5) * args.think)
 
     print(f"{args.visitors} visitors x {args.messages} messages (cap {args.max_messages}), think {args.think}s, ramp {args.ramp}s")
+    print("A progress line prints every 10 seconds. Press Ctrl+C to stop early; the results so far are still reported.")
     started = time.perf_counter()
     threads = [threading.Thread(target=visitor, args=(i,), daemon=True) for i in range(args.visitors)]
     for t in threads:
         t.start()
-    for t in threads:
-        t.join()
+
+    def progress():
+        with lock:
+            answered = sum(1 for st, _ in results if st == 200)
+            away = sum(1 for st, _ in results if st in (503, 429))
+            print(f"  [{time.perf_counter() - started:4.0f}s] sent {state['sent']}, answered {answered}, "
+                  f"waiting for a reply {state['in_flight']}, turned away {away}, other failures {len(results) - answered - away}", flush=True)
+
+    interrupted = False
+    try:
+        last = time.perf_counter()
+        # Poll with a timeout: a plain join() can ignore Ctrl+C on Windows.
+        while any(t.is_alive() for t in threads):
+            for t in threads:
+                t.join(timeout=0.25)
+            if time.perf_counter() - last >= 10:
+                progress()
+                last = time.perf_counter()
+    except KeyboardInterrupt:
+        interrupted = True
+        state["stop"] = True
+        print("\nStopped early. Reporting what finished so far (replies still on their way are not counted).")
     wall = time.perf_counter() - started
 
+    with lock:
+        results = list(results)
+    if not results:
+        print("No replies came back before the run ended.")
+        return
     ok = [s for st, s in results if st == 200]
     counts = {}
     for st, _ in results:
