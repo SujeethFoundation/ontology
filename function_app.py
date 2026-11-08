@@ -170,3 +170,9 @@ def crawl_manifest(req):
 def search_manifest(req):
     d=load_ontology()
     return respond({"ontology_version":d["ontology_version"],"search_domains":[x for x in d["domains"] if x["search_enabled"]]})
+
+# Optional chat route for the sujeeth.org chat window (see chat_blueprint.py). Off unless CHAT_ENABLED=true.
+import os
+if os.getenv("CHAT_ENABLED", "").strip().lower() in ("1", "true", "yes"):
+    from chat_blueprint import bp as chat_bp
+    app.register_functions(chat_bp)
