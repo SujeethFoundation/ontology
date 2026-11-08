@@ -17,7 +17,9 @@ It is loaded only when CHAT_ENABLED=true. Settings (application settings of the 
   CHAT_RATE_PER_MINUTE (8), CHAT_RATE_PER_HOUR (60), CHAT_GLOBAL_PER_HOUR (600)   Limits per instance.
   CHAT_MAX_CONCURRENT (8)  Chats being answered at one time on an instance.
   CHAT_QUEUE_SECONDS (25)  How long a chat waits for a free slot before it is told the assistant is busy.
-  CHAT_MODEL_RETRIES (3)   Times to retry when the model says it is over its token limit (honors its Retry-After).
+  CHAT_RATE_LIMIT_WAIT_SECONDS (40)  How long a chat keeps waiting when the model says it is over its tokens-per-minute limit
+                           (it waits as the model asks, and all chats on the instance pause together).
+  CHAT_MODEL_RETRIES (1)   Quick retries for connection problems and server errors.
   CHAT_MAX_MESSAGE_CHARS (2000), CHAT_MAX_HISTORY_MESSAGES (12), CHAT_TIMEOUT_SECONDS (90)
   CHAT_LOG_ERROR_DETAIL (false)  Set to true while diagnosing: failures also log the error's text (first 300 characters).
                                  Off by default, because an error's text can echo part of what a visitor wrote.
@@ -34,6 +36,7 @@ import asyncio
 import json
 import logging
 import os
+import random
 import threading
 import time
 import uuid
@@ -71,7 +74,8 @@ RATE_PER_HOUR = _int("CHAT_RATE_PER_HOUR", 60)
 GLOBAL_PER_HOUR = _int("CHAT_GLOBAL_PER_HOUR", 600)
 MAX_CONCURRENT = max(1, _int("CHAT_MAX_CONCURRENT", 8))
 QUEUE_SECONDS = _int("CHAT_QUEUE_SECONDS", 25)
-MODEL_RETRIES = max(0, _int("CHAT_MODEL_RETRIES", 3))
+MODEL_RETRIES = max(0, _int("CHAT_MODEL_RETRIES", 1))
+RATE_LIMIT_WAIT_SECONDS = max(0, _int("CHAT_RATE_LIMIT_WAIT_SECONDS", 40))
 LOG_ERROR_DETAIL = (os.getenv("CHAT_LOG_ERROR_DETAIL") or "").strip().lower() in ("1", "true", "yes")
 MAX_MESSAGE_CHARS = _int("CHAT_MAX_MESSAGE_CHARS", 2000)
 MAX_HISTORY_MESSAGES = _int("CHAT_MAX_HISTORY_MESSAGES", 12)
@@ -198,9 +202,50 @@ def get_client():
         return _client
 
 
+_cooldown_until = 0.0  # monotonic time before which this instance sends no new model calls; a 429 sets it
+_cooldown_lock = threading.Lock()
+
+
+def _retry_after_seconds(exc):
+    """How long the service asked us to wait, from its Retry-After headers, or None if it did not say."""
+    headers = getattr(getattr(exc, "response", None), "headers", None) or {}
+    try:
+        millis = headers.get("retry-after-ms")
+        if millis:
+            return float(millis) / 1000
+        seconds = headers.get("retry-after")
+        if seconds:
+            return float(seconds)
+    except (TypeError, ValueError):
+        pass
+    return None
+
+
 def ask_agent(messages):
-    response = get_client().responses.create(input=messages)
-    return (getattr(response, "output_text", "") or "").strip()
+    """Ask the agent. If the model says it is over its token limit, wait as it asks and try again, for up to
+    CHAT_RATE_LIMIT_WAIT_SECONDS. A limit hit by one chat pauses every chat on this instance, so they come back
+    together once, instead of each retrying on its own and keeping the limit exceeded."""
+    global _cooldown_until
+    deadline = time.monotonic() + RATE_LIMIT_WAIT_SECONDS
+    attempt = 0
+    while True:
+        pause = _cooldown_until - time.monotonic()
+        if pause > 0:
+            time.sleep(max(0.0, min(pause, deadline - time.monotonic())) + random.uniform(0, 0.5))
+        try:
+            response = get_client().responses.create(input=messages)
+            return (getattr(response, "output_text", "") or "").strip()
+        except Exception as exc:
+            if type(exc).__name__ != "RateLimitError" or time.monotonic() >= deadline:
+                raise
+            attempt += 1
+            wait = _retry_after_seconds(exc)
+            if wait is None:
+                wait = min(2 ** attempt, 15)
+            wait = min(max(wait, 1.0), 20.0)
+            with _cooldown_lock:
+                _cooldown_until = max(_cooldown_until, time.monotonic() + wait)
+            log.warning("chat model over its token limit (429); waiting %.1fs (attempt %d)", wait, attempt)
 
 
 def explain(exc):
