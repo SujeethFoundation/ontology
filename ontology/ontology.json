@@ -1,6 +1,6 @@
 {
-  "ontology_version": "1.5.1",
-  "last_updated": "2026-11-07",
+  "ontology_version": "1.5.2",
+  "last_updated": "2026-11-08",
   "description": "Sujeeth Foundation domain ontology and governance configuration, including validated concepts used to associate approved external domains.",
   "classes": [
     {
@@ -211,12 +211,16 @@
     {
       "id": "recording",
       "name": "Recording",
-      "definition": "A recording associated with a Session.",
+      "definition": "A recording of a Session. The recording link is stored on a Circle Note (Dataverse table suj_circlenotes, column suj_note) and labeled by the meeting (suj_meeting).",
       "aliases": [
         "recordings",
         "session recording",
         "watch a session",
-        "session video"
+        "session video",
+        "recording link",
+        "past session",
+        "past sessions",
+        "meeting recording"
       ]
     },
     {
@@ -594,7 +598,7 @@
         "circle notes",
         "session notes"
       ],
-      "definition": "Notes recorded about a Circle (Dataverse table suj_circlenotes)."
+      "definition": "Notes recorded about a Circle (Dataverse table suj_circlenotes). Each note holds a meeting label (suj_meeting) and a link (suj_note) to the Session's Recording."
     },
     {
       "id": "portal_feedback",
@@ -972,6 +976,14 @@
       "definition": "A Circle can have Circle Notes."
     },
     {
+      "id": "recording_stored_in_circle_notes",
+      "subject": "recording",
+      "predicate": "is_stored_in",
+      "object": "circle_notes",
+      "cardinality": "1:1",
+      "definition": "A Session Recording is stored as the link on a Circle Note."
+    },
+    {
       "id": "vulnerability_courage_illustrates_week_1",
       "subject": "vulnerability_courage",
       "predicate": "illustrates",
@@ -1152,6 +1164,10 @@
     {
       "id": "br_program_statistics_source",
       "rule": "Program statistics come only from sujeeth.org and topics.sujeeth.org. Do not total them from Dataverse rows, and do not take them from Candid, third-party sites, or older documents."
+    },
+    {
+      "id": "br_recording_source",
+      "rule": "Session Recordings are the links stored on Circle Notes (Dataverse table suj_circlenotes, column suj_note), labeled by suj_meeting and linked to a Circle through suj_circle. To find recordings, look up the Circle first, then read its notes."
     }
   ],
   "preferred_terminology": [
@@ -1332,7 +1348,11 @@
     },
     {
       "table": "suj_circlenotes",
-      "maps_to": "Circle Notes"
+      "maps_to": "Circle Notes",
+      "also_maps_to": [
+        "Recording"
+      ],
+      "notes": "suj_note is the Session Recording link, suj_meeting is the meeting label, and suj_circle links the note to its Circle."
     },
     {
       "table": "suj_book",
@@ -1371,10 +1391,6 @@
     {
       "id": "gap_circle_session_relationship",
       "description": "Confirm the Dataverse representation of the six Session records belonging to each Circle."
-    },
-    {
-      "id": "gap_recording_mapping",
-      "description": "Confirm the Dataverse table or external system storing Session recordings."
     },
     {
       "id": "gap_donation_mapping",
