@@ -338,6 +338,26 @@
         "first job",
         "entry-level job"
       ],
+      "query_phrases": [
+        "getting into",
+        "get into",
+        "break into",
+        "breaking into",
+        "career in",
+        "careers in",
+        "start a career",
+        "starting a career",
+        "start my career",
+        "starting out",
+        "entry level",
+        "new grad",
+        "internship",
+        "internships",
+        "industry",
+        "industries",
+        "career field",
+        "first role"
+      ],
       "definition": "Learning and activities that help a person explore career options, build professional skills, prepare for employment, and progress in a career."
     },
     {
