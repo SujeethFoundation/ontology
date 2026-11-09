@@ -1,5 +1,5 @@
 {
-  "ontology_version": "1.5.3",
+  "ontology_version": "1.5.4",
   "last_updated": "2026-11-09",
   "description": "Sujeeth Foundation domain ontology and governance configuration, including validated concepts used to associate approved external domains.",
   "classes": [
@@ -1791,6 +1791,22 @@
         ],
         "include_sitemaps": [
           "/sitemaps/advice.xml"
+        ]
+      }
+    },
+    {
+      "domain": "medicine.yale.edu",
+      "crawl_enabled": true,
+      "search_enabled": true,
+      "associated_concepts": [
+        "permission_to_feel",
+        "psychological_safety"
+      ],
+      "crawl_policy": {
+        "mode": "domain",
+        "respect_robots_txt": true,
+        "include_paths": [
+          "/childstudy/news-article/"
         ]
       }
     }
