@@ -1,6 +1,6 @@
 {
-  "ontology_version": "1.5.2",
-  "last_updated": "2026-11-08",
+  "ontology_version": "1.5.3",
+  "last_updated": "2026-11-09",
   "description": "Sujeeth Foundation domain ontology and governance configuration, including validated concepts used to associate approved external domains.",
   "classes": [
     {
@@ -708,6 +708,35 @@
         "brave leadership"
       ],
       "definition": "Showing up honestly, taking risks, and handling fear of failure or judgment."
+    },
+    {
+      "id": "right_kind_of_wrong",
+      "name": "Right Kind of Wrong",
+      "definition": "A framework for distinguishing kinds of failure and learning thoughtfully from setbacks by considering uncertainty, preventability, context, and consequences.",
+      "aliases": [
+        "Right Kind Of Wrong",
+        "The Science of Failing Well",
+        "failing well",
+        "learning from failure",
+        "intelligent failure",
+        "failure landscape",
+        "learning from missteps",
+        "learning from setbacks"
+      ]
+    },
+    {
+      "id": "permission_to_feel",
+      "name": "Permission to Feel",
+      "definition": "A framework for noticing and naming emotions without judgment, exploring what they may signal about needs, concerns, or values, and using that awareness to choose a considered next step.",
+      "aliases": [
+        "Permission To Feel",
+        "emotional awareness",
+        "emotions as information",
+        "recognizing emotions",
+        "naming emotions",
+        "understanding emotions",
+        "responding to emotions"
+      ]
     }
   ],
   "relationships": [
@@ -1126,6 +1155,22 @@
       "object": "week_6",
       "cardinality": "N:N",
       "definition": "Appreciation content is used in Week 6: Follow-up & Negotiation."
+    },
+    {
+      "id": "right_kind_of_wrong_illustrates_career_development",
+      "subject": "right_kind_of_wrong",
+      "predicate": "illustrates",
+      "object": "career_development",
+      "cardinality": "N:N",
+      "definition": "Right Kind of Wrong illustrates Career Development by helping students learn thoughtfully from setbacks and make informed next moves."
+    },
+    {
+      "id": "permission_to_feel_illustrates_career_development",
+      "subject": "permission_to_feel",
+      "predicate": "illustrates",
+      "object": "career_development",
+      "cardinality": "N:N",
+      "definition": "Permission to Feel illustrates Career Development by helping students use emotional awareness to guide career decisions."
     }
   ],
   "business_rules": [
