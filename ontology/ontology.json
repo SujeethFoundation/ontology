@@ -1,5 +1,5 @@
 {
-  "ontology_version": "1.5.5",
+  "ontology_version": "1.5.6",
   "last_updated": "2026-11-09",
   "description": "Sujeeth Foundation domain ontology and governance configuration, including validated concepts used to associate approved external domains.",
   "classes": [
@@ -1890,7 +1890,8 @@
       "search_enabled": true,
       "associated_concepts": [
         "permission_to_feel",
-        "psychological_safety"
+        "psychological_safety",
+        "week_1"
       ],
       "crawl_policy": {
         "mode": "domain",
