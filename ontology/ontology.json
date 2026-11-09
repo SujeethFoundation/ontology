@@ -1897,7 +1897,7 @@
         "mode": "domain",
         "respect_robots_txt": true,
         "include_paths": [
-          "/childstudy/news-article/"
+          "/childstudy/"
         ]
       }
     }
