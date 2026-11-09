@@ -4,8 +4,12 @@ The page cannot call the Foundry agent itself: the agent endpoint accepts only M
 tokens must never be put in a web page. This route takes the conversation from the page, calls the agent
 as the app's managed identity, and returns the reply.
 
-  POST /api/chat          {"messages": [{"role": "user" | "assistant", "content": "..."}]}  ->  {"reply": "..."}
+  POST /api/chat          {"messages": [{"role": "user" | "assistant", "content": "...", "attachments": [...]}]}  ->  {"reply": "..."}
   GET  /api/chat/health   ->  {"configured": true}
+
+Visitors can attach files (PDF, Word, PowerPoint, Excel, text, Markdown, CSV) to a message. The page sends each as
+base64; chat_attachments.py reads the text out of it and adds that text to the visitor's message before the agent
+sees it. Attachment limits and settings are described in chat_attachments.py.
 
 Every other route in this app needs a function key. These two are open to the web on purpose (the chat page
 has no key to send), so they check the page's address, limit requests, and cap how many chats run at once.
@@ -20,7 +24,10 @@ It is loaded only when CHAT_ENABLED=true. Settings (application settings of the 
   CHAT_RATE_LIMIT_WAIT_SECONDS (40)  How long a chat keeps waiting when the model says it is over its tokens-per-minute limit
                            (it waits as the model asks, and all chats on the instance pause together).
   CHAT_MODEL_RETRIES (1)   Quick retries for connection problems and server errors.
-  CHAT_MAX_MESSAGE_CHARS (2000), CHAT_MAX_HISTORY_MESSAGES (12), CHAT_TIMEOUT_SECONDS (90)
+  CHAT_MAX_MESSAGE_CHARS (2000)  What a visitor types in one message. Text read from attached files has its own limits.
+  CHAT_MAX_HISTORY_MESSAGES (12), CHAT_TIMEOUT_SECONDS (90)
+  CHAT_MAX_BODY_BYTES (12 MB)    The whole request, including base64 files. Keep it above CHAT_MAX_TOTAL_FILE_BYTES x 1.34.
+  CHAT_EXTRACT_TIMEOUT_SECONDS (25)  How long reading the attached files may take.
   CHAT_SEND_CORS_HEADERS (true)  When the Function App's own CORS list already allows the page (portal > API > CORS), the platform
                                  adds the CORS headers itself. Set this to false so the route does not add them a second time
                                  (a browser rejects a response whose Access-Control-Allow-Origin appears twice). The route still
@@ -35,6 +42,7 @@ away. Set CHAT_MAX_CONCURRENT at or above that per-instance setting, so the plat
 
 Why chats stay off the worker's threads: this app also answers every search's domain lookups (through websearch).
 A chat waits up to a minute and a half for the agent, so chats are async and run on a small pool of their own.
+Reading attached files is CPU work, so it runs on its own two-thread pool, not on the event loop.
 """
 import asyncio
 import json
@@ -49,6 +57,8 @@ from concurrent.futures import ThreadPoolExecutor
 
 import azure.functions as func
 
+import chat_attachments as attachments
+
 bp = func.Blueprint()
 log = logging.getLogger("sujeeth-chat")
 
@@ -56,7 +66,9 @@ FRIENDLY = {
     "busy": "The assistant is busy right now. Please try again in a minute.",
     "unavailable": "The assistant is unavailable right now. Please try again in a minute, or browse sujeeth.org.",
     "slow": "That took too long. Please try again, or ask a shorter question.",
+    "file": "I couldn't read that file. Please try a PDF or Word version.",
 }
+DEFAULT_FILE_PROMPT = "Please review the attached file(s)."
 
 
 def _int(name, default):
@@ -85,9 +97,11 @@ SEND_CORS_HEADERS = (os.getenv("CHAT_SEND_CORS_HEADERS") or "true").strip().lowe
 MAX_MESSAGE_CHARS = _int("CHAT_MAX_MESSAGE_CHARS", 2000)
 MAX_HISTORY_MESSAGES = _int("CHAT_MAX_HISTORY_MESSAGES", 12)
 TIMEOUT_SECONDS = _int("CHAT_TIMEOUT_SECONDS", 90)
-MAX_BODY_BYTES = 64 * 1024
+MAX_BODY_BYTES = _int("CHAT_MAX_BODY_BYTES", 12 * 1024 * 1024)
+EXTRACT_TIMEOUT_SECONDS = _int("CHAT_EXTRACT_TIMEOUT_SECONDS", 25)
 
 _pool = ThreadPoolExecutor(max_workers=MAX_CONCURRENT, thread_name_prefix="chat")
+_extract_pool = ThreadPoolExecutor(max_workers=2, thread_name_prefix="chat-files")
 _slots = None      # asyncio semaphore, made on first use inside the running event loop
 _slots_loop = None
 _in_flight = 0     # chats being answered right now; only changed on the event loop thread
@@ -161,7 +175,9 @@ def reply_json(status, body, origin=None, extra=None):
 
 
 def parse_messages(raw):
-    """Check the conversation the page sent. Returns (messages, error)."""
+    """Check the conversation the page sent. Returns (messages, error).
+    Each message is {"role", "content", "attachments"}. Attachments are checked for count, type and size here,
+    but not read; build_agent_messages does that."""
     if not isinstance(raw, list) or not raw:
         return None, "Send a list of messages."
     messages = []
@@ -172,16 +188,51 @@ def parse_messages(raw):
         if role not in ("user", "assistant") or not isinstance(content, str):
             return None, "Each message needs a role (user or assistant) and text."
         content = content.strip()
-        if not content:
+        files = []
+        if role == "user":  # the page never attaches files to the assistant's turns
+            try:
+                files = attachments.validate_attachments(item.get("attachments"))
+            except attachments.AttachmentError as exc:
+                return None, str(exc)
+        if not content and not files:
             continue
         if len(content) > MAX_MESSAGE_CHARS:
             return None, f"Messages can be up to {MAX_MESSAGE_CHARS} characters."
-        messages.append({"role": role, "content": content})
+        messages.append({"role": role, "content": content, "attachments": files})
     if not messages or messages[-1]["role"] != "user":
         return None, "The last message must be from the visitor."
     while messages and messages[0]["role"] != "user":  # the agent should see the conversation start with the visitor
         messages.pop(0)
+    total = sum(f["size"] for m in messages for f in m["attachments"])
+    if total > attachments.MAX_TOTAL_FILE_BYTES:
+        return None, (f"Attachments in the recent conversation must total no more than "
+                      f"{attachments.MAX_TOTAL_FILE_BYTES // (1024 * 1024)} MB. Start a new conversation to attach more.")
     return messages, None
+
+
+def build_agent_messages(messages):
+    """Read the attached files and fold their text into the visitor's messages.
+    Returns a list of {"role", "content"} for the agent. Raises attachments.AttachmentError for a file that cannot
+    be read. Runs on a worker thread. Newest messages are read first, so when the text budget runs out it is the
+    oldest files that are left out, and the agent is told."""
+    budget = attachments.MAX_TOTAL_ATTACHMENT_CHARS
+    built = []
+    for message in reversed(messages):
+        parts = [message["content"]] if message["content"] else []
+        blocks = []
+        for file in message["attachments"]:
+            if budget <= 0:
+                blocks.append(f"[Attached file: {file['name']}]\n[Left out: earlier files in this conversation already "
+                              f"used up the room for attached text.]\n[End of attached file]")
+                continue
+            text = attachments.extract_text(file, min(attachments.MAX_ATTACHMENT_CHARS, budget))
+            budget -= len(text)
+            blocks.append(attachments.format_attachment(file["name"], text))
+        if blocks and not parts:
+            parts.append(DEFAULT_FILE_PROMPT)
+        built.append({"role": message["role"], "content": "\n\n".join(parts + blocks)})
+    built.reverse()
+    return built
 
 
 _client = None
@@ -295,7 +346,8 @@ async def chat(req: func.HttpRequest) -> func.HttpResponse:
 
     body = req.get_body() or b""
     if len(body) > MAX_BODY_BYTES:
-        return reply_json(413, {"error": "That request is too large."}, origin)
+        return reply_json(413, {"error": "That request is too large. Attach files of "
+                                         f"{attachments.MAX_FILE_BYTES // (1024 * 1024)} MB or less."}, origin)
     try:
         payload = json.loads(body.decode("utf-8"))
     except (ValueError, UnicodeDecodeError):
@@ -308,9 +360,25 @@ async def chat(req: func.HttpRequest) -> func.HttpResponse:
     if not allowed:
         return reply_json(429, {"error": "You are sending messages quickly. Please wait a moment.", "retry_after": wait},
                           origin, {"Retry-After": str(wait)})
+
+    request_id, began = uuid.uuid4().hex[:8], time.perf_counter()
+    file_count = sum(len(m["attachments"]) for m in messages)
+
+    # Read any attached files before taking a chat slot, on a pool of their own, so a slow PDF never holds one.
+    try:
+        agent_messages = await asyncio.wait_for(
+            asyncio.get_running_loop().run_in_executor(_extract_pool, build_agent_messages, messages),
+            EXTRACT_TIMEOUT_SECONDS)
+    except attachments.AttachmentError as exc:
+        log.info("chat %s file rejected: %s", request_id, exc)  # the message names the file, never its contents
+        return reply_json(400, {"error": str(exc)}, origin)
+    except Exception as exc:
+        detail = f" | {type(exc).__name__}: {str(exc)[:300]}" if LOG_ERROR_DETAIL else ""
+        log.error("chat %s failed: reading attached files (%s)%s", request_id, type(exc).__name__, detail)
+        return reply_json(400, {"error": FRIENDLY["file"]}, origin)
+
     # Wait for a free slot rather than turning the visitor away. While it waits, this request counts as in flight,
     # which is what makes the platform start another instance.
-    request_id, began = uuid.uuid4().hex[:8], time.perf_counter()
     slots = _get_slots()
     try:
         await asyncio.wait_for(slots.acquire(), QUEUE_SECONDS)
@@ -320,7 +388,7 @@ async def chat(req: func.HttpRequest) -> func.HttpResponse:
     waited = time.perf_counter() - began
 
     _in_flight += 1
-    future = asyncio.get_running_loop().run_in_executor(_pool, ask_agent, messages)
+    future = asyncio.get_running_loop().run_in_executor(_pool, ask_agent, agent_messages)
 
     def finished(done):
         # The slot is held until the call really ends, even if this visitor gave up waiting for it.
@@ -339,9 +407,10 @@ async def chat(req: func.HttpRequest) -> func.HttpResponse:
         log.error("chat %s failed: %s%s", request_id, note, detail)
         return reply_json(status, {"error": FRIENDLY[key]}, origin)
 
-    # Log sizes and timing only. Visitors may paste resumes, so message text is never logged.
-    log.info("chat %s ok turns=%d chars_in=%d chars_out=%d seconds=%.1f waited=%.1f in_flight=%d", request_id, len(messages),
-             sum(len(m["content"]) for m in messages), len(text), time.perf_counter() - began, waited, _in_flight)
+    # Log sizes and timing only. Visitors may paste or attach resumes, so message and file text is never logged.
+    log.info("chat %s ok turns=%d files=%d chars_in=%d chars_out=%d seconds=%.1f waited=%.1f in_flight=%d", request_id,
+             len(agent_messages), file_count, sum(len(m["content"]) for m in agent_messages), len(text),
+             time.perf_counter() - began, waited, _in_flight)
     if not text:
         return reply_json(502, {"error": FRIENDLY["unavailable"]}, origin)
     return reply_json(200, {"reply": text}, origin)
