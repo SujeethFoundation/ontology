@@ -1,5 +1,5 @@
 {
-  "ontology_version": "1.5.4",
+  "ontology_version": "1.5.5",
   "last_updated": "2026-11-09",
   "description": "Sujeeth Foundation domain ontology and governance configuration, including validated concepts used to associate approved external domains.",
   "classes": [
@@ -641,9 +641,7 @@
         "power of regret",
         "Daniel Pink",
         "learning from regret",
-        "career regret",
-        "learning from failure",
-        "intelligent failure"
+        "career regret"
       ],
       "definition": "Using regret as information for braver, more authentic career choices (Week 6)."
     },
@@ -721,7 +719,12 @@
         "intelligent failure",
         "failure landscape",
         "learning from missteps",
-        "learning from setbacks"
+        "learning from setbacks",
+        "failure that teaches",
+        "preventable mistakes",
+        "complex failures",
+        "reflecting on setbacks without blame",
+        "failure reflection"
       ]
     },
     {
@@ -735,7 +738,14 @@
         "recognizing emotions",
         "naming emotions",
         "understanding emotions",
-        "responding to emotions"
+        "responding to emotions",
+        "emotional self-awareness",
+        "feelings as information",
+        "noticing emotions",
+        "reflecting on emotions",
+        "emotions as signals",
+        "allowing yourself to feel",
+        "adjusting thoughtfully"
       ]
     }
   ],
@@ -1171,6 +1181,86 @@
       "object": "career_development",
       "cardinality": "N:N",
       "definition": "Permission to Feel illustrates Career Development by helping students use emotional awareness to guide career decisions."
+    },
+    {
+      "id": "program_statistics_describe_foundation",
+      "subject": "program_statistics",
+      "predicate": "describe",
+      "object": "sujeeth_foundation",
+      "cardinality": "N:1",
+      "definition": "Program Statistics describe the Foundation's reach and results."
+    },
+    {
+      "id": "leadership_supports_psychological_safety",
+      "subject": "leadership",
+      "predicate": "supports",
+      "object": "psychological_safety",
+      "cardinality": "N:N",
+      "definition": "Leadership practices can support a team climate where people can raise questions, ideas, and mistakes without fear."
+    },
+    {
+      "id": "purpose_informs_motivation",
+      "subject": "purpose",
+      "predicate": "informs",
+      "object": "motivation",
+      "cardinality": "N:N",
+      "definition": "A person's sense of meaning and direction can inform what motivates their goals and choices."
+    },
+    {
+      "id": "week_6_part_of_career_development",
+      "subject": "week_6",
+      "predicate": "is_part_of",
+      "object": "career_development",
+      "cardinality": "N:1",
+      "definition": "Week 6 applies career development through follow-up, negotiation, and relationship-building."
+    },
+    {
+      "id": "portal_feedback_concerns_foundation",
+      "subject": "portal_feedback",
+      "predicate": "concerns",
+      "object": "sujeeth_foundation",
+      "cardinality": "N:1",
+      "definition": "Portal Feedback concerns the Foundation's student portal."
+    },
+    {
+      "id": "psychological_safety_supports_vulnerability_courage",
+      "subject": "psychological_safety",
+      "predicate": "supports",
+      "object": "vulnerability_courage",
+      "cardinality": "N:N",
+      "definition": "Psychological Safety can support people in showing up honestly and taking interpersonal risks."
+    },
+    {
+      "id": "right_kind_of_wrong_supports_growth_mindset",
+      "subject": "right_kind_of_wrong",
+      "predicate": "supports",
+      "object": "growth_mindset",
+      "cardinality": "N:N",
+      "definition": "Learning thoughtfully from setbacks supports developing abilities through learning, feedback, and practice."
+    },
+    {
+      "id": "right_kind_of_wrong_complements_learning_from_regret",
+      "subject": "right_kind_of_wrong",
+      "predicate": "complements",
+      "object": "learning_from_regret",
+      "cardinality": "N:N",
+      "definition": "Right Kind of Wrong examines kinds and causes of failure; Learning from Regret uses regret to guide braver, more authentic choices."
+    },
+    {
+      "id": "permission_to_feel_supports_psychological_safety",
+      "subject": "permission_to_feel",
+      "predicate": "supports",
+      "object": "psychological_safety",
+      "cardinality": "N:N",
+      "definition": "Noticing emotions without judgment can support emotionally open reflection and conversation."
+    },
+    {
+      "id": "permission_to_feel_informs_purpose",
+      "subject": "permission_to_feel",
+      "predicate": "informs",
+      "object": "purpose",
+      "cardinality": "N:N",
+      "definition": "Exploring emotions can reveal needs, concerns, and values that inform a person's sense of direction."
     }
   ],
   "business_rules": [
