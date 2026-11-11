@@ -1,11 +1,502 @@
 {
-  "ontology_version": "1.5.7",
-  "last_updated": "2026-11-09",
+  "ontology_version": "1.9.1",
+  "last_updated": "2026-11-10",
   "description": "Sujeeth Foundation domain ontology and governance configuration, including validated concepts used to associate approved external domains.",
+  "foundation_purpose": {
+    "mission": "Help college students network into their first jobs through professional mentorship, books, and career development programs.",
+    "vision": "Unlock the opportunity of education.",
+    "problem": "Underemployment among new graduates, and the gap between a degree and a first job.",
+    "serves": "College students, especially juniors exploring internships or their first full-time job.",
+    "how_it_works": "The Foundation supplies the content, volunteer Career Mentors lead six weekly Sessions for a small Circle of Students, and the Students do the work.",
+    "agent_guidance": [
+      "Orient every answer toward the person's next concrete career step, then point to the matching program week or resource.",
+      "When a query could be answered with generic career advice or with the Foundation's program, start with the program and add third-party material as support.",
+      "Say plainly what the Foundation does not do: it does not place students in jobs and does not grade them.",
+      "Be honest about setbacks and gaps. If the content for a concept is thin, say so and offer the nearest concept."
+    ]
+  },
+  "persona_stages": [
+    {
+      "id": "prospective",
+      "definition": "Deciding whether to take part. Needs what the program is, what it asks of them, and how to start.",
+      "signals": "Future or conditional wording: how do I join, I am thinking about, what does it involve."
+    },
+    {
+      "id": "current",
+      "definition": "Taking part this term. Needs what to do next and where the working material is.",
+      "signals": "Present wording about this term: this week, my circle, we meet on Mondays."
+    },
+    {
+      "id": "past",
+      "definition": "Took part before. Needs what happened since, how to keep using it, and a way back in.",
+      "signals": "Past wording: last spring, I was in a circle, when I mentored."
+    }
+  ],
+  "personas": [
+    {
+      "id": "student",
+      "class_id": "student",
+      "name": "Student",
+      "wiki_faq": "FAQ for Students",
+      "voice": "Direct and practical. One next step they can take this week.",
+      "limits": "May learn about the program, their own Circle's schedule, and published material. Never anything about another Student.",
+      "stages": {
+        "prospective": {
+          "goal": "Decide whether to join a Circle and find out how.",
+          "concepts": [
+            "student",
+            "career_circle_program",
+            "circle",
+            "session",
+            "week",
+            "career_mentor",
+            "testimonial",
+            "book"
+          ],
+          "entry_points": [],
+          "note": "There is no public sign-up link for students. They join through a Partner school or club."
+        },
+        "current": {
+          "goal": "Prepare for this week's Session and act on it.",
+          "concepts": [
+            "student",
+            "week",
+            "agenda",
+            "presentation",
+            "session",
+            "recording",
+            "resource",
+            "book_request",
+            "resume_resource",
+            "linkedin_profile",
+            "networking",
+            "job_application_strategy",
+            "interviewing",
+            "follow_up",
+            "salary_negotiation",
+            "onboarding_survey",
+            "feedback_survey",
+            "portal_feedback",
+            "programs_portal"
+          ],
+          "entry_points": [
+            "week_1_presentation",
+            "week_2_presentation",
+            "week_3_presentation",
+            "week_4_presentation",
+            "week_5_presentation",
+            "week_6_presentation",
+            "session_recordings",
+            "request_a_book"
+          ]
+        },
+        "past": {
+          "goal": "Keep using what they practiced, and stay in touch.",
+          "concepts": [
+            "student",
+            "career_development",
+            "networking",
+            "follow_up",
+            "salary_negotiation",
+            "receiving_feedback",
+            "spotlight",
+            "testimonial",
+            "feedback_survey"
+          ],
+          "entry_points": [],
+          "note": "A past Student who wants to give back moves to the donor or mentor persona. See persona_transitions."
+        }
+      },
+      "how_to_read": "Stage concepts are starting points. Follow relationships outward from them; week leads to week_1 through week_6 and the frameworks that illustrate each.",
+      "signals": {
+        "language": [
+          "my resume",
+          "my mentor",
+          "my circle",
+          "I'm a junior",
+          "this week's session",
+          "how do I get an interview",
+          "I need a job or internship"
+        ],
+        "context": [
+          "arrived from a Week page, the books page, or the portal",
+          "earlier turns about their own job search"
+        ]
+      }
+    },
+    {
+      "id": "mentor",
+      "class_id": "career_mentor",
+      "name": "Mentor",
+      "wiki_faq": "FAQ for Mentors",
+      "voice": "Colleague to colleague. Short, with the agenda and the principle behind it.",
+      "limits": "May learn a Mentor's name, employer, and Circle. Never contact details, and nothing about an individual Student.",
+      "stages": {
+        "prospective": {
+          "goal": "Decide whether to volunteer, then apply.",
+          "concepts": [
+            "volunteer",
+            "career_mentor",
+            "career_circle_program",
+            "session",
+            "week",
+            "spotlight",
+            "sujeeth_foundation",
+            "programs_portal"
+          ],
+          "entry_points": [
+            "volunteer_application"
+          ]
+        },
+        "current": {
+          "goal": "Run this week's Session well.",
+          "concepts": [
+            "agenda",
+            "presentation",
+            "week",
+            "session",
+            "circle",
+            "student",
+            "resource",
+            "substitute_request",
+            "recording",
+            "circle_notes",
+            "community_manager"
+          ],
+          "entry_points": [
+            "week_1_presentation",
+            "week_2_presentation",
+            "week_3_presentation",
+            "week_4_presentation",
+            "week_5_presentation",
+            "week_6_presentation",
+            "session_recordings"
+          ]
+        },
+        "past": {
+          "goal": "See what the program did, share their story, and mentor again.",
+          "concepts": [
+            "spotlight",
+            "volunteer",
+            "impact_report",
+            "program_statistics",
+            "career_circle_program"
+          ],
+          "entry_points": [
+            "volunteer_application"
+          ]
+        }
+      },
+      "how_to_read": "Stage concepts are starting points. Follow relationships outward from them; week leads to week_1 through week_6 and the frameworks that illustrate each.",
+      "signals": {
+        "language": [
+          "my circle",
+          "my students",
+          "I mentor",
+          "run the session",
+          "agenda",
+          "slides for week",
+          "substitute",
+          "I work at (a job title or employer) and want to help"
+        ],
+        "context": [
+          "arrived from the volunteer page or a mentor FAQ",
+          "earlier turns about facilitating"
+        ]
+      }
+    },
+    {
+      "id": "donor",
+      "class_id": "donor",
+      "name": "Donor",
+      "wiki_faq": "FAQ for Donors",
+      "voice": "Specific and plain. Figures from live pages only, and honest about setbacks.",
+      "limits": "Aggregate results and published financials only. Never anything about an individual Student.",
+      "stages": {
+        "prospective": {
+          "goal": "Judge whether the Foundation is a good place to give.",
+          "concepts": [
+            "sujeeth_foundation",
+            "career_circle_program",
+            "impact_report",
+            "program_statistics",
+            "testimonial",
+            "donation",
+            "donor"
+          ],
+          "entry_points": [
+            "candid_profile",
+            "donate"
+          ]
+        },
+        "current": {
+          "goal": "See what their gift is paying for.",
+          "concepts": [
+            "impact_report",
+            "program_statistics",
+            "testimonial",
+            "donation",
+            "book",
+            "student"
+          ],
+          "entry_points": [
+            "donate"
+          ]
+        },
+        "past": {
+          "goal": "Learn what changed since they gave, and decide whether to give again.",
+          "concepts": [
+            "impact_report",
+            "program_statistics",
+            "donation",
+            "career_circle_program"
+          ],
+          "entry_points": [
+            "donate",
+            "candid_profile"
+          ]
+        }
+      },
+      "how_to_read": "Stage concepts are starting points. Follow relationships outward from them; week leads to week_1 through week_6 and the frameworks that illustrate each.",
+      "signals": {
+        "language": [
+          "donate",
+          "gift",
+          "tax deductible",
+          "where does the money go",
+          "financials",
+          "annual report",
+          "Candid"
+        ],
+        "context": [
+          "arrived from the donate link or the annual report"
+        ]
+      }
+    },
+    {
+      "id": "partner",
+      "class_id": "partner",
+      "name": "Partner",
+      "wiki_faq": "FAQ for Partners",
+      "voice": "Operational. What the school contributes, what its students get, and what happens when.",
+      "limits": "Aggregate results for their own Partnership. Never anything about an individual Student from a public agent.",
+      "stages": {
+        "prospective": {
+          "goal": "Decide whether to bring Career Circles to their students.",
+          "concepts": [
+            "partnership",
+            "partner",
+            "career_circle_program",
+            "week",
+            "circle",
+            "career_mentor",
+            "impact_report",
+            "program_statistics",
+            "testimonial"
+          ],
+          "entry_points": [
+            "partner_with_us"
+          ]
+        },
+        "current": {
+          "goal": "Run this term's Circles with the Foundation.",
+          "concepts": [
+            "partnership",
+            "academic_period",
+            "circle",
+            "community_manager",
+            "student",
+            "career_mentor",
+            "book_request",
+            "onboarding_survey",
+            "feedback_survey"
+          ],
+          "entry_points": [
+            "partner_with_us"
+          ]
+        },
+        "past": {
+          "goal": "See results from their term and decide whether to run it again.",
+          "concepts": [
+            "impact_report",
+            "program_statistics",
+            "testimonial",
+            "partnership",
+            "academic_period"
+          ],
+          "entry_points": [
+            "partner_with_us"
+          ]
+        }
+      },
+      "how_to_read": "Stage concepts are starting points. Follow relationships outward from them; week leads to week_1 through week_6 and the frameworks that illustrate each.",
+      "signals": {
+        "language": [
+          "our students",
+          "our campus or university",
+          "our class",
+          "career center",
+          "bring this to",
+          "semester",
+          "faculty"
+        ],
+        "context": [
+          "arrived from the partner page",
+          "writing on behalf of an institution"
+        ]
+      }
+    }
+  ],
+  "default_persona": {
+    "id": "visitor",
+    "definition": "Someone whose persona is not yet known.",
+    "start_with": [
+      "sujeeth_foundation",
+      "career_circle_program",
+      "career_development",
+      "spotlight"
+    ],
+    "when_unclear": "Use persona_inference.when_unclear_default. Do not ask who they are."
+  },
+  "persona_transitions": [
+    {
+      "from": "visitor",
+      "to": "student.prospective",
+      "when": "Says they are a student or asks how to join."
+    },
+    {
+      "from": "visitor",
+      "to": "mentor.prospective",
+      "when": "Asks about volunteering or mentoring."
+    },
+    {
+      "from": "visitor",
+      "to": "donor.prospective",
+      "when": "Asks about giving or where money goes."
+    },
+    {
+      "from": "visitor",
+      "to": "partner.prospective",
+      "when": "Asks on behalf of a school, class, or nonprofit."
+    },
+    {
+      "from": "student.prospective",
+      "to": "student.current",
+      "when": "Joins a Circle."
+    },
+    {
+      "from": "student.current",
+      "to": "student.past",
+      "when": "Finishes the six Weeks."
+    },
+    {
+      "from": "mentor.prospective",
+      "to": "mentor.current",
+      "when": "Application accepted and assigned a Circle."
+    },
+    {
+      "from": "mentor.current",
+      "to": "mentor.past",
+      "when": "Term ends."
+    },
+    {
+      "from": "donor.prospective",
+      "to": "donor.current",
+      "when": "Makes a gift."
+    },
+    {
+      "from": "donor.current",
+      "to": "donor.past",
+      "when": "Has not given in the current program year."
+    },
+    {
+      "from": "partner.prospective",
+      "to": "partner.current",
+      "when": "Forms a Partnership for an Academic Period."
+    },
+    {
+      "from": "partner.current",
+      "to": "partner.past",
+      "when": "The Academic Period ends."
+    },
+    {
+      "from": "mentor.past",
+      "to": "mentor.current",
+      "when": "Mentors another Circle."
+    },
+    {
+      "from": "donor.past",
+      "to": "donor.current",
+      "when": "Gives again."
+    },
+    {
+      "from": "partner.past",
+      "to": "partner.current",
+      "when": "Forms a new Partnership."
+    },
+    {
+      "from": "student.past",
+      "to": "mentor.prospective",
+      "when": "Has the professional experience to volunteer and wants to give back."
+    },
+    {
+      "from": "student.past",
+      "to": "donor.prospective",
+      "when": "Wants to give back with a gift."
+    },
+    {
+      "from": "mentor.past",
+      "to": "donor.prospective",
+      "when": "Asks about giving."
+    },
+    {
+      "from": "mentor.current",
+      "to": "partner.prospective",
+      "when": "Wants to introduce a school."
+    },
+    {
+      "from": "donor.current",
+      "to": "mentor.prospective",
+      "when": "Asks about volunteering time."
+    }
+  ],
+  "class_categories": [
+    {
+      "id": "delivery",
+      "definition": "People, groups, and records involved in running the program. Current detail lives in Dataverse."
+    },
+    {
+      "id": "content",
+      "definition": "Materials used in Sessions."
+    },
+    {
+      "id": "proof_and_giving",
+      "definition": "Evidence of results and how the Foundation is funded."
+    },
+    {
+      "id": "curriculum",
+      "definition": "The six program Weeks and the topic they add up to."
+    },
+    {
+      "id": "skill",
+      "definition": "Job-search skills a Student practices. Outside sources carry most of the depth."
+    },
+    {
+      "id": "framework",
+      "definition": "Ideas from books and research used to teach the Weeks."
+    }
+  ],
   "classes": [
     {
       "id": "sujeeth_foundation",
       "name": "Sujeeth Foundation",
+      "category": "delivery",
+      "audiences": [
+        "student",
+        "mentor",
+        "donor",
+        "partner"
+      ],
       "definition": "The nonprofit organization delivering the Career Circle Program and providing books to students.",
       "aliases": [
         "the Foundation",
@@ -17,32 +508,53 @@
     {
       "id": "partner",
       "name": "Partner",
+      "category": "delivery",
+      "audiences": [
+        "partner",
+        "donor"
+      ],
       "definition": "An institution working with Sujeeth Foundation through a Partnership.",
       "aliases": [
         "partner institution",
         "partner school",
         "campus partner",
-        "partners"
+        "partners",
+        "partner institutions",
+        "educational institutions",
+        "higher education institutions",
+        "career services"
       ]
     },
     {
       "id": "partnership",
       "name": "Partnership",
+      "category": "delivery",
+      "audiences": [
+        "partner"
+      ],
       "definition": "A semester-specific relationship between Sujeeth Foundation and one Partner institution.",
       "aliases": [
         "partnerships",
         "partner with us",
         "bring Career Circles to campus",
-        "school partnership"
+        "school partnership",
+        "start a circle at my school",
+        "bring this to my university"
       ]
     },
     {
       "id": "career_circle_program",
       "name": "Career Circle Program",
+      "category": "delivery",
+      "audiences": [
+        "student",
+        "mentor",
+        "donor",
+        "partner"
+      ],
       "definition": "The Foundation program delivered through Partnerships.",
       "aliases": [
         "Career Circles",
-        "Career Circle program",
         "six-week program",
         "how the program works"
       ]
@@ -50,16 +562,26 @@
     {
       "id": "academic_period",
       "name": "Academic Period",
+      "category": "delivery",
+      "audiences": [
+        "partner"
+      ],
+      "definition": "The semester in which a Partnership operates.",
       "aliases": [
         "Semester",
         "academic term",
         "semester dates"
-      ],
-      "definition": "The semester in which a Partnership operates."
+      ]
     },
     {
       "id": "circle",
       "name": "Circle",
+      "category": "delivery",
+      "audiences": [
+        "student",
+        "mentor",
+        "partner"
+      ],
       "definition": "A cohort hosted by a Partnership and containing six individual Sessions.",
       "aliases": [
         "cohort",
@@ -70,21 +592,44 @@
     {
       "id": "session",
       "name": "Session",
+      "category": "delivery",
+      "audiences": [
+        "student",
+        "mentor"
+      ],
       "definition": "One weekly meeting within a Circle.",
       "aliases": [
         "weekly session",
         "weekly meeting",
-        "sessions"
+        "sessions",
+        "breakout rooms"
       ]
     },
     {
       "id": "week",
       "name": "Week",
-      "definition": "One of the six program weeks."
+      "category": "curriculum",
+      "audiences": [
+        "student",
+        "mentor",
+        "partner"
+      ],
+      "definition": "One of the six program weeks.",
+      "aliases": [
+        "program week",
+        "weekly topic"
+      ]
     },
     {
       "id": "student",
       "name": "Student",
+      "category": "delivery",
+      "audiences": [
+        "student",
+        "mentor",
+        "donor",
+        "partner"
+      ],
       "definition": "A student participating in a Circle.",
       "aliases": [
         "students",
@@ -92,12 +637,19 @@
         "participants",
         "mentee",
         "mentees",
-        "college student"
+        "college student",
+        "college junior"
       ]
     },
     {
       "id": "career_mentor",
       "name": "Career Mentor",
+      "category": "delivery",
+      "audiences": [
+        "student",
+        "mentor",
+        "partner"
+      ],
       "definition": "A volunteer who leads Sessions and guides Students.",
       "aliases": [
         "mentor",
@@ -105,12 +657,19 @@
         "mentoring",
         "career mentors",
         "session leader",
-        "mentor FAQ"
+        "mentor FAQ",
+        "facilitator",
+        "facilitators",
+        "facilitating a session"
       ]
     },
     {
       "id": "volunteer",
       "name": "Volunteer",
+      "category": "delivery",
+      "audiences": [
+        "mentor"
+      ],
       "definition": "A person volunteering with the Foundation or a Partner.",
       "aliases": [
         "volunteers",
@@ -125,6 +684,11 @@
     {
       "id": "community_manager",
       "name": "Community Manager",
+      "category": "delivery",
+      "audiences": [
+        "partner",
+        "mentor"
+      ],
       "definition": "A role supporting coordination between a Partner and Volunteers; cannot lead a Circle.",
       "aliases": [
         "community managers"
@@ -133,6 +697,11 @@
     {
       "id": "resource",
       "name": "Resource",
+      "category": "content",
+      "audiences": [
+        "student",
+        "mentor"
+      ],
       "definition": "Learning material supporting one or more program Weeks.",
       "aliases": [
         "resources",
@@ -143,6 +712,11 @@
     {
       "id": "book",
       "name": "Book",
+      "category": "content",
+      "audiences": [
+        "student",
+        "donor"
+      ],
       "definition": "A catalogued book that is also a Resource.",
       "aliases": [
         "books",
@@ -154,6 +728,11 @@
     {
       "id": "book_request",
       "name": "Book Request",
+      "category": "content",
+      "audiences": [
+        "student",
+        "partner"
+      ],
       "definition": "A Student request for a catalogued Book.",
       "aliases": [
         "request a book",
@@ -161,12 +740,18 @@
         "free book",
         "book limit",
         "book order",
-        "order a book"
+        "order a book",
+        "request books",
+        "books at your request"
       ]
     },
     {
       "id": "substitute_request",
       "name": "Substitute Request",
+      "category": "delivery",
+      "audiences": [
+        "mentor"
+      ],
       "definition": "A request by a Mentor for another Volunteer to cover a Session.",
       "aliases": [
         "substitute",
@@ -180,6 +765,11 @@
     {
       "id": "onboarding_survey",
       "name": "Onboarding Survey",
+      "category": "delivery",
+      "audiences": [
+        "student",
+        "partner"
+      ],
       "definition": "The onboarding survey completed by a Student.",
       "aliases": [
         "student onboarding",
@@ -190,6 +780,11 @@
     {
       "id": "feedback_survey",
       "name": "Feedback Survey",
+      "category": "delivery",
+      "audiences": [
+        "student",
+        "partner"
+      ],
       "definition": "The feedback survey completed by a Student.",
       "aliases": [
         "student feedback",
@@ -200,6 +795,11 @@
     {
       "id": "presentation",
       "name": "Presentation",
+      "category": "content",
+      "audiences": [
+        "student",
+        "mentor"
+      ],
       "definition": "A presentation or Sway resource associated with program content.",
       "aliases": [
         "slides",
@@ -211,6 +811,11 @@
     {
       "id": "recording",
       "name": "Recording",
+      "category": "delivery",
+      "audiences": [
+        "student",
+        "mentor"
+      ],
       "definition": "A recording of a Session. The recording link is stored on a Circle Note (Dataverse table suj_circlenotes, column suj_note) and labeled by the meeting (suj_meeting).",
       "aliases": [
         "recordings",
@@ -226,6 +831,11 @@
     {
       "id": "agenda",
       "name": "Agenda",
+      "category": "content",
+      "audiences": [
+        "student",
+        "mentor"
+      ],
       "definition": "The agenda for a program Week or Session.",
       "aliases": [
         "session agenda",
@@ -236,6 +846,11 @@
     {
       "id": "spotlight",
       "name": "Spotlight",
+      "category": "proof_and_giving",
+      "audiences": [
+        "student",
+        "mentor"
+      ],
       "definition": "A feature highlighting one Volunteer.",
       "aliases": [
         "spotlights",
@@ -247,17 +862,31 @@
     {
       "id": "testimonial",
       "name": "Testimonial",
+      "category": "proof_and_giving",
+      "audiences": [
+        "donor",
+        "partner",
+        "student"
+      ],
       "definition": "A quotation from one Student.",
       "aliases": [
         "testimonials",
         "student quote",
         "student story",
-        "what students say"
+        "what students say",
+        "what students are saying",
+        "student testimonial"
       ]
     },
     {
       "id": "impact_report",
       "name": "Impact Report",
+      "category": "proof_and_giving",
+      "audiences": [
+        "donor",
+        "partner",
+        "mentor"
+      ],
       "definition": "A report describing Foundation impact.",
       "aliases": [
         "annual report",
@@ -268,6 +897,10 @@
     {
       "id": "donor",
       "name": "Donor",
+      "category": "proof_and_giving",
+      "audiences": [
+        "donor"
+      ],
       "definition": "A person or organization making Donations to the Foundation.",
       "aliases": [
         "donors",
@@ -280,6 +913,10 @@
     {
       "id": "donation",
       "name": "Donation",
+      "category": "proof_and_giving",
+      "audiences": [
+        "donor"
+      ],
       "definition": "A contribution made to Sujeeth Foundation.",
       "aliases": [
         "donate",
@@ -295,12 +932,23 @@
         "contribution",
         "ways to give",
         "tax-deductible gift",
-        "support the Foundation"
+        "support the Foundation",
+        "give to the Foundation",
+        "make a donation",
+        "donate now",
+        "support our mission",
+        "your gift"
       ]
     },
     {
       "id": "resume_resource",
       "name": "Resume Resource",
+      "category": "skill",
+      "audiences": [
+        "student",
+        "mentor"
+      ],
+      "definition": "A learning resource that helps students create, improve, format, or tailor a resume or curriculum vitae for employment opportunities.",
       "aliases": [
         "resume writing",
         "resume builder",
@@ -316,13 +964,21 @@
         "resume format",
         "resume examples",
         "ATS resume",
-        "applicant tracking system"
-      ],
-      "definition": "A learning resource that helps students create, improve, format, or tailor a resume or curriculum vitae for employment opportunities."
+        "applicant tracking system",
+        "cover letter",
+        "application materials",
+        "resume building"
+      ]
     },
     {
       "id": "career_development",
       "name": "Career Development",
+      "category": "curriculum",
+      "audiences": [
+        "student",
+        "mentor"
+      ],
+      "definition": "Learning and activities that help a person explore career options, build professional skills, prepare for employment, and progress in a career.",
       "aliases": [
         "career planning",
         "professional development",
@@ -340,7 +996,10 @@
         "what career should I choose",
         "what do I want to be",
         "first job",
-        "entry-level job"
+        "entry-level job",
+        "choosing a career",
+        "figuring out what I want to do",
+        "what should I do after graduation"
       ],
       "query_phrases": [
         "getting into",
@@ -361,12 +1020,17 @@
         "industries",
         "career field",
         "first role"
-      ],
-      "definition": "Learning and activities that help a person explore career options, build professional skills, prepare for employment, and progress in a career."
+      ]
     },
     {
       "id": "leadership",
       "name": "Leadership",
+      "category": "framework",
+      "audiences": [
+        "student",
+        "mentor"
+      ],
+      "definition": "The knowledge and practices involved in guiding, influencing, and supporting people or teams toward shared goals.",
       "aliases": [
         "leadership skills",
         "leading people",
@@ -375,12 +1039,17 @@
         "leaders",
         "inspire others",
         "being a leader"
-      ],
-      "definition": "The knowledge and practices involved in guiding, influencing, and supporting people or teams toward shared goals."
+      ]
     },
     {
       "id": "growth_mindset",
       "name": "Growth Mindset",
+      "category": "framework",
+      "audiences": [
+        "student",
+        "mentor"
+      ],
+      "definition": "The belief that abilities and skills can be developed through effort, learning, feedback, and practice.",
       "aliases": [
         "learning mindset",
         "developing abilities",
@@ -388,12 +1057,17 @@
         "mindset",
         "fixed mindset",
         "Carol Dweck"
-      ],
-      "definition": "The belief that abilities and skills can be developed through effort, learning, feedback, and practice."
+      ]
     },
     {
       "id": "grit",
       "name": "Grit",
+      "category": "framework",
+      "audiences": [
+        "student",
+        "mentor"
+      ],
+      "definition": "Perseverance and sustained commitment toward long-term goals despite challenges or setbacks.",
       "aliases": [
         "perseverance",
         "passion and perseverance",
@@ -401,12 +1075,17 @@
         "long term perseverance",
         "resilience",
         "stick with it"
-      ],
-      "definition": "Perseverance and sustained commitment toward long-term goals despite challenges or setbacks."
+      ]
     },
     {
       "id": "purpose",
       "name": "Purpose",
+      "category": "framework",
+      "audiences": [
+        "student",
+        "mentor"
+      ],
+      "definition": "A person's sense of meaning, direction, and motivation that informs goals and choices.",
       "aliases": [
         "sense of purpose",
         "personal purpose",
@@ -417,12 +1096,17 @@
         "life purpose",
         "finding purpose",
         "personal values"
-      ],
-      "definition": "A person's sense of meaning, direction, and motivation that informs goals and choices."
+      ]
     },
     {
       "id": "networking",
       "name": "Networking",
+      "category": "skill",
+      "audiences": [
+        "student",
+        "mentor"
+      ],
+      "definition": "Building and maintaining professional relationships that support learning, collaboration, and career opportunities.",
       "aliases": [
         "professional networking",
         "building relationships",
@@ -432,13 +1116,22 @@
         "informational interviews",
         "networking event",
         "building a network",
-        "working out loud"
-      ],
-      "definition": "Building and maintaining professional relationships that support learning, collaboration, and career opportunities."
+        "working out loud",
+        "coffee chat",
+        "cold outreach",
+        "reaching out to professionals",
+        "LinkedIn outreach"
+      ]
     },
     {
       "id": "innovation",
       "name": "Innovation",
+      "category": "framework",
+      "audiences": [
+        "student",
+        "mentor"
+      ],
+      "definition": "Developing, testing, and applying new ideas or approaches to create value or solve problems.",
       "aliases": [
         "innovative thinking",
         "experimentation",
@@ -448,24 +1141,34 @@
         "startups",
         "lean startup",
         "build-measure-learn"
-      ],
-      "definition": "Developing, testing, and applying new ideas or approaches to create value or solve problems."
+      ]
     },
     {
       "id": "motivation",
       "name": "Motivation",
+      "category": "framework",
+      "audiences": [
+        "student",
+        "mentor"
+      ],
+      "definition": "The internal and external factors that initiate, direct, and sustain goal-oriented behavior.",
       "aliases": [
         "intrinsic motivation",
         "what motivates people",
         "staying motivated",
         "self motivation",
         "what drives you"
-      ],
-      "definition": "The internal and external factors that initiate, direct, and sustain goal-oriented behavior."
+      ]
     },
     {
       "id": "appreciation",
       "name": "Appreciation",
+      "category": "framework",
+      "audiences": [
+        "student",
+        "mentor"
+      ],
+      "definition": "Recognizing and expressing the value of people, contributions, and positive experiences.",
       "aliases": [
         "gratitude",
         "recognition",
@@ -473,12 +1176,18 @@
         "acknowledgment",
         "thank you notes",
         "showing appreciation"
-      ],
-      "definition": "Recognizing and expressing the value of people, contributions, and positive experiences."
+      ]
     },
     {
       "id": "week_1",
       "name": "Week 1",
+      "category": "curriculum",
+      "audiences": [
+        "student",
+        "mentor",
+        "partner"
+      ],
+      "definition": "Week 1 of the six-week Career Circle Program: Self-Assessment. Understand strengths, goals, and growth areas; build trust and a personal narrative.",
       "aliases": [
         "program week 1",
         "week number 1",
@@ -490,12 +1199,18 @@
         "self-assessment",
         "self assessment",
         "coat of arms"
-      ],
-      "definition": "Week 1 of the six-week Career Circle Program: Self-Assessment. Understand strengths, goals, and growth areas; build trust and a personal narrative."
+      ]
     },
     {
       "id": "week_2",
       "name": "Week 2",
+      "category": "curriculum",
+      "audiences": [
+        "student",
+        "mentor",
+        "partner"
+      ],
+      "definition": "Week 2 of the six-week Career Circle Program: Research & Exploration. Explore industries, roles, and companies that fit your goals.",
       "aliases": [
         "program week 2",
         "week number 2",
@@ -506,12 +1221,18 @@
         "week 2 session",
         "research and exploration",
         "research & exploration"
-      ],
-      "definition": "Week 2 of the six-week Career Circle Program: Research & Exploration. Explore industries, roles, and companies that fit your goals."
+      ]
     },
     {
       "id": "week_3",
       "name": "Week 3",
+      "category": "curriculum",
+      "audiences": [
+        "student",
+        "mentor",
+        "partner"
+      ],
+      "definition": "Week 3 of the six-week Career Circle Program: Resume & Preparation. Build a base resume and a LinkedIn profile that match your target roles.",
       "aliases": [
         "program week 3",
         "week number 3",
@@ -522,12 +1243,18 @@
         "week 3 session",
         "resume and preparation",
         "resume & preparation"
-      ],
-      "definition": "Week 3 of the six-week Career Circle Program: Resume & Preparation. Build a base resume and a LinkedIn profile that match your target roles."
+      ]
     },
     {
       "id": "week_4",
       "name": "Week 4",
+      "category": "curriculum",
+      "audiences": [
+        "student",
+        "mentor",
+        "partner"
+      ],
+      "definition": "Week 4 of the six-week Career Circle Program: Networking. Build professional relationships through generosity and visibility.",
       "aliases": [
         "program week 4",
         "week number 4",
@@ -538,12 +1265,18 @@
         "week 4 session",
         "networking week",
         "work out loud"
-      ],
-      "definition": "Week 4 of the six-week Career Circle Program: Networking. Build professional relationships through generosity and visibility."
+      ]
     },
     {
       "id": "week_5",
       "name": "Week 5",
+      "category": "curriculum",
+      "audiences": [
+        "student",
+        "mentor",
+        "partner"
+      ],
+      "definition": "Week 5 of the six-week Career Circle Program: Applications & Interviews. Choose an application strategy and tell your experience well in interviews.",
       "aliases": [
         "program week 5",
         "week number 5",
@@ -555,12 +1288,18 @@
         "applications and interviews",
         "applications & interviews",
         "how many jobs should I apply to"
-      ],
-      "definition": "Week 5 of the six-week Career Circle Program: Applications & Interviews. Choose an application strategy and tell your experience well in interviews."
+      ]
     },
     {
       "id": "week_6",
       "name": "Week 6",
+      "category": "curriculum",
+      "audiences": [
+        "student",
+        "mentor",
+        "partner"
+      ],
+      "definition": "Week 6 of the six-week Career Circle Program: Follow-up & Negotiation. Follow up after interviews, negotiate offers, and build relationships beyond transactions.",
       "aliases": [
         "program week 6",
         "week number 6",
@@ -572,12 +1311,18 @@
         "follow-up and negotiation",
         "follow-up & negotiation",
         "ultimate guide to following up"
-      ],
-      "definition": "Week 6 of the six-week Career Circle Program: Follow-up & Negotiation. Follow up after interviews, negotiate offers, and build relationships beyond transactions."
+      ]
     },
     {
       "id": "program_statistics",
       "name": "Program Statistics",
+      "category": "proof_and_giving",
+      "audiences": [
+        "donor",
+        "partner",
+        "mentor"
+      ],
+      "definition": "Counts and rates describing Foundation reach and results. The authoritative sources are sujeeth.org and topics.sujeeth.org; no other domain is.",
       "aliases": [
         "how many students",
         "number of students",
@@ -587,132 +1332,195 @@
         "impact numbers",
         "statistics",
         "stats",
-        "by the numbers"
-      ],
-      "definition": "Counts and rates describing Foundation reach and results. The authoritative sources are sujeeth.org and topics.sujeeth.org; no other domain is."
+        "by the numbers",
+        "students served",
+        "circles hosted",
+        "books shipped",
+        "impact metrics",
+        "net promoter score",
+        "NPS"
+      ]
     },
     {
       "id": "circle_notes",
       "name": "Circle Notes",
-      "aliases": [
-        "circle notes",
-        "session notes"
+      "category": "delivery",
+      "audiences": [
+        "mentor"
       ],
-      "definition": "Notes recorded about a Circle (Dataverse table suj_circlenotes). Each note holds a meeting label (suj_meeting) and a link (suj_note) to the Session's Recording."
+      "definition": "Notes recorded about a Circle (Dataverse table suj_circlenotes). Each note holds a meeting label (suj_meeting) and a link (suj_note) to the Session's Recording.",
+      "aliases": [
+        "session notes"
+      ]
     },
     {
       "id": "portal_feedback",
       "name": "Portal Feedback",
+      "category": "delivery",
+      "audiences": [
+        "student"
+      ],
+      "definition": "Feedback submitted about the student portal (Dataverse table suj_portalfeedback).",
       "aliases": [
-        "portal feedback",
         "portal feedback form",
         "report a portal problem"
-      ],
-      "definition": "Feedback submitted about the student portal (Dataverse table suj_portalfeedback)."
+      ]
     },
     {
       "id": "follow_up",
       "name": "Follow-up",
+      "category": "skill",
+      "audiences": [
+        "student",
+        "mentor"
+      ],
+      "definition": "Staying in touch after interviews and networking conversations in a way that builds the relationship (Week 6).",
       "aliases": [
         "follow up after interview",
         "interview follow-up",
         "follow-up email",
         "interview thank-you note",
-        "following up"
-      ],
-      "definition": "Staying in touch after interviews and networking conversations in a way that builds the relationship (Week 6)."
+        "following up",
+        "post-interview email",
+        "checking in after applying"
+      ]
     },
     {
       "id": "job_application_strategy",
       "name": "Job Application Strategy",
+      "category": "skill",
+      "audiences": [
+        "student",
+        "mentor"
+      ],
+      "definition": "Choosing how many roles to apply to and how much to personalize each application (Week 5).",
       "aliases": [
         "how many jobs to apply to",
         "tailor each application",
         "mass applying",
         "application strategy",
-        "applying to jobs"
-      ],
-      "definition": "Choosing how many roles to apply to and how much to personalize each application (Week 5)."
+        "applying to jobs",
+        "application volume",
+        "easy apply",
+        "job applications",
+        "job hunting"
+      ]
     },
     {
       "id": "learning_from_regret",
       "name": "Learning from Regret",
+      "category": "framework",
+      "audiences": [
+        "student",
+        "mentor"
+      ],
+      "definition": "Using regret as information for braver, more authentic career choices (Week 6).",
       "aliases": [
         "power of regret",
         "Daniel Pink",
-        "learning from regret",
         "career regret"
-      ],
-      "definition": "Using regret as information for braver, more authentic career choices (Week 6)."
+      ]
     },
     {
       "id": "salary_negotiation",
       "name": "Salary Negotiation",
+      "category": "skill",
+      "audiences": [
+        "student",
+        "mentor"
+      ],
+      "definition": "Preparing for and conducting a conversation about pay and terms in a job offer.",
       "aliases": [
         "negotiate salary",
-        "salary negotiation",
         "negotiating pay",
         "compensation",
         "job offer negotiation",
-        "counteroffer"
-      ],
-      "definition": "Preparing for and conducting a conversation about pay and terms in a job offer."
+        "counteroffer",
+        "how much should I ask for",
+        "salary expectations"
+      ]
     },
     {
       "id": "interviewing",
       "name": "Interviewing",
+      "category": "skill",
+      "audiences": [
+        "student",
+        "mentor"
+      ],
+      "definition": "Preparing for and performing well in job interviews.",
       "aliases": [
         "job interview",
         "interview prep",
         "interview questions",
         "behavioral interview",
         "mock interview",
-        "STAR method"
-      ],
-      "definition": "Preparing for and performing well in job interviews."
+        "STAR method",
+        "interview tips",
+        "tell me about yourself",
+        "phone screen",
+        "storytelling in an interview"
+      ]
     },
     {
       "id": "linkedin_profile",
       "name": "LinkedIn Profile",
+      "category": "skill",
+      "audiences": [
+        "student",
+        "mentor"
+      ],
+      "definition": "Building a professional LinkedIn profile and presence as a student or early-career professional.",
       "aliases": [
-        "LinkedIn profile",
         "LinkedIn headline",
         "LinkedIn summary",
         "LinkedIn tips",
         "personal brand",
         "online presence"
-      ],
-      "definition": "Building a professional LinkedIn profile and presence as a student or early-career professional."
+      ]
     },
     {
       "id": "psychological_safety",
       "name": "Psychological Safety",
+      "category": "framework",
+      "audiences": [
+        "student",
+        "mentor"
+      ],
+      "definition": "A team climate where people can raise questions, ideas, and mistakes without fear of embarrassment or punishment.",
       "aliases": [
-        "psychological safety",
         "speaking up",
         "safe to speak up",
         "fearless organization"
-      ],
-      "definition": "A team climate where people can raise questions, ideas, and mistakes without fear of embarrassment or punishment."
+      ]
     },
     {
       "id": "vulnerability_courage",
       "name": "Vulnerability and Courage",
+      "category": "framework",
+      "audiences": [
+        "student",
+        "mentor"
+      ],
+      "definition": "Showing up honestly, taking risks, and handling fear of failure or judgment.",
       "aliases": [
         "vulnerability",
         "daring greatly",
         "shame",
         "belonging",
         "brave leadership"
-      ],
-      "definition": "Showing up honestly, taking risks, and handling fear of failure or judgment."
+      ]
     },
     {
       "id": "right_kind_of_wrong",
       "name": "Right Kind of Wrong",
+      "category": "framework",
+      "audiences": [
+        "student",
+        "mentor"
+      ],
       "definition": "A framework for distinguishing kinds of failure and learning thoughtfully from setbacks by considering uncertainty, preventability, context, and consequences.",
       "aliases": [
-        "Right Kind Of Wrong",
         "The Science of Failing Well",
         "failing well",
         "learning from failure",
@@ -730,9 +1538,13 @@
     {
       "id": "permission_to_feel",
       "name": "Permission to Feel",
+      "category": "framework",
+      "audiences": [
+        "student",
+        "mentor"
+      ],
       "definition": "A framework for noticing and naming emotions without judgment, exploring what they may signal about needs, concerns, or values, and using that awareness to choose a considered next step.",
       "aliases": [
-        "Permission To Feel",
         "emotional awareness",
         "emotions as information",
         "recognizing emotions",
@@ -747,6 +1559,296 @@
         "allowing yourself to feel",
         "adjusting thoughtfully"
       ]
+    },
+    {
+      "id": "receiving_feedback",
+      "name": "Receiving Feedback",
+      "category": "skill",
+      "audiences": [
+        "student",
+        "mentor"
+      ],
+      "definition": "Taking in feedback from mentors, interviewers, and employers, including a rejection, and deciding what to change (Week 5 reading: Thank You for Feedback).",
+      "aliases": [
+        "thank you for feedback",
+        "taking feedback",
+        "handling criticism",
+        "Stone and Heen",
+        "feedback after a rejection"
+      ]
+    },
+    {
+      "id": "programs_portal",
+      "name": "Programs Portal",
+      "category": "delivery",
+      "audiences": [
+        "student",
+        "mentor"
+      ],
+      "definition": "The Foundation's Programs Portal (portal.sujeeth.org), where Students request Books and Volunteers apply.",
+      "aliases": [
+        "student portal",
+        "launch portal",
+        "the portal"
+      ]
+    }
+  ],
+  "predicates": [
+    {
+      "id": "is_a",
+      "kind": "taxonomic",
+      "definition": "Subject is a kind or instance of object.",
+      "inverse": "has_kind",
+      "symmetric": false,
+      "expands_search": false
+    },
+    {
+      "id": "contains",
+      "kind": "partitive",
+      "definition": "Subject is made up of objects.",
+      "inverse": "is_contained_in",
+      "symmetric": false,
+      "expands_search": false
+    },
+    {
+      "id": "is_part_of",
+      "kind": "partitive",
+      "definition": "Subject is one part of object.",
+      "inverse": "has_part",
+      "symmetric": false,
+      "expands_search": false
+    },
+    {
+      "id": "has",
+      "kind": "partitive",
+      "definition": "Subject carries or owns object.",
+      "inverse": "belongs_to",
+      "symmetric": false,
+      "expands_search": false
+    },
+    {
+      "id": "hosts",
+      "kind": "partitive",
+      "definition": "Subject runs objects under it.",
+      "inverse": "is_hosted_by",
+      "symmetric": false,
+      "expands_search": false
+    },
+    {
+      "id": "is_stored_in",
+      "kind": "partitive",
+      "definition": "Subject is kept on object.",
+      "inverse": "stores",
+      "symmetric": false,
+      "expands_search": false
+    },
+    {
+      "id": "precedes",
+      "kind": "sequence",
+      "definition": "Subject comes before object.",
+      "inverse": "follows",
+      "symmetric": false,
+      "expands_search": false
+    },
+    {
+      "id": "delivers",
+      "kind": "action",
+      "definition": "Subject runs object for participants.",
+      "inverse": "is_delivered_by",
+      "symmetric": false,
+      "expands_search": false
+    },
+    {
+      "id": "forms",
+      "kind": "action",
+      "definition": "Subject sets up object.",
+      "inverse": "is_formed_by",
+      "symmetric": false,
+      "expands_search": false
+    },
+    {
+      "id": "attends",
+      "kind": "action",
+      "definition": "Subject takes part in object.",
+      "inverse": "is_attended_by",
+      "symmetric": false,
+      "expands_search": false
+    },
+    {
+      "id": "leads",
+      "kind": "action",
+      "definition": "Subject runs object.",
+      "inverse": "is_led_by",
+      "symmetric": false,
+      "expands_search": false
+    },
+    {
+      "id": "guides",
+      "kind": "action",
+      "definition": "Subject mentors object.",
+      "inverse": "is_guided_by",
+      "symmetric": false,
+      "expands_search": false
+    },
+    {
+      "id": "makes",
+      "kind": "action",
+      "definition": "Subject creates or submits object.",
+      "inverse": "is_made_by",
+      "symmetric": false,
+      "expands_search": false
+    },
+    {
+      "id": "completes",
+      "kind": "action",
+      "definition": "Subject fills in object.",
+      "inverse": "is_completed_by",
+      "symmetric": false,
+      "expands_search": false
+    },
+    {
+      "id": "requests",
+      "kind": "action",
+      "definition": "Subject asks for object.",
+      "inverse": "is_requested_by",
+      "symmetric": false,
+      "expands_search": false
+    },
+    {
+      "id": "coordinates_with",
+      "kind": "action",
+      "definition": "Subject works alongside object.",
+      "inverse": "coordinates_with",
+      "symmetric": true,
+      "expands_search": false
+    },
+    {
+      "id": "features",
+      "kind": "action",
+      "definition": "Subject profiles object.",
+      "inverse": "is_featured_in",
+      "symmetric": false,
+      "expands_search": false
+    },
+    {
+      "id": "quotes",
+      "kind": "action",
+      "definition": "Subject cites words from object.",
+      "inverse": "is_quoted_in",
+      "symmetric": false,
+      "expands_search": false
+    },
+    {
+      "id": "is_with",
+      "kind": "reference",
+      "definition": "Subject is tied to exactly one object.",
+      "inverse": "has_partnership",
+      "symmetric": false,
+      "expands_search": false
+    },
+    {
+      "id": "occurs_in",
+      "kind": "reference",
+      "definition": "Subject happens during object.",
+      "inverse": "includes",
+      "symmetric": false,
+      "expands_search": false
+    },
+    {
+      "id": "corresponds_to",
+      "kind": "reference",
+      "definition": "Subject maps onto object.",
+      "inverse": "corresponds_to",
+      "symmetric": true,
+      "expands_search": false
+    },
+    {
+      "id": "reported_under",
+      "kind": "reference",
+      "definition": "Subject is counted under object for reporting.",
+      "inverse": "reports_on",
+      "symmetric": false,
+      "expands_search": false
+    },
+    {
+      "id": "received_by",
+      "kind": "reference",
+      "definition": "Subject goes to object.",
+      "inverse": "receives",
+      "symmetric": false,
+      "expands_search": false
+    },
+    {
+      "id": "describes",
+      "kind": "reference",
+      "definition": "Subject states facts about object.",
+      "inverse": "is_described_by",
+      "symmetric": false,
+      "expands_search": false
+    },
+    {
+      "id": "reports",
+      "kind": "reference",
+      "definition": "Subject publishes object.",
+      "inverse": "is_reported_in",
+      "symmetric": false,
+      "expands_search": false
+    },
+    {
+      "id": "concerns",
+      "kind": "reference",
+      "definition": "Subject is about object.",
+      "inverse": "is_subject_of",
+      "symmetric": false,
+      "expands_search": false
+    },
+    {
+      "id": "illustrates",
+      "kind": "conceptual",
+      "definition": "Subject content is used to teach object.",
+      "inverse": "is_illustrated_by",
+      "symmetric": false,
+      "expands_search": true
+    },
+    {
+      "id": "supports",
+      "kind": "conceptual",
+      "definition": "Subject provides material or grounding for object.",
+      "inverse": "is_supported_by",
+      "symmetric": false,
+      "expands_search": false
+    },
+    {
+      "id": "informs",
+      "kind": "conceptual",
+      "definition": "Subject shapes how object is understood or decided.",
+      "inverse": "is_informed_by",
+      "symmetric": false,
+      "expands_search": false
+    },
+    {
+      "id": "complements",
+      "kind": "conceptual",
+      "definition": "Subject and object are best read together.",
+      "inverse": "complements",
+      "symmetric": true,
+      "expands_search": false
+    },
+    {
+      "id": "provides",
+      "kind": "action",
+      "definition": "Subject gives object to participants.",
+      "inverse": "is_provided_by",
+      "symmetric": false,
+      "expands_search": false
+    },
+    {
+      "id": "uses",
+      "kind": "action",
+      "definition": "Subject works through object.",
+      "inverse": "is_used_by",
+      "symmetric": false,
+      "expands_search": false
     }
   ],
   "relationships": [
@@ -839,17 +1941,17 @@
       "definition": "Career Mentors guide Students."
     },
     {
-      "id": "community_manager_supports_partner",
+      "id": "community_manager_coordinates_with_partner",
       "subject": "community_manager",
-      "predicate": "supports",
+      "predicate": "coordinates_with",
       "object": "partner",
       "cardinality": "N:N",
       "definition": "Community Managers coordinate with Partner institutions."
     },
     {
-      "id": "community_manager_supports_volunteer",
+      "id": "community_manager_coordinates_with_volunteer",
       "subject": "community_manager",
-      "predicate": "supports",
+      "predicate": "coordinates_with",
       "object": "volunteer",
       "cardinality": "N:N",
       "definition": "Community Managers coordinate with Volunteers."
@@ -923,7 +2025,7 @@
       "subject": "spotlight",
       "predicate": "features",
       "object": "volunteer",
-      "cardinality": "1:1",
+      "cardinality": "N:1",
       "definition": "A Spotlight features one Volunteer."
     },
     {
@@ -939,7 +2041,7 @@
       "subject": "testimonial",
       "predicate": "quotes",
       "object": "student",
-      "cardinality": "1:1",
+      "cardinality": "N:1",
       "definition": "A Testimonial quotes one Student."
     },
     {
@@ -1185,7 +2287,7 @@
     {
       "id": "program_statistics_describe_foundation",
       "subject": "program_statistics",
-      "predicate": "describe",
+      "predicate": "describes",
       "object": "sujeeth_foundation",
       "cardinality": "N:1",
       "definition": "Program Statistics describe the Foundation's reach and results."
@@ -1215,12 +2317,12 @@
       "definition": "Week 6 applies career development through follow-up, negotiation, and relationship-building."
     },
     {
-      "id": "portal_feedback_concerns_foundation",
+      "id": "portal_feedback_concerns_programs_portal",
       "subject": "portal_feedback",
       "predicate": "concerns",
-      "object": "sujeeth_foundation",
+      "object": "programs_portal",
       "cardinality": "N:1",
-      "definition": "Portal Feedback concerns the Foundation's student portal."
+      "definition": "Portal Feedback is feedback about the Programs Portal."
     },
     {
       "id": "psychological_safety_supports_vulnerability_courage",
@@ -1261,6 +2363,350 @@
       "object": "purpose",
       "cardinality": "N:N",
       "definition": "Exploring emotions can reveal needs, concerns, and values that inform a person's sense of direction."
+    },
+    {
+      "id": "week_1_is_a_week",
+      "subject": "week_1",
+      "predicate": "is_a",
+      "object": "week",
+      "cardinality": "N:1",
+      "definition": "Week 1 (Self-Assessment) is one of the six program Weeks. Sessions, Agendas, and Resources point to the generic Week; this edge connects them to the Week's own content."
+    },
+    {
+      "id": "week_2_is_a_week",
+      "subject": "week_2",
+      "predicate": "is_a",
+      "object": "week",
+      "cardinality": "N:1",
+      "definition": "Week 2 (Research & Exploration) is one of the six program Weeks. Sessions, Agendas, and Resources point to the generic Week; this edge connects them to the Week's own content."
+    },
+    {
+      "id": "week_3_is_a_week",
+      "subject": "week_3",
+      "predicate": "is_a",
+      "object": "week",
+      "cardinality": "N:1",
+      "definition": "Week 3 (Resume & Preparation) is one of the six program Weeks. Sessions, Agendas, and Resources point to the generic Week; this edge connects them to the Week's own content."
+    },
+    {
+      "id": "week_4_is_a_week",
+      "subject": "week_4",
+      "predicate": "is_a",
+      "object": "week",
+      "cardinality": "N:1",
+      "definition": "Week 4 (Networking) is one of the six program Weeks. Sessions, Agendas, and Resources point to the generic Week; this edge connects them to the Week's own content."
+    },
+    {
+      "id": "week_5_is_a_week",
+      "subject": "week_5",
+      "predicate": "is_a",
+      "object": "week",
+      "cardinality": "N:1",
+      "definition": "Week 5 (Applications & Interviews) is one of the six program Weeks. Sessions, Agendas, and Resources point to the generic Week; this edge connects them to the Week's own content."
+    },
+    {
+      "id": "week_6_is_a_week",
+      "subject": "week_6",
+      "predicate": "is_a",
+      "object": "week",
+      "cardinality": "N:1",
+      "definition": "Week 6 (Follow-up & Negotiation) is one of the six program Weeks. Sessions, Agendas, and Resources point to the generic Week; this edge connects them to the Week's own content."
+    },
+    {
+      "id": "week_1_is_part_of_career_development",
+      "subject": "week_1",
+      "predicate": "is_part_of",
+      "object": "career_development",
+      "cardinality": "N:1",
+      "definition": "Week 1 (Self-Assessment) is part of Career Development, as Week 6 already is."
+    },
+    {
+      "id": "week_2_is_part_of_career_development",
+      "subject": "week_2",
+      "predicate": "is_part_of",
+      "object": "career_development",
+      "cardinality": "N:1",
+      "definition": "Week 2 (Research & Exploration) is part of Career Development, as Week 6 already is."
+    },
+    {
+      "id": "week_3_is_part_of_career_development",
+      "subject": "week_3",
+      "predicate": "is_part_of",
+      "object": "career_development",
+      "cardinality": "N:1",
+      "definition": "Week 3 (Resume & Preparation) is part of Career Development, as Week 6 already is."
+    },
+    {
+      "id": "week_4_is_part_of_career_development",
+      "subject": "week_4",
+      "predicate": "is_part_of",
+      "object": "career_development",
+      "cardinality": "N:1",
+      "definition": "Week 4 (Networking) is part of Career Development, as Week 6 already is."
+    },
+    {
+      "id": "week_5_is_part_of_career_development",
+      "subject": "week_5",
+      "predicate": "is_part_of",
+      "object": "career_development",
+      "cardinality": "N:1",
+      "definition": "Week 5 (Applications & Interviews) is part of Career Development, as Week 6 already is."
+    },
+    {
+      "id": "career_circle_program_contains_week",
+      "subject": "career_circle_program",
+      "predicate": "contains",
+      "object": "week",
+      "cardinality": "1:6",
+      "definition": "The Career Circle Program runs for six program Weeks."
+    },
+    {
+      "id": "partnership_delivers_career_circle_program",
+      "subject": "partnership",
+      "predicate": "delivers",
+      "object": "career_circle_program",
+      "cardinality": "N:1",
+      "definition": "A Partnership delivers the Career Circle Program to a Partner's students for one Academic Period."
+    },
+    {
+      "id": "impact_report_informs_donor",
+      "subject": "impact_report",
+      "predicate": "informs",
+      "object": "donor",
+      "cardinality": "N:N",
+      "definition": "Impact Reports and published financials show Donors what the Foundation does with gifts."
+    },
+    {
+      "id": "receiving_feedback_illustrates_week_5",
+      "subject": "receiving_feedback",
+      "predicate": "illustrates",
+      "object": "week_5",
+      "cardinality": "N:N",
+      "definition": "Receiving Feedback content is used in Week 5: Applications & Interviews."
+    },
+    {
+      "id": "receiving_feedback_supports_growth_mindset",
+      "subject": "receiving_feedback",
+      "predicate": "supports",
+      "object": "growth_mindset",
+      "cardinality": "N:N",
+      "definition": "Taking feedback well is how a Growth Mindset shows up in a job search."
+    },
+    {
+      "id": "week_1_precedes_week_2",
+      "subject": "week_1",
+      "predicate": "precedes",
+      "object": "week_2",
+      "cardinality": "1:1",
+      "definition": "Week 1 (Self-Assessment) comes before Week 2 (Research & Exploration). The curriculum builds in this order."
+    },
+    {
+      "id": "week_2_precedes_week_3",
+      "subject": "week_2",
+      "predicate": "precedes",
+      "object": "week_3",
+      "cardinality": "1:1",
+      "definition": "Week 2 (Research & Exploration) comes before Week 3 (Resume & Preparation). The curriculum builds in this order."
+    },
+    {
+      "id": "week_3_precedes_week_4",
+      "subject": "week_3",
+      "predicate": "precedes",
+      "object": "week_4",
+      "cardinality": "1:1",
+      "definition": "Week 3 (Resume & Preparation) comes before Week 4 (Networking). The curriculum builds in this order."
+    },
+    {
+      "id": "week_4_precedes_week_5",
+      "subject": "week_4",
+      "predicate": "precedes",
+      "object": "week_5",
+      "cardinality": "1:1",
+      "definition": "Week 4 (Networking) comes before Week 5 (Applications & Interviews). The curriculum builds in this order."
+    },
+    {
+      "id": "week_5_precedes_week_6",
+      "subject": "week_5",
+      "predicate": "precedes",
+      "object": "week_6",
+      "cardinality": "1:1",
+      "definition": "Week 5 (Applications & Interviews) comes before Week 6 (Follow-up & Negotiation). The curriculum builds in this order."
+    },
+    {
+      "id": "resume_resource_precedes_job_application_strategy",
+      "subject": "resume_resource",
+      "predicate": "precedes",
+      "object": "job_application_strategy",
+      "cardinality": "N:N",
+      "definition": "A base resume comes before applying to roles."
+    },
+    {
+      "id": "job_application_strategy_precedes_interviewing",
+      "subject": "job_application_strategy",
+      "predicate": "precedes",
+      "object": "interviewing",
+      "cardinality": "N:N",
+      "definition": "Applications come before interviews."
+    },
+    {
+      "id": "interviewing_precedes_follow_up",
+      "subject": "interviewing",
+      "predicate": "precedes",
+      "object": "follow_up",
+      "cardinality": "N:N",
+      "definition": "Follow-up comes after an interview."
+    },
+    {
+      "id": "follow_up_precedes_salary_negotiation",
+      "subject": "follow_up",
+      "predicate": "precedes",
+      "object": "salary_negotiation",
+      "cardinality": "N:N",
+      "definition": "Negotiation comes after follow-up leads to an offer."
+    },
+    {
+      "id": "leadership_supports_vulnerability_courage",
+      "subject": "leadership",
+      "predicate": "supports",
+      "object": "vulnerability_courage",
+      "cardinality": "N:N",
+      "definition": "Leadership content (Dare to Lead) grounds the Week 1 material on vulnerability and courage."
+    },
+    {
+      "id": "linkedin_profile_supports_networking",
+      "subject": "linkedin_profile",
+      "predicate": "supports",
+      "object": "networking",
+      "cardinality": "N:N",
+      "definition": "A clear LinkedIn profile is the base for networking outreach."
+    },
+    {
+      "id": "innovation_supports_job_application_strategy",
+      "subject": "innovation",
+      "predicate": "supports",
+      "object": "job_application_strategy",
+      "cardinality": "N:N",
+      "definition": "Lean Startup thinking treats each application as an experiment to learn from."
+    },
+    {
+      "id": "motivation_supports_grit",
+      "subject": "motivation",
+      "predicate": "supports",
+      "object": "grit",
+      "cardinality": "N:N",
+      "definition": "Motivation sustains the long-term effort that Grit describes."
+    },
+    {
+      "id": "substitute_request_concerns_session",
+      "subject": "substitute_request",
+      "predicate": "concerns",
+      "object": "session",
+      "cardinality": "N:1",
+      "definition": "Each Substitute Request is for one Session."
+    },
+    {
+      "id": "onboarding_survey_informs_impact_report",
+      "subject": "onboarding_survey",
+      "predicate": "informs",
+      "object": "impact_report",
+      "cardinality": "N:N",
+      "definition": "Onboarding Surveys give the baseline that Impact Reports compare against."
+    },
+    {
+      "id": "feedback_survey_informs_impact_report",
+      "subject": "feedback_survey",
+      "predicate": "informs",
+      "object": "impact_report",
+      "cardinality": "N:N",
+      "definition": "Feedback Surveys supply the results that Impact Reports present."
+    },
+    {
+      "id": "agenda_describes_session",
+      "subject": "agenda",
+      "predicate": "describes",
+      "object": "session",
+      "cardinality": "N:N",
+      "definition": "An Agenda sets out what happens in a Session."
+    },
+    {
+      "id": "testimonial_supports_impact_report",
+      "subject": "testimonial",
+      "predicate": "supports",
+      "object": "impact_report",
+      "cardinality": "N:N",
+      "definition": "Testimonials appear in Impact Reports as student evidence."
+    },
+    {
+      "id": "student_makes_portal_feedback",
+      "subject": "student",
+      "predicate": "makes",
+      "object": "portal_feedback",
+      "cardinality": "1:N",
+      "definition": "A Student can submit Portal Feedback."
+    },
+    {
+      "id": "program_statistics_describes_career_circle_program",
+      "subject": "program_statistics",
+      "predicate": "describes",
+      "object": "career_circle_program",
+      "cardinality": "N:N",
+      "definition": "Program Statistics count the reach and results of the Career Circle Program."
+    },
+    {
+      "id": "circle_is_part_of_career_circle_program",
+      "subject": "circle",
+      "predicate": "is_part_of",
+      "object": "career_circle_program",
+      "cardinality": "N:1",
+      "definition": "A Circle is one cohort of the Career Circle Program."
+    },
+    {
+      "id": "impact_report_informs_partner",
+      "subject": "impact_report",
+      "predicate": "informs",
+      "object": "partner",
+      "cardinality": "N:N",
+      "definition": "Impact Reports show Partner institutions what their term produced."
+    },
+    {
+      "id": "sujeeth_foundation_provides_book",
+      "subject": "sujeeth_foundation",
+      "predicate": "provides",
+      "object": "book",
+      "cardinality": "1:N",
+      "definition": "The Foundation provides Books to Students at no charge."
+    },
+    {
+      "id": "student_uses_programs_portal",
+      "subject": "student",
+      "predicate": "uses",
+      "object": "programs_portal",
+      "cardinality": "N:1",
+      "definition": "Students request Books through the Programs Portal."
+    },
+    {
+      "id": "volunteer_uses_programs_portal",
+      "subject": "volunteer",
+      "predicate": "uses",
+      "object": "programs_portal",
+      "cardinality": "N:1",
+      "definition": "Volunteers apply through the Programs Portal."
+    },
+    {
+      "id": "programs_portal_hosts_book",
+      "subject": "programs_portal",
+      "predicate": "hosts",
+      "object": "book",
+      "cardinality": "1:N",
+      "definition": "The Programs Portal lists the Book catalog."
+    },
+    {
+      "id": "programs_portal_hosts_book_request",
+      "subject": "programs_portal",
+      "predicate": "hosts",
+      "object": "book_request",
+      "cardinality": "1:N",
+      "definition": "Book Requests are made on the Programs Portal."
     }
   ],
   "business_rules": [
@@ -1303,6 +2749,313 @@
     {
       "id": "br_recording_source",
       "rule": "Session Recordings are the links stored on Circle Notes (Dataverse table suj_circlenotes, column suj_note), labeled by suj_meeting and linked to a Circle through suj_circle. To find recordings, look up the Circle first, then read its notes."
+    },
+    {
+      "id": "br_stats_live_pages_only",
+      "rule": "Quote program statistics only from live pages on sujeeth.org and topics.sujeeth.org (home page, topics pages). PDFs hosted on sujeeth.org, such as the annual report and the whitepaper, are dated documents. If a dated document and a live page differ, use the live page and say the figures differ."
+    },
+    {
+      "id": "br_design_vs_now",
+      "rule": "For what the program is designed to do (curriculum, agendas, FAQs), the wiki and sujeeth.org win. For what is happening now (which Circles run, when they meet, who mentors, open applications), Dataverse wins."
+    },
+    {
+      "id": "br_one_mentor_per_circle",
+      "rule": "Each Circle has exactly one Career Mentor. To find current Mentors, list the active Circles and read the Mentor linked to each."
+    },
+    {
+      "id": "br_student_privacy",
+      "rule": "An agent may share a Career Mentor's name, employer, and Circle. It must not share email addresses, phone numbers, home addresses, or anything about an individual Student."
+    },
+    {
+      "id": "br_third_party_attribution",
+      "rule": "Third-party domains support a concept. They are not Foundation statements. Summarize briefly, link the source, do not reproduce it, and do not present a third party's claim as a Foundation claim."
+    },
+    {
+      "id": "br_no_placement_promise",
+      "rule": "Do not promise job placement, grades, or specific outcomes. Mentors give guidance and feedback; Students are not graded."
+    },
+    {
+      "id": "br_persona_is_a_lens",
+      "rule": "A persona changes emphasis, entry points, and wording. It never changes facts, source precedence, or access. No persona receives information about an individual Student from a public agent."
+    },
+    {
+      "id": "br_persona_can_change",
+      "rule": "A person can hold more than one persona and can move between stages. Follow persona_transitions when the conversation shifts, and do not assume the first persona holds for the whole conversation."
+    },
+    {
+      "id": "br_persona_infer_never_ask",
+      "rule": "Infer the persona and stage from the conversation and the entry page (see persona_inference). Never ask the person which persona they are or what their role is. If the persona is unclear, give the shared answer first and one short line per route."
+    }
+  ],
+  "source_precedence": [
+    {
+      "id": "sp_program_statistics",
+      "question_type": "Counts, rates, reach, results",
+      "concepts": [
+        "program_statistics",
+        "impact_report"
+      ],
+      "prefer": [
+        "sujeeth.org (live pages)",
+        "topics.sujeeth.org"
+      ],
+      "avoid": [
+        "PDFs hosted on sujeeth.org",
+        "app.candid.org",
+        "Dataverse totals",
+        "wiki",
+        "third-party sites"
+      ],
+      "note": "See br_stats_live_pages_only."
+    },
+    {
+      "id": "sp_happening_now",
+      "question_type": "Which Circles run, when, who mentors, open applications, substitutes",
+      "concepts": [
+        "circle",
+        "session",
+        "career_mentor",
+        "volunteer",
+        "substitute_request"
+      ],
+      "prefer": [
+        "Dataverse (suj_circle, contact, suj_volunteer, suj_substitute)"
+      ],
+      "avoid": [
+        "wiki",
+        "sujeeth.org pages as proof of current schedules"
+      ],
+      "note": "See br_design_vs_now and br_student_privacy."
+    },
+    {
+      "id": "sp_program_design",
+      "question_type": "What the program covers, weekly agendas, FAQs, how to take part",
+      "concepts": [
+        "career_circle_program",
+        "week",
+        "agenda",
+        "presentation"
+      ],
+      "prefer": [
+        "wiki",
+        "sujeeth.org"
+      ],
+      "avoid": [
+        "third-party sites as the description of the program"
+      ],
+      "note": "Use quick_links for slide decks."
+    },
+    {
+      "id": "sp_career_skills",
+      "question_type": "How do I write a resume, interview, negotiate, follow up",
+      "concepts": [
+        "resume_resource",
+        "interviewing",
+        "salary_negotiation",
+        "follow_up",
+        "networking",
+        "linkedin_profile",
+        "job_application_strategy"
+      ],
+      "prefer": [
+        "approved third-party domains for the skill",
+        "then the matching program week and wiki page for how the Foundation frames it"
+      ],
+      "avoid": [
+        "reproducing third-party text"
+      ],
+      "note": "See br_third_party_attribution."
+    },
+    {
+      "id": "sp_mentor_stories",
+      "question_type": "Career paths in real jobs",
+      "concepts": [
+        "spotlight",
+        "career_development"
+      ],
+      "prefer": [
+        "sujeeth.org spotlight pages"
+      ],
+      "avoid": [],
+      "note": "Spotlight stories are best bets for career questions."
+    },
+    {
+      "id": "sp_recordings",
+      "question_type": "Watch a past session",
+      "concepts": [
+        "recording",
+        "circle_notes"
+      ],
+      "prefer": [
+        "Dataverse Circle Notes (suj_circlenotes)"
+      ],
+      "avoid": [
+        "guessing a link"
+      ],
+      "note": "Find the Circle first, then read its notes. See br_recording_source."
+    }
+  ],
+  "ambiguous_terms": [
+    {
+      "term": "circle",
+      "candidates": [
+        "circle",
+        "networking"
+      ],
+      "default": "circle",
+      "use_other_when": "The query mentions Working Out Loud or a 12-week peer group; use networking.",
+      "ask": "Do you mean a Career Circle cohort, or a Working Out Loud circle?"
+    },
+    {
+      "term": "session",
+      "candidates": [
+        "session",
+        "recording",
+        "substitute_request"
+      ],
+      "default": "session",
+      "use_other_when": "Watch, replay, or recording points to recording; cannot attend or need cover points to substitute_request."
+    },
+    {
+      "term": "support the Foundation",
+      "candidates": [
+        "donation",
+        "volunteer",
+        "partnership"
+      ],
+      "default": null,
+      "use_other_when": "Money or a gift points to donation; time or mentoring points to volunteer; a school or class points to partnership.",
+      "by_persona": {
+        "donor": "donation",
+        "mentor": "volunteer",
+        "partner": "partnership"
+      },
+      "when_unclear": "One line per route: give (donation page), mentor (volunteer application), partner (partner page), join a Circle (through a partner school)."
+    },
+    {
+      "term": "partner",
+      "candidates": [
+        "partner",
+        "partnership"
+      ],
+      "default": "partner",
+      "use_other_when": "Semester dates, one term, or book reporting points to partnership.",
+      "by_persona": {
+        "partner": "partnership",
+        "donor": "partner"
+      }
+    },
+    {
+      "term": "mentor",
+      "candidates": [
+        "career_mentor",
+        "volunteer"
+      ],
+      "default": "career_mentor",
+      "use_other_when": "Become, sign up, or apply points to volunteer. Who mentors a given Circle is a Dataverse question.",
+      "by_persona": {
+        "student": "career_mentor",
+        "partner": "career_mentor",
+        "mentor": "volunteer"
+      }
+    },
+    {
+      "term": "feedback",
+      "candidates": [
+        "feedback_survey",
+        "portal_feedback",
+        "receiving_feedback"
+      ],
+      "default": null,
+      "use_other_when": "End-of-program survey points to feedback_survey; a problem with the portal points to portal_feedback; handling criticism or a rejection points to receiving_feedback.",
+      "ask": "Is this about the end-of-program survey, a portal problem, or how to take feedback from an interviewer?",
+      "by_persona": {
+        "student": "feedback_survey",
+        "partner": "feedback_survey"
+      }
+    },
+    {
+      "term": "follow up",
+      "candidates": [
+        "follow_up"
+      ],
+      "default": "follow_up",
+      "use_other_when": "Sales or project follow-up is not in scope; answer for job seekers after an interview or networking conversation (Week 6)."
+    },
+    {
+      "term": "mindset",
+      "candidates": [
+        "growth_mindset"
+      ],
+      "default": "growth_mindset",
+      "use_other_when": "The query names the book Mindset or Carol Dweck; still growth_mindset."
+    },
+    {
+      "term": "regret / failure",
+      "candidates": [
+        "learning_from_regret",
+        "right_kind_of_wrong",
+        "permission_to_feel"
+      ],
+      "default": null,
+      "use_other_when": "Regret points to learning_from_regret; failure or a setback points to right_kind_of_wrong; feelings about a setback point to permission_to_feel.",
+      "ask": "Are you thinking about a regret, a setback, or how you feel about one?"
+    },
+    {
+      "term": "statistics",
+      "candidates": [
+        "program_statistics",
+        "impact_report"
+      ],
+      "default": "program_statistics",
+      "use_other_when": "A report, annual report, or financials points to impact_report. Both follow br_stats_live_pages_only.",
+      "by_persona": {
+        "donor": "program_statistics",
+        "partner": "program_statistics",
+        "mentor": "program_statistics"
+      }
+    },
+    {
+      "term": "books",
+      "candidates": [
+        "book_request",
+        "book",
+        "resource"
+      ],
+      "default": "book",
+      "use_other_when": "Asking how to get a free book points to book_request; asking what to read for a week points to resource.",
+      "by_persona": {
+        "student": "book_request",
+        "donor": "book",
+        "mentor": "resource"
+      }
+    },
+    {
+      "term": "sign up / get involved",
+      "candidates": [
+        "circle",
+        "volunteer",
+        "donation",
+        "partnership"
+      ],
+      "default": null,
+      "by_persona": {
+        "student": "circle",
+        "mentor": "volunteer",
+        "donor": "donation",
+        "partner": "partnership"
+      },
+      "use_other_when": "The persona decides. A student joins a Circle, a mentor applies to volunteer, a donor gives, a school forms a Partnership.",
+      "when_unclear": "One line per route: give (donation page), mentor (volunteer application), partner (partner page), join a Circle (through a partner school)."
+    },
+    {
+      "term": "portal",
+      "candidates": [
+        "programs_portal",
+        "portal_feedback"
+      ],
+      "default": "programs_portal",
+      "use_other_when": "A problem with the portal, a bug, or a complaint points to portal_feedback."
     }
   ],
   "preferred_terminology": [
@@ -1396,7 +3149,13 @@
         "Vulnerability and trust (Brene Brown clip)",
         "Coat of Arms exercise"
       ],
-      "presentation_quick_link": "week_1_presentation"
+      "presentation_quick_link": "week_1_presentation",
+      "class_id": "week_1",
+      "illustrated_by": [
+        "grit",
+        "growth_mindset",
+        "vulnerability_courage"
+      ]
     },
     {
       "week": 2,
@@ -1407,7 +3166,11 @@
         "Ikigai",
         "Connecting with hiring managers (LinkedIn Learning video)"
       ],
-      "presentation_quick_link": "week_2_presentation"
+      "presentation_quick_link": "week_2_presentation",
+      "class_id": "week_2",
+      "illustrated_by": [
+        "purpose"
+      ]
     },
     {
       "week": 3,
@@ -1418,7 +3181,13 @@
         "Base resume",
         "The Origin of Why (Simon Sinek)"
       ],
-      "presentation_quick_link": "week_3_presentation"
+      "presentation_quick_link": "week_3_presentation",
+      "class_id": "week_3",
+      "illustrated_by": [
+        "linkedin_profile",
+        "purpose",
+        "resume_resource"
+      ]
     },
     {
       "week": 4,
@@ -1429,7 +3198,12 @@
         "Work Out Loud (John Stepper)",
         "Social media best practices"
       ],
-      "presentation_quick_link": "week_4_presentation"
+      "presentation_quick_link": "week_4_presentation",
+      "class_id": "week_4",
+      "illustrated_by": [
+        "grit",
+        "networking"
+      ]
     },
     {
       "week": 5,
@@ -1441,7 +3215,16 @@
         "Lean Startup (each application as an experiment)",
         "Start with Why"
       ],
-      "presentation_quick_link": "week_5_presentation"
+      "presentation_quick_link": "week_5_presentation",
+      "class_id": "week_5",
+      "illustrated_by": [
+        "grit",
+        "innovation",
+        "interviewing",
+        "job_application_strategy",
+        "purpose",
+        "receiving_feedback"
+      ]
     },
     {
       "week": 6,
@@ -1452,34 +3235,168 @@
         "The Power of Regret (Daniel Pink)",
         "Ultimate Guide to Following Up"
       ],
-      "presentation_quick_link": "week_6_presentation"
+      "presentation_quick_link": "week_6_presentation",
+      "class_id": "week_6",
+      "illustrated_by": [
+        "appreciation",
+        "follow_up",
+        "learning_from_regret",
+        "salary_negotiation"
+      ]
     }
   ],
+  "framework_sources": [
+    {
+      "concept": "vulnerability_courage",
+      "work": "Dare to Lead",
+      "author": "Brené Brown",
+      "weeks": [
+        1
+      ],
+      "wiki_page": "Vulnerability and Trust"
+    },
+    {
+      "concept": "grit",
+      "work": "Grit",
+      "author": "Angela Duckworth",
+      "weeks": [
+        1,
+        4,
+        5
+      ],
+      "wiki_page": "Grit and Perseverance"
+    },
+    {
+      "concept": "growth_mindset",
+      "work": "Mindset",
+      "author": "Carol Dweck",
+      "weeks": [
+        1
+      ],
+      "wiki_page": null
+    },
+    {
+      "concept": "purpose",
+      "work": "Start with Why",
+      "author": "Simon Sinek",
+      "weeks": [
+        2,
+        3,
+        5
+      ],
+      "wiki_page": "Purpose Driven Approach"
+    },
+    {
+      "concept": "networking",
+      "work": "Work Out Loud",
+      "author": "John Stepper",
+      "weeks": [
+        4
+      ],
+      "wiki_page": "Working Out Loud"
+    },
+    {
+      "concept": "innovation",
+      "work": "The Lean Startup",
+      "author": "Eric Ries",
+      "weeks": [
+        5
+      ],
+      "wiki_page": "Lean Startup Methodology"
+    },
+    {
+      "concept": "receiving_feedback",
+      "work": "Thank You for Feedback",
+      "author": "Douglas Stone and Sheila Heen",
+      "weeks": [
+        5
+      ],
+      "wiki_page": null
+    },
+    {
+      "concept": "appreciation",
+      "work": "Focus on the Good Stuff",
+      "author": "Mike Robbins",
+      "weeks": [
+        6
+      ],
+      "wiki_page": "Power of Appreciation"
+    },
+    {
+      "concept": "learning_from_regret",
+      "work": "The Power of Regret",
+      "author": "Daniel Pink",
+      "weeks": [
+        6
+      ],
+      "wiki_page": "Learning from Regret"
+    },
+    {
+      "concept": "right_kind_of_wrong",
+      "work": "Right Kind of Wrong",
+      "author": "Amy Edmondson",
+      "weeks": [],
+      "wiki_page": "Right Kind of Wrong"
+    },
+    {
+      "concept": "psychological_safety",
+      "work": "The Fearless Organization",
+      "author": "Amy Edmondson",
+      "weeks": [],
+      "wiki_page": null
+    },
+    {
+      "concept": "permission_to_feel",
+      "work": "Permission to Feel",
+      "author": "Marc Brackett",
+      "weeks": [],
+      "wiki_page": "Permission to Feel"
+    }
+  ],
+  "wiki_base": "https://github.com/SujeethFoundation/sujeethfoundation.github.io/wiki/",
   "dataverse_mappings": [
     {
       "table": "mshied_scholarship",
-      "maps_to": "Partnership"
+      "maps_to": "Partnership",
+      "class_ids": [
+        "partnership"
+      ]
     },
     {
       "table": "suj_circle",
       "maps_to": "Circle",
-      "notes": "Active Circles have statecode = 0; start date is suj_start."
+      "notes": "Active Circles have statecode = 0; start date is suj_start.",
+      "class_ids": [
+        "circle"
+      ]
     },
     {
       "table": "suj_studentonboarding",
-      "maps_to": "Onboarding Survey"
+      "maps_to": "Onboarding Survey",
+      "class_ids": [
+        "onboarding_survey"
+      ]
     },
     {
       "table": "suj_feedback",
-      "maps_to": "Feedback Survey"
+      "maps_to": "Feedback Survey",
+      "class_ids": [
+        "feedback_survey"
+      ]
     },
     {
       "table": "suj_volunteer",
-      "maps_to": "Volunteer"
+      "maps_to": "Volunteer",
+      "class_ids": [
+        "volunteer"
+      ]
     },
     {
       "table": "suj_substitute",
-      "maps_to": "Substitute Request"
+      "maps_to": "Substitute Request",
+      "class_ids": [
+        "substitute_request"
+      ]
     },
     {
       "table": "suj_circlenotes",
@@ -1487,19 +3404,32 @@
       "also_maps_to": [
         "Recording"
       ],
-      "notes": "suj_note is the Session Recording link, suj_meeting is the meeting label, and suj_circle links the note to its Circle."
+      "notes": "suj_note is the Session Recording link, suj_meeting is the meeting label, and suj_circle links the note to its Circle.",
+      "class_ids": [
+        "circle_notes",
+        "recording"
+      ]
     },
     {
       "table": "suj_book",
-      "maps_to": "Book"
+      "maps_to": "Book",
+      "class_ids": [
+        "book"
+      ]
     },
     {
       "table": "suj_bookrequest",
-      "maps_to": "Book Request"
+      "maps_to": "Book Request",
+      "class_ids": [
+        "book_request"
+      ]
     },
     {
       "table": "suj_portalfeedback",
-      "maps_to": "Portal Feedback"
+      "maps_to": "Portal Feedback",
+      "class_ids": [
+        "portal_feedback"
+      ]
     },
     {
       "table": "contact",
@@ -1507,19 +3437,32 @@
       "also_maps_to": [
         "Career Mentor"
       ],
-      "notes": "Career Mentors are contact rows with suj_ismentor = true, linked to a Circle through the suj_circle field; employer is in jobtitle."
+      "notes": "Career Mentors are contact rows with suj_ismentor = true, linked to a Circle through the suj_circle field; employer is in jobtitle.",
+      "class_ids": [
+        "student",
+        "career_mentor"
+      ]
     },
     {
       "table": "account",
-      "maps_to": "Partner institution"
+      "maps_to": "Partner institution",
+      "class_ids": [
+        "partner"
+      ]
     },
     {
       "table": "mshied_program",
-      "maps_to": "Career Circle Program"
+      "maps_to": "Career Circle Program",
+      "class_ids": [
+        "career_circle_program"
+      ]
     },
     {
       "table": "mshied_academicperiod",
-      "maps_to": "Academic Period"
+      "maps_to": "Academic Period",
+      "class_ids": [
+        "academic_period"
+      ]
     }
   ],
   "schema_gaps": [
@@ -1534,6 +3477,139 @@
     {
       "id": "gap_mentor_role",
       "description": "Confirm how Career Mentor and Community Manager roles are represented and whether one person can hold both roles."
+    }
+  ],
+  "content_gaps": [
+    {
+      "id": "cg_growth_mindset_page",
+      "concepts": [
+        "growth_mindset"
+      ],
+      "observed": "No wiki page. Mindset is a shipped book and the concept has outside content, but the wiki mentions it only inside the Grit page.",
+      "suggested_action": "Add a Growth Mindset wiki page like the other framework pages."
+    },
+    {
+      "id": "cg_no_first_party_page",
+      "concepts": [
+        "leadership",
+        "psychological_safety",
+        "motivation",
+        "linkedin_profile",
+        "job_application_strategy"
+      ],
+      "observed": "No page of their own on the wiki or sujeeth.org.",
+      "suggested_action": "Decide which deserve a page; the job-search skills are covered inside the weekly pages."
+    },
+    {
+      "id": "cg_brene_brown_empty",
+      "concepts": [
+        "vulnerability_courage"
+      ],
+      "observed": "brenebrown.com is associated but returned zero search matches on 2026-11-10 for 'vulnerability'.",
+      "suggested_action": "Check the crawl result for brenebrown.com (robots, JavaScript rendering, include paths) before relying on it."
+    },
+    {
+      "id": "cg_regret_sources",
+      "concepts": [
+        "learning_from_regret"
+      ],
+      "observed": "Both associated domains returned zero matches for 'regret' on 2026-11-10. Neither covers Daniel Pink's regret research. The Pink Substack was removed in 1.3.6 because robots.txt refused the crawler.",
+      "suggested_action": "Find an approved source for regret after checking robots.txt and terms, then associate it."
+    },
+    {
+      "id": "cg_right_kind_of_wrong_domain",
+      "concepts": [
+        "right_kind_of_wrong"
+      ],
+      "observed": "Had no approved search domain before 1.6.0, so searches returned no_approved_domains_for_concepts.",
+      "suggested_action": "Fixed by associating amycedmondson.com in 1.6.0. Run retag, then confirm the site holds the content."
+    },
+    {
+      "id": "cg_wiki_untagged",
+      "concepts": [
+        "week_1",
+        "week_2",
+        "week_3",
+        "week_4",
+        "week_5",
+        "week_6"
+      ],
+      "observed": "Weekly agendas on sujeeth.org sit mostly on one page (/circle). The wiki has a page per week, but wiki search results carry no concept tags, so concept-filtered searches never return them.",
+      "suggested_action": "Give wiki pages concept tags at index time, or add a wiki entry to the search manifest."
+    },
+    {
+      "id": "cg_book_limit_conflict",
+      "concepts": [
+        "book_request",
+        "book"
+      ],
+      "observed": "The portal books page says books ship free in a set of eight. The business rule br_book_limit says up to six titles. The Donor FAQ says books moved to an on-demand model.",
+      "suggested_action": "Confirm the current policy and make the portal page, the rule, and the FAQ say the same thing."
+    },
+    {
+      "id": "cg_student_sign_up",
+      "concepts": [
+        "student",
+        "circle"
+      ],
+      "observed": "No quick link or public page tells a prospective Student how to join a Circle.",
+      "suggested_action": "Add a student sign-up or 'ask your school' page and a quick link for it."
+    },
+    {
+      "id": "cg_past_stage_content",
+      "concepts": [
+        "student",
+        "career_mentor",
+        "donor",
+        "partner"
+      ],
+      "observed": "Past Students, Mentors, Donors, and Partners have no page or quick link of their own. The past stage leans on Spotlights, Impact Reports, and re-entry links.",
+      "suggested_action": "Decide what the Foundation offers people after a term ends, such as an alumni update or a past-mentor note."
+    },
+    {
+      "id": "cg_tag_home_statistics",
+      "concepts": [
+        "program_statistics"
+      ],
+      "observed": "The home page chunk with the Our Impact figures carried impact_report but not program_statistics, because none of its wording matched an alias. topics.sujeeth.org/impact, which holds impact metrics, was also not tagged program_statistics.",
+      "suggested_action": "Fixed in 1.9.0 with aliases (students served, circles hosted, books shipped, impact metrics, NPS). Run the retag and confirm both pages carry the tag."
+    },
+    {
+      "id": "cg_tag_partner_page",
+      "concepts": [
+        "partner",
+        "testimonial"
+      ],
+      "observed": "sujeeth.org/partner was tagged partnership but not partner or testimonial. Its wording is 'partner institutions' and 'What Students are Saying'.",
+      "suggested_action": "Fixed in 1.9.0 with aliases. Confirm after the retag."
+    },
+    {
+      "id": "cg_tag_precision",
+      "concepts": [
+        "donation",
+        "program_statistics",
+        "circle"
+      ],
+      "observed": "Chunks of sujeeth.org/circle that cover resumes and networking carried donation and program_statistics tags. A broad alias is the likely cause. Candidates: giving, contribute, contribution under donation; statistics, stats under program_statistics.",
+      "suggested_action": "Run POST /api/index/retag-preview and read which alias produced each tag. Remove or narrow the offender instead of guessing. Not changed in 1.9.0 because removing aliases also removes query matching."
+    },
+    {
+      "id": "cg_portal_concept",
+      "concepts": [
+        "programs_portal",
+        "portal_feedback"
+      ],
+      "observed": "The Programs Portal had no class. Portal Feedback pointed at the Foundation, and portal text on the home page matched nothing.",
+      "suggested_action": "Added programs_portal in 1.9.0 and associated it with sujeeth.org and portal.sujeeth.org."
+    },
+    {
+      "id": "cg_recording_no_web_content",
+      "concepts": [
+        "recording",
+        "book_request"
+      ],
+      "observed": "Recording returned zero matches on portal.sujeeth.org, and Book Request returns only the books page. Their content lives in Dataverse.",
+      "suggested_action": "Route these to Dataverse (see source_precedence). Do not expect web matches."
     }
   ],
   "domains": [
@@ -1566,7 +3642,8 @@
         "week_3",
         "week_4",
         "week_5",
-        "week_6"
+        "week_6",
+        "programs_portal"
       ],
       "crawl_policy": {
         "mode": "domain",
@@ -1600,7 +3677,8 @@
         "resource",
         "recording",
         "session",
-        "book_request"
+        "book_request",
+        "programs_portal"
       ],
       "crawl_policy": {
         "mode": "manual",
@@ -1616,7 +3694,8 @@
         "impact_report",
         "circle",
         "session",
-        "program_statistics"
+        "program_statistics",
+        "career_mentor"
       ],
       "crawl_policy": {
         "mode": "domain",
@@ -1781,7 +3860,8 @@
         "leadership",
         "week_6",
         "psychological_safety",
-        "learning_from_regret"
+        "learning_from_regret",
+        "right_kind_of_wrong"
       ],
       "crawl_policy": {
         "mode": "domain",
@@ -1912,7 +3992,11 @@
         "week_1",
         "presentation"
       ],
-      "description": "Slides for Week 1 of the Career Circle Program."
+      "description": "Slides for Week 1 of the Career Circle Program.",
+      "audiences": [
+        "student",
+        "mentor"
+      ]
     },
     {
       "id": "week_2_presentation",
@@ -1923,7 +4007,11 @@
         "week_2",
         "presentation"
       ],
-      "description": "Slides for Week 2 of the Career Circle Program."
+      "description": "Slides for Week 2 of the Career Circle Program.",
+      "audiences": [
+        "student",
+        "mentor"
+      ]
     },
     {
       "id": "week_3_presentation",
@@ -1934,7 +4022,11 @@
         "week_3",
         "presentation"
       ],
-      "description": "Slides for Week 3 of the Career Circle Program."
+      "description": "Slides for Week 3 of the Career Circle Program.",
+      "audiences": [
+        "student",
+        "mentor"
+      ]
     },
     {
       "id": "week_4_presentation",
@@ -1945,7 +4037,11 @@
         "week_4",
         "presentation"
       ],
-      "description": "Slides for Week 4 of the Career Circle Program."
+      "description": "Slides for Week 4 of the Career Circle Program.",
+      "audiences": [
+        "student",
+        "mentor"
+      ]
     },
     {
       "id": "week_5_presentation",
@@ -1956,7 +4052,11 @@
         "week_5",
         "presentation"
       ],
-      "description": "Slides for Week 5 of the Career Circle Program."
+      "description": "Slides for Week 5 of the Career Circle Program.",
+      "audiences": [
+        "student",
+        "mentor"
+      ]
     },
     {
       "id": "week_6_presentation",
@@ -1967,7 +4067,11 @@
         "week_6",
         "presentation"
       ],
-      "description": "Slides for Week 6 of the Career Circle Program."
+      "description": "Slides for Week 6 of the Career Circle Program.",
+      "audiences": [
+        "student",
+        "mentor"
+      ]
     },
     {
       "id": "session_recordings",
@@ -1978,7 +4082,11 @@
         "recording",
         "session"
       ],
-      "description": "Where students find Session recordings."
+      "description": "Where students find Session recordings.",
+      "audiences": [
+        "student",
+        "mentor"
+      ]
     },
     {
       "id": "candid_profile",
@@ -1988,13 +4096,88 @@
       "concepts": [
         "sujeeth_foundation"
       ],
-      "description": "Candid profile with the Foundation's EIN and mission. Use for mission and organization details; program statistics come from sujeeth.org."
+      "description": "Candid profile with the Foundation's EIN and mission. Use for mission and organization details; program statistics come from sujeeth.org.",
+      "audiences": [
+        "donor",
+        "partner"
+      ]
+    },
+    {
+      "id": "volunteer_application",
+      "title": "Apply to volunteer as a Career Mentor",
+      "url": "https://portal.sujeeth.org/volunteer",
+      "kind": "application",
+      "concepts": [
+        "volunteer",
+        "career_mentor"
+      ],
+      "description": "Application for professionals who want to lead Career Circle Sessions.",
+      "audiences": [
+        "mentor"
+      ]
+    },
+    {
+      "id": "donate",
+      "title": "Give to the Sujeeth Foundation",
+      "url": "https://go.sujeeth.org/give",
+      "kind": "donation",
+      "concepts": [
+        "donation",
+        "donor"
+      ],
+      "description": "The Foundation's donation page.",
+      "audiences": [
+        "donor"
+      ]
+    },
+    {
+      "id": "partner_with_us",
+      "title": "Partner with the Foundation",
+      "url": "https://www.sujeeth.org/partner",
+      "kind": "page",
+      "concepts": [
+        "partnership",
+        "partner"
+      ],
+      "description": "How a school or nonprofit brings Career Circles to its students.",
+      "audiences": [
+        "partner"
+      ]
+    },
+    {
+      "id": "request_a_book",
+      "title": "Request a free book",
+      "url": "https://portal.sujeeth.org/books",
+      "kind": "catalog",
+      "concepts": [
+        "book",
+        "book_request"
+      ],
+      "description": "Book catalog where students request books.",
+      "audiences": [
+        "student"
+      ]
     }
   ],
   "concept_integrity": {
     "domain_association_field": "associated_concepts",
     "all_domain_concepts_must_match_class_ids": true,
     "unresolved_domain_concepts": [],
-    "validation_note": "Every associated_concepts value in every domain must reference a class id in classes."
+    "validation_note": "Every associated_concepts value in every domain must reference a class id. Every relationship predicate must be listed in predicates. Every class must have a category listed in class_categories. tests/test_ontology_structure.py enforces these. Every class has audiences drawn from personas. Every persona stage lists class ids tagged for that persona and quick link ids. programs_portal is a class, so every domain that lists it resolves."
+  },
+  "persona_inference": {
+    "principle": "Work out the persona and stage from what the person says and where they came from. Never ask them which persona they are or to describe their role.",
+    "steps": [
+      "Read the signals in this message, in earlier turns, and in the page or link the person came from.",
+      "If one persona clearly leads, use its voice, entry points, and stage goals.",
+      "If two or more are plausible, or none is, give the answer that is true for everyone first, then one short line for each route that applies.",
+      "If new signals appear, move to the new persona or stage (see persona_transitions) without announcing it."
+    ],
+    "never": [
+      "Ask 'Are you a student, a mentor, a donor, or someone at a school?'",
+      "Ask the person to state their role before answering",
+      "Tell the person which persona you have assigned them"
+    ],
+    "when_unclear_default": "Lead with the shared facts, then give each route in one line: join a Circle through a partner school, apply to mentor, give, or bring Career Circles to a school."
   }
 }
