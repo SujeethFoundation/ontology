@@ -49,6 +49,7 @@ import json
 import logging
 import os
 import random
+import re
 import threading
 import time
 import uuid
@@ -279,6 +280,40 @@ def _retry_after_seconds(exc):
     return None
 
 
+class AgentRunFailed(Exception):
+    """The agent service answered, but the run did not finish (status failed, incomplete or cancelled).
+    status and code come from the service's response, never from the visitor, so they are safe to log."""
+
+    def __init__(self, status, code=None, message=None):
+        super().__init__(message or status)
+        self.status = re.sub(r"[^A-Za-z0-9_.-]", "", str(status))[:40] or "unknown"
+        self.code = (re.sub(r"[^A-Za-z0-9_.-]", "", str(code))[:60] or None) if code else None
+
+
+def _field(obj, name):
+    if obj is None:
+        return None
+    return obj.get(name) if isinstance(obj, dict) else getattr(obj, name, None)
+
+
+def _run_problem(response):
+    """(status, code, message) when the agent run failed or stopped early, else None. The client does not raise
+    for these: it returns a response whose status is "failed" and whose output text is empty."""
+    status = str(getattr(response, "status", "") or "").lower()
+    if status not in ("failed", "incomplete", "cancelled"):
+        return None
+    code = _field(getattr(response, "error", None), "code") or _field(getattr(response, "incomplete_details", None), "reason")
+    return status, code, _field(getattr(response, "error", None), "message")
+
+
+def _is_rate_limited(exc):
+    """The model is over its token limit, whether the client raised it or the run reported it as its failure."""
+    if type(exc).__name__ == "RateLimitError":
+        return True
+    code = (getattr(exc, "code", None) or "").lower() if isinstance(exc, AgentRunFailed) else ""
+    return "rate_limit" in code or "too_many_requests" in code or code == "429"
+
+
 def ask_agent(messages):
     """Ask the agent. If the model says it is over its token limit, wait as it asks and try again, for up to
     CHAT_RATE_LIMIT_WAIT_SECONDS. A limit hit by one chat pauses every chat on this instance, so they come back
@@ -292,9 +327,12 @@ def ask_agent(messages):
             time.sleep(max(0.0, min(pause, deadline - time.monotonic())) + random.uniform(0, 0.5))
         try:
             response = get_client().responses.create(input=messages)
+            problem = _run_problem(response)
+            if problem:
+                raise AgentRunFailed(*problem)
             return (getattr(response, "output_text", "") or "").strip()
         except Exception as exc:
-            if type(exc).__name__ != "RateLimitError" or time.monotonic() >= deadline:
+            if not _is_rate_limited(exc) or time.monotonic() >= deadline:
                 raise
             attempt += 1
             wait = _retry_after_seconds(exc)
@@ -309,8 +347,10 @@ def ask_agent(messages):
 def explain(exc):
     """Map a failure to (status, friendly key, log note). Never includes visitor text."""
     name = type(exc).__name__
-    if name == "RateLimitError":
+    if _is_rate_limited(exc):
         return 503, "busy", "agent rate limit (429); check the model deployment's tokens per minute"
+    if isinstance(exc, AgentRunFailed):
+        return 502, "unavailable", f"agent run {exc.status} ({exc.code or 'no error code'})"
     if name in ("APITimeoutError", "TimeoutError"):
         return 504, "slow", "agent timed out"
     if name in ("AuthenticationError", "PermissionDeniedError"):
@@ -412,5 +452,6 @@ async def chat(req: func.HttpRequest) -> func.HttpResponse:
              len(agent_messages), file_count, sum(len(m["content"]) for m in agent_messages), len(text),
              time.perf_counter() - began, waited, _in_flight)
     if not text:
+        log.error("chat %s failed: agent returned no text", request_id)
         return reply_json(502, {"error": FRIENDLY["unavailable"]}, origin)
     return reply_json(200, {"reply": text}, origin)
