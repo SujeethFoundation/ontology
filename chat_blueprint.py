@@ -314,6 +314,22 @@ def _is_rate_limited(exc):
     return "rate_limit" in code or "too_many_requests" in code or code == "429"
 
 
+def final_answer_text(response):
+    """Text of the agent's last message only.
+
+    The response's output_text property joins every message the agent wrote during the run with nothing between
+    them. When the agent says something like "I'm checking the curriculum..." before a tool call and then writes
+    its answer, output_text returns both run together. The visitor should see only the answer."""
+    for item in reversed(getattr(response, "output", None) or []):
+        if _field(item, "type") == "message":
+            parts = [_field(c, "text") or "" for c in (_field(item, "content") or [])
+                     if _field(c, "type") == "output_text"]
+            text = "".join(parts).strip()
+            if text:
+                return text
+    return (getattr(response, "output_text", "") or "").strip()
+
+
 def ask_agent(messages):
     """Ask the agent. If the model says it is over its token limit, wait as it asks and try again, for up to
     CHAT_RATE_LIMIT_WAIT_SECONDS. A limit hit by one chat pauses every chat on this instance, so they come back
@@ -330,7 +346,7 @@ def ask_agent(messages):
             problem = _run_problem(response)
             if problem:
                 raise AgentRunFailed(*problem)
-            return (getattr(response, "output_text", "") or "").strip()
+            return final_answer_text(response)
         except Exception as exc:
             if not _is_rate_limited(exc) or time.monotonic() >= deadline:
                 raise
