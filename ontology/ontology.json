@@ -1,6 +1,6 @@
 {
-  "ontology_version": "1.9.1",
-  "last_updated": "2026-11-10",
+  "ontology_version": "1.9.2",
+  "last_updated": "2026-11-12",
   "description": "Sujeeth Foundation domain ontology and governance configuration, including validated concepts used to associate approved external domains.",
   "foundation_purpose": {
     "mission": "Help college students network into their first jobs through professional mentorship, books, and career development programs.",
@@ -556,7 +556,13 @@
       "aliases": [
         "Career Circles",
         "six-week program",
-        "how the program works"
+        "how the program works",
+        "syllabus",
+        "program syllabus",
+        "program curriculum",
+        "the curriculum",
+        "what the program covers",
+        "course outline"
       ]
     },
     {
@@ -617,7 +623,9 @@
       "definition": "One of the six program weeks.",
       "aliases": [
         "program week",
-        "weekly topic"
+        "weekly topic",
+        "week by week",
+        "topics by week"
       ]
     },
     {
@@ -840,7 +848,8 @@
       "aliases": [
         "session agenda",
         "weekly agenda",
-        "session plan"
+        "session plan",
+        "lesson plan"
       ]
     },
     {
