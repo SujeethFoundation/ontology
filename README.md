@@ -140,3 +140,9 @@ Edit `ontology/ontology.json`, increment `ontology_version`, review, test, and d
 
 - Added an optional `index_policy` to a domain record: `{"text_in_memory": false}` keeps that domain's chunk text in the websearch table instead of in each instance's memory. The domain is still searched by keywords and vectors, and the text of the few chunks a search returns is read from the table. Absent means true. `/api/ontology/search-manifest` carries it with the rest of the record, and websearch applies a change on its next index check: the ontology answer is cached for `ONTOLOGY_CACHE_SECONDS` (2 minutes), and an instance reloads at most once per `LOCAL_INDEX_MIN_RELOAD_SECONDS` (10 minutes).
 - Set it to false for `www.themuse.com` (40,344 chunks) and `medicine.yale.edu` (22,824 chunks), about 73% of the index. A chunk without text in memory gets no phrase-match bonus in ranking.
+
+## Version 1.11.0 changes
+
+- Spotlight stories now surface on the career skills they show, not only on career development. Added the `illustrates` relationships `spotlight_illustrates_networking`, `spotlight_illustrates_interviewing`, `spotlight_illustrates_job_application_strategy`, `spotlight_illustrates_salary_negotiation`, `spotlight_illustrates_volunteer` and `spotlight_illustrates_career_mentor` (N:N). A question that matches one of these concepts (including questions about volunteering and mentoring) now also searches Spotlight, and the websearch app reserves its Spotlight places for the question. No domain change was needed: `sujeeth.org` already lists `spotlight` in its `associated_concepts`, and domain resolution reads only that list.
+
+**After deploying:** restart the websearch app (it caches the ontology in memory).

@@ -1,6 +1,6 @@
 {
-  "ontology_version": "1.10.0",
-  "last_updated": "2026-11-12",
+  "ontology_version": "1.11.0",
+  "last_updated": "2026-11-13",
   "description": "Sujeeth Foundation domain ontology and governance configuration, including validated concepts used to associate approved external domains.",
   "foundation_purpose": {
     "mission": "Help college students network into their first jobs through professional mentorship, books, and career development programs.",
@@ -2044,6 +2044,54 @@
       "object": "career_development",
       "cardinality": "N:N",
       "definition": "A Spotlight illustrates Career Development through one Volunteer's career path, and Career Development questions can draw on Spotlights."
+    },
+    {
+      "id": "spotlight_illustrates_networking",
+      "subject": "spotlight",
+      "predicate": "illustrates",
+      "object": "networking",
+      "cardinality": "N:N",
+      "definition": "A Spotlight illustrates Networking through how one Volunteer built and used professional relationships, and Networking questions can draw on Spotlights."
+    },
+    {
+      "id": "spotlight_illustrates_interviewing",
+      "subject": "spotlight",
+      "predicate": "illustrates",
+      "object": "interviewing",
+      "cardinality": "N:N",
+      "definition": "A Spotlight illustrates Interviewing through how one Volunteer prepared for and handled interviews, and Interviewing questions can draw on Spotlights."
+    },
+    {
+      "id": "spotlight_illustrates_job_application_strategy",
+      "subject": "spotlight",
+      "predicate": "illustrates",
+      "object": "job_application_strategy",
+      "cardinality": "N:N",
+      "definition": "A Spotlight illustrates Job Application Strategy through how one Volunteer chose and tailored applications, and Job Application Strategy questions can draw on Spotlights."
+    },
+    {
+      "id": "spotlight_illustrates_salary_negotiation",
+      "subject": "spotlight",
+      "predicate": "illustrates",
+      "object": "salary_negotiation",
+      "cardinality": "N:N",
+      "definition": "A Spotlight illustrates Salary Negotiation through how one Volunteer approached pay and terms in an offer, and Salary Negotiation questions can draw on Spotlights."
+    },
+    {
+      "id": "spotlight_illustrates_volunteer",
+      "subject": "spotlight",
+      "predicate": "illustrates",
+      "object": "volunteer",
+      "cardinality": "N:N",
+      "definition": "A Spotlight illustrates Volunteering through the story of one Volunteer, and questions about volunteering can draw on Spotlights."
+    },
+    {
+      "id": "spotlight_illustrates_career_mentor",
+      "subject": "spotlight",
+      "predicate": "illustrates",
+      "object": "career_mentor",
+      "cardinality": "N:N",
+      "definition": "A Spotlight illustrates being a Career Mentor through the story of one Volunteer who mentors, and questions about mentors can draw on Spotlights."
     },
     {
       "id": "testimonial_quotes_student",

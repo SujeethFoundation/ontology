@@ -78,3 +78,19 @@ def test_index_policy_only_says_whether_chunk_text_stays_in_memory():
 def test_the_large_advice_domains_keep_their_text_out_of_memory():
     cold = {d["domain"] for d in ONTOLOGY["domains"] if (d.get("index_policy") or {}).get("text_in_memory") is False}
     assert cold == {"www.themuse.com", "medicine.yale.edu"}
+
+
+def test_spotlight_illustrates_the_career_skills_it_shows():
+    class_ids = {item["id"] for item in ONTOLOGY["classes"]}
+    skills = {"career_development", "networking", "interviewing", "job_application_strategy", "salary_negotiation",
+              "volunteer", "career_mentor"}
+    illustrated = {r["object"] for r in ONTOLOGY["relationships"]
+                   if r["subject"] == "spotlight" and r["predicate"] == "illustrates"}
+    assert skills <= illustrated and illustrated <= class_ids
+
+
+def test_relationship_ids_are_unique_and_point_at_real_classes():
+    class_ids = {item["id"] for item in ONTOLOGY["classes"]}
+    ids = [r["id"] for r in ONTOLOGY["relationships"]]
+    assert len(ids) == len(set(ids))
+    assert all(r["subject"] in class_ids and r["object"] in class_ids for r in ONTOLOGY["relationships"])
