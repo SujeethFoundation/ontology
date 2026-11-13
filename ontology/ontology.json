@@ -1,5 +1,5 @@
 {
-  "ontology_version": "1.9.2",
+  "ontology_version": "1.10.0",
   "last_updated": "2026-11-12",
   "description": "Sujeeth Foundation domain ontology and governance configuration, including validated concepts used to associate approved external domains.",
   "foundation_purpose": {
@@ -3971,6 +3971,9 @@
         "include_sitemaps": [
           "/sitemaps/advice.xml"
         ]
+      },
+      "index_policy": {
+        "text_in_memory": false
       }
     },
     {
@@ -3988,6 +3991,9 @@
         "include_paths": [
           "/childstudy/"
         ]
+      },
+      "index_policy": {
+        "text_in_memory": false
       }
     }
   ],

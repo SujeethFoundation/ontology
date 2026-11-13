@@ -135,3 +135,8 @@ Edit `ontology/ontology.json`, increment `ontology_version`, review, test, and d
 - Added the aliases `sales career`, `sales jobs`, `get a job in sales`, and `entry-level sales` to `career_development`.
 
 **After deploying:** restart the websearch app (it caches the ontology in memory). If the search service stores aliases, reindex them.
+
+## Version 1.10.0 changes
+
+- Added an optional `index_policy` to a domain record: `{"text_in_memory": false}` keeps that domain's chunk text in the websearch table instead of in each instance's memory. The domain is still searched by keywords and vectors, and the text of the few chunks a search returns is read from the table. Absent means true. `/api/ontology/search-manifest` carries it with the rest of the record, and websearch applies a change on its next index check: the ontology answer is cached for `ONTOLOGY_CACHE_SECONDS` (2 minutes), and an instance reloads at most once per `LOCAL_INDEX_MIN_RELOAD_SECONDS` (10 minutes).
+- Set it to false for `www.themuse.com` (40,344 chunks) and `medicine.yale.edu` (22,824 chunks), about 73% of the index. A chunk without text in memory gets no phrase-match bonus in ranking.

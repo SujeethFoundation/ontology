@@ -65,3 +65,16 @@ def test_spotlight_connects_to_career_development():
     )
     sujeeth = next(d for d in ONTOLOGY["domains"] if d["domain"] == "sujeeth.org")
     assert {"spotlight", "career_development"} <= set(sujeeth["associated_concepts"])
+
+
+def test_index_policy_only_says_whether_chunk_text_stays_in_memory():
+    for item in ONTOLOGY["domains"]:
+        policy = item.get("index_policy")
+        if policy is not None:
+            assert set(policy) <= {"text_in_memory"}, item["domain"]
+            assert isinstance(policy.get("text_in_memory", True), bool), item["domain"]
+
+
+def test_the_large_advice_domains_keep_their_text_out_of_memory():
+    cold = {d["domain"] for d in ONTOLOGY["domains"] if (d.get("index_policy") or {}).get("text_in_memory") is False}
+    assert cold == {"www.themuse.com", "medicine.yale.edu"}
