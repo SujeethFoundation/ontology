@@ -5,7 +5,8 @@ tokens must never be put in a web page. This route takes the conversation from t
 as the app's managed identity, and returns the reply.
 
   POST /api/chat          {"messages": [{"role": "user" | "assistant", "content": "...", "attachments": [...]}]}  ->  {"reply": "..."}
-  GET  /api/chat/health   ->  {"configured": true}
+  POST /api/chat/fold     {"messages": [older turns], "summary": "..."}  ->  {"summary": "..."}   (see below)
+  GET  /api/chat/health   ->  {"configured": true}; with ?warm=1 it also starts loading the model client in the background
 
 Visitors can attach files (PDF, Word, PowerPoint, Excel, text, Markdown, CSV) to a message. The page sends each as
 base64; chat_attachments.py reads the text out of it and adds that text to the visitor's message before the agent
@@ -30,9 +31,11 @@ It is loaded only when CHAT_ENABLED=true. Settings (application settings of the 
                            so a long conversation keeps working. The visitor's newest message is never shortened.
   CHAT_OLD_MESSAGE_CHARS (600)    How much of an older message is kept when the conversation is shortened.
   CHAT_SUMMARIZE_AFTER_CHARS (12000)  When a conversation passes this many characters (or fills the history window), the
-                           older turns are summarized. The reply carries {"summary", "keep_last"}; the page keeps only its last
-                           keep_last messages and sends the summary back with its next request ("summary"), so each turn is
-                           summarized once. If summarizing fails, the shortening above still keeps the chat working.
+                           older turns are summarized. The reply is sent first, carrying {"fold": {"keep_last": N}}. The page then
+                           posts every message except its last N to /api/chat/fold, gets {"summary"} back, keeps only its last N
+                           messages and sends the summary with its next request ("summary"), so each turn is summarized once.
+                           Summarizing is a second model call, so it runs after the visitor already has the answer instead of
+                           before. If it fails, the shortening above still keeps the chat working.
   CHAT_KEEP_RECENT_MESSAGES (4), CHAT_SUMMARY_MAX_CHARS (3000), CHAT_SUMMARY_TIMEOUT_SECONDS (30)
   CHAT_SUMMARY_BASE_URL, CHAT_SUMMARY_MODEL, CHAT_SUMMARY_TOKEN_SCOPE   Optional. A plain model deployment (OpenAI-compatible
                            base URL and deployment name) to write the summaries. Without them the agent writes them, which
@@ -222,8 +225,9 @@ def compact_history(messages):
     return messages
 
 
-def parse_messages(raw):
-    """Check the conversation the page sent. Returns (messages, error).
+def parse_messages(raw, last_role="user"):
+    """Check the conversation the page sent. Returns (messages, error). last_role is the role the final message must
+    have ("user" for a chat; None for the older turns sent to be summarized).
     Each message is {"role", "content", "attachments"}. Attachments are checked for count, type and size here,
     but not read; build_agent_messages does that."""
     if not isinstance(raw, list) or not raw:
@@ -247,7 +251,7 @@ def parse_messages(raw):
         if role == "user" and len(content) > MAX_MESSAGE_CHARS:  # the assistant's own long replies are compacted, not refused
             return None, f"Messages can be up to {MAX_MESSAGE_CHARS} characters."
         messages.append({"role": role, "content": content, "attachments": files})
-    if not messages or messages[-1]["role"] != "user":
+    if not messages or (last_role and messages[-1]["role"] != last_role):
         return None, "The last message must be from the visitor."
     messages = compact_history(messages)
     total = sum(f["size"] for m in messages for f in m["attachments"])
@@ -283,21 +287,23 @@ def build_agent_messages(messages):
 
 
 _client = None
+_token_provider = None
 _client_lock = threading.Lock()
 
 
 def get_client():
     """One client for the life of the instance. Its token provider refreshes tokens itself.
     The packages are imported here, not at the top, so the ontology routes pay nothing for them."""
-    global _client
+    global _client, _token_provider
     with _client_lock:
         if _client is None:
             from azure.identity import DefaultAzureCredential, get_bearer_token_provider
             from openai import OpenAI
 
+            _token_provider = get_bearer_token_provider(DefaultAzureCredential(), "https://ai.azure.com/.default")
             kwargs = {
                 "base_url": BASE_URL,
-                "api_key": get_bearer_token_provider(DefaultAzureCredential(), "https://ai.azure.com/.default"),
+                "api_key": _token_provider,
                 "timeout": TIMEOUT_SECONDS,
                 "max_retries": MODEL_RETRIES,
             }
@@ -305,6 +311,30 @@ def get_client():
                 kwargs["default_query"] = {"api-version": API_VERSION}
             _client = OpenAI(**kwargs)
         return _client
+
+
+_warm_lock = threading.Lock()
+_warm_state = "cold"  # "cold" -> "running" -> "done"
+
+
+def warm():
+    """Load the openai and azure-identity packages, build the client and fetch its first token, so the first real chat
+    does not pay for them. Safe to call many times; only the first call per instance does the work."""
+    global _warm_state
+    with _warm_lock:
+        if _warm_state != "cold":
+            return
+        _warm_state = "running"
+    try:
+        get_client()
+        if _token_provider:
+            _token_provider()
+        if SUMMARY_BASE_URL:
+            get_summary_client()
+    except Exception as exc:  # a failed warm-up only means the first chat does that work itself
+        log.warning("chat warm-up failed (%s)", type(exc).__name__)
+    finally:
+        _warm_state = "done"
 
 
 _cooldown_until = 0.0  # monotonic time before which this instance sends no new model calls; a 429 sets it
@@ -464,9 +494,9 @@ def summarize(prior_summary, turns):
     return clean_summary(final_answer_text(response))
 
 
-def fold_if_long(sent_summary, agent_messages, reply):
-    """After a reply: when the conversation is long, summarize all but the newest turns. Returns
-    {"summary", "keep_last"} for the page, or None when there is nothing to fold or summarizing failed."""
+def plan_fold(sent_summary, agent_messages, reply):
+    """After a reply: is the conversation long enough to summarize? Returns how many of the newest messages the page
+    should keep (the rest are summarized through /api/chat/fold), or None. Makes no model call."""
     full = agent_messages + [{"role": "assistant", "content": reply}]
     chars = sum(len(m["content"]) for m in full) + len(sent_summary)
     if chars <= SUMMARIZE_AFTER_CHARS and len(full) < MAX_HISTORY_MESSAGES:
@@ -474,24 +504,21 @@ def fold_if_long(sent_summary, agent_messages, reply):
     keep = min(KEEP_RECENT_MESSAGES, len(full) - 1)
     while keep > 1 and full[-keep]["role"] != "user":  # what the page keeps must start with the visitor
         keep -= 1
-    older = full[:-keep]
-    if not older or full[-keep]["role"] != "user":
+    if len(full) - keep < 1 or full[-keep]["role"] != "user":
         return None
-    try:
-        notes = summarize(sent_summary, older)
-    except Exception as exc:  # the visitor still gets the answer; compact_history keeps later turns working
-        log.warning("chat summary failed (%s)", type(exc).__name__)
-        return None
-    if not notes:
-        return None
-    return {"summary": notes, "keep_last": keep}
+    return keep
 
 
 def answer(agent_messages, prior_summary):
-    """Runs on a worker thread, in the chat's slot: the reply, then the summary when the conversation is long."""
+    """Runs on a worker thread, in the chat's slot: the reply, and whether the page should summarize afterwards."""
     text = ask_agent(summary_messages(prior_summary) + agent_messages)
-    fold = fold_if_long(prior_summary, agent_messages, text) if text else None
-    return text, fold
+    keep = plan_fold(prior_summary, agent_messages, text) if text else None
+    return text, keep
+
+
+def fold(agent_messages, prior_summary):
+    """Runs on a worker thread, in a slot: notes covering the older turns. Raises on failure."""
+    return summarize(prior_summary, agent_messages)
 
 
 def explain(exc):
@@ -510,16 +537,85 @@ def explain(exc):
     return 502, "unavailable", f"agent call failed ({name})"
 
 
-# These two routes are open to the web (the rest of this app needs a function key).
+class Busy(Exception):
+    """No chat slot came free within CHAT_QUEUE_SECONDS."""
+
+
+async def run_in_slot(fn, *args, timeout):
+    """Wait for a free slot rather than turning the visitor away, run fn on the chat pool, and return
+    (result, seconds_waited). While it waits, the request counts as in flight, which is what makes the platform start
+    another instance. The slot is held until the call really ends, even if the visitor gave up waiting for it."""
+    global _in_flight
+    began = time.perf_counter()
+    slots = _get_slots()
+    try:
+        await asyncio.wait_for(slots.acquire(), QUEUE_SECONDS)
+    except asyncio.TimeoutError:
+        raise Busy() from None
+    waited = time.perf_counter() - began
+
+    _in_flight += 1
+    future = asyncio.get_running_loop().run_in_executor(_pool, fn, *args)
+
+    def finished(done):
+        global _in_flight
+        _in_flight -= 1
+        slots.release()
+        if not done.cancelled():
+            done.exception()  # mark any failure as seen
+
+    future.add_done_callback(finished)
+    return await asyncio.wait_for(asyncio.shield(future), timeout), waited
+
+
+async def read_files(request_id, messages):
+    """Read any attached files on a pool of their own, so a slow PDF never holds a chat slot. Returns
+    (agent_messages, None) or (None, (status, message))."""
+    try:
+        built = await asyncio.wait_for(
+            asyncio.get_running_loop().run_in_executor(_extract_pool, build_agent_messages, messages),
+            EXTRACT_TIMEOUT_SECONDS)
+        return built, None
+    except attachments.AttachmentError as exc:
+        log.info("chat %s file rejected: %s", request_id, exc)  # the message names the file, never its contents
+        return None, str(exc)
+    except Exception as exc:
+        detail = f" | {type(exc).__name__}: {str(exc)[:300]}" if LOG_ERROR_DETAIL else ""
+        log.error("chat %s failed: reading attached files (%s)%s", request_id, type(exc).__name__, detail)
+        return None, FRIENDLY["file"]
+
+
+def read_payload(req, origin):
+    """Origin, size and JSON checks shared by the POST routes. Returns (payload, None) or (None, error response)."""
+    if not origin or origin.rstrip("/").lower() not in ALLOWED_ORIGINS:
+        return None, reply_json(403, {"error": "This address cannot use the chat."})
+    if not BASE_URL:
+        log.error("chat failed: FOUNDRY_AGENT_BASE_URL is not set")
+        return None, reply_json(503, {"error": FRIENDLY["unavailable"]}, origin)
+    body = req.get_body() or b""
+    if len(body) > MAX_BODY_BYTES:
+        return None, reply_json(413, {"error": "That request is too large. Attach files of "
+                                               f"{attachments.MAX_FILE_BYTES // (1024 * 1024)} MB or less."}, origin)
+    try:
+        payload = json.loads(body.decode("utf-8"))  # the page sends text/plain, which skips the browser's preflight
+    except (ValueError, UnicodeDecodeError):
+        return None, reply_json(400, {"error": "Send JSON."}, origin)
+    return (payload if isinstance(payload, dict) else {}), None
+
+
+# These routes are open to the web (the rest of this app needs a function key).
 @bp.route(route="chat/health", methods=["GET"], auth_level=func.AuthLevel.ANONYMOUS)
 async def chat_health(req: func.HttpRequest) -> func.HttpResponse:
-    return reply_json(200, {"configured": bool(BASE_URL), "in_flight": _in_flight, "max_concurrent": MAX_CONCURRENT},
+    # The page asks for ?warm=1 when a visitor opens the chat, so the model client is ready by the first message.
+    if BASE_URL and req.params.get("warm") and _warm_state == "cold":
+        threading.Thread(target=warm, name="chat-warm", daemon=True).start()
+    return reply_json(200, {"configured": bool(BASE_URL), "in_flight": _in_flight, "max_concurrent": MAX_CONCURRENT,
+                            "warm": _warm_state == "done"},
                       req.headers.get("origin"))
 
 
 @bp.route(route="chat", methods=["POST", "OPTIONS"], auth_level=func.AuthLevel.ANONYMOUS)
 async def chat(req: func.HttpRequest) -> func.HttpResponse:
-    global _in_flight
     origin = req.headers.get("origin")
     if req.method == "OPTIONS":
         preflight = ({"Access-Control-Allow-Methods": "POST, OPTIONS", "Access-Control-Allow-Headers": "Content-Type",
@@ -528,21 +624,10 @@ async def chat(req: func.HttpRequest) -> func.HttpResponse:
 
     # Browsers always send Origin on a cross-site POST. This keeps other websites from using the route in a page.
     # It does not stop a script that sets its own headers, which is what the limits are for.
-    if not origin or origin.rstrip("/").lower() not in ALLOWED_ORIGINS:
-        return reply_json(403, {"error": "This address cannot use the chat."})
-    if not BASE_URL:
-        log.error("chat failed: FOUNDRY_AGENT_BASE_URL is not set")
-        return reply_json(503, {"error": FRIENDLY["unavailable"]}, origin)
-
-    body = req.get_body() or b""
-    if len(body) > MAX_BODY_BYTES:
-        return reply_json(413, {"error": "That request is too large. Attach files of "
-                                         f"{attachments.MAX_FILE_BYTES // (1024 * 1024)} MB or less."}, origin)
-    try:
-        payload = json.loads(body.decode("utf-8"))
-    except (ValueError, UnicodeDecodeError):
-        return reply_json(400, {"error": "Send JSON."}, origin)
-    messages, problem = parse_messages(payload.get("messages") if isinstance(payload, dict) else None)
+    payload, error = read_payload(req, origin)
+    if error:
+        return error
+    messages, problem = parse_messages(payload.get("messages"))
     if problem:
         return reply_json(400, {"error": problem}, origin)
     prior_summary = clean_summary(payload.get("summary"))
@@ -555,43 +640,15 @@ async def chat(req: func.HttpRequest) -> func.HttpResponse:
     request_id, began = uuid.uuid4().hex[:8], time.perf_counter()
     file_count = sum(len(m["attachments"]) for m in messages)
 
-    # Read any attached files before taking a chat slot, on a pool of their own, so a slow PDF never holds one.
-    try:
-        agent_messages = await asyncio.wait_for(
-            asyncio.get_running_loop().run_in_executor(_extract_pool, build_agent_messages, messages),
-            EXTRACT_TIMEOUT_SECONDS)
-    except attachments.AttachmentError as exc:
-        log.info("chat %s file rejected: %s", request_id, exc)  # the message names the file, never its contents
-        return reply_json(400, {"error": str(exc)}, origin)
-    except Exception as exc:
-        detail = f" | {type(exc).__name__}: {str(exc)[:300]}" if LOG_ERROR_DETAIL else ""
-        log.error("chat %s failed: reading attached files (%s)%s", request_id, type(exc).__name__, detail)
-        return reply_json(400, {"error": FRIENDLY["file"]}, origin)
+    agent_messages, file_error = await read_files(request_id, messages)
+    if file_error:
+        return reply_json(400, {"error": file_error}, origin)
 
-    # Wait for a free slot rather than turning the visitor away. While it waits, this request counts as in flight,
-    # which is what makes the platform start another instance.
-    slots = _get_slots()
     try:
-        await asyncio.wait_for(slots.acquire(), QUEUE_SECONDS)
-    except asyncio.TimeoutError:
+        (text, keep), waited = await run_in_slot(answer, agent_messages, prior_summary, timeout=TIMEOUT_SECONDS + 5)
+    except Busy:
         log.warning("chat %s busy: no free slot after %ds (in_flight=%d of %d)", request_id, QUEUE_SECONDS, _in_flight, MAX_CONCURRENT)
         return reply_json(503, {"error": FRIENDLY["busy"]}, origin, {"Retry-After": "10"})
-    waited = time.perf_counter() - began
-
-    _in_flight += 1
-    future = asyncio.get_running_loop().run_in_executor(_pool, answer, agent_messages, prior_summary)
-
-    def finished(done):
-        # The slot is held until the call really ends, even if this visitor gave up waiting for it.
-        global _in_flight
-        _in_flight -= 1
-        slots.release()
-        if not done.cancelled():
-            done.exception()  # mark any failure as seen
-
-    future.add_done_callback(finished)
-    try:
-        text, fold = await asyncio.wait_for(asyncio.shield(future), TIMEOUT_SECONDS + SUMMARY_TIMEOUT_SECONDS + 5)
     except Exception as exc:  # the visitor sees a friendly line; the log has the cause
         status, key, note = explain(exc)
         detail = f" | {type(exc).__name__}: {str(exc)[:300]}" if LOG_ERROR_DETAIL else ""
@@ -599,10 +656,57 @@ async def chat(req: func.HttpRequest) -> func.HttpResponse:
         return reply_json(status, {"error": FRIENDLY[key]}, origin)
 
     # Log sizes and timing only. Visitors may paste or attach resumes, so message and file text is never logged.
-    log.info("chat %s ok turns=%d files=%d chars_in=%d chars_out=%d seconds=%.1f waited=%.1f in_flight=%d folded=%s", request_id,
+    log.info("chat %s ok turns=%d files=%d chars_in=%d chars_out=%d seconds=%.1f waited=%.1f in_flight=%d fold_due=%s", request_id,
              len(agent_messages), file_count, sum(len(m["content"]) for m in agent_messages), len(text),
-             time.perf_counter() - began, waited, _in_flight, bool(fold))
+             time.perf_counter() - began, waited, _in_flight, bool(keep))
     if not text:
         log.error("chat %s failed: agent returned no text", request_id)
         return reply_json(502, {"error": FRIENDLY["unavailable"]}, origin)
-    return reply_json(200, {"reply": text, **(fold or {})}, origin)
+    return reply_json(200, {"reply": text, **({"fold": {"keep_last": keep}} if keep else {})}, origin)
+
+
+fold_limiter = Limiter()  # summaries count apart from chats, so a long chat does not use up the visitor's message allowance
+
+
+@bp.route(route="chat/fold", methods=["POST", "OPTIONS"], auth_level=func.AuthLevel.ANONYMOUS)
+async def chat_fold(req: func.HttpRequest) -> func.HttpResponse:
+    """Summarize the older turns of a long conversation. The page calls this after it has shown the reply."""
+    origin = req.headers.get("origin")
+    if req.method == "OPTIONS":
+        preflight = ({"Access-Control-Allow-Methods": "POST, OPTIONS", "Access-Control-Allow-Headers": "Content-Type",
+                      "Access-Control-Max-Age": "86400"} if SEND_CORS_HEADERS else {})
+        return func.HttpResponse(status_code=204, headers={**cors_headers(origin), **preflight})
+
+    payload, error = read_payload(req, origin)
+    if error:
+        return error
+    messages, problem = parse_messages(payload.get("messages"), last_role=None)
+    if problem:
+        return reply_json(400, {"error": problem}, origin)
+    prior_summary = clean_summary(payload.get("summary"))
+
+    allowed, wait = fold_limiter.allow(client_ip(req))
+    if not allowed:
+        return reply_json(429, {"error": "Please wait a moment.", "retry_after": wait}, origin, {"Retry-After": str(wait)})
+
+    request_id, began = uuid.uuid4().hex[:8], time.perf_counter()
+    agent_messages, file_error = await read_files(request_id, messages)
+    if file_error:
+        return reply_json(400, {"error": file_error}, origin)
+
+    try:
+        notes, waited = await run_in_slot(fold, agent_messages, prior_summary, timeout=SUMMARY_TIMEOUT_SECONDS + 5)
+    except Busy:
+        log.warning("chat %s fold busy: no free slot after %ds", request_id, QUEUE_SECONDS)
+        return reply_json(503, {"error": FRIENDLY["busy"]}, origin, {"Retry-After": "10"})
+    except Exception as exc:  # the page keeps its full history; compact_history keeps later turns working
+        status, key, note = explain(exc)
+        detail = f" | {type(exc).__name__}: {str(exc)[:300]}" if LOG_ERROR_DETAIL else ""
+        log.warning("chat %s fold failed: %s%s", request_id, note, detail)
+        return reply_json(status, {"error": FRIENDLY[key]}, origin)
+
+    log.info("chat %s fold ok turns=%d chars_out=%d seconds=%.1f waited=%.1f", request_id, len(agent_messages),
+             len(notes), time.perf_counter() - began, waited)
+    if not notes:
+        return reply_json(502, {"error": FRIENDLY["unavailable"]}, origin)
+    return reply_json(200, {"summary": notes}, origin)
