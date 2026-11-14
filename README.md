@@ -146,3 +146,11 @@ Edit `ontology/ontology.json`, increment `ontology_version`, review, test, and d
 - Spotlight stories now surface on the career skills they show, not only on career development. Added the `illustrates` relationships `spotlight_illustrates_networking`, `spotlight_illustrates_interviewing`, `spotlight_illustrates_job_application_strategy`, `spotlight_illustrates_salary_negotiation`, `spotlight_illustrates_volunteer` and `spotlight_illustrates_career_mentor` (N:N). A question that matches one of these concepts (including questions about volunteering and mentoring) now also searches Spotlight, and the websearch app reserves its Spotlight places for the question. No domain change was needed: `sujeeth.org` already lists `spotlight` in its `associated_concepts`, and domain resolution reads only that list.
 
 **After deploying:** restart the websearch app (it caches the ontology in memory).
+
+## Version 1.12.0 changes
+
+- Added the `referral` class (category `skill`, audiences student and mentor): asking someone you know to recommend or introduce you. Aliases are phrases such as `ask for a referral`, `get a referral`, `referral from a mentor`, `warm introduction`; none is a bare common word.
+- Tied it to networking: `referral_is_part_of_networking` (`is_part_of`), and two `illustrates` relationships, `networking_illustrates_referral` and `week_4_illustrates_referral`, so a referral question also searches pages tagged Networking or Week 4 without waiting for a reindex.
+- Added `referral` to the student's current and past stages, to the skills in `source_precedence`, and to the `associated_concepts` of `sujeeth.org`, `youspot.com` and `www.themuse.com`.
+
+**After deploying:** restart the websearch app (it caches the ontology in memory). Pages are tagged `referral` when they are indexed, so reindex or recrawl `sujeeth.org` to tag existing pages that mention referrals directly.

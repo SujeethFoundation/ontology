@@ -94,3 +94,20 @@ def test_relationship_ids_are_unique_and_point_at_real_classes():
     ids = [r["id"] for r in ONTOLOGY["relationships"]]
     assert len(ids) == len(set(ids))
     assert all(r["subject"] in class_ids and r["object"] in class_ids for r in ONTOLOGY["relationships"])
+
+
+def test_referral_is_a_networking_skill_with_phrase_aliases():
+    referral = next(c for c in ONTOLOGY["classes"] if c["id"] == "referral")
+    assert referral["category"] == "skill"
+    assert set(referral["audiences"]) == {"student", "mentor"}
+    assert "ask for a referral" in referral["aliases"]
+    # A bare common word would match unrelated questions, so every alias is a phrase.
+    assert all(len(alias.split()) >= 2 for alias in referral["aliases"])
+    related = {(r["subject"], r["predicate"], r["object"]) for r in ONTOLOGY["relationships"]}
+    assert ("referral", "is_part_of", "networking") in related
+    assert ("networking", "illustrates", "referral") in related
+
+
+def test_referral_resolves_to_approved_domains():
+    carrying = {d["domain"] for d in ONTOLOGY["domains"] if "referral" in d["associated_concepts"]}
+    assert {"sujeeth.org", "youspot.com", "www.themuse.com"} <= carrying
