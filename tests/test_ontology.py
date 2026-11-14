@@ -118,3 +118,11 @@ def test_interviewing_matches_a_plain_interview_question_without_tagging_pages_o
     # query_phrases match questions only; the page tagger skips them, so a bare "interview" cannot tag content.
     assert {"interview", "interviews"} <= set(interviewing["query_phrases"])
     assert "interview" not in [a.lower() for a in interviewing["aliases"]]
+
+
+def test_a_week_question_reaches_the_foundations_own_site():
+    """"What does each week cover?" matched only the concept `week`. With no domain attached, search ran nowhere and the answer was empty."""
+    sujeeth = next(item for item in ONTOLOGY["domains"] if item["domain"] == "sujeeth.org")
+    assert {"week", "agenda"} <= set(sujeeth["associated_concepts"])
+    week = next(item for item in ONTOLOGY["classes"] if item["id"] == "week")
+    assert {"syllabus", "curriculum"} <= set(week["aliases"])
