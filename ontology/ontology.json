@@ -1,5 +1,5 @@
 {
-  "ontology_version": "1.12.0",
+  "ontology_version": "1.12.1",
   "last_updated": "2026-11-14",
   "description": "Sujeeth Foundation domain ontology and governance configuration, including validated concepts used to associate approved external domains.",
   "foundation_purpose": {
@@ -1494,6 +1494,12 @@
         "tell me about yourself",
         "phone screen",
         "storytelling in an interview"
+      ],
+      "query_phrases": [
+        "interview",
+        "interviews",
+        "prepare for an interview",
+        "interview preparation"
       ]
     },
     {

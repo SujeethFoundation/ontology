@@ -111,3 +111,10 @@ def test_referral_is_a_networking_skill_with_phrase_aliases():
 def test_referral_resolves_to_approved_domains():
     carrying = {d["domain"] for d in ONTOLOGY["domains"] if "referral" in d["associated_concepts"]}
     assert {"sujeeth.org", "youspot.com", "www.themuse.com"} <= carrying
+
+
+def test_interviewing_matches_a_plain_interview_question_without_tagging_pages_on_it():
+    interviewing = next(c for c in ONTOLOGY["classes"] if c["id"] == "interviewing")
+    # query_phrases match questions only; the page tagger skips them, so a bare "interview" cannot tag content.
+    assert {"interview", "interviews"} <= set(interviewing["query_phrases"])
+    assert "interview" not in [a.lower() for a in interviewing["aliases"]]

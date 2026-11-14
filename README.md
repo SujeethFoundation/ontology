@@ -154,3 +154,10 @@ Edit `ontology/ontology.json`, increment `ontology_version`, review, test, and d
 - Added `referral` to the student's current and past stages, to the skills in `source_precedence`, and to the `associated_concepts` of `sujeeth.org`, `youspot.com` and `www.themuse.com`.
 
 **After deploying:** restart the websearch app (it caches the ontology in memory). Pages are tagged `referral` when they are indexed, so reindex or recrawl `sujeeth.org` to tag existing pages that mention referrals directly.
+
+## Version 1.12.1 changes
+
+- Added `query_phrases` to `interviewing`: `interview`, `interviews`, `prepare for an interview`, `interview preparation`. Before, a plain question such as "how do I prepare for an interview" scored `networking` (via "informational interview") and `interviewing` (via "job interview") at the same weak 0.33, so the search asked "Are you asking about Networking or Interviewing?". `interviewing` now scores 1.4 and no question is asked. Query phrases never tag page content, so no new pages are tagged `interviewing`.
+- A question that names an informational interview still matches both concepts outright (1.2 and 1.1) and searches both.
+
+**After deploying:** restart the websearch app (it caches the ontology).
