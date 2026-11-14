@@ -1,6 +1,6 @@
 {
-  "ontology_version": "1.11.0",
-  "last_updated": "2026-11-13",
+  "ontology_version": "1.12.0",
+  "last_updated": "2026-11-14",
   "description": "Sujeeth Foundation domain ontology and governance configuration, including validated concepts used to associate approved external domains.",
   "foundation_purpose": {
     "mission": "Help college students network into their first jobs through professional mentorship, books, and career development programs.",
@@ -70,6 +70,7 @@
             "resume_resource",
             "linkedin_profile",
             "networking",
+            "referral",
             "job_application_strategy",
             "interviewing",
             "follow_up",
@@ -96,6 +97,7 @@
             "student",
             "career_development",
             "networking",
+            "referral",
             "follow_up",
             "salary_negotiation",
             "receiving_feedback",
@@ -1130,6 +1132,29 @@
         "cold outreach",
         "reaching out to professionals",
         "LinkedIn outreach"
+      ]
+    },
+    {
+      "id": "referral",
+      "name": "Referral",
+      "category": "skill",
+      "audiences": [
+        "student",
+        "mentor"
+      ],
+      "definition": "Asking someone you know, such as a mentor or a contact at a company, to recommend you or introduce you to the people hiring. A referral grows out of networking and works best after trust is built (Week 4).",
+      "aliases": [
+        "employee referral",
+        "ask for a referral",
+        "asking for a referral",
+        "get a referral",
+        "referral request",
+        "referral email",
+        "referral from a mentor",
+        "internal referral",
+        "get referred",
+        "warm introduction",
+        "warm intro"
       ]
     },
     {
@@ -2638,6 +2663,30 @@
       "definition": "A clear LinkedIn profile is the base for networking outreach."
     },
     {
+      "id": "referral_is_part_of_networking",
+      "subject": "referral",
+      "predicate": "is_part_of",
+      "object": "networking",
+      "cardinality": "N:1",
+      "definition": "Asking for a Referral is one way of using a professional network, and it comes after the relationship is built."
+    },
+    {
+      "id": "networking_illustrates_referral",
+      "subject": "networking",
+      "predicate": "illustrates",
+      "object": "referral",
+      "cardinality": "N:N",
+      "definition": "Networking content shows how to build the trust a Referral depends on, so Referral questions can draw on Networking."
+    },
+    {
+      "id": "week_4_illustrates_referral",
+      "subject": "week_4",
+      "predicate": "illustrates",
+      "object": "referral",
+      "cardinality": "N:N",
+      "definition": "Week 4 is where Students practice reaching out and building relationships, so Referral questions can draw on Week 4 pages."
+    },
+    {
       "id": "innovation_supports_job_application_strategy",
       "subject": "innovation",
       "predicate": "supports",
@@ -2911,6 +2960,7 @@
         "salary_negotiation",
         "follow_up",
         "networking",
+        "referral",
         "linkedin_profile",
         "job_application_strategy"
       ],
@@ -3681,6 +3731,7 @@
         "volunteer",
         "spotlight",
         "career_development",
+        "referral",
         "student",
         "career_mentor",
         "donor",
@@ -3882,6 +3933,7 @@
       "search_enabled": true,
       "associated_concepts": [
         "networking",
+        "referral",
         "career_development",
         "week_4"
       ],
@@ -4001,6 +4053,7 @@
         "career_development",
         "resume_resource",
         "networking",
+        "referral",
         "week_3",
         "week_4",
         "week_5",
