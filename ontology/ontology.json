@@ -1,5 +1,5 @@
 {
-  "ontology_version": "1.12.2",
+  "ontology_version": "1.12.3",
   "last_updated": "2026-11-14",
   "description": "Sujeeth Foundation domain ontology and governance configuration, including validated concepts used to associate approved external domains.",
   "foundation_purpose": {
@@ -565,6 +565,19 @@
         "the curriculum",
         "what the program covers",
         "course outline"
+      ],
+      "query_phrases": [
+        "what is covered",
+        "what's covered",
+        "covered in the program",
+        "what does the program cover",
+        "what do you cover",
+        "what do we cover",
+        "what will i learn",
+        "what will we learn",
+        "what is taught",
+        "topics covered",
+        "topics in the program"
       ]
     },
     {
@@ -2549,6 +2562,14 @@
       "object": "week",
       "cardinality": "1:6",
       "definition": "The Career Circle Program runs for six program Weeks."
+    },
+    {
+      "id": "week_illustrates_career_circle_program",
+      "subject": "week",
+      "predicate": "illustrates",
+      "object": "career_circle_program",
+      "cardinality": "N:1",
+      "definition": "The six weekly topics are the program's syllabus. A question about what the Career Circle Program covers can draw on the Week pages."
     },
     {
       "id": "partnership_delivers_career_circle_program",
