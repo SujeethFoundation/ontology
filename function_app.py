@@ -73,7 +73,23 @@ def process_info():
 
 def load_ontology():
     with DATA_PATH.open("r", encoding="utf-8") as f:
-        return json.load(f)
+        data = json.load(f)
+    audit = data.get("relationship_audit", {})
+    defaults = audit.get("edge_defaults", {})
+    if defaults:
+        needs_confirmation = {
+            item["relationship"]: item["reason"]
+            for item in audit.get("needs_confirmation", [])
+        }
+        overrides = audit.get("edge_overrides", {})
+        for relationship in data.get("relationships", []):
+            relationship.update(defaults)
+            relationship_id = relationship["id"]
+            if relationship_id in needs_confirmation:
+                relationship["audit_status"] = "needs_confirmation"
+                relationship["audit_note"] = needs_confirmation[relationship_id]
+            relationship.update(overrides.get(relationship_id, {}))
+    return data
 
 def respond(data, status=200):
     return func.HttpResponse(json.dumps(data, ensure_ascii=False), status_code=status,
@@ -236,3 +252,4 @@ def crawl_manifest(req):
 def search_manifest(req):
     d=load_ontology()
     return respond({"ontology_version":d["ontology_version"],"search_domains":[x for x in d["domains"] if x["search_enabled"]]})
+

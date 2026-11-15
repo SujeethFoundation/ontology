@@ -1,6 +1,6 @@
 {
-  "ontology_version": "1.13.4",
-  "last_updated": "2026-11-14",
+  "ontology_version": "1.13.5",
+  "last_updated": "2026-11-15",
   "description": "Sujeeth Foundation domain ontology and governance configuration, including validated concepts used to associate approved external domains.",
   "foundation_purpose": {
     "mission": "Help college students network into their first jobs through professional mentorship, books, and career development programs.",
@@ -2286,9 +2286,7 @@
       "predicate": "delivers",
       "object": "career_circle_program",
       "cardinality": "1:N",
-      "definition": "The Foundation delivers the Career Circle Program.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "The Foundation delivers the Career Circle Program."
     },
     {
       "id": "foundation_forms_partnership",
@@ -2296,9 +2294,7 @@
       "predicate": "forms",
       "object": "partnership",
       "cardinality": "1:N",
-      "definition": "The Foundation forms Partnerships with Partner institutions.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "The Foundation forms Partnerships with Partner institutions."
     },
     {
       "id": "partnership_with_partner",
@@ -2306,9 +2302,7 @@
       "predicate": "is_with",
       "object": "partner",
       "cardinality": "N:1",
-      "definition": "Each Partnership is with exactly one Partner.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Each Partnership is with exactly one Partner."
     },
     {
       "id": "partnership_in_period",
@@ -2316,9 +2310,7 @@
       "predicate": "occurs_in",
       "object": "academic_period",
       "cardinality": "N:1",
-      "definition": "Each Partnership belongs to exactly one Academic Period.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Each Partnership belongs to exactly one Academic Period."
     },
     {
       "id": "partnership_hosts_circle",
@@ -2326,9 +2318,7 @@
       "predicate": "hosts",
       "object": "circle",
       "cardinality": "1:N",
-      "definition": "A Partnership can host multiple Circles.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "A Partnership can host multiple Circles."
     },
     {
       "id": "circle_contains_session",
@@ -2336,9 +2326,7 @@
       "predicate": "contains",
       "object": "session",
       "cardinality": "1:6",
-      "definition": "Each Circle contains exactly six Sessions.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Each Circle contains exactly six Sessions."
     },
     {
       "id": "session_maps_week",
@@ -2346,9 +2334,7 @@
       "predicate": "corresponds_to",
       "object": "week",
       "cardinality": "N:1",
-      "definition": "Each Session corresponds to one program Week.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Each Session corresponds to one program Week."
     },
     {
       "id": "session_has_recording",
@@ -2356,9 +2342,7 @@
       "predicate": "has",
       "object": "recording",
       "cardinality": "1:1",
-      "definition": "Each Session has one Recording.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Each Session has one Recording."
     },
     {
       "id": "student_attends_circle",
@@ -2366,9 +2350,7 @@
       "predicate": "attends",
       "object": "circle",
       "cardinality": "N:1",
-      "definition": "A Student attends a Circle.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "A Student attends a Circle."
     },
     {
       "id": "mentor_leads_session",
@@ -2376,9 +2358,7 @@
       "predicate": "leads",
       "object": "session",
       "cardinality": "1:N",
-      "definition": "A Career Mentor leads Sessions.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "A Career Mentor leads Sessions."
     },
     {
       "id": "mentor_guides_student",
@@ -2386,9 +2366,7 @@
       "predicate": "guides",
       "object": "student",
       "cardinality": "N:N",
-      "definition": "Career Mentors guide Students.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Career Mentors guide Students."
     },
     {
       "id": "community_manager_coordinates_with_partner",
@@ -2396,9 +2374,7 @@
       "predicate": "coordinates_with",
       "object": "partner",
       "cardinality": "N:N",
-      "definition": "Community Managers coordinate with Partner institutions.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Community Managers coordinate with Partner institutions."
     },
     {
       "id": "community_manager_coordinates_with_volunteer",
@@ -2406,9 +2382,7 @@
       "predicate": "coordinates_with",
       "object": "volunteer",
       "cardinality": "N:N",
-      "definition": "Community Managers coordinate with Volunteers.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Community Managers coordinate with Volunteers."
     },
     {
       "id": "resource_supports_week",
@@ -2416,9 +2390,7 @@
       "predicate": "supports",
       "object": "week",
       "cardinality": "N:N",
-      "definition": "A Resource can support one or more Weeks.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "A Resource can support one or more Weeks."
     },
     {
       "id": "book_is_resource",
@@ -2426,9 +2398,7 @@
       "predicate": "is_a",
       "object": "resource",
       "cardinality": "N:1",
-      "definition": "A Book is a type of Resource.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "A Book is a type of Resource."
     },
     {
       "id": "student_completes_onboarding",
@@ -2436,9 +2406,7 @@
       "predicate": "completes",
       "object": "onboarding_survey",
       "cardinality": "1:1",
-      "definition": "Each Student completes one Onboarding Survey.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Each Student completes one Onboarding Survey."
     },
     {
       "id": "student_completes_feedback",
@@ -2446,9 +2414,7 @@
       "predicate": "completes",
       "object": "feedback_survey",
       "cardinality": "1:1",
-      "definition": "Each Student completes one Feedback Survey.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Each Student completes one Feedback Survey."
     },
     {
       "id": "student_requests_book",
@@ -2456,9 +2422,7 @@
       "predicate": "makes",
       "object": "book_request",
       "cardinality": "1:0..6",
-      "definition": "A Student can make up to six qualifying Book Requests.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "A Student can make up to six qualifying Book Requests."
     },
     {
       "id": "book_request_for_book",
@@ -2466,9 +2430,7 @@
       "predicate": "requests",
       "object": "book",
       "cardinality": "N:1",
-      "definition": "Each Book Request references one catalogued Book.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Each Book Request references one catalogued Book."
     },
     {
       "id": "book_request_for_partnership",
@@ -2476,9 +2438,7 @@
       "predicate": "reported_under",
       "object": "partnership",
       "cardinality": "N:1",
-      "definition": "A Book Request is associated with a Partnership for reporting, not fulfillment.",
-      "audit_status": "needs_confirmation",
-      "audit_note": "The relationship may represent a reporting or fulfillment association, but the current class definitions do not explain why a book request is reported under a Partnership."
+      "definition": "A Book Request is associated with a Partnership for reporting, not fulfillment."
     },
     {
       "id": "mentor_makes_substitute_request",
@@ -2486,9 +2446,7 @@
       "predicate": "makes",
       "object": "substitute_request",
       "cardinality": "1:N",
-      "definition": "A Mentor may request substitute coverage for a Session.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "A Mentor may request substitute coverage for a Session."
     },
     {
       "id": "spotlight_features_volunteer",
@@ -2496,9 +2454,7 @@
       "predicate": "features",
       "object": "volunteer",
       "cardinality": "N:1",
-      "definition": "A Spotlight features one Volunteer.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Features identifies the Volunteer profiled by the Spotlight; this is distinct from an Illustrates edge used to retrieve the Spotlight as an example of a concept."
+      "definition": "A Spotlight features one Volunteer."
     },
     {
       "id": "spotlight_illustrates_career_development",
@@ -2506,9 +2462,7 @@
       "predicate": "illustrates",
       "object": "career_development",
       "cardinality": "N:N",
-      "definition": "A Spotlight illustrates Career Development through one Volunteer's career path, and Career Development questions can draw on Spotlights.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "A Spotlight illustrates Career Development through one Volunteer's career path, and Career Development questions can draw on Spotlights."
     },
     {
       "id": "spotlight_illustrates_networking",
@@ -2516,9 +2470,7 @@
       "predicate": "illustrates",
       "object": "networking",
       "cardinality": "N:N",
-      "definition": "A Spotlight illustrates Networking through how one Volunteer built and used professional relationships, and Networking questions can draw on Spotlights.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "A Spotlight illustrates Networking through how one Volunteer built and used professional relationships, and Networking questions can draw on Spotlights."
     },
     {
       "id": "spotlight_illustrates_interviewing",
@@ -2526,9 +2478,7 @@
       "predicate": "illustrates",
       "object": "interviewing",
       "cardinality": "N:N",
-      "definition": "A Spotlight illustrates Interviewing through how one Volunteer prepared for and handled interviews, and Interviewing questions can draw on Spotlights.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "A Spotlight illustrates Interviewing through how one Volunteer prepared for and handled interviews, and Interviewing questions can draw on Spotlights."
     },
     {
       "id": "spotlight_illustrates_job_application_strategy",
@@ -2536,9 +2486,7 @@
       "predicate": "illustrates",
       "object": "job_application_strategy",
       "cardinality": "N:N",
-      "definition": "A Spotlight illustrates Job Application Strategy through how one Volunteer chose and tailored applications, and Job Application Strategy questions can draw on Spotlights.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "A Spotlight illustrates Job Application Strategy through how one Volunteer chose and tailored applications, and Job Application Strategy questions can draw on Spotlights."
     },
     {
       "id": "spotlight_illustrates_salary_negotiation",
@@ -2546,9 +2494,7 @@
       "predicate": "illustrates",
       "object": "salary_negotiation",
       "cardinality": "N:N",
-      "definition": "A Spotlight illustrates Salary Negotiation through how one Volunteer approached pay and terms in an offer, and Salary Negotiation questions can draw on Spotlights.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "A Spotlight illustrates Salary Negotiation through how one Volunteer approached pay and terms in an offer, and Salary Negotiation questions can draw on Spotlights."
     },
     {
       "id": "spotlight_illustrates_volunteer",
@@ -2556,9 +2502,7 @@
       "predicate": "illustrates",
       "object": "volunteer",
       "cardinality": "N:N",
-      "definition": "A Spotlight illustrates Volunteering through the story of one Volunteer, and questions about volunteering can draw on Spotlights.",
-      "audit_status": "needs_confirmation",
-      "audit_note": "This overlaps with Spotlight features Volunteer. Keep both only if 'features' means who is profiled and 'illustrates' is intentionally used to retrieve the Spotlight as an example of volunteering."
+      "definition": "A Spotlight illustrates Volunteering through the story of one Volunteer, and questions about volunteering can draw on Spotlights."
     },
     {
       "id": "spotlight_illustrates_career_mentor",
@@ -2566,9 +2510,7 @@
       "predicate": "illustrates",
       "object": "career_mentor",
       "cardinality": "N:N",
-      "definition": "A Spotlight illustrates being a Career Mentor through the story of one Volunteer who mentors, and questions about mentors can draw on Spotlights.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "A Spotlight illustrates being a Career Mentor through the story of one Volunteer who mentors, and questions about mentors can draw on Spotlights."
     },
     {
       "id": "testimonial_quotes_student",
@@ -2576,9 +2518,7 @@
       "predicate": "quotes",
       "object": "student",
       "cardinality": "N:1",
-      "definition": "A Testimonial quotes one Student.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "A Testimonial quotes one Student."
     },
     {
       "id": "donor_makes_donation",
@@ -2586,9 +2526,7 @@
       "predicate": "makes",
       "object": "donation",
       "cardinality": "1:N",
-      "definition": "A Donor makes Donations to the Foundation.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "A Donor makes Donations to the Foundation."
     },
     {
       "id": "foundation_receives_donation",
@@ -2596,9 +2534,7 @@
       "predicate": "received_by",
       "object": "sujeeth_foundation",
       "cardinality": "N:1",
-      "definition": "Donations are made to the Foundation, not to a Partner or Circle.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Donations are made to the Foundation, not to a Partner or Circle."
     },
     {
       "id": "mentor_is_volunteer",
@@ -2606,9 +2542,7 @@
       "predicate": "is_a",
       "object": "volunteer",
       "cardinality": "N:1",
-      "definition": "A Career Mentor is a Volunteer who leads Sessions.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "A Career Mentor is a Volunteer who leads Sessions."
     },
     {
       "id": "presentation_is_resource",
@@ -2616,9 +2550,7 @@
       "predicate": "is_a",
       "object": "resource",
       "cardinality": "N:1",
-      "definition": "A Presentation is a type of Resource.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "A Presentation is a type of Resource."
     },
     {
       "id": "resume_resource_is_resource",
@@ -2626,9 +2558,7 @@
       "predicate": "is_a",
       "object": "resource",
       "cardinality": "N:1",
-      "definition": "A Resume Resource is a type of Resource.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "A Resume Resource is a type of Resource."
     },
     {
       "id": "agenda_describes_week",
@@ -2636,9 +2566,7 @@
       "predicate": "describes",
       "object": "week",
       "cardinality": "N:N",
-      "definition": "An Agenda describes one program Week or Session.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "An Agenda describes one program Week or Session."
     },
     {
       "id": "impact_report_reports_statistics",
@@ -2646,9 +2574,7 @@
       "predicate": "reports",
       "object": "program_statistics",
       "cardinality": "N:N",
-      "definition": "An Impact Report presents Program Statistics.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "An Impact Report presents Program Statistics."
     },
     {
       "id": "appreciation_illustrates_follow_up",
@@ -2656,9 +2582,7 @@
       "predicate": "illustrates",
       "object": "follow_up",
       "cardinality": "N:N",
-      "definition": "Appreciation content illustrates effective follow-up (thank-yous, recognition).",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Appreciation content illustrates effective follow-up (thank-yous, recognition)."
     },
     {
       "id": "circle_has_notes",
@@ -2666,9 +2590,7 @@
       "predicate": "has",
       "object": "circle_notes",
       "cardinality": "1:N",
-      "definition": "A Circle can have Circle Notes.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "A Circle can have Circle Notes."
     },
     {
       "id": "recording_stored_in_circle_notes",
@@ -2676,9 +2598,7 @@
       "predicate": "is_stored_in",
       "object": "circle_notes",
       "cardinality": "1:1",
-      "definition": "A Session Recording is stored as the link on a Circle Note.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "A Session Recording is stored as the link on a Circle Note."
     },
     {
       "id": "vulnerability_courage_illustrates_week_1",
@@ -2686,9 +2606,7 @@
       "predicate": "illustrates",
       "object": "week_1",
       "cardinality": "N:N",
-      "definition": "Vulnerability Courage content is used in Week 1: Self-Assessment.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Vulnerability Courage content is used in Week 1: Self-Assessment."
     },
     {
       "id": "grit_illustrates_week_1",
@@ -2696,9 +2614,7 @@
       "predicate": "illustrates",
       "object": "week_1",
       "cardinality": "N:N",
-      "definition": "Grit content is used in Week 1: Self-Assessment.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Grit content is used in Week 1: Self-Assessment."
     },
     {
       "id": "growth_mindset_illustrates_week_1",
@@ -2706,9 +2622,7 @@
       "predicate": "illustrates",
       "object": "week_1",
       "cardinality": "N:N",
-      "definition": "Growth Mindset content is used in Week 1: Self-Assessment.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Growth Mindset content is used in Week 1: Self-Assessment."
     },
     {
       "id": "purpose_illustrates_week_2",
@@ -2716,9 +2630,7 @@
       "predicate": "illustrates",
       "object": "week_2",
       "cardinality": "N:N",
-      "definition": "Purpose content is used in Week 2: Research & Exploration.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Purpose content is used in Week 2: Research & Exploration."
     },
     {
       "id": "resume_resource_illustrates_week_3",
@@ -2726,9 +2638,7 @@
       "predicate": "illustrates",
       "object": "week_3",
       "cardinality": "N:N",
-      "definition": "Resume Resource content is used in Week 3: Resume & Preparation.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Resume Resource content is used in Week 3: Resume & Preparation."
     },
     {
       "id": "linkedin_profile_illustrates_week_3",
@@ -2736,9 +2646,7 @@
       "predicate": "illustrates",
       "object": "week_3",
       "cardinality": "N:N",
-      "definition": "Linkedin Profile content is used in Week 3: Resume & Preparation.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Linkedin Profile content is used in Week 3: Resume & Preparation."
     },
     {
       "id": "purpose_illustrates_week_3",
@@ -2746,9 +2654,7 @@
       "predicate": "illustrates",
       "object": "week_3",
       "cardinality": "N:N",
-      "definition": "Purpose content is used in Week 3: Resume & Preparation.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Purpose content is used in Week 3: Resume & Preparation."
     },
     {
       "id": "networking_illustrates_week_4",
@@ -2756,9 +2662,7 @@
       "predicate": "illustrates",
       "object": "week_4",
       "cardinality": "N:N",
-      "definition": "Networking content is used in Week 4: Networking.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Networking content is used in Week 4: Networking."
     },
     {
       "id": "grit_illustrates_week_4",
@@ -2766,9 +2670,7 @@
       "predicate": "illustrates",
       "object": "week_4",
       "cardinality": "N:N",
-      "definition": "Grit content is used in Week 4: Networking.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Grit content is used in Week 4: Networking."
     },
     {
       "id": "interviewing_illustrates_week_5",
@@ -2776,9 +2678,7 @@
       "predicate": "illustrates",
       "object": "week_5",
       "cardinality": "N:N",
-      "definition": "Interviewing content is used in Week 5: Applications & Interviews.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Interviewing content is used in Week 5: Applications & Interviews."
     },
     {
       "id": "job_application_strategy_illustrates_week_5",
@@ -2786,9 +2686,7 @@
       "predicate": "illustrates",
       "object": "week_5",
       "cardinality": "N:N",
-      "definition": "Job Application Strategy content is used in Week 5: Applications & Interviews.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Job Application Strategy content is used in Week 5: Applications & Interviews."
     },
     {
       "id": "innovation_illustrates_week_5",
@@ -2796,9 +2694,7 @@
       "predicate": "illustrates",
       "object": "week_5",
       "cardinality": "N:N",
-      "definition": "Innovation content is used in Week 5: Applications & Interviews.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Innovation content is used in Week 5: Applications & Interviews."
     },
     {
       "id": "grit_illustrates_week_5",
@@ -2806,9 +2702,7 @@
       "predicate": "illustrates",
       "object": "week_5",
       "cardinality": "N:N",
-      "definition": "Grit content is used in Week 5: Applications & Interviews.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Grit content is used in Week 5: Applications & Interviews."
     },
     {
       "id": "purpose_illustrates_week_5",
@@ -2816,9 +2710,7 @@
       "predicate": "illustrates",
       "object": "week_5",
       "cardinality": "N:N",
-      "definition": "Purpose content is used in Week 5: Applications & Interviews.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Purpose content is used in Week 5: Applications & Interviews."
     },
     {
       "id": "follow_up_illustrates_week_6",
@@ -2826,9 +2718,7 @@
       "predicate": "illustrates",
       "object": "week_6",
       "cardinality": "N:N",
-      "definition": "Follow Up content is used in Week 6: Follow-up & Negotiation.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Follow Up content is used in Week 6: Follow-up & Negotiation."
     },
     {
       "id": "salary_negotiation_illustrates_week_6",
@@ -2836,9 +2726,7 @@
       "predicate": "illustrates",
       "object": "week_6",
       "cardinality": "N:N",
-      "definition": "Salary Negotiation content is used in Week 6: Follow-up & Negotiation.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Salary Negotiation content is used in Week 6: Follow-up & Negotiation."
     },
     {
       "id": "learning_from_regret_illustrates_week_6",
@@ -2846,9 +2734,7 @@
       "predicate": "illustrates",
       "object": "week_6",
       "cardinality": "N:N",
-      "definition": "Learning From Regret content is used in Week 6: Follow-up & Negotiation.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Learning From Regret content is used in Week 6: Follow-up & Negotiation."
     },
     {
       "id": "appreciation_illustrates_week_6",
@@ -2856,9 +2742,7 @@
       "predicate": "illustrates",
       "object": "week_6",
       "cardinality": "N:N",
-      "definition": "Appreciation content is used in Week 6: Follow-up & Negotiation.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Appreciation content is used in Week 6: Follow-up & Negotiation."
     },
     {
       "id": "right_kind_of_wrong_illustrates_career_development",
@@ -2866,9 +2750,7 @@
       "predicate": "illustrates",
       "object": "career_development",
       "cardinality": "N:N",
-      "definition": "Right Kind of Wrong illustrates Career Development by helping students learn thoughtfully from setbacks and make informed next moves.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Right Kind of Wrong illustrates Career Development by helping students learn thoughtfully from setbacks and make informed next moves."
     },
     {
       "id": "permission_to_feel_illustrates_career_development",
@@ -2876,9 +2758,7 @@
       "predicate": "illustrates",
       "object": "career_development",
       "cardinality": "N:N",
-      "definition": "Permission to Feel illustrates Career Development by helping students use emotional awareness to guide career decisions.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Permission to Feel illustrates Career Development by helping students use emotional awareness to guide career decisions."
     },
     {
       "id": "program_statistics_describe_foundation",
@@ -2886,9 +2766,7 @@
       "predicate": "describes",
       "object": "sujeeth_foundation",
       "cardinality": "N:1",
-      "definition": "Program Statistics describe the Foundation's reach and results.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Program Statistics describe the Foundation's reach and results."
     },
     {
       "id": "leadership_supports_psychological_safety",
@@ -2896,9 +2774,7 @@
       "predicate": "supports",
       "object": "psychological_safety",
       "cardinality": "N:N",
-      "definition": "Leadership practices can support a team climate where people can raise questions, ideas, and mistakes without fear.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Leadership practices can support a team climate where people can raise questions, ideas, and mistakes without fear."
     },
     {
       "id": "purpose_informs_motivation",
@@ -2906,9 +2782,7 @@
       "predicate": "informs",
       "object": "motivation",
       "cardinality": "N:N",
-      "definition": "A person's sense of meaning and direction can inform what motivates their goals and choices.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "A person's sense of meaning and direction can inform what motivates their goals and choices."
     },
     {
       "id": "week_6_part_of_career_development",
@@ -2916,9 +2790,7 @@
       "predicate": "is_part_of",
       "object": "career_development",
       "cardinality": "N:1",
-      "definition": "Week 6 applies career development through follow-up, negotiation, and relationship-building.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Week 6 applies career development through follow-up, negotiation, and relationship-building."
     },
     {
       "id": "portal_feedback_concerns_programs_portal",
@@ -2926,9 +2798,7 @@
       "predicate": "concerns",
       "object": "programs_portal",
       "cardinality": "N:1",
-      "definition": "Portal Feedback is feedback about the Programs Portal.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Portal Feedback is feedback about the Programs Portal."
     },
     {
       "id": "psychological_safety_supports_vulnerability_courage",
@@ -2936,9 +2806,7 @@
       "predicate": "supports",
       "object": "vulnerability_courage",
       "cardinality": "N:N",
-      "definition": "Psychological Safety can support people in showing up honestly and taking interpersonal risks.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Psychological Safety can support people in showing up honestly and taking interpersonal risks."
     },
     {
       "id": "right_kind_of_wrong_supports_growth_mindset",
@@ -2946,9 +2814,7 @@
       "predicate": "supports",
       "object": "growth_mindset",
       "cardinality": "N:N",
-      "definition": "Learning thoughtfully from setbacks supports developing abilities through learning, feedback, and practice.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Learning thoughtfully from setbacks supports developing abilities through learning, feedback, and practice."
     },
     {
       "id": "right_kind_of_wrong_complements_learning_from_regret",
@@ -2956,9 +2822,7 @@
       "predicate": "complements",
       "object": "learning_from_regret",
       "cardinality": "N:N",
-      "definition": "Right Kind of Wrong examines kinds and causes of failure; Learning from Regret uses regret to guide braver, more authentic choices.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Right Kind of Wrong examines kinds and causes of failure; Learning from Regret uses regret to guide braver, more authentic choices."
     },
     {
       "id": "permission_to_feel_supports_psychological_safety",
@@ -2966,9 +2830,7 @@
       "predicate": "supports",
       "object": "psychological_safety",
       "cardinality": "N:N",
-      "definition": "Noticing emotions without judgment can support emotionally open reflection and conversation.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Noticing emotions without judgment can support emotionally open reflection and conversation."
     },
     {
       "id": "permission_to_feel_informs_purpose",
@@ -2976,9 +2838,7 @@
       "predicate": "informs",
       "object": "purpose",
       "cardinality": "N:N",
-      "definition": "Exploring emotions can reveal needs, concerns, and values that inform a person's sense of direction.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Exploring emotions can reveal needs, concerns, and values that inform a person's sense of direction."
     },
     {
       "id": "week_1_is_a_week",
@@ -2986,9 +2846,7 @@
       "predicate": "is_a",
       "object": "week",
       "cardinality": "N:1",
-      "definition": "Week 1 (Self-Assessment) is one of the six program Weeks. Sessions, Agendas, and Resources point to the generic Week; this edge connects them to the Week's own content.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Week 1 (Self-Assessment) is one of the six program Weeks. Sessions, Agendas, and Resources point to the generic Week; this edge connects them to the Week's own content."
     },
     {
       "id": "week_2_is_a_week",
@@ -2996,9 +2854,7 @@
       "predicate": "is_a",
       "object": "week",
       "cardinality": "N:1",
-      "definition": "Week 2 (Research & Exploration) is one of the six program Weeks. Sessions, Agendas, and Resources point to the generic Week; this edge connects them to the Week's own content.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Week 2 (Research & Exploration) is one of the six program Weeks. Sessions, Agendas, and Resources point to the generic Week; this edge connects them to the Week's own content."
     },
     {
       "id": "week_3_is_a_week",
@@ -3006,9 +2862,7 @@
       "predicate": "is_a",
       "object": "week",
       "cardinality": "N:1",
-      "definition": "Week 3 (Resume & Preparation) is one of the six program Weeks. Sessions, Agendas, and Resources point to the generic Week; this edge connects them to the Week's own content.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Week 3 (Resume & Preparation) is one of the six program Weeks. Sessions, Agendas, and Resources point to the generic Week; this edge connects them to the Week's own content."
     },
     {
       "id": "week_4_is_a_week",
@@ -3016,9 +2870,7 @@
       "predicate": "is_a",
       "object": "week",
       "cardinality": "N:1",
-      "definition": "Week 4 (Networking) is one of the six program Weeks. Sessions, Agendas, and Resources point to the generic Week; this edge connects them to the Week's own content.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Week 4 (Networking) is one of the six program Weeks. Sessions, Agendas, and Resources point to the generic Week; this edge connects them to the Week's own content."
     },
     {
       "id": "week_5_is_a_week",
@@ -3026,9 +2878,7 @@
       "predicate": "is_a",
       "object": "week",
       "cardinality": "N:1",
-      "definition": "Week 5 (Applications & Interviews) is one of the six program Weeks. Sessions, Agendas, and Resources point to the generic Week; this edge connects them to the Week's own content.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Week 5 (Applications & Interviews) is one of the six program Weeks. Sessions, Agendas, and Resources point to the generic Week; this edge connects them to the Week's own content."
     },
     {
       "id": "week_6_is_a_week",
@@ -3036,9 +2886,7 @@
       "predicate": "is_a",
       "object": "week",
       "cardinality": "N:1",
-      "definition": "Week 6 (Follow-up & Negotiation) is one of the six program Weeks. Sessions, Agendas, and Resources point to the generic Week; this edge connects them to the Week's own content.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Week 6 (Follow-up & Negotiation) is one of the six program Weeks. Sessions, Agendas, and Resources point to the generic Week; this edge connects them to the Week's own content."
     },
     {
       "id": "week_1_is_part_of_career_development",
@@ -3046,9 +2894,7 @@
       "predicate": "is_part_of",
       "object": "career_development",
       "cardinality": "N:1",
-      "definition": "Week 1 (Self-Assessment) is part of Career Development, as Week 6 already is.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Week 1 (Self-Assessment) is part of Career Development, as Week 6 already is."
     },
     {
       "id": "week_2_is_part_of_career_development",
@@ -3056,9 +2902,7 @@
       "predicate": "is_part_of",
       "object": "career_development",
       "cardinality": "N:1",
-      "definition": "Week 2 (Research & Exploration) is part of Career Development, as Week 6 already is.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Week 2 (Research & Exploration) is part of Career Development, as Week 6 already is."
     },
     {
       "id": "week_3_is_part_of_career_development",
@@ -3066,9 +2910,7 @@
       "predicate": "is_part_of",
       "object": "career_development",
       "cardinality": "N:1",
-      "definition": "Week 3 (Resume & Preparation) is part of Career Development, as Week 6 already is.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Week 3 (Resume & Preparation) is part of Career Development, as Week 6 already is."
     },
     {
       "id": "week_4_is_part_of_career_development",
@@ -3076,9 +2918,7 @@
       "predicate": "is_part_of",
       "object": "career_development",
       "cardinality": "N:1",
-      "definition": "Week 4 (Networking) is part of Career Development, as Week 6 already is.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Week 4 (Networking) is part of Career Development, as Week 6 already is."
     },
     {
       "id": "week_5_is_part_of_career_development",
@@ -3086,9 +2926,7 @@
       "predicate": "is_part_of",
       "object": "career_development",
       "cardinality": "N:1",
-      "definition": "Week 5 (Applications & Interviews) is part of Career Development, as Week 6 already is.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Week 5 (Applications & Interviews) is part of Career Development, as Week 6 already is."
     },
     {
       "id": "career_circle_program_contains_week",
@@ -3096,9 +2934,7 @@
       "predicate": "contains",
       "object": "week",
       "cardinality": "1:6",
-      "definition": "The Career Circle Program runs for six program Weeks.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "The Career Circle Program runs for six program Weeks."
     },
     {
       "id": "partnership_delivers_career_circle_program",
@@ -3106,9 +2942,7 @@
       "predicate": "delivers",
       "object": "career_circle_program",
       "cardinality": "N:1",
-      "definition": "A Partnership delivers the Career Circle Program to a Partner's students for one Academic Period.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "A Partnership delivers the Career Circle Program to a Partner's students for one Academic Period."
     },
     {
       "id": "impact_report_informs_donor",
@@ -3116,9 +2950,7 @@
       "predicate": "informs",
       "object": "donor",
       "cardinality": "N:N",
-      "definition": "Impact Reports and published financials show Donors what the Foundation does with gifts.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Impact Reports and published financials show Donors what the Foundation does with gifts."
     },
     {
       "id": "receiving_feedback_illustrates_week_5",
@@ -3126,9 +2958,7 @@
       "predicate": "illustrates",
       "object": "week_5",
       "cardinality": "N:N",
-      "definition": "Receiving Feedback content is used in Week 5: Applications & Interviews.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Receiving Feedback content is used in Week 5: Applications & Interviews."
     },
     {
       "id": "receiving_feedback_supports_growth_mindset",
@@ -3136,9 +2966,7 @@
       "predicate": "supports",
       "object": "growth_mindset",
       "cardinality": "N:N",
-      "definition": "Taking feedback well is how a Growth Mindset shows up in a job search.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Taking feedback well is how a Growth Mindset shows up in a job search."
     },
     {
       "id": "week_1_precedes_week_2",
@@ -3146,9 +2974,7 @@
       "predicate": "precedes",
       "object": "week_2",
       "cardinality": "1:1",
-      "definition": "Week 1 (Self-Assessment) comes before Week 2 (Research & Exploration). The curriculum builds in this order.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Week 1 (Self-Assessment) comes before Week 2 (Research & Exploration). The curriculum builds in this order."
     },
     {
       "id": "week_2_precedes_week_3",
@@ -3156,9 +2982,7 @@
       "predicate": "precedes",
       "object": "week_3",
       "cardinality": "1:1",
-      "definition": "Week 2 (Research & Exploration) comes before Week 3 (Resume & Preparation). The curriculum builds in this order.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Week 2 (Research & Exploration) comes before Week 3 (Resume & Preparation). The curriculum builds in this order."
     },
     {
       "id": "week_3_precedes_week_4",
@@ -3166,9 +2990,7 @@
       "predicate": "precedes",
       "object": "week_4",
       "cardinality": "1:1",
-      "definition": "Week 3 (Resume & Preparation) comes before Week 4 (Networking). The curriculum builds in this order.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Week 3 (Resume & Preparation) comes before Week 4 (Networking). The curriculum builds in this order."
     },
     {
       "id": "week_4_precedes_week_5",
@@ -3176,9 +2998,7 @@
       "predicate": "precedes",
       "object": "week_5",
       "cardinality": "1:1",
-      "definition": "Week 4 (Networking) comes before Week 5 (Applications & Interviews). The curriculum builds in this order.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Week 4 (Networking) comes before Week 5 (Applications & Interviews). The curriculum builds in this order."
     },
     {
       "id": "week_5_precedes_week_6",
@@ -3186,9 +3006,7 @@
       "predicate": "precedes",
       "object": "week_6",
       "cardinality": "1:1",
-      "definition": "Week 5 (Applications & Interviews) comes before Week 6 (Follow-up & Negotiation). The curriculum builds in this order.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Week 5 (Applications & Interviews) comes before Week 6 (Follow-up & Negotiation). The curriculum builds in this order."
     },
     {
       "id": "resume_resource_precedes_job_application_strategy",
@@ -3196,9 +3014,7 @@
       "predicate": "precedes",
       "object": "job_application_strategy",
       "cardinality": "N:N",
-      "definition": "A base resume comes before applying to roles.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "A base resume comes before applying to roles."
     },
     {
       "id": "job_application_strategy_precedes_interviewing",
@@ -3206,9 +3022,7 @@
       "predicate": "precedes",
       "object": "interviewing",
       "cardinality": "N:N",
-      "definition": "Applications come before interviews.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Applications come before interviews."
     },
     {
       "id": "interviewing_precedes_follow_up",
@@ -3216,9 +3030,7 @@
       "predicate": "precedes",
       "object": "follow_up",
       "cardinality": "N:N",
-      "definition": "Follow-up comes after an interview.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Follow-up comes after an interview."
     },
     {
       "id": "follow_up_precedes_salary_negotiation",
@@ -3226,9 +3038,7 @@
       "predicate": "precedes",
       "object": "salary_negotiation",
       "cardinality": "N:N",
-      "definition": "Negotiation comes after follow-up leads to an offer.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Negotiation comes after follow-up leads to an offer."
     },
     {
       "id": "leadership_supports_vulnerability_courage",
@@ -3236,9 +3046,7 @@
       "predicate": "supports",
       "object": "vulnerability_courage",
       "cardinality": "N:N",
-      "definition": "Leadership content (Dare to Lead) grounds the Week 1 material on vulnerability and courage.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Leadership content (Dare to Lead) grounds the Week 1 material on vulnerability and courage."
     },
     {
       "id": "linkedin_profile_supports_networking",
@@ -3246,9 +3054,7 @@
       "predicate": "supports",
       "object": "networking",
       "cardinality": "N:N",
-      "definition": "A clear LinkedIn profile is the base for networking outreach.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "A clear LinkedIn profile is the base for networking outreach."
     },
     {
       "id": "referral_is_part_of_networking",
@@ -3256,9 +3062,7 @@
       "predicate": "is_part_of",
       "object": "networking",
       "cardinality": "N:1",
-      "definition": "Asking for a Referral is one way of using a professional network, and it comes after the relationship is built.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Asking for a Referral is one way of using a professional network, and it comes after the relationship is built."
     },
     {
       "id": "networking_supports_referral",
@@ -3266,9 +3070,7 @@
       "predicate": "supports",
       "object": "referral",
       "cardinality": "N:N",
-      "definition": "Networking content shows how to build the trust a Referral depends on, so Referral questions can draw on Networking.",
-      "audit_status": "revised",
-      "audit_note": "Networking builds the relationship and trust from which a referral may follow. It does not, as a whole, illustrate a referral."
+      "definition": "Networking content shows how to build the trust a Referral depends on, so Referral questions can draw on Networking."
     },
     {
       "id": "week_4_illustrates_referral",
@@ -3276,9 +3078,7 @@
       "predicate": "illustrates",
       "object": "referral",
       "cardinality": "N:N",
-      "definition": "Week 4 is where Students practice reaching out and building relationships, so Referral questions can draw on Week 4 pages.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Week 4 is where Students practice reaching out and building relationships, so Referral questions can draw on Week 4 pages."
     },
     {
       "id": "innovation_supports_job_application_strategy",
@@ -3286,9 +3086,7 @@
       "predicate": "supports",
       "object": "job_application_strategy",
       "cardinality": "N:N",
-      "definition": "Lean Startup thinking treats each application as an experiment to learn from.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Lean Startup thinking treats each application as an experiment to learn from."
     },
     {
       "id": "motivation_supports_grit",
@@ -3296,9 +3094,7 @@
       "predicate": "supports",
       "object": "grit",
       "cardinality": "N:N",
-      "definition": "Motivation sustains the long-term effort that Grit describes.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Motivation sustains the long-term effort that Grit describes."
     },
     {
       "id": "substitute_request_concerns_session",
@@ -3306,9 +3102,7 @@
       "predicate": "concerns",
       "object": "session",
       "cardinality": "N:1",
-      "definition": "Each Substitute Request is for one Session.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Each Substitute Request is for one Session."
     },
     {
       "id": "onboarding_survey_informs_impact_report",
@@ -3316,9 +3110,7 @@
       "predicate": "informs",
       "object": "impact_report",
       "cardinality": "N:N",
-      "definition": "Onboarding Surveys give the baseline that Impact Reports compare against.",
-      "audit_status": "needs_confirmation",
-      "audit_note": "Likely if survey results are included in the Impact Report, but the current class definitions do not explicitly establish this data lineage."
+      "definition": "Onboarding Surveys give the baseline that Impact Reports compare against."
     },
     {
       "id": "feedback_survey_informs_impact_report",
@@ -3326,9 +3118,7 @@
       "predicate": "informs",
       "object": "impact_report",
       "cardinality": "N:N",
-      "definition": "Feedback Surveys supply the results that Impact Reports present.",
-      "audit_status": "needs_confirmation",
-      "audit_note": "Likely if survey results are included in the Impact Report, but the current class definitions do not explicitly establish this data lineage."
+      "definition": "Feedback Surveys supply the results that Impact Reports present."
     },
     {
       "id": "agenda_describes_session",
@@ -3336,9 +3126,7 @@
       "predicate": "describes",
       "object": "session",
       "cardinality": "N:N",
-      "definition": "An Agenda sets out what happens in a Session.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "An Agenda sets out what happens in a Session."
     },
     {
       "id": "testimonial_supports_impact_report",
@@ -3346,9 +3134,7 @@
       "predicate": "supports",
       "object": "impact_report",
       "cardinality": "N:N",
-      "definition": "Testimonials appear in Impact Reports as student evidence.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Testimonials appear in Impact Reports as student evidence."
     },
     {
       "id": "student_makes_portal_feedback",
@@ -3356,9 +3142,7 @@
       "predicate": "makes",
       "object": "portal_feedback",
       "cardinality": "1:N",
-      "definition": "A Student can submit Portal Feedback.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "A Student can submit Portal Feedback."
     },
     {
       "id": "program_statistics_describes_career_circle_program",
@@ -3366,9 +3150,7 @@
       "predicate": "describes",
       "object": "career_circle_program",
       "cardinality": "N:N",
-      "definition": "Program Statistics count the reach and results of the Career Circle Program.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Program Statistics count the reach and results of the Career Circle Program."
     },
     {
       "id": "circle_is_part_of_career_circle_program",
@@ -3376,9 +3158,7 @@
       "predicate": "is_part_of",
       "object": "career_circle_program",
       "cardinality": "N:1",
-      "definition": "A Circle is one cohort of the Career Circle Program.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "A Circle is one cohort of the Career Circle Program."
     },
     {
       "id": "impact_report_informs_partner",
@@ -3386,9 +3166,7 @@
       "predicate": "informs",
       "object": "partner",
       "cardinality": "N:N",
-      "definition": "Impact Reports show Partner institutions what their term produced.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Impact Reports show Partner institutions what their term produced."
     },
     {
       "id": "sujeeth_foundation_provides_book",
@@ -3396,9 +3174,7 @@
       "predicate": "provides",
       "object": "book",
       "cardinality": "1:N",
-      "definition": "The Foundation provides Books to Students at no charge.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "The Foundation provides Books to Students at no charge."
     },
     {
       "id": "student_uses_programs_portal",
@@ -3406,9 +3182,7 @@
       "predicate": "uses",
       "object": "programs_portal",
       "cardinality": "N:1",
-      "definition": "Students request Books through the Programs Portal.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Students request Books through the Programs Portal."
     },
     {
       "id": "volunteer_uses_programs_portal",
@@ -3416,9 +3190,7 @@
       "predicate": "uses",
       "object": "programs_portal",
       "cardinality": "N:1",
-      "definition": "Volunteers apply through the Programs Portal.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Volunteers apply through the Programs Portal."
     },
     {
       "id": "programs_portal_hosts_book",
@@ -3426,9 +3198,7 @@
       "predicate": "hosts",
       "object": "book",
       "cardinality": "1:N",
-      "definition": "The Programs Portal lists the Book catalog.",
-      "audit_status": "needs_confirmation",
-      "audit_note": "The portal definition says Students request Books. It does not establish whether the portal hosts the book catalog or merely provides the request workflow."
+      "definition": "The Programs Portal lists the Book catalog."
     },
     {
       "id": "programs_portal_hosts_book_request",
@@ -3436,9 +3206,7 @@
       "predicate": "hosts",
       "object": "book_request",
       "cardinality": "1:N",
-      "definition": "Book Requests are made on the Programs Portal.",
-      "audit_status": "needs_confirmation",
-      "audit_note": "The portal is where Students request Books, but 'hosts' may imply that the portal stores the request record. Confirm the intended application/data relationship."
+      "definition": "Book Requests are made on the Programs Portal."
     },
     {
       "id": "circle_has_career_mentor",
@@ -3446,9 +3214,7 @@
       "predicate": "has",
       "object": "career_mentor",
       "cardinality": "1:1",
-      "definition": "Each Circle has exactly one assigned Career Mentor, as specified by the program business rules.",
-      "audit_status": "needs_confirmation",
-      "audit_note": "Plausible operational assignment, but the Circle definition does not state that a Circle has a Career Mentor. Confirm whether this is a direct data relationship."
+      "definition": "Each Circle has exactly one assigned Career Mentor, as specified by the program business rules."
     },
     {
       "id": "career_mentor_leads_circle",
@@ -3456,9 +3222,7 @@
       "predicate": "leads",
       "object": "circle",
       "cardinality": "1:N",
-      "definition": "A Career Mentor leads the Circle to which they are assigned.",
-      "audit_status": "needs_confirmation",
-      "audit_note": "The Career Mentor definition says mentors lead Sessions and guide Students. Leading a Circle is broader and may be inferable from its Sessions, but is not stated directly."
+      "definition": "A Career Mentor leads the Circle to which they are assigned."
     },
     {
       "id": "presentation_describes_week",
@@ -3466,9 +3230,7 @@
       "predicate": "describes",
       "object": "week",
       "cardinality": "N:N",
-      "definition": "Program presentations provide the teaching content for one or more program Weeks.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Program presentations provide the teaching content for one or more program Weeks."
     },
     {
       "id": "book_received_by_student",
@@ -3476,9 +3238,7 @@
       "predicate": "received_by",
       "object": "student",
       "cardinality": "N:N",
-      "definition": "Students receive Books provided by the Foundation; Book Requests identify the requested catalogued titles.",
-      "audit_status": "needs_confirmation",
-      "audit_note": "The relationship is plausible, but the current definitions do not state whether every catalogued Book is delivered to a Student or whether this is a conditional fulfillment outcome."
+      "definition": "Students receive Books provided by the Foundation; Book Requests identify the requested catalogued titles."
     },
     {
       "id": "networking_precedes_referral",
@@ -3486,9 +3246,7 @@
       "predicate": "precedes",
       "object": "referral",
       "cardinality": "N:N",
-      "definition": "A referral generally follows relationship-building through networking and depends on trust.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "A referral generally follows relationship-building through networking and depends on trust."
     },
     {
       "id": "resume_resource_is_part_of_career_development",
@@ -3496,9 +3254,7 @@
       "predicate": "is_part_of",
       "object": "career_development",
       "cardinality": "N:1",
-      "definition": "Resume Resource is a career-development skill or practice.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Resume Resource is a career-development skill or practice."
     },
     {
       "id": "linkedin_profile_is_part_of_career_development",
@@ -3506,9 +3262,7 @@
       "predicate": "is_part_of",
       "object": "career_development",
       "cardinality": "N:1",
-      "definition": "LinkedIn Profile is a career-development skill or practice.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "LinkedIn Profile is a career-development skill or practice."
     },
     {
       "id": "networking_is_part_of_career_development",
@@ -3516,9 +3270,7 @@
       "predicate": "is_part_of",
       "object": "career_development",
       "cardinality": "N:1",
-      "definition": "Networking is a career-development skill or practice.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Networking is a career-development skill or practice."
     },
     {
       "id": "referral_is_part_of_career_development",
@@ -3526,9 +3278,7 @@
       "predicate": "is_part_of",
       "object": "career_development",
       "cardinality": "N:1",
-      "definition": "Referral is a career-development skill or practice.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Referral is a career-development skill or practice."
     },
     {
       "id": "job_application_strategy_is_part_of_career_development",
@@ -3536,9 +3286,7 @@
       "predicate": "is_part_of",
       "object": "career_development",
       "cardinality": "N:1",
-      "definition": "Job Application Strategy is a career-development skill or practice.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Job Application Strategy is a career-development skill or practice."
     },
     {
       "id": "interviewing_is_part_of_career_development",
@@ -3546,9 +3294,7 @@
       "predicate": "is_part_of",
       "object": "career_development",
       "cardinality": "N:1",
-      "definition": "Interviewing is a career-development skill or practice.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Interviewing is a career-development skill or practice."
     },
     {
       "id": "receiving_feedback_is_part_of_career_development",
@@ -3556,9 +3302,7 @@
       "predicate": "is_part_of",
       "object": "career_development",
       "cardinality": "N:1",
-      "definition": "Receiving Feedback is a career-development skill or practice.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Receiving Feedback is a career-development skill or practice."
     },
     {
       "id": "follow_up_is_part_of_career_development",
@@ -3566,9 +3310,7 @@
       "predicate": "is_part_of",
       "object": "career_development",
       "cardinality": "N:1",
-      "definition": "Follow-up is a career-development skill or practice.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Follow-up is a career-development skill or practice."
     },
     {
       "id": "salary_negotiation_is_part_of_career_development",
@@ -3576,9 +3318,7 @@
       "predicate": "is_part_of",
       "object": "career_development",
       "cardinality": "N:1",
-      "definition": "Salary Negotiation is a career-development skill or practice.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Salary Negotiation is a career-development skill or practice."
     },
     {
       "id": "growth_mindset_informs_receiving_feedback",
@@ -3586,9 +3326,7 @@
       "predicate": "informs",
       "object": "receiving_feedback",
       "cardinality": "N:N",
-      "definition": "Instructional inference: A Growth Mindset shapes how a Student approaches feedback, treating it as information for learning and practice.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Instructional inference: A Growth Mindset shapes how a Student approaches feedback, treating it as information for learning and practice."
     },
     {
       "id": "receiving_feedback_informs_job_application_strategy",
@@ -3596,9 +3334,7 @@
       "predicate": "informs",
       "object": "job_application_strategy",
       "cardinality": "N:N",
-      "definition": "Instructional inference: Feedback, including information learned from rejection, can guide changes to the roles a Student targets and how they tailor future applications.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Instructional inference: Feedback, including information learned from rejection, can guide changes to the roles a Student targets and how they tailor future applications."
     },
     {
       "id": "grit_supports_job_application_strategy",
@@ -3606,9 +3342,7 @@
       "predicate": "supports",
       "object": "job_application_strategy",
       "cardinality": "N:N",
-      "definition": "Instructional inference: Sustained effort and perseverance can help a Student maintain a thoughtful application strategy through a long job search.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Instructional inference: Sustained effort and perseverance can help a Student maintain a thoughtful application strategy through a long job search."
     },
     {
       "id": "purpose_informs_job_application_strategy",
@@ -3616,9 +3350,7 @@
       "predicate": "informs",
       "object": "job_application_strategy",
       "cardinality": "N:N",
-      "definition": "Instructional inference: A Student's sense of purpose and career direction can inform which roles to pursue and how to prioritize applications.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Instructional inference: A Student's sense of purpose and career direction can inform which roles to pursue and how to prioritize applications."
     },
     {
       "id": "purpose_informs_linkedin_profile",
@@ -3626,9 +3358,7 @@
       "predicate": "informs",
       "object": "linkedin_profile",
       "cardinality": "N:N",
-      "definition": "Instructional inference: A Student's goals, values, and sense of direction can inform the professional story communicated through a LinkedIn Profile.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Instructional inference: A Student's goals, values, and sense of direction can inform the professional story communicated through a LinkedIn Profile."
     },
     {
       "id": "resume_resource_supports_interviewing",
@@ -3636,9 +3366,7 @@
       "predicate": "supports",
       "object": "interviewing",
       "cardinality": "N:N",
-      "definition": "Instructional inference: Preparing a resume helps a Student identify and organize experiences they may later discuss in interviews.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Instructional inference: Preparing a resume helps a Student identify and organize experiences they may later discuss in interviews."
     },
     {
       "id": "innovation_supports_receiving_feedback",
@@ -3646,9 +3374,7 @@
       "predicate": "supports",
       "object": "receiving_feedback",
       "cardinality": "N:N",
-      "definition": "Instructional inference: Treating applications as experiments encourages a Student to learn from feedback and adjust the next attempt.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Instructional inference: Treating applications as experiments encourages a Student to learn from feedback and adjust the next attempt."
     },
     {
       "id": "learning_from_regret_informs_purpose",
@@ -3656,9 +3382,7 @@
       "predicate": "informs",
       "object": "purpose",
       "cardinality": "N:N",
-      "definition": "Instructional inference: Reflecting on regret can clarify values and help a person make more authentic choices about direction and meaningful work.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Instructional inference: Reflecting on regret can clarify values and help a person make more authentic choices about direction and meaningful work."
     },
     {
       "id": "permission_to_feel_informs_receiving_feedback",
@@ -3666,9 +3390,7 @@
       "predicate": "informs",
       "object": "receiving_feedback",
       "cardinality": "N:N",
-      "definition": "Instructional inference: Noticing and naming emotions can help a Student respond thoughtfully to feedback rather than react without reflection.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Instructional inference: Noticing and naming emotions can help a Student respond thoughtfully to feedback rather than react without reflection."
     },
     {
       "id": "psychological_safety_supports_receiving_feedback",
@@ -3676,9 +3398,7 @@
       "predicate": "supports",
       "object": "receiving_feedback",
       "cardinality": "N:N",
-      "definition": "Instructional inference: A climate where people can speak openly makes it easier to ask for, hear, and discuss feedback.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Instructional inference: A climate where people can speak openly makes it easier to ask for, hear, and discuss feedback."
     },
     {
       "id": "vulnerability_courage_supports_receiving_feedback",
@@ -3686,9 +3406,7 @@
       "predicate": "supports",
       "object": "receiving_feedback",
       "cardinality": "N:N",
-      "definition": "Instructional inference: Being willing to show up honestly and take interpersonal risks can help a Student receive and act on feedback.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Instructional inference: Being willing to show up honestly and take interpersonal risks can help a Student receive and act on feedback."
     },
     {
       "id": "appreciation_supports_networking",
@@ -3696,9 +3414,7 @@
       "predicate": "supports",
       "object": "networking",
       "cardinality": "N:N",
-      "definition": "Instructional inference: Expressing genuine appreciation can help maintain professional relationships built through networking.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Instructional inference: Expressing genuine appreciation can help maintain professional relationships built through networking."
     },
     {
       "id": "leadership_supports_career_mentor",
@@ -3706,9 +3422,7 @@
       "predicate": "supports",
       "object": "career_mentor",
       "cardinality": "N:N",
-      "definition": "Instructional inference: Leadership practices can inform how a Career Mentor guides Students and leads Sessions.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Instructional inference: Leadership practices can inform how a Career Mentor guides Students and leads Sessions."
     },
     {
       "id": "receiving_feedback_supports_career_development",
@@ -3716,9 +3430,7 @@
       "predicate": "supports",
       "object": "career_development",
       "cardinality": "N:N",
-      "definition": "Instructional inference: Learning from feedback, including rejection, helps a Student adjust and continue their career-development efforts.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Instructional inference: Learning from feedback, including rejection, helps a Student adjust and continue their career-development efforts."
     },
     {
       "id": "ikigai_defines_ideal_job",
@@ -3726,9 +3438,7 @@
       "predicate": "defines",
       "object": "ideal_job",
       "cardinality": "1:1",
-      "definition": "Ikigai supplies the four-part lens used to define an Ideal Job: what a person loves, what they are good at, what the world needs, and what they can be paid to do.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Ikigai supplies the four-part lens used to define an Ideal Job: what a person loves, what they are good at, what the world needs, and what they can be paid to do."
     },
     {
       "id": "job_application_strategy_targets_ideal_job",
@@ -3736,9 +3446,7 @@
       "predicate": "targets",
       "object": "ideal_job",
       "cardinality": "N:1",
-      "definition": "Job Application Strategy is intended to help the Student obtain an Ideal Job identified through the Ikigai lens. Role selection, application volume, and personalization should serve this goal.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Job Application Strategy is intended to help the Student obtain an Ideal Job identified through the Ikigai lens. Role selection, application volume, and personalization should serve this goal."
     },
     {
       "id": "career_development_aims_for_ideal_job",
@@ -3746,9 +3454,7 @@
       "predicate": "aims_for",
       "object": "ideal_job",
       "cardinality": "N:1",
-      "definition": "Career Development helps a Student identify, pursue, and prepare for an Ideal Job.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Career Development helps a Student identify, pursue, and prepare for an Ideal Job."
     },
     {
       "id": "ikigai_illustrates_week_2",
@@ -3756,9 +3462,7 @@
       "predicate": "illustrates",
       "object": "week_2",
       "cardinality": "N:N",
-      "definition": "Ikigai is a named framework taught in Week 2: Research & Exploration and gives students a way to evaluate career fit.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Ikigai is a named framework taught in Week 2: Research & Exploration and gives students a way to evaluate career fit."
     },
     {
       "id": "discover_uses_purpose",
@@ -3766,9 +3470,7 @@
       "predicate": "uses",
       "object": "purpose",
       "cardinality": "N:N",
-      "definition": "Discover uses Purpose to help a Student identify what gives their work meaning.",
-      "audit_status": "needs_confirmation",
-      "audit_note": "Discover identifies sources of meaning and values. 'Uses Purpose' may imply Purpose is a tool rather than something the student clarifies."
+      "definition": "Discover uses Purpose to help a Student identify what gives their work meaning."
     },
     {
       "id": "discover_uses_ikigai",
@@ -3776,9 +3478,7 @@
       "predicate": "uses",
       "object": "ikigai",
       "cardinality": "N:N",
-      "definition": "Discover uses Ikigai to connect interests, strengths, contribution, and paid work.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Discover uses Ikigai to connect interests, strengths, contribution, and paid work."
     },
     {
       "id": "explore_uses_ikigai",
@@ -3786,9 +3486,7 @@
       "predicate": "uses",
       "object": "ikigai",
       "cardinality": "N:N",
-      "definition": "Explore uses the Student's Ikigai criteria to narrow industries, functions, job titles, and employers.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Explore uses the Student's Ikigai criteria to narrow industries, functions, job titles, and employers."
     },
     {
       "id": "explore_uses_purpose",
@@ -3796,9 +3494,7 @@
       "predicate": "uses",
       "object": "purpose",
       "cardinality": "N:N",
-      "definition": "Explore uses Purpose to assess whether possible fields and roles connect to the Student's sense of meaning.",
-      "audit_status": "needs_confirmation",
-      "audit_note": "Explore translates self-knowledge into roles and employers. The current definition does not establish Purpose as a method used during this phase."
+      "definition": "Explore uses Purpose to assess whether possible fields and roles connect to the Student's sense of meaning."
     },
     {
       "id": "explore_uses_networking",
@@ -3806,9 +3502,7 @@
       "predicate": "uses",
       "object": "networking",
       "cardinality": "N:N",
-      "definition": "Explore uses networking to learn about industries, roles, organizations, and employers.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Explore uses networking to learn about industries, roles, organizations, and employers."
     },
     {
       "id": "validate_uses_networking",
@@ -3816,9 +3510,7 @@
       "predicate": "uses",
       "object": "networking",
       "cardinality": "N:N",
-      "definition": "Validate uses professional conversations to test assumptions about the work and the people doing it.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Validate uses professional conversations to test assumptions about the work and the people doing it."
     },
     {
       "id": "validate_uses_career_mentor",
@@ -3826,9 +3518,7 @@
       "predicate": "uses",
       "object": "career_mentor",
       "cardinality": "N:N",
-      "definition": "Validate can draw on Career Mentors to help students test career assumptions and understand role expectations.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Validate can draw on Career Mentors to help students test career assumptions and understand role expectations."
     },
     {
       "id": "validate_uses_receiving_feedback",
@@ -3836,9 +3526,7 @@
       "predicate": "uses",
       "object": "receiving_feedback",
       "cardinality": "N:N",
-      "definition": "Validate uses feedback to revise assumptions about fit, qualifications, and next steps.",
-      "audit_status": "needs_confirmation",
-      "audit_note": "Validation includes conversations and testing assumptions. The current definition does not explicitly say that the Receiving Feedback skill is a method used in this phase."
+      "definition": "Validate uses feedback to revise assumptions about fit, qualifications, and next steps."
     },
     {
       "id": "pursue_uses_resume_resource",
@@ -3846,9 +3534,7 @@
       "predicate": "uses",
       "object": "resume_resource",
       "cardinality": "N:N",
-      "definition": "Pursue uses the Resume Resource to present relevant experience for target roles.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Pursue uses the Resume Resource to present relevant experience for target roles."
     },
     {
       "id": "pursue_uses_linkedin_profile",
@@ -3856,9 +3542,7 @@
       "predicate": "uses",
       "object": "linkedin_profile",
       "cardinality": "N:N",
-      "definition": "Pursue uses the LinkedIn Profile to communicate professional interests and connect with people in target fields.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Pursue uses the LinkedIn Profile to communicate professional interests and connect with people in target fields."
     },
     {
       "id": "pursue_uses_networking",
@@ -3866,9 +3550,7 @@
       "predicate": "uses",
       "object": "networking",
       "cardinality": "N:N",
-      "definition": "Pursue uses networking to build relationships around target opportunities.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Pursue uses networking to build relationships around target opportunities."
     },
     {
       "id": "pursue_uses_referral",
@@ -3876,9 +3558,7 @@
       "predicate": "uses",
       "object": "referral",
       "cardinality": "N:N",
-      "definition": "Pursue uses referrals when a trusted relationship can support access to a target opportunity.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Pursue uses referrals when a trusted relationship can support access to a target opportunity."
     },
     {
       "id": "pursue_uses_job_application_strategy",
@@ -3886,9 +3566,7 @@
       "predicate": "uses",
       "object": "job_application_strategy",
       "cardinality": "N:N",
-      "definition": "Pursue uses Job Application Strategy to select and prioritize roles that match the Ideal Job criteria.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Pursue uses Job Application Strategy to select and prioritize roles that match the Ideal Job criteria."
     },
     {
       "id": "pursue_uses_interviewing",
@@ -3896,9 +3574,7 @@
       "predicate": "uses",
       "object": "interviewing",
       "cardinality": "N:N",
-      "definition": "Pursue uses Interviewing to demonstrate fit and assess whether an employer and role match the Student's criteria.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Pursue uses Interviewing to demonstrate fit and assess whether an employer and role match the Student's criteria."
     },
     {
       "id": "pursue_uses_follow_up",
@@ -3906,9 +3582,7 @@
       "predicate": "uses",
       "object": "follow_up",
       "cardinality": "N:N",
-      "definition": "Pursue uses Follow-up to maintain relationships and move hiring conversations forward.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Pursue uses Follow-up to maintain relationships and move hiring conversations forward."
     },
     {
       "id": "pursue_uses_salary_negotiation",
@@ -3916,9 +3590,7 @@
       "predicate": "uses",
       "object": "salary_negotiation",
       "cardinality": "N:N",
-      "definition": "Pursue uses Salary Negotiation to assess and agree on the terms of an offer.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Pursue uses Salary Negotiation to assess and agree on the terms of an offer."
     },
     {
       "id": "pursue_targets_ideal_job",
@@ -3926,9 +3598,7 @@
       "predicate": "targets",
       "object": "ideal_job",
       "cardinality": "N:1",
-      "definition": "Pursue is directed toward obtaining an Ideal Job defined through the Student's Ikigai criteria.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Pursue is directed toward obtaining an Ideal Job defined through the Student's Ikigai criteria."
     },
     {
       "id": "discover_precedes_explore",
@@ -3936,9 +3606,7 @@
       "predicate": "precedes",
       "object": "explore",
       "cardinality": "N:N",
-      "definition": "Students first clarify what matters to them before translating it into possible career directions.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Students first clarify what matters to them before translating it into possible career directions."
     },
     {
       "id": "explore_precedes_validate",
@@ -3946,9 +3614,7 @@
       "predicate": "precedes",
       "object": "validate",
       "cardinality": "N:N",
-      "definition": "Students identify possible roles and employers before testing assumptions about them.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Students identify possible roles and employers before testing assumptions about them."
     },
     {
       "id": "validate_precedes_pursue",
@@ -3956,9 +3622,7 @@
       "predicate": "precedes",
       "object": "pursue",
       "cardinality": "N:N",
-      "definition": "Students test role fit before committing their search effort to a focused set of opportunities.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Students test role fit before committing their search effort to a focused set of opportunities."
     },
     {
       "id": "first_job_can_be_stepping_stone_to_ideal_job",
@@ -3966,9 +3630,7 @@
       "predicate": "can_be_stepping_stone_to",
       "object": "ideal_job",
       "cardinality": "N:1",
-      "definition": "A first job may build the skills, experience, relationships, and evidence that move a Student closer to the Ideal Job; it does not have to be the final destination.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "A first job may build the skills, experience, relationships, and evidence that move a Student closer to the Ideal Job; it does not have to be the final destination."
     },
     {
       "id": "discover_illustrates_week_1",
@@ -3976,9 +3638,7 @@
       "predicate": "illustrates",
       "object": "week_1",
       "cardinality": "N:N",
-      "definition": "Discover is practiced in Week 1: Self-Assessment.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Discover is practiced in Week 1: Self-Assessment."
     },
     {
       "id": "explore_illustrates_week_2",
@@ -3986,9 +3646,7 @@
       "predicate": "illustrates",
       "object": "week_2",
       "cardinality": "N:N",
-      "definition": "Explore is practiced in Week 2: Research & Exploration.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Explore is practiced in Week 2: Research & Exploration."
     },
     {
       "id": "validate_illustrates_week_2",
@@ -3996,9 +3654,7 @@
       "predicate": "illustrates",
       "object": "week_2",
       "cardinality": "N:N",
-      "definition": "Validate begins in Week 2 as students research roles and connect with hiring managers.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Validate begins in Week 2 as students research roles and connect with hiring managers."
     },
     {
       "id": "validate_illustrates_week_4",
@@ -4006,9 +3662,7 @@
       "predicate": "illustrates",
       "object": "week_4",
       "cardinality": "N:N",
-      "definition": "Validate continues in Week 4 as students use professional relationships to learn about target work.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Validate continues in Week 4 as students use professional relationships to learn about target work."
     },
     {
       "id": "pursue_illustrates_week_3",
@@ -4016,9 +3670,7 @@
       "predicate": "illustrates",
       "object": "week_3",
       "cardinality": "N:N",
-      "definition": "Pursue is prepared for in Week 3 through resumes and LinkedIn profiles aligned to target roles.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Pursue is prepared for in Week 3 through resumes and LinkedIn profiles aligned to target roles."
     },
     {
       "id": "pursue_illustrates_week_4",
@@ -4026,9 +3678,7 @@
       "predicate": "illustrates",
       "object": "week_4",
       "cardinality": "N:N",
-      "definition": "Pursue uses Week 4 networking to build relationships and discover opportunities.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Pursue uses Week 4 networking to build relationships and discover opportunities."
     },
     {
       "id": "pursue_illustrates_week_5",
@@ -4036,9 +3686,7 @@
       "predicate": "illustrates",
       "object": "week_5",
       "cardinality": "N:N",
-      "definition": "Pursue is practiced in Week 5 through targeted applications and interviews.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Pursue is practiced in Week 5 through targeted applications and interviews."
     },
     {
       "id": "pursue_illustrates_week_6",
@@ -4046,41 +3694,31 @@
       "predicate": "illustrates",
       "object": "week_6",
       "cardinality": "N:N",
-      "definition": "Pursue continues in Week 6 through follow-up, offer evaluation, and salary negotiation.",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "definition": "Pursue continues in Week 6 through follow-up, offer evaluation, and salary negotiation."
     },
     {
       "id": "discover_is_part_of_career_development",
       "subject": "discover",
       "predicate": "is_part_of",
-      "object": "career_development",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "object": "career_development"
     },
     {
       "id": "explore_is_part_of_career_development",
       "subject": "explore",
       "predicate": "is_part_of",
-      "object": "career_development",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "object": "career_development"
     },
     {
       "id": "validate_is_part_of_career_development",
       "subject": "validate",
       "predicate": "is_part_of",
-      "object": "career_development",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "object": "career_development"
     },
     {
       "id": "pursue_is_part_of_career_development",
       "subject": "pursue",
       "predicate": "is_part_of",
-      "object": "career_development",
-      "audit_status": "consistent_with_current_definitions",
-      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+      "object": "career_development"
     }
   ],
   "business_rules": [
@@ -6251,6 +5889,20 @@
       "consistent_with_current_definitions": 168,
       "needs_confirmation": 12,
       "revised": 1
+    },
+    "edge_defaults": {
+      "audit_status": "consistent_with_current_definitions",
+      "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning."
+    },
+    "edge_overrides": {
+      "spotlight_features_volunteer": {
+        "audit_note": "Features identifies the Volunteer profiled by the Spotlight; this is distinct from an Illustrates edge used to retrieve the Spotlight as an example of a concept."
+      },
+      "networking_supports_referral": {
+        "audit_status": "revised",
+        "audit_note": "Networking builds the relationship and trust from which a referral may follow. It does not, as a whole, illustrate a referral."
+      }
     }
   }
 }
+
