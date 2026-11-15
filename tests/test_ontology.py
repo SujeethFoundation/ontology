@@ -126,3 +126,16 @@ def test_a_week_question_reaches_the_foundations_own_site():
     assert {"week", "agenda"} <= set(sujeeth["associated_concepts"])
     week = next(item for item in ONTOLOGY["classes"] if item["id"] == "week")
     assert {"syllabus", "curriculum"} <= set(week["aliases"])
+
+
+def test_what_the_program_covers_draws_on_the_weekly_syllabus():
+    """"What is covered in the program?" returned only the Week 1 page. The program is covered by its six weeks, and
+    only an `illustrates` relationship makes the search follow from the program to them."""
+    related = {(r["subject"], r["predicate"], r["object"]) for r in ONTOLOGY["relationships"]}
+    assert ("career_circle_program", "contains", "week") in related
+    assert ("week", "illustrates", "career_circle_program") in related
+    program = next(c for c in ONTOLOGY["classes"] if c["id"] == "career_circle_program")
+    # query_phrases match questions only; the page tagger skips them, so these phrases cannot tag content.
+    assert {"what is covered", "covered in the program", "what will i learn"} <= set(program["query_phrases"])
+    week = next(c for c in ONTOLOGY["classes"] if c["id"] == "week")
+    assert {"syllabus", "curriculum"} <= set(week["aliases"])
