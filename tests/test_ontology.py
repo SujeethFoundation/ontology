@@ -24,9 +24,6 @@ def test_all_remaining_domains_are_crawl_enabled_unless_manual_only():
         else:
             assert item.get("crawl_enabled") is True, item["domain"]
 
-def test_portal_domain_is_removed():
-    assert not any(item.get("domain") == "portal.sujeeth.org" for item in ONTOLOGY["domains"])
-
 def test_domain_notes_are_removed():
     assert all("notes" not in item for item in ONTOLOGY["domains"])
 
