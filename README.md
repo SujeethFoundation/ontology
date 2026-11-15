@@ -2,6 +2,10 @@
 
 Python Azure Functions v2 API. `ontology/ontology.json` is the canonical source for ontology concepts, relationships, rules, terminology, Dataverse mappings, program structure, and domain governance.
 
+## Version 1.13.5 changes
+
+- Normalized repeated relationship audit metadata into shared defaults, explicit overrides, and the existing needs-confirmation audit list. The API loader expands the metadata so relationship responses retain their existing shape.
+
 ## Version 1.13.4 changes
 
 - Added four question-only phrases to the existing `explore` concept: researching roles and companies, researching companies, comparing employers, and learning what a job role is really like. They are not page-tagging aliases.
@@ -166,3 +170,4 @@ Edit `ontology/ontology.json`, increment `ontology_version`, review, test, and d
 - A question that names an informational interview still matches both concepts outright (1.2 and 1.1) and searches both.
 
 **After deploying:** restart the websearch app (it caches the ontology).
+
