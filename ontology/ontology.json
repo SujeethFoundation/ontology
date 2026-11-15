@@ -1,5 +1,5 @@
 {
-  "ontology_version": "1.13.3",
+  "ontology_version": "1.13.4",
   "last_updated": "2026-11-14",
   "description": "Sujeeth Foundation domain ontology and governance configuration, including validated concepts used to associate approved external domains.",
   "foundation_purpose": {
@@ -1902,7 +1902,11 @@
         "what jobs can I do with my major",
         "research job titles and employers",
         "find companies in my target industry",
-        "career options based on my interests"
+        "career options based on my interests",
+        "research roles and companies",
+        "research companies",
+        "compare employers",
+        "learn what a job role is really like"
       ]
     },
     {

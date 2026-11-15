@@ -123,6 +123,28 @@ def test_interviewing_matches_a_plain_interview_question_without_tagging_pages_o
     assert "interview" not in [a.lower() for a in interviewing["aliases"]]
 
 
+def test_career_research_questions_map_to_the_existing_explore_concept():
+    """These are question-only phrases: they recover career exploration without broadening page tags."""
+    explore = next(c for c in ONTOLOGY["classes"] if c["id"] == "explore")
+    phrases = set(explore["query_phrases"])
+    assert {
+        "research roles and companies",
+        "research companies",
+        "compare employers",
+        "learn what a job role is really like",
+    } <= phrases
+    assert not ({"research companies", "compare employers"} & set(explore["aliases"]))
+
+
+def test_illustrates_keeps_its_subject_to_object_meaning_and_retrieval_direction():
+    illustrates = next(p for p in ONTOLOGY["predicates"] if p["id"] == "illustrates")
+    behavior = illustrates["search_behavior"]
+    assert illustrates["symmetric"] is False
+    assert behavior["matched_endpoint"] == "object"
+    assert behavior["retrieve_endpoint"] == "subject"
+    assert behavior["traversal_direction"] == "object_to_subject"
+
+
 def test_a_week_question_reaches_the_foundations_own_site():
     """"What does each week cover?" matched only the concept `week`. With no domain attached, search ran nowhere and the answer was empty."""
     sujeeth = next(item for item in ONTOLOGY["domains"] if item["domain"] == "sujeeth.org")
