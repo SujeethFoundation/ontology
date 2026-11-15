@@ -2,6 +2,11 @@
 
 Python Azure Functions v2 API. `ontology/ontology.json` is the canonical source for ontology concepts, relationships, rules, terminology, Dataverse mappings, program structure, and domain governance.
 
+## Version 1.13.4 changes
+
+- Added four question-only phrases to the existing `explore` concept: researching roles and companies, researching companies, comparing employers, and learning what a job role is really like. They are not page-tagging aliases.
+- Kept `illustrates` unchanged: when a query matches the object, search may retrieve the subject as its illustration. The relationship remains directional and is not generic relatedness.
+
 ## Decisions
 - GitHub and `github-wiki-see.page` are removed. Continue using the existing Wiki Search service separately.
 - Domain crawling and search permissions are controlled only by the ontology.
