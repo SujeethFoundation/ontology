@@ -1,5 +1,5 @@
 {
-  "ontology_version": "1.13.2",
+  "ontology_version": "1.13.3",
   "last_updated": "2026-11-14",
   "description": "Sujeeth Foundation domain ontology and governance configuration, including validated concepts used to associate approved external domains.",
   "foundation_purpose": {
@@ -574,6 +574,13 @@
         "school partnership",
         "start a circle at my school",
         "bring this to my university"
+      ],
+      "query_phrases": [
+        "partner with the foundation",
+        "school partner",
+        "partner with you",
+        "my school partner",
+        "bring career circles to my school"
       ]
     },
     {
@@ -597,6 +604,16 @@
         "the curriculum",
         "what the program covers",
         "course outline"
+      ],
+      "query_phrases": [
+        "covered in the program",
+        "what does the program cover",
+        "what the program covers",
+        "topics covered",
+        "topics in the program",
+        "taught in the program",
+        "learn in the program",
+        "career circle"
       ]
     },
     {
@@ -659,7 +676,21 @@
         "program week",
         "weekly topic",
         "week by week",
-        "topics by week"
+        "topics by week",
+        "syllabus",
+        "curriculum"
+      ],
+      "query_phrases": [
+        "covered in the program",
+        "what does the program cover",
+        "what the program covers",
+        "topics covered",
+        "topics in the program",
+        "taught in the program",
+        "learn in the program",
+        "each week",
+        "weekly topics",
+        "six weeks"
       ]
     },
     {
@@ -802,6 +833,15 @@
         "cover a session",
         "session coverage",
         "substitute mentor"
+      ],
+      "query_phrases": [
+        "can't make my session",
+        "cant make my session",
+        "cannot make my session",
+        "can't attend my session",
+        "miss my session",
+        "who can cover my session",
+        "cover my session"
       ]
     },
     {
@@ -1198,7 +1238,12 @@
         "meet people in my target industry",
         "build professional connections",
         "talk to people in a career field",
-        "informational networking conversation"
+        "informational networking conversation",
+        "elevator pitch",
+        "career fair",
+        "career fairs",
+        "networking message",
+        "how do I network"
       ]
     },
     {
@@ -1495,7 +1540,10 @@
         "follow up after a job interview",
         "thank you after an interview",
         "follow up after networking",
-        "check in after applying"
+        "check in after applying",
+        "thank you email",
+        "thank you note",
+        "thank-you email"
       ]
     },
     {
@@ -1523,7 +1571,12 @@
         "targeted job search",
         "how many jobs should I apply for",
         "prioritize job applications",
-        "apply for jobs that fit my career goals"
+        "apply for jobs that fit my career goals",
+        "job openings",
+        "find job openings",
+        "job postings",
+        "where to find jobs",
+        "job boards"
       ]
     },
     {
@@ -1567,7 +1620,10 @@
       "query_phrases": [
         "negotiate a first job offer",
         "entry level salary negotiation",
-        "evaluate compensation in a job offer"
+        "evaluate compensation in a job offer",
+        "job offer",
+        "negotiate a job offer",
+        "negotiate an offer"
       ]
     },
     {
@@ -1599,7 +1655,9 @@
         "prepare for a job interview",
         "practice interview answers",
         "interview questions for entry level jobs",
-        "how to evaluate a job during an interview"
+        "how to evaluate a job during an interview",
+        "interviewer",
+        "questions to ask an interviewer"
       ]
     },
     {
@@ -1725,7 +1783,11 @@
       "query_phrases": [
         "learn from interview feedback",
         "respond to rejection",
-        "use feedback to improve a job search"
+        "use feedback to improve a job search",
+        "handle a rejection",
+        "handle rejection",
+        "got rejected",
+        "deal with rejection"
       ]
     },
     {
@@ -4473,27 +4535,32 @@
       "preferred": "Book Request",
       "avoid": [
         "Book Order"
-      ]
+      ],
+      "class_id": "book_request"
     },
     {
       "preferred": "Impact Report",
       "avoid": [
         "Case Study"
-      ]
+      ],
+      "class_id": "impact_report"
     },
     {
       "preferred": "Circle",
-      "definition": "A cohort of students participating together."
+      "definition": "A cohort of students participating together.",
+      "class_id": "circle"
     },
     {
       "preferred": "Session",
-      "definition": "One weekly meeting within a Circle."
+      "definition": "One weekly meeting within a Circle.",
+      "class_id": "session"
     },
     {
       "preferred": "Academic Period",
       "aliases": [
         "Semester"
-      ]
+      ],
+      "class_id": "academic_period"
     },
     {
       "preferred": "Resume Resource",
@@ -4503,7 +4570,8 @@
         "CV writing",
         "curriculum vitae",
         "resume preparation"
-      ]
+      ],
+      "class_id": "resume_resource"
     },
     {
       "preferred": "Career Development",
@@ -4512,28 +4580,32 @@
         "professional development",
         "career readiness",
         "career growth"
-      ]
+      ],
+      "class_id": "career_development"
     },
     {
       "preferred": "Growth Mindset",
       "aliases": [
         "learning mindset",
         "developing abilities"
-      ]
+      ],
+      "class_id": "growth_mindset"
     },
     {
       "preferred": "Grit",
       "aliases": [
         "perseverance",
         "persistence"
-      ]
+      ],
+      "class_id": "grit"
     },
     {
       "preferred": "Networking",
       "aliases": [
         "professional networking",
         "career connections"
-      ]
+      ],
+      "class_id": "networking"
     },
     {
       "preferred": "Plain, specific wording",
@@ -5143,7 +5215,9 @@
         "explore",
         "validate",
         "pursue",
-        "first_job"
+        "first_job",
+        "week",
+        "receiving_feedback"
       ],
       "crawl_policy": {
         "mode": "domain",
@@ -5310,7 +5384,8 @@
         "ideal_job",
         "first_job",
         "discover",
-        "validate"
+        "validate",
+        "receiving_feedback"
       ],
       "crawl_policy": {
         "mode": "domain",
@@ -5480,7 +5555,8 @@
         "pursue",
         "ideal_job",
         "first_job",
-        "ikigai"
+        "ikigai",
+        "receiving_feedback"
       ],
       "crawl_policy": {
         "mode": "domain",
