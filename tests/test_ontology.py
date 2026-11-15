@@ -105,7 +105,10 @@ def test_referral_is_a_networking_skill_with_phrase_aliases():
     assert all(len(alias.split()) >= 2 for alias in referral["aliases"])
     related = {(r["subject"], r["predicate"], r["object"]) for r in ONTOLOGY["relationships"]}
     assert ("referral", "is_part_of", "networking") in related
-    assert ("networking", "illustrates", "referral") in related
+    # The relationship audit (1.13.x) corrected this edge: networking is the ground a referral grows from, not an
+    # illustration of one.
+    assert ("networking", "supports", "referral") in related
+    assert ("networking", "illustrates", "referral") not in related
 
 
 def test_referral_resolves_to_approved_domains():
@@ -128,14 +131,64 @@ def test_a_week_question_reaches_the_foundations_own_site():
     assert {"syllabus", "curriculum"} <= set(week["aliases"])
 
 
-def test_what_the_program_covers_draws_on_the_weekly_syllabus():
-    """"What is covered in the program?" returned only the Week 1 page. The program is covered by its six weeks, and
-    only an `illustrates` relationship makes the search follow from the program to them."""
+def test_what_the_program_covers_matches_the_weeks_directly():
+    """"What is covered in the program?" returned only the Week 1 page. The question now matches Week as well as the
+    program, through phrases on both. It does not use an `illustrates` edge: the audit keeps that predicate for
+    illustration, and the program contains its weeks."""
     related = {(r["subject"], r["predicate"], r["object"]) for r in ONTOLOGY["relationships"]}
     assert ("career_circle_program", "contains", "week") in related
-    assert ("week", "illustrates", "career_circle_program") in related
-    program = next(c for c in ONTOLOGY["classes"] if c["id"] == "career_circle_program")
-    # query_phrases match questions only; the page tagger skips them, so these phrases cannot tag content.
-    assert {"what is covered", "covered in the program", "what will i learn"} <= set(program["query_phrases"])
-    week = next(c for c in ONTOLOGY["classes"] if c["id"] == "week")
-    assert {"syllabus", "curriculum"} <= set(week["aliases"])
+    assert ("week", "illustrates", "career_circle_program") not in related
+    by_id = {c["id"]: c for c in ONTOLOGY["classes"]}
+    for cid in ("career_circle_program", "week"):
+        assert {"covered in the program", "what does the program cover", "topics covered"} <= set(by_id[cid]["query_phrases"])
+    assert {"syllabus", "curriculum"} <= set(by_id["week"]["aliases"])
+
+
+# The Search App's filler words (services/concept_resolver.py, STOPWORDS) plus question words. A phrase made only of
+# these half-matches unrelated questions: "what's covered" matched "what's a good vodka tonic recipe".
+FILLER = set("""a an the and or but if of to in on at by for from with without into about as is are was were be been am do
+does did have has had can could should would will may might must i me my mine we us our you your yours he she it its they
+them their this that these those there here what which who whom whose when where why how not no yes so than then too very
+just also any some more most other such only own same up out over under again all each both few make makes made making give
+gives gave giving tell tells told telling show shows showing get gets got getting take takes taking let lets need needs want
+wants like use using go goes going know help helps teach teaches way ways thing things please tips tip s t covered cover
+covers learn taught""".split())
+
+
+# Kept on purpose for "how do I get into consulting". They also match "get into shape", so do not add more like them.
+FILLER_ONLY_ALLOWED = {("career_development", "getting into"), ("career_development", "get into")}
+
+
+def test_every_query_phrase_carries_a_topic_word():
+    import re
+    for item in ONTOLOGY["classes"]:
+        for phrase in item.get("query_phrases", []):
+            if (item["id"], phrase) in FILLER_ONLY_ALLOWED:
+                continue
+            words = re.sub(r"[^a-z0-9]+", " ", phrase.lower()).split()
+            assert any(word not in FILLER for word in words), (item["id"], phrase)
+
+
+def test_questions_that_used_to_miss_have_a_phrase():
+    by_id = {c["id"]: set(p.lower() for p in c.get("query_phrases", [])) for c in ONTOLOGY["classes"]}
+    assert "career circle" in by_id["career_circle_program"]            # "What is a Career Circle?" matched only Circle
+    assert "partner with the foundation" in by_id["partnership"]
+    assert "who can cover my session" in by_id["substitute_request"]
+    assert "job openings" in by_id["job_application_strategy"]
+    assert {"elevator pitch", "career fair"} <= by_id["networking"]
+    assert "job offer" in by_id["salary_negotiation"]
+    assert "thank you email" in by_id["follow_up"]
+
+
+def test_a_rejection_question_has_a_domain_to_search():
+    carrying = {d["domain"] for d in ONTOLOGY["domains"] if "receiving_feedback" in d["associated_concepts"] and d["search_enabled"]}
+    assert "sujeeth.org" in carrying
+
+
+def test_terminology_entries_name_their_class():
+    """The Search App reads a terminology entry's aliases only when the entry names its class (class_id)."""
+    class_ids = {c["id"] for c in ONTOLOGY["classes"]}
+    names = {c["name"].lower() for c in ONTOLOGY["classes"]}
+    for term in ONTOLOGY["preferred_terminology"]:
+        if str(term.get("preferred", "")).lower() in names:
+            assert term.get("class_id") in class_ids, term["preferred"]
