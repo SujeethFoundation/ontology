@@ -96,6 +96,36 @@ def test_relationship_ids_are_unique_and_point_at_real_classes():
     assert all(r["subject"] in class_ids and r["object"] in class_ids for r in ONTOLOGY["relationships"])
 
 
+def test_relationship_audit_metadata_is_normalized_without_changing_loaded_edges():
+    from collections import Counter
+    import function_app
+
+    raw = json.loads((Path(__file__).parents[1] / "ontology" / "ontology.json").read_text(encoding="utf-8"))
+    audit = raw["relationship_audit"]
+    assert all("audit_status" not in r and "audit_note" not in r for r in raw["relationships"])
+    assert audit["edge_defaults"] == {
+        "audit_status": "consistent_with_current_definitions",
+        "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning.",
+    }
+
+    loaded = function_app.load_ontology()
+    counts = Counter(r["audit_status"] for r in loaded["relationships"])
+    assert counts == audit["review_status_counts"]
+    by_id = {r["id"]: r for r in loaded["relationships"]}
+    assert by_id["networking_supports_referral"]["audit_status"] == "revised"
+    assert by_id["networking_supports_referral"]["audit_note"] == audit["edge_overrides"]["networking_supports_referral"]["audit_note"]
+    for entry in audit["needs_confirmation"]:
+        edge = by_id[entry["relationship"]]
+        assert edge["audit_status"] == "needs_confirmation"
+        assert edge["audit_note"] == entry["reason"]
+
+
+def test_relationship_audit_storage_is_smaller_than_repeated_edge_metadata():
+    audit = ONTOLOGY["relationship_audit"]
+    assert len(audit["needs_confirmation"]) == 12
+    assert set(audit["edge_overrides"]) == {"spotlight_features_volunteer", "networking_supports_referral"}
+
+
 def test_referral_is_a_networking_skill_with_phrase_aliases():
     referral = next(c for c in ONTOLOGY["classes"] if c["id"] == "referral")
     assert referral["category"] == "skill"
@@ -214,3 +244,4 @@ def test_terminology_entries_name_their_class():
     for term in ONTOLOGY["preferred_terminology"]:
         if str(term.get("preferred", "")).lower() in names:
             assert term.get("class_id") in class_ids, term["preferred"]
+
