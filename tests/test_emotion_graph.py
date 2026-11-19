@@ -78,6 +78,18 @@ class EmotionGraphTests(unittest.TestCase):
         self.assertIn("ranking_policy", mapping)
         self.assertIn("helps_interpret", mapping["semantic_model"])
 
+    def test_emotion_edges_excluded_from_generic_expansion(self):
+        emotion_edges = [e for e in self.edges if e.get("retrieval", {}).get("semantic_relation") == "helps_interpret"]
+        general_edges = [e for e in self.edges if e["predicate"] == "illustrates" and e not in emotion_edges]
+        self.assertEqual(326, len(emotion_edges))
+        self.assertTrue(general_edges)
+        self.assertTrue(all(e["retrieval"]["general_search_expand"] is False for e in emotion_edges))
+        self.assertTrue(all(e["retrieval"]["search_expansion"] == "feelings_api_only" for e in emotion_edges))
+        self.assertTrue(all(e.get("retrieval", {}).get("general_search_expand", True) for e in general_edges))
+        routing = self.data["retrieval_configuration"]["emotion_concept_mapping"]["routing"]
+        self.assertEqual("emotion_intent_first", routing["priority"])
+        self.assertIn("pending_mcp", routing["runtime_status"])
+
     def test_intent_examples(self):
         cases = [
             ("disappointment", "setback", "right_kind_of_wrong"),
