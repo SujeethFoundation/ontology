@@ -5030,6 +5030,24 @@
         "column": 5,
         "source_status": "adapted_vocabulary_not_official_numeric_coordinates"
       }
+    },
+    {
+      "id": "emotional_learning",
+      "name": "Emotional Learning",
+      "category": "framework",
+      "audiences": [
+        "student",
+        "mentor"
+      ],
+      "definition": "Understanding feelings, reflecting on regret, and learning thoughtfully from setbacks.",
+      "aliases": [
+        "emotion and learning",
+        "learning from emotions"
+      ],
+      "query_phrases": [
+        "understand feelings and learn from setbacks",
+        "learn from regret and failure"
+      ]
     }
   ],
   "predicates": [
@@ -20949,6 +20967,42 @@
       "cardinality": "N:N",
       "definition": "Career Circle program weeks take place within an academic period.",
       "audit_status": "proposed_for_editorial_review"
+    },
+    {
+      "id": "learning_from_regret_is_part_of_emotional_learning",
+      "subject": "learning_from_regret",
+      "predicate": "is_part_of",
+      "object": "emotional_learning",
+      "cardinality": "N:N",
+      "definition": "learning from regret is part of Emotional Learning as a search grouping.",
+      "audit_status": "proposed_for_editorial_review"
+    },
+    {
+      "id": "right_kind_of_wrong_is_part_of_emotional_learning",
+      "subject": "right_kind_of_wrong",
+      "predicate": "is_part_of",
+      "object": "emotional_learning",
+      "cardinality": "N:N",
+      "definition": "right kind of wrong is part of Emotional Learning as a search grouping.",
+      "audit_status": "proposed_for_editorial_review"
+    },
+    {
+      "id": "feelings_is_part_of_emotional_learning",
+      "subject": "feelings",
+      "predicate": "is_part_of",
+      "object": "emotional_learning",
+      "cardinality": "N:N",
+      "definition": "feelings is part of Emotional Learning as a search grouping.",
+      "audit_status": "proposed_for_editorial_review"
+    },
+    {
+      "id": "mood_meter_is_part_of_emotional_learning",
+      "subject": "mood_meter",
+      "predicate": "is_part_of",
+      "object": "emotional_learning",
+      "cardinality": "N:N",
+      "definition": "mood meter is part of Emotional Learning as a search grouping.",
+      "audit_status": "proposed_for_editorial_review"
     }
   ],
   "business_rules": [
@@ -22312,7 +22366,8 @@
         "innovation",
         "learning_from_regret",
         "career_development",
-        "week_5"
+        "week_5",
+        "emotional_learning"
       ],
       "crawl_policy": {
         "mode": "domain",
@@ -22329,7 +22384,8 @@
         "week_6",
         "psychological_safety",
         "learning_from_regret",
-        "right_kind_of_wrong"
+        "right_kind_of_wrong",
+        "emotional_learning"
       ],
       "crawl_policy": {
         "mode": "domain",
@@ -22567,7 +22623,8 @@
         "complacent",
         "tranquil",
         "cozy",
-        "serene"
+        "serene",
+        "emotional_learning"
       ],
       "crawl_policy": {
         "mode": "domain",
@@ -23210,6 +23267,22 @@
         "mixed_questions": "Emotion route and career route may both run; deduplicate concepts before searching.",
         "runtime_status": "contract_only_pending_mcp_and_search_changes"
       }
+    },
+    "emotional_learning_domain_group": {
+      "concept": "emotional_learning",
+      "member_concepts": [
+        "learning_from_regret",
+        "right_kind_of_wrong",
+        "feelings",
+        "mood_meter"
+      ],
+      "search_domains": [
+        "amycedmondson.com",
+        "www.startuplessonslearned.com",
+        "medicine.yale.edu"
+      ],
+      "routing": "Resolve emotional_learning to its directly associated domains; retain original concept-domain associations.",
+      "runtime_status": "ontology_contract_only_pending_mcp_support"
     }
   },
   "relationship_semantics": {
