@@ -4,6 +4,7 @@ from collections import deque
 from pathlib import Path
 from urllib.parse import unquote
 import azure.functions as func
+from feeling_resolution import find_feeling, feeling_detail, resolve_feelings
 
 app = func.FunctionApp(http_auth_level=func.AuthLevel.FUNCTION)
 DATA_PATH = Path(__file__).parent / "ontology" / "ontology.json"
@@ -187,6 +188,44 @@ simple_route("ontology/program-structure","program_structure")
 simple_route("ontology/dataverse-mappings","dataverse_mappings")
 simple_route("ontology/schema-gaps","schema_gaps")
 simple_route("ontology/quick-links","quick_links")
+
+@app.route(route="ontology/feelings/{feeling}", methods=["GET"])
+def get_feeling(req):
+    data = load_ontology()
+    feeling = find_feeling(data, unquote(req.route_params["feeling"]))
+    if not feeling:
+        return respond({"error": "Feeling not found"}, 404)
+    return respond({"ontology_version": data["ontology_version"], **feeling_detail(data, feeling)})
+
+@app.route(route="ontology/feelings/resolve", methods=["POST"])
+def resolve_feeling(req):
+    try:
+        body = req.get_json()
+    except ValueError:
+        return respond({"error": "Body must be valid JSON"}, 400)
+    if not isinstance(body, dict):
+        return respond({"error": "Body must be a JSON object"}, 400)
+    values = body.get("feelings", body.get("feeling"))
+    if isinstance(values, str):
+        values = [values]
+    if not isinstance(values, list) or not 1 <= len(values) <= 5 or not all(isinstance(v, str) and 0 < len(v) <= 100 for v in values):
+        return respond({"error": "feeling must be a nonempty string, or feelings an array of 1-5 strings (max 100 characters each)"}, 400)
+    intent = body.get("intent")
+    persona = body.get("persona")
+    max_results = body.get("max_results", 3)
+    if intent is not None and (not isinstance(intent, str) or len(intent) > 100):
+        return respond({"error": "intent must be a string of at most 100 characters"}, 400)
+    if persona is not None and (not isinstance(persona, str) or len(persona) > 100):
+        return respond({"error": "persona must be a string of at most 100 characters"}, 400)
+    if type(max_results) is not int or not 1 <= max_results <= 10:
+        return respond({"error": "max_results must be an integer from 1 to 10"}, 400)
+    data = load_ontology()
+    if persona and persona not in {p["id"] for p in data.get("personas", [])}:
+        return respond({"error": "Unknown persona"}, 400)
+    result = resolve_feelings(data, values, intent=intent, persona=persona, max_results=max_results)
+    if not result["feelings"]:
+        return respond({"error": "No known feelings found", **result}, 404)
+    return respond({"ontology_version": data["ontology_version"], **result})
 
 @app.route(route="ontology/domains", methods=["GET"])
 def domains(req):
