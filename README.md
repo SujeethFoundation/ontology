@@ -85,6 +85,12 @@ Run: `python -m unittest discover -s tests -p 'test_*.py'`.
 
 Deployment: merge and deploy the Function App before expecting these endpoints to exist. Update the MCP to call the new route and consume its ranking and guardrails. The websearch app may need restarting to refresh its cached ontology. No MCP code is changed by this PR.
 
+### Emotion-aware search routing (contract, not yet active in MCP)
+
+The 326 emotion-to-framework `illustrates` edges remain in the ontology and remain available to the Feelings API. They now carry `retrieval.general_search_expand=false` and `retrieval.search_expansion="feelings_api_only"`. The other 41 general-purpose `illustrates` edges retain their existing search eligibility.
+
+**MCP implementation required:** Detect emotion and intent, call `POST /api/ontology/feelings/resolve`, then pass ranked framework concepts to Web Search and Wiki Search. For mixed career/emotion questions, preserve career concepts and deduplicate search inputs. **Search implementation required:** When traversing generic `illustrates` relationships, skip edges explicitly marked `general_search_expand=false`. These flags are metadata until the MCP/search code consumes them. Do not assume the exclusion is active in production just because the ontology deploys.
+
 ## Governance and deployment
 Edit `ontology/ontology.json`, increment `ontology_version`, review, test, and deploy. Do not expose write endpoints. The crawler should periodically retrieve manifests and reconcile indexed content when domains are disabled or policies change. Crawl size limits are not set in the ontology; the websearch app's `MAX_PAGES_PER_DOMAIN` setting controls them, and the ontology only decides which domains may be crawled. Confirm domain ownership, relevance, public access, robots.txt, and site terms before production crawling. Never crawl private/authenticated content without explicit authorization.
 
