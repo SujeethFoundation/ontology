@@ -1,5 +1,5 @@
 {
-  "ontology_version": "1.15.2-proposed",
+  "ontology_version": "1.15.3-proposed",
   "last_updated": "2026-11-19",
   "description": "Sujeeth Foundation domain ontology and governance configuration, including validated concepts used to associate approved external domains.",
   "foundation_purpose": {
@@ -12709,6 +12709,3266 @@
       "cardinality": "N:N",
       "definition": "Compare surprised with shocked; these are not necessarily synonyms.",
       "audit_status": "consistent_with_current_definitions"
+    },
+    {
+      "id": "right_kind_of_wrong_illustrates_enraged",
+      "subject": "right_kind_of_wrong",
+      "predicate": "illustrates",
+      "object": "enraged",
+      "cardinality": "N:N",
+      "definition": "Right Kind of Wrong provides a relevant lens for exploring enraged in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "emotional_regulation_illustrates_enraged",
+      "subject": "emotional_regulation",
+      "predicate": "illustrates",
+      "object": "enraged",
+      "cardinality": "N:N",
+      "definition": "Emotional Regulation provides a relevant lens for exploring enraged in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "permission_to_feel_illustrates_enraged",
+      "subject": "permission_to_feel",
+      "predicate": "illustrates",
+      "object": "enraged",
+      "cardinality": "N:N",
+      "definition": "Permission to Feel provides a way to notice and name enraged without judgment, then choose a considered response.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "vulnerability_courage_illustrates_panicked",
+      "subject": "vulnerability_courage",
+      "predicate": "illustrates",
+      "object": "panicked",
+      "cardinality": "N:N",
+      "definition": "Vulnerability and Courage provides a relevant lens for exploring panicked in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "psychological_safety_illustrates_panicked",
+      "subject": "psychological_safety",
+      "predicate": "illustrates",
+      "object": "panicked",
+      "cardinality": "N:N",
+      "definition": "Psychological Safety provides a relevant lens for exploring panicked in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "interviewing_illustrates_panicked",
+      "subject": "interviewing",
+      "predicate": "illustrates",
+      "object": "panicked",
+      "cardinality": "N:N",
+      "definition": "Interviewing provides a relevant lens for exploring panicked in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "emotional_regulation_illustrates_panicked",
+      "subject": "emotional_regulation",
+      "predicate": "illustrates",
+      "object": "panicked",
+      "cardinality": "N:N",
+      "definition": "Emotional Regulation provides a relevant lens for exploring panicked in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "permission_to_feel_illustrates_panicked",
+      "subject": "permission_to_feel",
+      "predicate": "illustrates",
+      "object": "panicked",
+      "cardinality": "N:N",
+      "definition": "Permission to Feel provides a way to notice and name panicked without judgment, then choose a considered response.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "interviewing_illustrates_stress",
+      "subject": "interviewing",
+      "predicate": "illustrates",
+      "object": "stress",
+      "cardinality": "N:N",
+      "definition": "Interviewing provides a relevant lens for exploring stressed in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "emotional_regulation_illustrates_stress",
+      "subject": "emotional_regulation",
+      "predicate": "illustrates",
+      "object": "stress",
+      "cardinality": "N:N",
+      "definition": "Emotional Regulation provides a relevant lens for exploring stressed in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "permission_to_feel_illustrates_stress",
+      "subject": "permission_to_feel",
+      "predicate": "illustrates",
+      "object": "stress",
+      "cardinality": "N:N",
+      "definition": "Permission to Feel provides a way to notice and name stressed without judgment, then choose a considered response.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "vulnerability_courage_illustrates_jittery",
+      "subject": "vulnerability_courage",
+      "predicate": "illustrates",
+      "object": "jittery",
+      "cardinality": "N:N",
+      "definition": "Vulnerability and Courage provides a relevant lens for exploring jittery in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "psychological_safety_illustrates_jittery",
+      "subject": "psychological_safety",
+      "predicate": "illustrates",
+      "object": "jittery",
+      "cardinality": "N:N",
+      "definition": "Psychological Safety provides a relevant lens for exploring jittery in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "interviewing_illustrates_jittery",
+      "subject": "interviewing",
+      "predicate": "illustrates",
+      "object": "jittery",
+      "cardinality": "N:N",
+      "definition": "Interviewing provides a relevant lens for exploring jittery in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "emotional_regulation_illustrates_jittery",
+      "subject": "emotional_regulation",
+      "predicate": "illustrates",
+      "object": "jittery",
+      "cardinality": "N:N",
+      "definition": "Emotional Regulation provides a relevant lens for exploring jittery in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "permission_to_feel_illustrates_jittery",
+      "subject": "permission_to_feel",
+      "predicate": "illustrates",
+      "object": "jittery",
+      "cardinality": "N:N",
+      "definition": "Permission to Feel provides a way to notice and name jittery without judgment, then choose a considered response.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "right_kind_of_wrong_illustrates_shocked",
+      "subject": "right_kind_of_wrong",
+      "predicate": "illustrates",
+      "object": "shocked",
+      "cardinality": "N:N",
+      "definition": "Right Kind of Wrong provides a relevant lens for exploring shocked in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "receiving_feedback_illustrates_shocked",
+      "subject": "receiving_feedback",
+      "predicate": "illustrates",
+      "object": "shocked",
+      "cardinality": "N:N",
+      "definition": "Receiving Feedback provides a relevant lens for exploring shocked in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "innovation_illustrates_shocked",
+      "subject": "innovation",
+      "predicate": "illustrates",
+      "object": "shocked",
+      "cardinality": "N:N",
+      "definition": "Innovation provides a relevant lens for exploring shocked in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "permission_to_feel_illustrates_shocked",
+      "subject": "permission_to_feel",
+      "predicate": "illustrates",
+      "object": "shocked",
+      "cardinality": "N:N",
+      "definition": "Permission to Feel provides a way to notice and name shocked without judgment, then choose a considered response.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "right_kind_of_wrong_illustrates_livid",
+      "subject": "right_kind_of_wrong",
+      "predicate": "illustrates",
+      "object": "livid",
+      "cardinality": "N:N",
+      "definition": "Right Kind of Wrong provides a relevant lens for exploring livid in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "emotional_regulation_illustrates_livid",
+      "subject": "emotional_regulation",
+      "predicate": "illustrates",
+      "object": "livid",
+      "cardinality": "N:N",
+      "definition": "Emotional Regulation provides a relevant lens for exploring livid in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "permission_to_feel_illustrates_livid",
+      "subject": "permission_to_feel",
+      "predicate": "illustrates",
+      "object": "livid",
+      "cardinality": "N:N",
+      "definition": "Permission to Feel provides a way to notice and name livid without judgment, then choose a considered response.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "right_kind_of_wrong_illustrates_furious",
+      "subject": "right_kind_of_wrong",
+      "predicate": "illustrates",
+      "object": "furious",
+      "cardinality": "N:N",
+      "definition": "Right Kind of Wrong provides a relevant lens for exploring furious in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "psychological_safety_illustrates_furious",
+      "subject": "psychological_safety",
+      "predicate": "illustrates",
+      "object": "furious",
+      "cardinality": "N:N",
+      "definition": "Psychological Safety provides a relevant lens for exploring furious in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "emotional_regulation_illustrates_furious",
+      "subject": "emotional_regulation",
+      "predicate": "illustrates",
+      "object": "furious",
+      "cardinality": "N:N",
+      "definition": "Emotional Regulation provides a relevant lens for exploring furious in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "permission_to_feel_illustrates_furious",
+      "subject": "permission_to_feel",
+      "predicate": "illustrates",
+      "object": "furious",
+      "cardinality": "N:N",
+      "definition": "Permission to Feel provides a way to notice and name furious without judgment, then choose a considered response.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "right_kind_of_wrong_illustrates_frustration",
+      "subject": "right_kind_of_wrong",
+      "predicate": "illustrates",
+      "object": "frustration",
+      "cardinality": "N:N",
+      "definition": "Right Kind of Wrong provides a relevant lens for exploring frustrated in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "growth_mindset_illustrates_frustration",
+      "subject": "growth_mindset",
+      "predicate": "illustrates",
+      "object": "frustration",
+      "cardinality": "N:N",
+      "definition": "Growth Mindset provides a relevant lens for exploring frustrated in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "psychological_safety_illustrates_frustration",
+      "subject": "psychological_safety",
+      "predicate": "illustrates",
+      "object": "frustration",
+      "cardinality": "N:N",
+      "definition": "Psychological Safety provides a relevant lens for exploring frustrated in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "receiving_feedback_illustrates_frustration",
+      "subject": "receiving_feedback",
+      "predicate": "illustrates",
+      "object": "frustration",
+      "cardinality": "N:N",
+      "definition": "Receiving Feedback provides a relevant lens for exploring frustrated in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "grit_illustrates_frustration",
+      "subject": "grit",
+      "predicate": "illustrates",
+      "object": "frustration",
+      "cardinality": "N:N",
+      "definition": "Grit provides a relevant lens for exploring frustrated in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "emotional_regulation_illustrates_frustration",
+      "subject": "emotional_regulation",
+      "predicate": "illustrates",
+      "object": "frustration",
+      "cardinality": "N:N",
+      "definition": "Emotional Regulation provides a relevant lens for exploring frustrated in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "permission_to_feel_illustrates_frustration",
+      "subject": "permission_to_feel",
+      "predicate": "illustrates",
+      "object": "frustration",
+      "cardinality": "N:N",
+      "definition": "Permission to Feel provides a way to notice and name frustrated without judgment, then choose a considered response.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "vulnerability_courage_illustrates_tense",
+      "subject": "vulnerability_courage",
+      "predicate": "illustrates",
+      "object": "tense",
+      "cardinality": "N:N",
+      "definition": "Vulnerability and Courage provides a relevant lens for exploring tense in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "psychological_safety_illustrates_tense",
+      "subject": "psychological_safety",
+      "predicate": "illustrates",
+      "object": "tense",
+      "cardinality": "N:N",
+      "definition": "Psychological Safety provides a relevant lens for exploring tense in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "interviewing_illustrates_tense",
+      "subject": "interviewing",
+      "predicate": "illustrates",
+      "object": "tense",
+      "cardinality": "N:N",
+      "definition": "Interviewing provides a relevant lens for exploring tense in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "permission_to_feel_illustrates_tense",
+      "subject": "permission_to_feel",
+      "predicate": "illustrates",
+      "object": "tense",
+      "cardinality": "N:N",
+      "definition": "Permission to Feel provides a way to notice and name tense without judgment, then choose a considered response.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "right_kind_of_wrong_illustrates_stunned",
+      "subject": "right_kind_of_wrong",
+      "predicate": "illustrates",
+      "object": "stunned",
+      "cardinality": "N:N",
+      "definition": "Right Kind of Wrong provides a relevant lens for exploring stunned in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "receiving_feedback_illustrates_stunned",
+      "subject": "receiving_feedback",
+      "predicate": "illustrates",
+      "object": "stunned",
+      "cardinality": "N:N",
+      "definition": "Receiving Feedback provides a relevant lens for exploring stunned in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "permission_to_feel_illustrates_stunned",
+      "subject": "permission_to_feel",
+      "predicate": "illustrates",
+      "object": "stunned",
+      "cardinality": "N:N",
+      "definition": "Permission to Feel provides a way to notice and name stunned without judgment, then choose a considered response.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "right_kind_of_wrong_illustrates_fuming",
+      "subject": "right_kind_of_wrong",
+      "predicate": "illustrates",
+      "object": "fuming",
+      "cardinality": "N:N",
+      "definition": "Right Kind of Wrong provides a relevant lens for exploring fuming in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "emotional_regulation_illustrates_fuming",
+      "subject": "emotional_regulation",
+      "predicate": "illustrates",
+      "object": "fuming",
+      "cardinality": "N:N",
+      "definition": "Emotional Regulation provides a relevant lens for exploring fuming in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "permission_to_feel_illustrates_fuming",
+      "subject": "permission_to_feel",
+      "predicate": "illustrates",
+      "object": "fuming",
+      "cardinality": "N:N",
+      "definition": "Permission to Feel provides a way to notice and name fuming without judgment, then choose a considered response.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "vulnerability_courage_illustrates_frightened",
+      "subject": "vulnerability_courage",
+      "predicate": "illustrates",
+      "object": "frightened",
+      "cardinality": "N:N",
+      "definition": "Vulnerability and Courage provides a relevant lens for exploring frightened in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "psychological_safety_illustrates_frightened",
+      "subject": "psychological_safety",
+      "predicate": "illustrates",
+      "object": "frightened",
+      "cardinality": "N:N",
+      "definition": "Psychological Safety provides a relevant lens for exploring frightened in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "emotional_regulation_illustrates_frightened",
+      "subject": "emotional_regulation",
+      "predicate": "illustrates",
+      "object": "frightened",
+      "cardinality": "N:N",
+      "definition": "Emotional Regulation provides a relevant lens for exploring frightened in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "permission_to_feel_illustrates_frightened",
+      "subject": "permission_to_feel",
+      "predicate": "illustrates",
+      "object": "frightened",
+      "cardinality": "N:N",
+      "definition": "Permission to Feel provides a way to notice and name frightened without judgment, then choose a considered response.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "right_kind_of_wrong_illustrates_angry",
+      "subject": "right_kind_of_wrong",
+      "predicate": "illustrates",
+      "object": "angry",
+      "cardinality": "N:N",
+      "definition": "Right Kind of Wrong provides a relevant lens for exploring angry in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "psychological_safety_illustrates_angry",
+      "subject": "psychological_safety",
+      "predicate": "illustrates",
+      "object": "angry",
+      "cardinality": "N:N",
+      "definition": "Psychological Safety provides a relevant lens for exploring angry in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "emotional_regulation_illustrates_angry",
+      "subject": "emotional_regulation",
+      "predicate": "illustrates",
+      "object": "angry",
+      "cardinality": "N:N",
+      "definition": "Emotional Regulation provides a relevant lens for exploring angry in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "permission_to_feel_illustrates_angry",
+      "subject": "permission_to_feel",
+      "predicate": "illustrates",
+      "object": "angry",
+      "cardinality": "N:N",
+      "definition": "Permission to Feel provides a way to notice and name angry without judgment, then choose a considered response.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "vulnerability_courage_illustrates_nervous",
+      "subject": "vulnerability_courage",
+      "predicate": "illustrates",
+      "object": "nervous",
+      "cardinality": "N:N",
+      "definition": "Vulnerability and Courage provides a relevant lens for exploring nervous in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "psychological_safety_illustrates_nervous",
+      "subject": "psychological_safety",
+      "predicate": "illustrates",
+      "object": "nervous",
+      "cardinality": "N:N",
+      "definition": "Psychological Safety provides a relevant lens for exploring nervous in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "networking_illustrates_nervous",
+      "subject": "networking",
+      "predicate": "illustrates",
+      "object": "nervous",
+      "cardinality": "N:N",
+      "definition": "Networking provides a relevant lens for exploring nervous in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "interviewing_illustrates_nervous",
+      "subject": "interviewing",
+      "predicate": "illustrates",
+      "object": "nervous",
+      "cardinality": "N:N",
+      "definition": "Nervousness can occur before interviews; preparation and practice may help.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "emotional_regulation_illustrates_nervous",
+      "subject": "emotional_regulation",
+      "predicate": "illustrates",
+      "object": "nervous",
+      "cardinality": "N:N",
+      "definition": "Emotional Regulation provides a relevant lens for exploring nervous in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "permission_to_feel_illustrates_nervous",
+      "subject": "permission_to_feel",
+      "predicate": "illustrates",
+      "object": "nervous",
+      "cardinality": "N:N",
+      "definition": "Permission to Feel provides a way to notice and name nervous without judgment, then choose a considered response.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "innovation_illustrates_restless",
+      "subject": "innovation",
+      "predicate": "illustrates",
+      "object": "restless",
+      "cardinality": "N:N",
+      "definition": "Innovation provides a relevant lens for exploring restless in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "emotional_regulation_illustrates_restless",
+      "subject": "emotional_regulation",
+      "predicate": "illustrates",
+      "object": "restless",
+      "cardinality": "N:N",
+      "definition": "Emotional Regulation provides a relevant lens for exploring restless in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "permission_to_feel_illustrates_restless",
+      "subject": "permission_to_feel",
+      "predicate": "illustrates",
+      "object": "restless",
+      "cardinality": "N:N",
+      "definition": "Permission to Feel provides a way to notice and name restless without judgment, then choose a considered response.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "vulnerability_courage_illustrates_anxiety",
+      "subject": "vulnerability_courage",
+      "predicate": "illustrates",
+      "object": "anxiety",
+      "cardinality": "N:N",
+      "definition": "Anxiety can arise when a person faces uncertainty or social risk; courage concerns action in the presence of risk.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "psychological_safety_illustrates_anxiety",
+      "subject": "psychological_safety",
+      "predicate": "illustrates",
+      "object": "anxiety",
+      "cardinality": "N:N",
+      "definition": "Anxiety about speaking up can prompt examination of the social context; anxiety alone does not establish a lack of psychological safety.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "networking_illustrates_anxiety",
+      "subject": "networking",
+      "predicate": "illustrates",
+      "object": "anxiety",
+      "cardinality": "N:N",
+      "definition": "Networking provides a relevant lens for exploring anxious in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "receiving_feedback_illustrates_anxiety",
+      "subject": "receiving_feedback",
+      "predicate": "illustrates",
+      "object": "anxiety",
+      "cardinality": "N:N",
+      "definition": "Receiving Feedback provides a relevant lens for exploring anxious in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "interviewing_illustrates_anxiety",
+      "subject": "interviewing",
+      "predicate": "illustrates",
+      "object": "anxiety",
+      "cardinality": "N:N",
+      "definition": "Interviewing provides a relevant lens for exploring anxious in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "emotional_regulation_illustrates_anxiety",
+      "subject": "emotional_regulation",
+      "predicate": "illustrates",
+      "object": "anxiety",
+      "cardinality": "N:N",
+      "definition": "Emotional Regulation provides a relevant lens for exploring anxious in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "permission_to_feel_illustrates_anxiety",
+      "subject": "permission_to_feel",
+      "predicate": "illustrates",
+      "object": "anxiety",
+      "cardinality": "N:N",
+      "definition": "Permission to Feel provides a way to notice and name anxious without judgment, then choose a considered response.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "vulnerability_courage_illustrates_apprehensive",
+      "subject": "vulnerability_courage",
+      "predicate": "illustrates",
+      "object": "apprehensive",
+      "cardinality": "N:N",
+      "definition": "Vulnerability and Courage provides a relevant lens for exploring apprehensive in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "psychological_safety_illustrates_apprehensive",
+      "subject": "psychological_safety",
+      "predicate": "illustrates",
+      "object": "apprehensive",
+      "cardinality": "N:N",
+      "definition": "Psychological Safety provides a relevant lens for exploring apprehensive in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "networking_illustrates_apprehensive",
+      "subject": "networking",
+      "predicate": "illustrates",
+      "object": "apprehensive",
+      "cardinality": "N:N",
+      "definition": "Networking provides a relevant lens for exploring apprehensive in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "interviewing_illustrates_apprehensive",
+      "subject": "interviewing",
+      "predicate": "illustrates",
+      "object": "apprehensive",
+      "cardinality": "N:N",
+      "definition": "Interviewing provides a relevant lens for exploring apprehensive in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "emotional_regulation_illustrates_apprehensive",
+      "subject": "emotional_regulation",
+      "predicate": "illustrates",
+      "object": "apprehensive",
+      "cardinality": "N:N",
+      "definition": "Emotional Regulation provides a relevant lens for exploring apprehensive in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "permission_to_feel_illustrates_apprehensive",
+      "subject": "permission_to_feel",
+      "predicate": "illustrates",
+      "object": "apprehensive",
+      "cardinality": "N:N",
+      "definition": "Permission to Feel provides a way to notice and name apprehensive without judgment, then choose a considered response.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "vulnerability_courage_illustrates_worried",
+      "subject": "vulnerability_courage",
+      "predicate": "illustrates",
+      "object": "worried",
+      "cardinality": "N:N",
+      "definition": "Vulnerability and Courage provides a relevant lens for exploring worried in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "psychological_safety_illustrates_worried",
+      "subject": "psychological_safety",
+      "predicate": "illustrates",
+      "object": "worried",
+      "cardinality": "N:N",
+      "definition": "Psychological Safety provides a relevant lens for exploring worried in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "receiving_feedback_illustrates_worried",
+      "subject": "receiving_feedback",
+      "predicate": "illustrates",
+      "object": "worried",
+      "cardinality": "N:N",
+      "definition": "Receiving Feedback provides a relevant lens for exploring worried in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "interviewing_illustrates_worried",
+      "subject": "interviewing",
+      "predicate": "illustrates",
+      "object": "worried",
+      "cardinality": "N:N",
+      "definition": "Interviewing provides a relevant lens for exploring worried in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "emotional_regulation_illustrates_worried",
+      "subject": "emotional_regulation",
+      "predicate": "illustrates",
+      "object": "worried",
+      "cardinality": "N:N",
+      "definition": "Emotional Regulation provides a relevant lens for exploring worried in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "permission_to_feel_illustrates_worried",
+      "subject": "permission_to_feel",
+      "predicate": "illustrates",
+      "object": "worried",
+      "cardinality": "N:N",
+      "definition": "Permission to Feel provides a way to notice and name worried without judgment, then choose a considered response.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "right_kind_of_wrong_illustrates_irritated",
+      "subject": "right_kind_of_wrong",
+      "predicate": "illustrates",
+      "object": "irritated",
+      "cardinality": "N:N",
+      "definition": "Right Kind of Wrong provides a relevant lens for exploring irritated in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "psychological_safety_illustrates_irritated",
+      "subject": "psychological_safety",
+      "predicate": "illustrates",
+      "object": "irritated",
+      "cardinality": "N:N",
+      "definition": "Psychological Safety provides a relevant lens for exploring irritated in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "emotional_regulation_illustrates_irritated",
+      "subject": "emotional_regulation",
+      "predicate": "illustrates",
+      "object": "irritated",
+      "cardinality": "N:N",
+      "definition": "Emotional Regulation provides a relevant lens for exploring irritated in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "permission_to_feel_illustrates_irritated",
+      "subject": "permission_to_feel",
+      "predicate": "illustrates",
+      "object": "irritated",
+      "cardinality": "N:N",
+      "definition": "Permission to Feel provides a way to notice and name irritated without judgment, then choose a considered response.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "right_kind_of_wrong_illustrates_annoyed",
+      "subject": "right_kind_of_wrong",
+      "predicate": "illustrates",
+      "object": "annoyed",
+      "cardinality": "N:N",
+      "definition": "Right Kind of Wrong provides a relevant lens for exploring annoyed in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "psychological_safety_illustrates_annoyed",
+      "subject": "psychological_safety",
+      "predicate": "illustrates",
+      "object": "annoyed",
+      "cardinality": "N:N",
+      "definition": "Psychological Safety provides a relevant lens for exploring annoyed in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "emotional_regulation_illustrates_annoyed",
+      "subject": "emotional_regulation",
+      "predicate": "illustrates",
+      "object": "annoyed",
+      "cardinality": "N:N",
+      "definition": "Emotional Regulation provides a relevant lens for exploring annoyed in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "permission_to_feel_illustrates_annoyed",
+      "subject": "permission_to_feel",
+      "predicate": "illustrates",
+      "object": "annoyed",
+      "cardinality": "N:N",
+      "definition": "Permission to Feel provides a way to notice and name annoyed without judgment, then choose a considered response.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "psychological_safety_illustrates_repulsed",
+      "subject": "psychological_safety",
+      "predicate": "illustrates",
+      "object": "repulsed",
+      "cardinality": "N:N",
+      "definition": "Psychological Safety provides a relevant lens for exploring repulsed in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "emotional_regulation_illustrates_repulsed",
+      "subject": "emotional_regulation",
+      "predicate": "illustrates",
+      "object": "repulsed",
+      "cardinality": "N:N",
+      "definition": "Emotional Regulation provides a relevant lens for exploring repulsed in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "permission_to_feel_illustrates_repulsed",
+      "subject": "permission_to_feel",
+      "predicate": "illustrates",
+      "object": "repulsed",
+      "cardinality": "N:N",
+      "definition": "Permission to Feel provides a way to notice and name repulsed without judgment, then choose a considered response.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "learning_from_regret_illustrates_troubled",
+      "subject": "learning_from_regret",
+      "predicate": "illustrates",
+      "object": "troubled",
+      "cardinality": "N:N",
+      "definition": "Learning from Regret provides a relevant lens for exploring troubled in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "right_kind_of_wrong_illustrates_troubled",
+      "subject": "right_kind_of_wrong",
+      "predicate": "illustrates",
+      "object": "troubled",
+      "cardinality": "N:N",
+      "definition": "Right Kind of Wrong provides a relevant lens for exploring troubled in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "vulnerability_courage_illustrates_troubled",
+      "subject": "vulnerability_courage",
+      "predicate": "illustrates",
+      "object": "troubled",
+      "cardinality": "N:N",
+      "definition": "Vulnerability and Courage provides a relevant lens for exploring troubled in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "emotional_regulation_illustrates_troubled",
+      "subject": "emotional_regulation",
+      "predicate": "illustrates",
+      "object": "troubled",
+      "cardinality": "N:N",
+      "definition": "Emotional Regulation provides a relevant lens for exploring troubled in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "permission_to_feel_illustrates_troubled",
+      "subject": "permission_to_feel",
+      "predicate": "illustrates",
+      "object": "troubled",
+      "cardinality": "N:N",
+      "definition": "Permission to Feel provides a way to notice and name troubled without judgment, then choose a considered response.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "learning_from_regret_illustrates_concerned",
+      "subject": "learning_from_regret",
+      "predicate": "illustrates",
+      "object": "concerned",
+      "cardinality": "N:N",
+      "definition": "Learning from Regret provides a relevant lens for exploring concerned in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "right_kind_of_wrong_illustrates_concerned",
+      "subject": "right_kind_of_wrong",
+      "predicate": "illustrates",
+      "object": "concerned",
+      "cardinality": "N:N",
+      "definition": "Right Kind of Wrong provides a relevant lens for exploring concerned in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "vulnerability_courage_illustrates_concerned",
+      "subject": "vulnerability_courage",
+      "predicate": "illustrates",
+      "object": "concerned",
+      "cardinality": "N:N",
+      "definition": "Vulnerability and Courage provides a relevant lens for exploring concerned in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "emotional_regulation_illustrates_concerned",
+      "subject": "emotional_regulation",
+      "predicate": "illustrates",
+      "object": "concerned",
+      "cardinality": "N:N",
+      "definition": "Emotional Regulation provides a relevant lens for exploring concerned in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "permission_to_feel_illustrates_concerned",
+      "subject": "permission_to_feel",
+      "predicate": "illustrates",
+      "object": "concerned",
+      "cardinality": "N:N",
+      "definition": "Permission to Feel provides a way to notice and name concerned without judgment, then choose a considered response.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "learning_from_regret_illustrates_uneasy",
+      "subject": "learning_from_regret",
+      "predicate": "illustrates",
+      "object": "uneasy",
+      "cardinality": "N:N",
+      "definition": "Learning from Regret provides a relevant lens for exploring uneasy in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "growth_mindset_illustrates_uneasy",
+      "subject": "growth_mindset",
+      "predicate": "illustrates",
+      "object": "uneasy",
+      "cardinality": "N:N",
+      "definition": "Growth Mindset provides a relevant lens for exploring uneasy in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "vulnerability_courage_illustrates_uneasy",
+      "subject": "vulnerability_courage",
+      "predicate": "illustrates",
+      "object": "uneasy",
+      "cardinality": "N:N",
+      "definition": "Vulnerability and Courage provides a relevant lens for exploring uneasy in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "receiving_feedback_illustrates_uneasy",
+      "subject": "receiving_feedback",
+      "predicate": "illustrates",
+      "object": "uneasy",
+      "cardinality": "N:N",
+      "definition": "Receiving Feedback provides a relevant lens for exploring uneasy in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "emotional_regulation_illustrates_uneasy",
+      "subject": "emotional_regulation",
+      "predicate": "illustrates",
+      "object": "uneasy",
+      "cardinality": "N:N",
+      "definition": "Emotional Regulation provides a relevant lens for exploring uneasy in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "permission_to_feel_illustrates_uneasy",
+      "subject": "permission_to_feel",
+      "predicate": "illustrates",
+      "object": "uneasy",
+      "cardinality": "N:N",
+      "definition": "Permission to Feel provides a way to notice and name uneasy without judgment, then choose a considered response.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "emotional_regulation_illustrates_peeved",
+      "subject": "emotional_regulation",
+      "predicate": "illustrates",
+      "object": "peeved",
+      "cardinality": "N:N",
+      "definition": "Emotional Regulation provides a relevant lens for exploring peeved in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "permission_to_feel_illustrates_peeved",
+      "subject": "permission_to_feel",
+      "predicate": "illustrates",
+      "object": "peeved",
+      "cardinality": "N:N",
+      "definition": "Permission to Feel provides a way to notice and name peeved without judgment, then choose a considered response.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "right_kind_of_wrong_illustrates_surprised",
+      "subject": "right_kind_of_wrong",
+      "predicate": "illustrates",
+      "object": "surprised",
+      "cardinality": "N:N",
+      "definition": "Right Kind of Wrong provides a relevant lens for exploring surprised in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "receiving_feedback_illustrates_surprised",
+      "subject": "receiving_feedback",
+      "predicate": "illustrates",
+      "object": "surprised",
+      "cardinality": "N:N",
+      "definition": "Receiving Feedback provides a relevant lens for exploring surprised in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "innovation_illustrates_surprised",
+      "subject": "innovation",
+      "predicate": "illustrates",
+      "object": "surprised",
+      "cardinality": "N:N",
+      "definition": "Innovation provides a relevant lens for exploring surprised in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "permission_to_feel_illustrates_surprised",
+      "subject": "permission_to_feel",
+      "predicate": "illustrates",
+      "object": "surprised",
+      "cardinality": "N:N",
+      "definition": "Permission to Feel provides a way to notice and name surprised without judgment, then choose a considered response.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "motivation_illustrates_upbeat",
+      "subject": "motivation",
+      "predicate": "illustrates",
+      "object": "upbeat",
+      "cardinality": "N:N",
+      "definition": "Motivation provides a relevant lens for exploring upbeat in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "permission_to_feel_illustrates_upbeat",
+      "subject": "permission_to_feel",
+      "predicate": "illustrates",
+      "object": "upbeat",
+      "cardinality": "N:N",
+      "definition": "Permission to Feel provides a way to notice and name upbeat without judgment, then choose a considered response.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "appreciation_illustrates_festive",
+      "subject": "appreciation",
+      "predicate": "illustrates",
+      "object": "festive",
+      "cardinality": "N:N",
+      "definition": "Appreciation provides a relevant lens for exploring festive in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "permission_to_feel_illustrates_festive",
+      "subject": "permission_to_feel",
+      "predicate": "illustrates",
+      "object": "festive",
+      "cardinality": "N:N",
+      "definition": "Permission to Feel provides a way to notice and name festive without judgment, then choose a considered response.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "motivation_illustrates_exhilarated",
+      "subject": "motivation",
+      "predicate": "illustrates",
+      "object": "exhilarated",
+      "cardinality": "N:N",
+      "definition": "Motivation provides a relevant lens for exploring exhilarated in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "permission_to_feel_illustrates_exhilarated",
+      "subject": "permission_to_feel",
+      "predicate": "illustrates",
+      "object": "exhilarated",
+      "cardinality": "N:N",
+      "definition": "Permission to Feel provides a way to notice and name exhilarated without judgment, then choose a considered response.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "motivation_illustrates_ecstatic",
+      "subject": "motivation",
+      "predicate": "illustrates",
+      "object": "ecstatic",
+      "cardinality": "N:N",
+      "definition": "Motivation provides a relevant lens for exploring ecstatic in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "permission_to_feel_illustrates_ecstatic",
+      "subject": "permission_to_feel",
+      "predicate": "illustrates",
+      "object": "ecstatic",
+      "cardinality": "N:N",
+      "definition": "Permission to Feel provides a way to notice and name ecstatic without judgment, then choose a considered response.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "permission_to_feel_illustrates_hyper",
+      "subject": "permission_to_feel",
+      "predicate": "illustrates",
+      "object": "hyper",
+      "cardinality": "N:N",
+      "definition": "Permission to Feel provides a way to notice and name hyper without judgment, then choose a considered response.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "appreciation_illustrates_cheerful",
+      "subject": "appreciation",
+      "predicate": "illustrates",
+      "object": "cheerful",
+      "cardinality": "N:N",
+      "definition": "Appreciation provides a relevant lens for exploring cheerful in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "networking_illustrates_cheerful",
+      "subject": "networking",
+      "predicate": "illustrates",
+      "object": "cheerful",
+      "cardinality": "N:N",
+      "definition": "Networking provides a relevant lens for exploring cheerful in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "permission_to_feel_illustrates_cheerful",
+      "subject": "permission_to_feel",
+      "predicate": "illustrates",
+      "object": "cheerful",
+      "cardinality": "N:N",
+      "definition": "Permission to Feel provides a way to notice and name cheerful without judgment, then choose a considered response.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "growth_mindset_illustrates_motivated",
+      "subject": "growth_mindset",
+      "predicate": "illustrates",
+      "object": "motivated",
+      "cardinality": "N:N",
+      "definition": "Growth Mindset provides a relevant lens for exploring motivated in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "purpose_illustrates_motivated",
+      "subject": "purpose",
+      "predicate": "illustrates",
+      "object": "motivated",
+      "cardinality": "N:N",
+      "definition": "Purpose provides a relevant lens for exploring motivated in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "motivation_illustrates_motivated",
+      "subject": "motivation",
+      "predicate": "illustrates",
+      "object": "motivated",
+      "cardinality": "N:N",
+      "definition": "Motivation provides a relevant lens for exploring motivated in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "grit_illustrates_motivated",
+      "subject": "grit",
+      "predicate": "illustrates",
+      "object": "motivated",
+      "cardinality": "N:N",
+      "definition": "Grit provides a relevant lens for exploring motivated in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "permission_to_feel_illustrates_motivated",
+      "subject": "permission_to_feel",
+      "predicate": "illustrates",
+      "object": "motivated",
+      "cardinality": "N:N",
+      "definition": "Permission to Feel provides a way to notice and name motivated without judgment, then choose a considered response.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "growth_mindset_illustrates_inspired",
+      "subject": "growth_mindset",
+      "predicate": "illustrates",
+      "object": "inspired",
+      "cardinality": "N:N",
+      "definition": "Growth Mindset provides a relevant lens for exploring inspired in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "purpose_illustrates_inspired",
+      "subject": "purpose",
+      "predicate": "illustrates",
+      "object": "inspired",
+      "cardinality": "N:N",
+      "definition": "Purpose provides a relevant lens for exploring inspired in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "innovation_illustrates_inspired",
+      "subject": "innovation",
+      "predicate": "illustrates",
+      "object": "inspired",
+      "cardinality": "N:N",
+      "definition": "Innovation provides a relevant lens for exploring inspired in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "permission_to_feel_illustrates_inspired",
+      "subject": "permission_to_feel",
+      "predicate": "illustrates",
+      "object": "inspired",
+      "cardinality": "N:N",
+      "definition": "Permission to Feel provides a way to notice and name inspired without judgment, then choose a considered response.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "motivation_illustrates_elated",
+      "subject": "motivation",
+      "predicate": "illustrates",
+      "object": "elated",
+      "cardinality": "N:N",
+      "definition": "Motivation provides a relevant lens for exploring elated in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "permission_to_feel_illustrates_elated",
+      "subject": "permission_to_feel",
+      "predicate": "illustrates",
+      "object": "elated",
+      "cardinality": "N:N",
+      "definition": "Permission to Feel provides a way to notice and name elated without judgment, then choose a considered response.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "motivation_illustrates_energized",
+      "subject": "motivation",
+      "predicate": "illustrates",
+      "object": "energized",
+      "cardinality": "N:N",
+      "definition": "Motivation provides a relevant lens for exploring energized in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "innovation_illustrates_energized",
+      "subject": "innovation",
+      "predicate": "illustrates",
+      "object": "energized",
+      "cardinality": "N:N",
+      "definition": "Innovation provides a relevant lens for exploring energized in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "permission_to_feel_illustrates_energized",
+      "subject": "permission_to_feel",
+      "predicate": "illustrates",
+      "object": "energized",
+      "cardinality": "N:N",
+      "definition": "Permission to Feel provides a way to notice and name energized without judgment, then choose a considered response.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "motivation_illustrates_lively",
+      "subject": "motivation",
+      "predicate": "illustrates",
+      "object": "lively",
+      "cardinality": "N:N",
+      "definition": "Motivation provides a relevant lens for exploring lively in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "permission_to_feel_illustrates_lively",
+      "subject": "permission_to_feel",
+      "predicate": "illustrates",
+      "object": "lively",
+      "cardinality": "N:N",
+      "definition": "Permission to Feel provides a way to notice and name lively without judgment, then choose a considered response.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "growth_mindset_illustrates_enthusiastic",
+      "subject": "growth_mindset",
+      "predicate": "illustrates",
+      "object": "enthusiastic",
+      "cardinality": "N:N",
+      "definition": "Growth Mindset provides a relevant lens for exploring enthusiastic in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "motivation_illustrates_enthusiastic",
+      "subject": "motivation",
+      "predicate": "illustrates",
+      "object": "enthusiastic",
+      "cardinality": "N:N",
+      "definition": "Motivation provides a relevant lens for exploring enthusiastic in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "innovation_illustrates_enthusiastic",
+      "subject": "innovation",
+      "predicate": "illustrates",
+      "object": "enthusiastic",
+      "cardinality": "N:N",
+      "definition": "Innovation provides a relevant lens for exploring enthusiastic in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "permission_to_feel_illustrates_enthusiastic",
+      "subject": "permission_to_feel",
+      "predicate": "illustrates",
+      "object": "enthusiastic",
+      "cardinality": "N:N",
+      "definition": "Permission to Feel provides a way to notice and name enthusiastic without judgment, then choose a considered response.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "growth_mindset_illustrates_optimistic",
+      "subject": "growth_mindset",
+      "predicate": "illustrates",
+      "object": "optimistic",
+      "cardinality": "N:N",
+      "definition": "Growth Mindset provides a relevant lens for exploring optimistic in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "purpose_illustrates_optimistic",
+      "subject": "purpose",
+      "predicate": "illustrates",
+      "object": "optimistic",
+      "cardinality": "N:N",
+      "definition": "Purpose provides a relevant lens for exploring optimistic in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "motivation_illustrates_optimistic",
+      "subject": "motivation",
+      "predicate": "illustrates",
+      "object": "optimistic",
+      "cardinality": "N:N",
+      "definition": "Motivation provides a relevant lens for exploring optimistic in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "grit_illustrates_optimistic",
+      "subject": "grit",
+      "predicate": "illustrates",
+      "object": "optimistic",
+      "cardinality": "N:N",
+      "definition": "Grit provides a relevant lens for exploring optimistic in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "permission_to_feel_illustrates_optimistic",
+      "subject": "permission_to_feel",
+      "predicate": "illustrates",
+      "object": "optimistic",
+      "cardinality": "N:N",
+      "definition": "Permission to Feel provides a way to notice and name optimistic without judgment, then choose a considered response.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "vulnerability_courage_illustrates_excited",
+      "subject": "vulnerability_courage",
+      "predicate": "illustrates",
+      "object": "excited",
+      "cardinality": "N:N",
+      "definition": "Vulnerability and Courage provides a relevant lens for exploring excited in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "motivation_illustrates_excited",
+      "subject": "motivation",
+      "predicate": "illustrates",
+      "object": "excited",
+      "cardinality": "N:N",
+      "definition": "Motivation provides a relevant lens for exploring excited in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "interviewing_illustrates_excited",
+      "subject": "interviewing",
+      "predicate": "illustrates",
+      "object": "excited",
+      "cardinality": "N:N",
+      "definition": "Interviewing provides a relevant lens for exploring excited in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "innovation_illustrates_excited",
+      "subject": "innovation",
+      "predicate": "illustrates",
+      "object": "excited",
+      "cardinality": "N:N",
+      "definition": "Innovation provides a relevant lens for exploring excited in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "permission_to_feel_illustrates_excited",
+      "subject": "permission_to_feel",
+      "predicate": "illustrates",
+      "object": "excited",
+      "cardinality": "N:N",
+      "definition": "Permission to Feel provides a way to notice and name excited without judgment, then choose a considered response.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "appreciation_illustrates_pleased",
+      "subject": "appreciation",
+      "predicate": "illustrates",
+      "object": "pleased",
+      "cardinality": "N:N",
+      "definition": "Appreciation provides a relevant lens for exploring pleased in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "permission_to_feel_illustrates_pleased",
+      "subject": "permission_to_feel",
+      "predicate": "illustrates",
+      "object": "pleased",
+      "cardinality": "N:N",
+      "definition": "Permission to Feel provides a way to notice and name pleased without judgment, then choose a considered response.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "appreciation_illustrates_happy",
+      "subject": "appreciation",
+      "predicate": "illustrates",
+      "object": "happy",
+      "cardinality": "N:N",
+      "definition": "Appreciation provides a relevant lens for exploring happy in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "permission_to_feel_illustrates_happy",
+      "subject": "permission_to_feel",
+      "predicate": "illustrates",
+      "object": "happy",
+      "cardinality": "N:N",
+      "definition": "Permission to Feel provides a way to notice and name happy without judgment, then choose a considered response.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "growth_mindset_illustrates_focused",
+      "subject": "growth_mindset",
+      "predicate": "illustrates",
+      "object": "focused",
+      "cardinality": "N:N",
+      "definition": "Growth Mindset provides a relevant lens for exploring focused in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "motivation_illustrates_focused",
+      "subject": "motivation",
+      "predicate": "illustrates",
+      "object": "focused",
+      "cardinality": "N:N",
+      "definition": "Motivation provides a relevant lens for exploring focused in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "interviewing_illustrates_focused",
+      "subject": "interviewing",
+      "predicate": "illustrates",
+      "object": "focused",
+      "cardinality": "N:N",
+      "definition": "Interviewing provides a relevant lens for exploring focused in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "innovation_illustrates_focused",
+      "subject": "innovation",
+      "predicate": "illustrates",
+      "object": "focused",
+      "cardinality": "N:N",
+      "definition": "Innovation provides a relevant lens for exploring focused in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "permission_to_feel_illustrates_focused",
+      "subject": "permission_to_feel",
+      "predicate": "illustrates",
+      "object": "focused",
+      "cardinality": "N:N",
+      "definition": "Permission to Feel provides a way to notice and name focused without judgment, then choose a considered response.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "vulnerability_courage_illustrates_proud",
+      "subject": "vulnerability_courage",
+      "predicate": "illustrates",
+      "object": "proud",
+      "cardinality": "N:N",
+      "definition": "Vulnerability and Courage provides a relevant lens for exploring proud in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "purpose_illustrates_proud",
+      "subject": "purpose",
+      "predicate": "illustrates",
+      "object": "proud",
+      "cardinality": "N:N",
+      "definition": "Pride in a meaningful accomplishment may help someone notice their values and priorities.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "receiving_feedback_illustrates_proud",
+      "subject": "receiving_feedback",
+      "predicate": "illustrates",
+      "object": "proud",
+      "cardinality": "N:N",
+      "definition": "Receiving Feedback provides a relevant lens for exploring proud in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "interviewing_illustrates_proud",
+      "subject": "interviewing",
+      "predicate": "illustrates",
+      "object": "proud",
+      "cardinality": "N:N",
+      "definition": "Interviewing provides a relevant lens for exploring proud in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "permission_to_feel_illustrates_proud",
+      "subject": "permission_to_feel",
+      "predicate": "illustrates",
+      "object": "proud",
+      "cardinality": "N:N",
+      "definition": "Permission to Feel provides a way to notice and name proud without judgment, then choose a considered response.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "motivation_illustrates_thrilled",
+      "subject": "motivation",
+      "predicate": "illustrates",
+      "object": "thrilled",
+      "cardinality": "N:N",
+      "definition": "Motivation provides a relevant lens for exploring thrilled in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "permission_to_feel_illustrates_thrilled",
+      "subject": "permission_to_feel",
+      "predicate": "illustrates",
+      "object": "thrilled",
+      "cardinality": "N:N",
+      "definition": "Permission to Feel provides a way to notice and name thrilled without judgment, then choose a considered response.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "permission_to_feel_illustrates_pleasant",
+      "subject": "permission_to_feel",
+      "predicate": "illustrates",
+      "object": "pleasant",
+      "cardinality": "N:N",
+      "definition": "Permission to Feel provides a way to notice and name pleasant without judgment, then choose a considered response.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "purpose_illustrates_joyful",
+      "subject": "purpose",
+      "predicate": "illustrates",
+      "object": "joyful",
+      "cardinality": "N:N",
+      "definition": "Purpose provides a relevant lens for exploring joyful in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "motivation_illustrates_joyful",
+      "subject": "motivation",
+      "predicate": "illustrates",
+      "object": "joyful",
+      "cardinality": "N:N",
+      "definition": "Motivation provides a relevant lens for exploring joyful in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "appreciation_illustrates_joyful",
+      "subject": "appreciation",
+      "predicate": "illustrates",
+      "object": "joyful",
+      "cardinality": "N:N",
+      "definition": "Appreciation provides a relevant lens for exploring joyful in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "permission_to_feel_illustrates_joyful",
+      "subject": "permission_to_feel",
+      "predicate": "illustrates",
+      "object": "joyful",
+      "cardinality": "N:N",
+      "definition": "Permission to Feel provides a way to notice and name joyful without judgment, then choose a considered response.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "growth_mindset_illustrates_hopeful",
+      "subject": "growth_mindset",
+      "predicate": "illustrates",
+      "object": "hopeful",
+      "cardinality": "N:N",
+      "definition": "Growth Mindset provides a relevant lens for exploring hopeful in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "purpose_illustrates_hopeful",
+      "subject": "purpose",
+      "predicate": "illustrates",
+      "object": "hopeful",
+      "cardinality": "N:N",
+      "definition": "Purpose provides a relevant lens for exploring hopeful in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "motivation_illustrates_hopeful",
+      "subject": "motivation",
+      "predicate": "illustrates",
+      "object": "hopeful",
+      "cardinality": "N:N",
+      "definition": "Motivation provides a relevant lens for exploring hopeful in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "interviewing_illustrates_hopeful",
+      "subject": "interviewing",
+      "predicate": "illustrates",
+      "object": "hopeful",
+      "cardinality": "N:N",
+      "definition": "Interviewing provides a relevant lens for exploring hopeful in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "grit_illustrates_hopeful",
+      "subject": "grit",
+      "predicate": "illustrates",
+      "object": "hopeful",
+      "cardinality": "N:N",
+      "definition": "Grit provides a relevant lens for exploring hopeful in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "permission_to_feel_illustrates_hopeful",
+      "subject": "permission_to_feel",
+      "predicate": "illustrates",
+      "object": "hopeful",
+      "cardinality": "N:N",
+      "definition": "Permission to Feel provides a way to notice and name hopeful without judgment, then choose a considered response.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "innovation_illustrates_playful",
+      "subject": "innovation",
+      "predicate": "illustrates",
+      "object": "playful",
+      "cardinality": "N:N",
+      "definition": "Innovation provides a relevant lens for exploring playful in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "permission_to_feel_illustrates_playful",
+      "subject": "permission_to_feel",
+      "predicate": "illustrates",
+      "object": "playful",
+      "cardinality": "N:N",
+      "definition": "Permission to Feel provides a way to notice and name playful without judgment, then choose a considered response.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "permission_to_feel_illustrates_blissful",
+      "subject": "permission_to_feel",
+      "predicate": "illustrates",
+      "object": "blissful",
+      "cardinality": "N:N",
+      "definition": "Permission to Feel provides a way to notice and name blissful without judgment, then choose a considered response.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "emotional_regulation_illustrates_disgusted",
+      "subject": "emotional_regulation",
+      "predicate": "illustrates",
+      "object": "disgusted",
+      "cardinality": "N:N",
+      "definition": "Emotional Regulation provides a relevant lens for exploring disgusted in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "permission_to_feel_illustrates_disgusted",
+      "subject": "permission_to_feel",
+      "predicate": "illustrates",
+      "object": "disgusted",
+      "cardinality": "N:N",
+      "definition": "Permission to Feel provides a way to notice and name disgusted without judgment, then choose a considered response.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "emotional_regulation_illustrates_glum",
+      "subject": "emotional_regulation",
+      "predicate": "illustrates",
+      "object": "glum",
+      "cardinality": "N:N",
+      "definition": "Emotional Regulation provides a relevant lens for exploring glum in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "permission_to_feel_illustrates_glum",
+      "subject": "permission_to_feel",
+      "predicate": "illustrates",
+      "object": "glum",
+      "cardinality": "N:N",
+      "definition": "Permission to Feel provides a way to notice and name glum without judgment, then choose a considered response.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "learning_from_regret_illustrates_disappointment",
+      "subject": "learning_from_regret",
+      "predicate": "illustrates",
+      "object": "disappointment",
+      "cardinality": "N:N",
+      "definition": "A disappointing outcome can invite reflection on unmet hopes and values; disappointment does not necessarily imply regret.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "right_kind_of_wrong_illustrates_disappointment",
+      "subject": "right_kind_of_wrong",
+      "predicate": "illustrates",
+      "object": "disappointment",
+      "cardinality": "N:N",
+      "definition": "If disappointment follows a setback, examining its causes and context can support learning; not every disappointing outcome is a failure.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "purpose_illustrates_disappointment",
+      "subject": "purpose",
+      "predicate": "illustrates",
+      "object": "disappointment",
+      "cardinality": "N:N",
+      "definition": "Purpose provides a relevant lens for exploring disappointed in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "receiving_feedback_illustrates_disappointment",
+      "subject": "receiving_feedback",
+      "predicate": "illustrates",
+      "object": "disappointment",
+      "cardinality": "N:N",
+      "definition": "Receiving Feedback provides a relevant lens for exploring disappointed in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "emotional_regulation_illustrates_disappointment",
+      "subject": "emotional_regulation",
+      "predicate": "illustrates",
+      "object": "disappointment",
+      "cardinality": "N:N",
+      "definition": "Emotional Regulation provides a relevant lens for exploring disappointed in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "permission_to_feel_illustrates_disappointment",
+      "subject": "permission_to_feel",
+      "predicate": "illustrates",
+      "object": "disappointment",
+      "cardinality": "N:N",
+      "definition": "Permission to Feel provides a way to notice and name disappointed without judgment, then choose a considered response.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "learning_from_regret_illustrates_down",
+      "subject": "learning_from_regret",
+      "predicate": "illustrates",
+      "object": "down",
+      "cardinality": "N:N",
+      "definition": "Learning from Regret provides a relevant lens for exploring down in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "emotional_regulation_illustrates_down",
+      "subject": "emotional_regulation",
+      "predicate": "illustrates",
+      "object": "down",
+      "cardinality": "N:N",
+      "definition": "Emotional Regulation provides a relevant lens for exploring down in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "permission_to_feel_illustrates_down",
+      "subject": "permission_to_feel",
+      "predicate": "illustrates",
+      "object": "down",
+      "cardinality": "N:N",
+      "definition": "Permission to Feel provides a way to notice and name down without judgment, then choose a considered response.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "growth_mindset_illustrates_apathetic",
+      "subject": "growth_mindset",
+      "predicate": "illustrates",
+      "object": "apathetic",
+      "cardinality": "N:N",
+      "definition": "Growth Mindset provides a relevant lens for exploring apathetic in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "motivation_illustrates_apathetic",
+      "subject": "motivation",
+      "predicate": "illustrates",
+      "object": "apathetic",
+      "cardinality": "N:N",
+      "definition": "Motivation provides a relevant lens for exploring apathetic in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "emotional_regulation_illustrates_apathetic",
+      "subject": "emotional_regulation",
+      "predicate": "illustrates",
+      "object": "apathetic",
+      "cardinality": "N:N",
+      "definition": "Emotional Regulation provides a relevant lens for exploring apathetic in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "permission_to_feel_illustrates_apathetic",
+      "subject": "permission_to_feel",
+      "predicate": "illustrates",
+      "object": "apathetic",
+      "cardinality": "N:N",
+      "definition": "Permission to Feel provides a way to notice and name apathetic without judgment, then choose a considered response.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "learning_from_regret_illustrates_pessimistic",
+      "subject": "learning_from_regret",
+      "predicate": "illustrates",
+      "object": "pessimistic",
+      "cardinality": "N:N",
+      "definition": "Learning from Regret provides a relevant lens for exploring pessimistic in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "right_kind_of_wrong_illustrates_pessimistic",
+      "subject": "right_kind_of_wrong",
+      "predicate": "illustrates",
+      "object": "pessimistic",
+      "cardinality": "N:N",
+      "definition": "Right Kind of Wrong provides a relevant lens for exploring pessimistic in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "growth_mindset_illustrates_pessimistic",
+      "subject": "growth_mindset",
+      "predicate": "illustrates",
+      "object": "pessimistic",
+      "cardinality": "N:N",
+      "definition": "Growth Mindset provides a relevant lens for exploring pessimistic in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "grit_illustrates_pessimistic",
+      "subject": "grit",
+      "predicate": "illustrates",
+      "object": "pessimistic",
+      "cardinality": "N:N",
+      "definition": "Grit provides a relevant lens for exploring pessimistic in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "emotional_regulation_illustrates_pessimistic",
+      "subject": "emotional_regulation",
+      "predicate": "illustrates",
+      "object": "pessimistic",
+      "cardinality": "N:N",
+      "definition": "Emotional Regulation provides a relevant lens for exploring pessimistic in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "permission_to_feel_illustrates_pessimistic",
+      "subject": "permission_to_feel",
+      "predicate": "illustrates",
+      "object": "pessimistic",
+      "cardinality": "N:N",
+      "definition": "Permission to Feel provides a way to notice and name pessimistic without judgment, then choose a considered response.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "emotional_regulation_illustrates_morose",
+      "subject": "emotional_regulation",
+      "predicate": "illustrates",
+      "object": "morose",
+      "cardinality": "N:N",
+      "definition": "Emotional Regulation provides a relevant lens for exploring morose in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "permission_to_feel_illustrates_morose",
+      "subject": "permission_to_feel",
+      "predicate": "illustrates",
+      "object": "morose",
+      "cardinality": "N:N",
+      "definition": "Permission to Feel provides a way to notice and name morose without judgment, then choose a considered response.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "learning_from_regret_illustrates_discouraged",
+      "subject": "learning_from_regret",
+      "predicate": "illustrates",
+      "object": "discouraged",
+      "cardinality": "N:N",
+      "definition": "Learning from Regret provides a relevant lens for exploring discouraged in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "right_kind_of_wrong_illustrates_discouraged",
+      "subject": "right_kind_of_wrong",
+      "predicate": "illustrates",
+      "object": "discouraged",
+      "cardinality": "N:N",
+      "definition": "Right Kind of Wrong provides a relevant lens for exploring discouraged in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "growth_mindset_illustrates_discouraged",
+      "subject": "growth_mindset",
+      "predicate": "illustrates",
+      "object": "discouraged",
+      "cardinality": "N:N",
+      "definition": "Discouragement after setbacks can invite reflection on what can be learned and improved.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "receiving_feedback_illustrates_discouraged",
+      "subject": "receiving_feedback",
+      "predicate": "illustrates",
+      "object": "discouraged",
+      "cardinality": "N:N",
+      "definition": "Receiving Feedback provides a relevant lens for exploring discouraged in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "grit_illustrates_discouraged",
+      "subject": "grit",
+      "predicate": "illustrates",
+      "object": "discouraged",
+      "cardinality": "N:N",
+      "definition": "Grit provides a relevant lens for exploring discouraged in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "emotional_regulation_illustrates_discouraged",
+      "subject": "emotional_regulation",
+      "predicate": "illustrates",
+      "object": "discouraged",
+      "cardinality": "N:N",
+      "definition": "Emotional Regulation provides a relevant lens for exploring discouraged in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "permission_to_feel_illustrates_discouraged",
+      "subject": "permission_to_feel",
+      "predicate": "illustrates",
+      "object": "discouraged",
+      "cardinality": "N:N",
+      "definition": "Permission to Feel provides a way to notice and name discouraged without judgment, then choose a considered response.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "learning_from_regret_illustrates_sad",
+      "subject": "learning_from_regret",
+      "predicate": "illustrates",
+      "object": "sad",
+      "cardinality": "N:N",
+      "definition": "Learning from Regret provides a relevant lens for exploring sad in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "emotional_regulation_illustrates_sad",
+      "subject": "emotional_regulation",
+      "predicate": "illustrates",
+      "object": "sad",
+      "cardinality": "N:N",
+      "definition": "Emotional Regulation provides a relevant lens for exploring sad in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "permission_to_feel_illustrates_sad",
+      "subject": "permission_to_feel",
+      "predicate": "illustrates",
+      "object": "sad",
+      "cardinality": "N:N",
+      "definition": "Permission to Feel provides a way to notice and name sad without judgment, then choose a considered response.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "growth_mindset_illustrates_bored",
+      "subject": "growth_mindset",
+      "predicate": "illustrates",
+      "object": "bored",
+      "cardinality": "N:N",
+      "definition": "Growth Mindset provides a relevant lens for exploring bored in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "motivation_illustrates_bored",
+      "subject": "motivation",
+      "predicate": "illustrates",
+      "object": "bored",
+      "cardinality": "N:N",
+      "definition": "Motivation provides a relevant lens for exploring bored in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "emotional_regulation_illustrates_bored",
+      "subject": "emotional_regulation",
+      "predicate": "illustrates",
+      "object": "bored",
+      "cardinality": "N:N",
+      "definition": "Emotional Regulation provides a relevant lens for exploring bored in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "permission_to_feel_illustrates_bored",
+      "subject": "permission_to_feel",
+      "predicate": "illustrates",
+      "object": "bored",
+      "cardinality": "N:N",
+      "definition": "Permission to Feel provides a way to notice and name bored without judgment, then choose a considered response.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "psychological_safety_illustrates_alienated",
+      "subject": "psychological_safety",
+      "predicate": "illustrates",
+      "object": "alienated",
+      "cardinality": "N:N",
+      "definition": "Psychological Safety provides a relevant lens for exploring alienated in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "networking_illustrates_alienated",
+      "subject": "networking",
+      "predicate": "illustrates",
+      "object": "alienated",
+      "cardinality": "N:N",
+      "definition": "Networking provides a relevant lens for exploring alienated in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "emotional_regulation_illustrates_alienated",
+      "subject": "emotional_regulation",
+      "predicate": "illustrates",
+      "object": "alienated",
+      "cardinality": "N:N",
+      "definition": "Emotional Regulation provides a relevant lens for exploring alienated in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "permission_to_feel_illustrates_alienated",
+      "subject": "permission_to_feel",
+      "predicate": "illustrates",
+      "object": "alienated",
+      "cardinality": "N:N",
+      "definition": "Permission to Feel provides a way to notice and name alienated without judgment, then choose a considered response.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "emotional_regulation_illustrates_miserable",
+      "subject": "emotional_regulation",
+      "predicate": "illustrates",
+      "object": "miserable",
+      "cardinality": "N:N",
+      "definition": "Emotional Regulation provides a relevant lens for exploring miserable in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "permission_to_feel_illustrates_miserable",
+      "subject": "permission_to_feel",
+      "predicate": "illustrates",
+      "object": "miserable",
+      "cardinality": "N:N",
+      "definition": "Permission to Feel provides a way to notice and name miserable without judgment, then choose a considered response.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "psychological_safety_illustrates_lonely",
+      "subject": "psychological_safety",
+      "predicate": "illustrates",
+      "object": "lonely",
+      "cardinality": "N:N",
+      "definition": "Psychological Safety provides a relevant lens for exploring lonely in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "networking_illustrates_lonely",
+      "subject": "networking",
+      "predicate": "illustrates",
+      "object": "lonely",
+      "cardinality": "N:N",
+      "definition": "Networking provides a relevant lens for exploring lonely in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "emotional_regulation_illustrates_lonely",
+      "subject": "emotional_regulation",
+      "predicate": "illustrates",
+      "object": "lonely",
+      "cardinality": "N:N",
+      "definition": "Emotional Regulation provides a relevant lens for exploring lonely in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "permission_to_feel_illustrates_lonely",
+      "subject": "permission_to_feel",
+      "predicate": "illustrates",
+      "object": "lonely",
+      "cardinality": "N:N",
+      "definition": "Permission to Feel provides a way to notice and name lonely without judgment, then choose a considered response.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "learning_from_regret_illustrates_disheartened",
+      "subject": "learning_from_regret",
+      "predicate": "illustrates",
+      "object": "disheartened",
+      "cardinality": "N:N",
+      "definition": "Learning from Regret provides a relevant lens for exploring disheartened in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "right_kind_of_wrong_illustrates_disheartened",
+      "subject": "right_kind_of_wrong",
+      "predicate": "illustrates",
+      "object": "disheartened",
+      "cardinality": "N:N",
+      "definition": "Right Kind of Wrong provides a relevant lens for exploring disheartened in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "growth_mindset_illustrates_disheartened",
+      "subject": "growth_mindset",
+      "predicate": "illustrates",
+      "object": "disheartened",
+      "cardinality": "N:N",
+      "definition": "Growth Mindset provides a relevant lens for exploring disheartened in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "receiving_feedback_illustrates_disheartened",
+      "subject": "receiving_feedback",
+      "predicate": "illustrates",
+      "object": "disheartened",
+      "cardinality": "N:N",
+      "definition": "Receiving Feedback provides a relevant lens for exploring disheartened in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "grit_illustrates_disheartened",
+      "subject": "grit",
+      "predicate": "illustrates",
+      "object": "disheartened",
+      "cardinality": "N:N",
+      "definition": "Grit provides a relevant lens for exploring disheartened in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "emotional_regulation_illustrates_disheartened",
+      "subject": "emotional_regulation",
+      "predicate": "illustrates",
+      "object": "disheartened",
+      "cardinality": "N:N",
+      "definition": "Emotional Regulation provides a relevant lens for exploring disheartened in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "permission_to_feel_illustrates_disheartened",
+      "subject": "permission_to_feel",
+      "predicate": "illustrates",
+      "object": "disheartened",
+      "cardinality": "N:N",
+      "definition": "Permission to Feel provides a way to notice and name disheartened without judgment, then choose a considered response.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "motivation_illustrates_tired",
+      "subject": "motivation",
+      "predicate": "illustrates",
+      "object": "tired",
+      "cardinality": "N:N",
+      "definition": "Motivation provides a relevant lens for exploring tired in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "grit_illustrates_tired",
+      "subject": "grit",
+      "predicate": "illustrates",
+      "object": "tired",
+      "cardinality": "N:N",
+      "definition": "Grit provides a relevant lens for exploring tired in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "emotional_regulation_illustrates_tired",
+      "subject": "emotional_regulation",
+      "predicate": "illustrates",
+      "object": "tired",
+      "cardinality": "N:N",
+      "definition": "Emotional Regulation provides a relevant lens for exploring tired in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "permission_to_feel_illustrates_tired",
+      "subject": "permission_to_feel",
+      "predicate": "illustrates",
+      "object": "tired",
+      "cardinality": "N:N",
+      "definition": "Permission to Feel provides a way to notice and name tired without judgment, then choose a considered response.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "learning_from_regret_illustrates_despondent",
+      "subject": "learning_from_regret",
+      "predicate": "illustrates",
+      "object": "despondent",
+      "cardinality": "N:N",
+      "definition": "Learning from Regret provides a relevant lens for exploring despondent in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "growth_mindset_illustrates_despondent",
+      "subject": "growth_mindset",
+      "predicate": "illustrates",
+      "object": "despondent",
+      "cardinality": "N:N",
+      "definition": "Growth Mindset provides a relevant lens for exploring despondent in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "purpose_illustrates_despondent",
+      "subject": "purpose",
+      "predicate": "illustrates",
+      "object": "despondent",
+      "cardinality": "N:N",
+      "definition": "Purpose provides a relevant lens for exploring despondent in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "grit_illustrates_despondent",
+      "subject": "grit",
+      "predicate": "illustrates",
+      "object": "despondent",
+      "cardinality": "N:N",
+      "definition": "Grit provides a relevant lens for exploring despondent in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "emotional_regulation_illustrates_despondent",
+      "subject": "emotional_regulation",
+      "predicate": "illustrates",
+      "object": "despondent",
+      "cardinality": "N:N",
+      "definition": "Emotional Regulation provides a relevant lens for exploring despondent in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "permission_to_feel_illustrates_despondent",
+      "subject": "permission_to_feel",
+      "predicate": "illustrates",
+      "object": "despondent",
+      "cardinality": "N:N",
+      "definition": "Permission to Feel provides a way to notice and name despondent without judgment, then choose a considered response.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "emotional_regulation_illustrates_depressed",
+      "subject": "emotional_regulation",
+      "predicate": "illustrates",
+      "object": "depressed",
+      "cardinality": "N:N",
+      "definition": "Emotional Regulation provides a relevant lens for exploring depressed in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "permission_to_feel_illustrates_depressed",
+      "subject": "permission_to_feel",
+      "predicate": "illustrates",
+      "object": "depressed",
+      "cardinality": "N:N",
+      "definition": "Permission to Feel provides a way to notice and name depressed without judgment, then choose a considered response.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "emotional_regulation_illustrates_sullen",
+      "subject": "emotional_regulation",
+      "predicate": "illustrates",
+      "object": "sullen",
+      "cardinality": "N:N",
+      "definition": "Emotional Regulation provides a relevant lens for exploring sullen in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "permission_to_feel_illustrates_sullen",
+      "subject": "permission_to_feel",
+      "predicate": "illustrates",
+      "object": "sullen",
+      "cardinality": "N:N",
+      "definition": "Permission to Feel provides a way to notice and name sullen without judgment, then choose a considered response.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "motivation_illustrates_exhausted",
+      "subject": "motivation",
+      "predicate": "illustrates",
+      "object": "exhausted",
+      "cardinality": "N:N",
+      "definition": "Motivation provides a relevant lens for exploring exhausted in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "grit_illustrates_exhausted",
+      "subject": "grit",
+      "predicate": "illustrates",
+      "object": "exhausted",
+      "cardinality": "N:N",
+      "definition": "Grit provides a relevant lens for exploring exhausted in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "emotional_regulation_illustrates_exhausted",
+      "subject": "emotional_regulation",
+      "predicate": "illustrates",
+      "object": "exhausted",
+      "cardinality": "N:N",
+      "definition": "Emotional Regulation provides a relevant lens for exploring exhausted in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "permission_to_feel_illustrates_exhausted",
+      "subject": "permission_to_feel",
+      "predicate": "illustrates",
+      "object": "exhausted",
+      "cardinality": "N:N",
+      "definition": "Permission to Feel provides a way to notice and name exhausted without judgment, then choose a considered response.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "motivation_illustrates_fatigued",
+      "subject": "motivation",
+      "predicate": "illustrates",
+      "object": "fatigued",
+      "cardinality": "N:N",
+      "definition": "Motivation provides a relevant lens for exploring fatigued in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "grit_illustrates_fatigued",
+      "subject": "grit",
+      "predicate": "illustrates",
+      "object": "fatigued",
+      "cardinality": "N:N",
+      "definition": "Grit provides a relevant lens for exploring fatigued in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "emotional_regulation_illustrates_fatigued",
+      "subject": "emotional_regulation",
+      "predicate": "illustrates",
+      "object": "fatigued",
+      "cardinality": "N:N",
+      "definition": "Emotional Regulation provides a relevant lens for exploring fatigued in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "permission_to_feel_illustrates_fatigued",
+      "subject": "permission_to_feel",
+      "predicate": "illustrates",
+      "object": "fatigued",
+      "cardinality": "N:N",
+      "definition": "Permission to Feel provides a way to notice and name fatigued without judgment, then choose a considered response.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "growth_mindset_illustrates_despair",
+      "subject": "growth_mindset",
+      "predicate": "illustrates",
+      "object": "despair",
+      "cardinality": "N:N",
+      "definition": "Growth Mindset provides a relevant lens for exploring despair in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "emotional_regulation_illustrates_despair",
+      "subject": "emotional_regulation",
+      "predicate": "illustrates",
+      "object": "despair",
+      "cardinality": "N:N",
+      "definition": "Emotional Regulation provides a relevant lens for exploring despair in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "permission_to_feel_illustrates_despair",
+      "subject": "permission_to_feel",
+      "predicate": "illustrates",
+      "object": "despair",
+      "cardinality": "N:N",
+      "definition": "Permission to Feel provides a way to notice and name despair without judgment, then choose a considered response.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "learning_from_regret_illustrates_hopeless",
+      "subject": "learning_from_regret",
+      "predicate": "illustrates",
+      "object": "hopeless",
+      "cardinality": "N:N",
+      "definition": "Learning from Regret provides a relevant lens for exploring hopeless in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "growth_mindset_illustrates_hopeless",
+      "subject": "growth_mindset",
+      "predicate": "illustrates",
+      "object": "hopeless",
+      "cardinality": "N:N",
+      "definition": "Growth Mindset provides a relevant lens for exploring hopeless in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "grit_illustrates_hopeless",
+      "subject": "grit",
+      "predicate": "illustrates",
+      "object": "hopeless",
+      "cardinality": "N:N",
+      "definition": "Grit provides a relevant lens for exploring hopeless in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "emotional_regulation_illustrates_hopeless",
+      "subject": "emotional_regulation",
+      "predicate": "illustrates",
+      "object": "hopeless",
+      "cardinality": "N:N",
+      "definition": "Emotional Regulation provides a relevant lens for exploring hopeless in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "permission_to_feel_illustrates_hopeless",
+      "subject": "permission_to_feel",
+      "predicate": "illustrates",
+      "object": "hopeless",
+      "cardinality": "N:N",
+      "definition": "Permission to Feel provides a way to notice and name hopeless without judgment, then choose a considered response.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "emotional_regulation_illustrates_desolate",
+      "subject": "emotional_regulation",
+      "predicate": "illustrates",
+      "object": "desolate",
+      "cardinality": "N:N",
+      "definition": "Emotional Regulation provides a relevant lens for exploring desolate in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "permission_to_feel_illustrates_desolate",
+      "subject": "permission_to_feel",
+      "predicate": "illustrates",
+      "object": "desolate",
+      "cardinality": "N:N",
+      "definition": "Permission to Feel provides a way to notice and name desolate without judgment, then choose a considered response.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "motivation_illustrates_spent",
+      "subject": "motivation",
+      "predicate": "illustrates",
+      "object": "spent",
+      "cardinality": "N:N",
+      "definition": "Motivation provides a relevant lens for exploring spent in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "grit_illustrates_spent",
+      "subject": "grit",
+      "predicate": "illustrates",
+      "object": "spent",
+      "cardinality": "N:N",
+      "definition": "Grit provides a relevant lens for exploring spent in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "emotional_regulation_illustrates_spent",
+      "subject": "emotional_regulation",
+      "predicate": "illustrates",
+      "object": "spent",
+      "cardinality": "N:N",
+      "definition": "Emotional Regulation provides a relevant lens for exploring spent in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "permission_to_feel_illustrates_spent",
+      "subject": "permission_to_feel",
+      "predicate": "illustrates",
+      "object": "spent",
+      "cardinality": "N:N",
+      "definition": "Permission to Feel provides a way to notice and name spent without judgment, then choose a considered response.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "emotional_regulation_illustrates_drained",
+      "subject": "emotional_regulation",
+      "predicate": "illustrates",
+      "object": "drained",
+      "cardinality": "N:N",
+      "definition": "Emotional Regulation provides a relevant lens for exploring drained in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "permission_to_feel_illustrates_drained",
+      "subject": "permission_to_feel",
+      "predicate": "illustrates",
+      "object": "drained",
+      "cardinality": "N:N",
+      "definition": "Permission to Feel provides a way to notice and name drained without judgment, then choose a considered response.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "permission_to_feel_illustrates_at_ease",
+      "subject": "permission_to_feel",
+      "predicate": "illustrates",
+      "object": "at_ease",
+      "cardinality": "N:N",
+      "definition": "Permission to Feel provides a way to notice and name at ease without judgment, then choose a considered response.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "permission_to_feel_illustrates_easygoing",
+      "subject": "permission_to_feel",
+      "predicate": "illustrates",
+      "object": "easygoing",
+      "cardinality": "N:N",
+      "definition": "Permission to Feel provides a way to notice and name easygoing without judgment, then choose a considered response.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "purpose_illustrates_content",
+      "subject": "purpose",
+      "predicate": "illustrates",
+      "object": "content",
+      "cardinality": "N:N",
+      "definition": "Purpose provides a relevant lens for exploring content in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "appreciation_illustrates_content",
+      "subject": "appreciation",
+      "predicate": "illustrates",
+      "object": "content",
+      "cardinality": "N:N",
+      "definition": "Appreciation provides a relevant lens for exploring content in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "permission_to_feel_illustrates_content",
+      "subject": "permission_to_feel",
+      "predicate": "illustrates",
+      "object": "content",
+      "cardinality": "N:N",
+      "definition": "Permission to Feel provides a way to notice and name content without judgment, then choose a considered response.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "purpose_illustrates_loving",
+      "subject": "purpose",
+      "predicate": "illustrates",
+      "object": "loving",
+      "cardinality": "N:N",
+      "definition": "Purpose provides a relevant lens for exploring loving in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "appreciation_illustrates_loving",
+      "subject": "appreciation",
+      "predicate": "illustrates",
+      "object": "loving",
+      "cardinality": "N:N",
+      "definition": "Appreciation provides a relevant lens for exploring loving in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "networking_illustrates_loving",
+      "subject": "networking",
+      "predicate": "illustrates",
+      "object": "loving",
+      "cardinality": "N:N",
+      "definition": "Networking provides a relevant lens for exploring loving in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "permission_to_feel_illustrates_loving",
+      "subject": "permission_to_feel",
+      "predicate": "illustrates",
+      "object": "loving",
+      "cardinality": "N:N",
+      "definition": "Permission to Feel provides a way to notice and name loving without judgment, then choose a considered response.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "purpose_illustrates_fulfilled",
+      "subject": "purpose",
+      "predicate": "illustrates",
+      "object": "fulfilled",
+      "cardinality": "N:N",
+      "definition": "Purpose provides a relevant lens for exploring fulfilled in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "permission_to_feel_illustrates_fulfilled",
+      "subject": "permission_to_feel",
+      "predicate": "illustrates",
+      "object": "fulfilled",
+      "cardinality": "N:N",
+      "definition": "Permission to Feel provides a way to notice and name fulfilled without judgment, then choose a considered response.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "psychological_safety_illustrates_calm",
+      "subject": "psychological_safety",
+      "predicate": "illustrates",
+      "object": "calm",
+      "cardinality": "N:N",
+      "definition": "Psychological Safety provides a relevant lens for exploring calm in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "permission_to_feel_illustrates_calm",
+      "subject": "permission_to_feel",
+      "predicate": "illustrates",
+      "object": "calm",
+      "cardinality": "N:N",
+      "definition": "Permission to Feel provides a way to notice and name calm without judgment, then choose a considered response.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "psychological_safety_illustrates_secure",
+      "subject": "psychological_safety",
+      "predicate": "illustrates",
+      "object": "secure",
+      "cardinality": "N:N",
+      "definition": "Psychological Safety provides a relevant lens for exploring secure in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "permission_to_feel_illustrates_secure",
+      "subject": "permission_to_feel",
+      "predicate": "illustrates",
+      "object": "secure",
+      "cardinality": "N:N",
+      "definition": "Permission to Feel provides a way to notice and name secure without judgment, then choose a considered response.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "purpose_illustrates_satisfied",
+      "subject": "purpose",
+      "predicate": "illustrates",
+      "object": "satisfied",
+      "cardinality": "N:N",
+      "definition": "Purpose provides a relevant lens for exploring satisfied in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "appreciation_illustrates_satisfied",
+      "subject": "appreciation",
+      "predicate": "illustrates",
+      "object": "satisfied",
+      "cardinality": "N:N",
+      "definition": "Appreciation provides a relevant lens for exploring satisfied in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "permission_to_feel_illustrates_satisfied",
+      "subject": "permission_to_feel",
+      "predicate": "illustrates",
+      "object": "satisfied",
+      "cardinality": "N:N",
+      "definition": "Permission to Feel provides a way to notice and name satisfied without judgment, then choose a considered response.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "purpose_illustrates_grateful",
+      "subject": "purpose",
+      "predicate": "illustrates",
+      "object": "grateful",
+      "cardinality": "N:N",
+      "definition": "Purpose provides a relevant lens for exploring grateful in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "appreciation_illustrates_grateful",
+      "subject": "appreciation",
+      "predicate": "illustrates",
+      "object": "grateful",
+      "cardinality": "N:N",
+      "definition": "Gratitude is closely related to noticing and expressing appreciation.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "networking_illustrates_grateful",
+      "subject": "networking",
+      "predicate": "illustrates",
+      "object": "grateful",
+      "cardinality": "N:N",
+      "definition": "Networking provides a relevant lens for exploring grateful in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "receiving_feedback_illustrates_grateful",
+      "subject": "receiving_feedback",
+      "predicate": "illustrates",
+      "object": "grateful",
+      "cardinality": "N:N",
+      "definition": "Receiving Feedback provides a relevant lens for exploring grateful in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "permission_to_feel_illustrates_grateful",
+      "subject": "permission_to_feel",
+      "predicate": "illustrates",
+      "object": "grateful",
+      "cardinality": "N:N",
+      "definition": "Permission to Feel provides a way to notice and name grateful without judgment, then choose a considered response.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "appreciation_illustrates_touched",
+      "subject": "appreciation",
+      "predicate": "illustrates",
+      "object": "touched",
+      "cardinality": "N:N",
+      "definition": "Appreciation provides a relevant lens for exploring touched in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "permission_to_feel_illustrates_touched",
+      "subject": "permission_to_feel",
+      "predicate": "illustrates",
+      "object": "touched",
+      "cardinality": "N:N",
+      "definition": "Permission to Feel provides a way to notice and name touched without judgment, then choose a considered response.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "psychological_safety_illustrates_relaxed",
+      "subject": "psychological_safety",
+      "predicate": "illustrates",
+      "object": "relaxed",
+      "cardinality": "N:N",
+      "definition": "Psychological Safety provides a relevant lens for exploring relaxed in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "permission_to_feel_illustrates_relaxed",
+      "subject": "permission_to_feel",
+      "predicate": "illustrates",
+      "object": "relaxed",
+      "cardinality": "N:N",
+      "definition": "Permission to Feel provides a way to notice and name relaxed without judgment, then choose a considered response.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "permission_to_feel_illustrates_chill",
+      "subject": "permission_to_feel",
+      "predicate": "illustrates",
+      "object": "chill",
+      "cardinality": "N:N",
+      "definition": "Permission to Feel provides a way to notice and name chill without judgment, then choose a considered response.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "permission_to_feel_illustrates_restful",
+      "subject": "permission_to_feel",
+      "predicate": "illustrates",
+      "object": "restful",
+      "cardinality": "N:N",
+      "definition": "Permission to Feel provides a way to notice and name restful without judgment, then choose a considered response.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "appreciation_illustrates_blessed",
+      "subject": "appreciation",
+      "predicate": "illustrates",
+      "object": "blessed",
+      "cardinality": "N:N",
+      "definition": "Appreciation provides a relevant lens for exploring blessed in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "permission_to_feel_illustrates_blessed",
+      "subject": "permission_to_feel",
+      "predicate": "illustrates",
+      "object": "blessed",
+      "cardinality": "N:N",
+      "definition": "Permission to Feel provides a way to notice and name blessed without judgment, then choose a considered response.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "permission_to_feel_illustrates_balanced",
+      "subject": "permission_to_feel",
+      "predicate": "illustrates",
+      "object": "balanced",
+      "cardinality": "N:N",
+      "definition": "Permission to Feel provides a way to notice and name balanced without judgment, then choose a considered response.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "permission_to_feel_illustrates_mellow",
+      "subject": "permission_to_feel",
+      "predicate": "illustrates",
+      "object": "mellow",
+      "cardinality": "N:N",
+      "definition": "Permission to Feel provides a way to notice and name mellow without judgment, then choose a considered response.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "learning_from_regret_illustrates_thoughtful",
+      "subject": "learning_from_regret",
+      "predicate": "illustrates",
+      "object": "thoughtful",
+      "cardinality": "N:N",
+      "definition": "Learning from Regret provides a relevant lens for exploring thoughtful in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "purpose_illustrates_thoughtful",
+      "subject": "purpose",
+      "predicate": "illustrates",
+      "object": "thoughtful",
+      "cardinality": "N:N",
+      "definition": "Purpose provides a relevant lens for exploring thoughtful in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "receiving_feedback_illustrates_thoughtful",
+      "subject": "receiving_feedback",
+      "predicate": "illustrates",
+      "object": "thoughtful",
+      "cardinality": "N:N",
+      "definition": "Receiving Feedback provides a relevant lens for exploring thoughtful in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "permission_to_feel_illustrates_thoughtful",
+      "subject": "permission_to_feel",
+      "predicate": "illustrates",
+      "object": "thoughtful",
+      "cardinality": "N:N",
+      "definition": "Permission to Feel provides a way to notice and name thoughtful without judgment, then choose a considered response.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "permission_to_feel_illustrates_peaceful",
+      "subject": "permission_to_feel",
+      "predicate": "illustrates",
+      "object": "peaceful",
+      "cardinality": "N:N",
+      "definition": "Permission to Feel provides a way to notice and name peaceful without judgment, then choose a considered response.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "psychological_safety_illustrates_comfortable",
+      "subject": "psychological_safety",
+      "predicate": "illustrates",
+      "object": "comfortable",
+      "cardinality": "N:N",
+      "definition": "Psychological Safety provides a relevant lens for exploring comfortable in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "networking_illustrates_comfortable",
+      "subject": "networking",
+      "predicate": "illustrates",
+      "object": "comfortable",
+      "cardinality": "N:N",
+      "definition": "Networking provides a relevant lens for exploring comfortable in context; the feeling alone does not establish a cause, diagnosis, or required action.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "permission_to_feel_illustrates_comfortable",
+      "subject": "permission_to_feel",
+      "predicate": "illustrates",
+      "object": "comfortable",
+      "cardinality": "N:N",
+      "definition": "Permission to Feel provides a way to notice and name comfortable without judgment, then choose a considered response.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "permission_to_feel_illustrates_carefree",
+      "subject": "permission_to_feel",
+      "predicate": "illustrates",
+      "object": "carefree",
+      "cardinality": "N:N",
+      "definition": "Permission to Feel provides a way to notice and name carefree without judgment, then choose a considered response.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "permission_to_feel_illustrates_sleepy",
+      "subject": "permission_to_feel",
+      "predicate": "illustrates",
+      "object": "sleepy",
+      "cardinality": "N:N",
+      "definition": "Permission to Feel provides a way to notice and name sleepy without judgment, then choose a considered response.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "permission_to_feel_illustrates_complacent",
+      "subject": "permission_to_feel",
+      "predicate": "illustrates",
+      "object": "complacent",
+      "cardinality": "N:N",
+      "definition": "Permission to Feel provides a way to notice and name complacent without judgment, then choose a considered response.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "permission_to_feel_illustrates_tranquil",
+      "subject": "permission_to_feel",
+      "predicate": "illustrates",
+      "object": "tranquil",
+      "cardinality": "N:N",
+      "definition": "Permission to Feel provides a way to notice and name tranquil without judgment, then choose a considered response.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "permission_to_feel_illustrates_cozy",
+      "subject": "permission_to_feel",
+      "predicate": "illustrates",
+      "object": "cozy",
+      "cardinality": "N:N",
+      "definition": "Permission to Feel provides a way to notice and name cozy without judgment, then choose a considered response.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
+    },
+    {
+      "id": "permission_to_feel_illustrates_serene",
+      "subject": "permission_to_feel",
+      "predicate": "illustrates",
+      "object": "serene",
+      "cardinality": "N:N",
+      "definition": "Permission to Feel provides a way to notice and name serene without judgment, then choose a considered response.",
+      "audit_status": "proposed_for_editorial_review",
+      "provenance": "emotion_to_concept_mapping_2026_11_19"
     }
   ],
   "business_rules": [
@@ -14926,6 +18186,20 @@
         }
       ],
       "membership_traversal": "Use belongs_to_mood_quadrant and is_emotion_vocabulary_term only when an exact term, quadrant, or explicit vocabulary listing is requested."
+    },
+    "emotion_concept_mapping": {
+      "version": "1.0-proposed",
+      "search_pattern": "When an emotion is resolved, use inbound illustrates edges to retrieve relevant explanatory frameworks and practices.",
+      "direction": "framework illustrates feeling (object); illustrates expands object to subject.",
+      "interpretation": "Relationships are possible reflection lenses, not causal claims or diagnoses.",
+      "review_status": "editorial_review_required",
+      "quality_gate": "Every Mood Meter feeling must have at least one inbound illustrates edge from a non-Mood-Meter concept.",
+      "example_questions": [
+        "I am disappointed I didn't get an internship. What can I learn?",
+        "How can I handle feeling nervous before an interview?",
+        "What can pride tell me about meaningful work?",
+        "Why am I grateful and sad at the same time?"
+      ]
     }
   },
   "relationship_semantics": {
