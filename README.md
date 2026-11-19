@@ -72,6 +72,25 @@ $body = @{ concepts = @("Resume Resource", "Week 3"); purpose = "search" } | Con
 Invoke-RestMethod -Method Post -Uri "http://localhost:7071/api/ontology/domain-resolution" -ContentType "application/json" -Body $body
 ```
 
+## Feelings API (proposed in PR #13)
+
+The Azure Function App serves deterministic Mood Meter resolution from the deployed `ontology/ontology.json`. These routes do not call an LLM or search service.
+
+- `GET /api/ontology/feelings/{feeling}`: exact ID, name, or alias lookup. Returns the feeling, quadrant, and curated explanatory frameworks. Returns 404 for unknown feelings.
+- `POST /api/ontology/feelings/resolve`: accepts `{"feeling":"disappointment","intent":"setback","persona":"student","max_results":3}` or `{"feelings":["nervous","proud"],"intent":"interview"}`. Returns up to 10 ranked framework matches and their guardrails, along with unresolved terms. Returns 400 for invalid input and 404 if no feeling matches.
+
+The MCP should detect feeling(s) and intent from the user's question and pass canonical intent tags such as `setback`, `reflection`, `feedback`, `interview`, `values`, or `regulation`. The API ranks exact intent-tag matches before editorial relevance weights. It does **not** infer intent from natural-language questions, personalize ranking by persona, perform web search, or verify framework guidance against live sources. Persona is validated and returned as context, not used for access control or scoring. The MCP must apply its own privacy and retrieval policies.
+
+Run: `python -m unittest discover -s tests -p 'test_*.py'`.
+
+Deployment: merge and deploy the Function App before expecting these endpoints to exist. Update the MCP to call the new route and consume its ranking and guardrails. The websearch app may need restarting to refresh its cached ontology. No MCP code is changed by this PR.
+
+### Emotion-aware search routing (contract, not yet active in MCP)
+
+The 326 emotion-to-framework `illustrates` edges remain in the ontology and remain available to the Feelings API. They now carry `retrieval.general_search_expand=false` and `retrieval.search_expansion="feelings_api_only"`. The other 41 general-purpose `illustrates` edges retain their existing search eligibility.
+
+**MCP implementation required:** Detect emotion and intent, call `POST /api/ontology/feelings/resolve`, then pass ranked framework concepts to Web Search and Wiki Search. For mixed career/emotion questions, preserve career concepts and deduplicate search inputs. **Search implementation required:** When traversing generic `illustrates` relationships, skip edges explicitly marked `general_search_expand=false`. These flags are metadata until the MCP/search code consumes them. Do not assume the exclusion is active in production just because the ontology deploys.
+
 ## Governance and deployment
 Edit `ontology/ontology.json`, increment `ontology_version`, review, test, and deploy. Do not expose write endpoints. The crawler should periodically retrieve manifests and reconcile indexed content when domains are disabled or policies change. Crawl size limits are not set in the ontology; the websearch app's `MAX_PAGES_PER_DOMAIN` setting controls them, and the ontology only decides which domains may be crawled. Confirm domain ownership, relevance, public access, robots.txt, and site terms before production crawling. Never crawl private/authenticated content without explicit authorization.
 
