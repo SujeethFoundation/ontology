@@ -9,8 +9,8 @@ Kept:
   classes                 every field except the Mood Meter grid, which shrinks to its quadrant (a class is a
                           feeling when mood_meter is an object)
   predicates              as is
-  relationships           id, subject, predicate, object, search_behavior and the two retrieval flags that decide
-                          whether an edge may expand a generic search
+  relationships           id, subject, predicate, object, search_behavior, weight and reason (a tool edge's fit and why
+                          it helps) and the two retrieval flags that decide whether an edge may expand a generic search
   preferred_terminology   as is
   personas                id and the language that signals each one
   ambiguous_terms, source_precedence   as is
@@ -33,7 +33,8 @@ def _class(item):
 
 
 def _relationship(item):
-    out = {key: item[key] for key in ("id", "subject", "predicate", "object", "search_behavior") if key in item}
+    out = {key: item[key] for key in ("id", "subject", "predicate", "object", "search_behavior", "weight", "reason")
+           if key in item}
     retrieval = item.get("retrieval")
     if isinstance(retrieval, dict):
         flags = {key: retrieval[key] for key in RETRIEVAL_FLAGS if key in retrieval}

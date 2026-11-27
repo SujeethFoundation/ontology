@@ -2,6 +2,13 @@
 
 Release notes moved out of the README. They are in the order changes were made, not strictly by version number. The current version is in `ontology/ontology.json`.
 
+## Version 1.15.7 changes
+
+- Added the `tool` class category and four tools students connect or open themselves: `youspot` (its MCP server is at https://youspot.com/mcp), `teal`, `indeed` (the Indeed connector; ChatGPT has a similar app) and `foundation_mcp` (https://mcp.sujeeth.org/mcp). Each carries a `tool` object: `url`, `kind` (`app`, `mcp` or `connector`), `connect` (what the student does to start), `fit_when`, and where it applies `mcp_url` and `available_in`.
+- Added the `helps_with` predicate (tool to skill, optional `weight` 0 to 1 and `reason`) and edges linking each tool to the skills it helps with. It does not expand search: a tool is offered with an answer by MCP's `suggested_tools`, and never changes which pages are searched. It is separate from `supports`, which means one concept grounds another.
+- `catalog.py` keeps `weight` and `reason` on slim relationships so MCP can rank a tool's edges.
+- `youspot` and `teal` are associated with their own domains (`youspot.com`, `tealhq.com`), so a question that names them reaches those pages. Indeed and the Foundation MCP have no domain.
+
 ## Version 1.15.6 changes
 
 - Added the `researching_people` skill: learning about a specific person (what they post, what they have worked on, what you have in common) before reaching out or meeting them. Aliases and question phrases cover "research a person", "what someone is interested in", "learn about someone's work", and "find common ground".

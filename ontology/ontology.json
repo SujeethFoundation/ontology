@@ -1,5 +1,5 @@
 {
-  "ontology_version": "1.15.6-proposed",
+  "ontology_version": "1.15.7-proposed",
   "last_updated": "2026-11-19",
   "description": "Sujeeth Foundation domain ontology and governance configuration, including validated concepts used to associate approved external domains.",
   "foundation_purpose": {
@@ -612,6 +612,10 @@
     {
       "id": "pathway_step",
       "definition": "An ordered phase in the process of identifying, testing, and pursuing an Ideal Job."
+    },
+    {
+      "id": "tool",
+      "definition": "Software a student connects or opens themselves to practice a skill. A tool is offered only when it fits the question; it never widens a search."
     }
   ],
   "classes": [
@@ -5081,6 +5085,75 @@
         "understand feelings and learn from setbacks",
         "learn from regret and failure"
       ]
+    },
+    {
+      "id": "youspot",
+      "name": "YouSpot",
+      "category": "tool",
+      "audiences": [
+        "student"
+      ],
+      "definition": "A platform that helps students find relevant professional conversations, research the people behind them, and write specific, personal replies. The Week 4 networking demo uses it.",
+      "tool": {
+        "url": "https://youspot.com/",
+        "kind": "mcp",
+        "mcp_url": "https://youspot.com/mcp",
+        "available_in": [
+          "Claude connector directory"
+        ],
+        "connect": "Add the YouSpot connector in your AI assistant, or add its MCP server at https://youspot.com/mcp.",
+        "fit_when": "Researching a person before you reach out, or finding conversations worth joining."
+      }
+    },
+    {
+      "id": "teal",
+      "name": "TealHQ",
+      "category": "tool",
+      "audiences": [
+        "student"
+      ],
+      "definition": "Teal's career resources and tools for building a resume, improving a LinkedIn profile, and organizing job applications.",
+      "tool": {
+        "url": "https://www.tealhq.com/",
+        "kind": "app",
+        "connect": "Open tealhq.com in your browser.",
+        "fit_when": "Writing or improving a resume or LinkedIn profile, or keeping track of applications."
+      }
+    },
+    {
+      "id": "indeed",
+      "name": "Indeed Job Search",
+      "category": "tool",
+      "audiences": [
+        "student"
+      ],
+      "definition": "Indeed's connector for searching job listings and reading job details and company information from your AI assistant.",
+      "tool": {
+        "url": "https://www.indeed.com/",
+        "kind": "connector",
+        "available_in": [
+          "Claude connector directory",
+          "ChatGPT"
+        ],
+        "connect": "Add the Indeed connector from your AI assistant's connector directory. ChatGPT has a similar Indeed app.",
+        "fit_when": "Looking for open roles and reading what a posting asks for."
+      }
+    },
+    {
+      "id": "foundation_mcp",
+      "name": "Sujeeth Foundation MCP Server",
+      "category": "tool",
+      "audiences": [
+        "student"
+      ],
+      "definition": "The Foundation's own MCP server. It lets a student's AI assistant search Career Circles guidance and Foundation materials directly.",
+      "tool": {
+        "url": "https://sujeeth.org/",
+        "kind": "mcp",
+        "mcp_url": "https://mcp.sujeeth.org/mcp",
+        "connect": "Add https://mcp.sujeeth.org/mcp as a custom MCP connector in your AI assistant.",
+        "fit_when": "Asking career, networking, or interview questions inside the student's own AI assistant."
+      }
     }
   ],
   "predicates": [
@@ -5394,6 +5467,14 @@
       "kind": "classification",
       "definition": "Subject is a vocabulary term used to name an emotional experience within object.",
       "inverse": "has_emotion_term",
+      "symmetric": false,
+      "expands_search": false
+    },
+    {
+      "id": "helps_with",
+      "kind": "conceptual",
+      "definition": "Subject is a tool a student can use to practice or complete object. An edge may carry a weight (0 to 1, how closely the tool fits) and a reason (one line on why it helps).",
+      "inverse": "is_helped_by_tool",
       "symmetric": false,
       "expands_search": false
     }
@@ -21060,6 +21141,106 @@
       "cardinality": "N:N",
       "definition": "mood meter is part of Emotional Learning as a search grouping.",
       "audit_status": "proposed_for_editorial_review"
+    },
+    {
+      "id": "youspot_helps_with_researching_people",
+      "subject": "youspot",
+      "predicate": "helps_with",
+      "object": "researching_people",
+      "weight": 0.95,
+      "reason": "Research the people behind posts before you write to them.",
+      "cardinality": "N:N",
+      "definition": "Youspot is a tool a student can use for researching people."
+    },
+    {
+      "id": "youspot_helps_with_networking",
+      "subject": "youspot",
+      "predicate": "helps_with",
+      "object": "networking",
+      "weight": 0.8,
+      "reason": "Find conversations in your field and write specific replies.",
+      "cardinality": "N:N",
+      "definition": "Youspot is a tool a student can use for networking."
+    },
+    {
+      "id": "youspot_helps_with_referral",
+      "subject": "youspot",
+      "predicate": "helps_with",
+      "object": "referral",
+      "weight": 0.6,
+      "reason": "Build the relationship before you ask for a referral.",
+      "cardinality": "N:N",
+      "definition": "Youspot is a tool a student can use for referral."
+    },
+    {
+      "id": "teal_helps_with_resume_resource",
+      "subject": "teal",
+      "predicate": "helps_with",
+      "object": "resume_resource",
+      "weight": 0.8,
+      "reason": "Build and improve your resume.",
+      "cardinality": "N:N",
+      "definition": "Teal is a tool a student can use for resume resource."
+    },
+    {
+      "id": "teal_helps_with_linkedin_profile",
+      "subject": "teal",
+      "predicate": "helps_with",
+      "object": "linkedin_profile",
+      "weight": 0.7,
+      "reason": "Improve your LinkedIn profile.",
+      "cardinality": "N:N",
+      "definition": "Teal is a tool a student can use for linkedin profile."
+    },
+    {
+      "id": "teal_helps_with_job_application_strategy",
+      "subject": "teal",
+      "predicate": "helps_with",
+      "object": "job_application_strategy",
+      "weight": 0.7,
+      "reason": "Organize and track your applications.",
+      "cardinality": "N:N",
+      "definition": "Teal is a tool a student can use for job application strategy."
+    },
+    {
+      "id": "indeed_helps_with_job_application_strategy",
+      "subject": "indeed",
+      "predicate": "helps_with",
+      "object": "job_application_strategy",
+      "weight": 0.8,
+      "reason": "Search listings and read what each job asks for.",
+      "cardinality": "N:N",
+      "definition": "Indeed is a tool a student can use for job application strategy."
+    },
+    {
+      "id": "indeed_helps_with_first_job",
+      "subject": "indeed",
+      "predicate": "helps_with",
+      "object": "first_job",
+      "weight": 0.6,
+      "reason": "See which entry-level roles are open.",
+      "cardinality": "N:N",
+      "definition": "Indeed is a tool a student can use for first job."
+    },
+    {
+      "id": "foundation_mcp_helps_with_career_development",
+      "subject": "foundation_mcp",
+      "predicate": "helps_with",
+      "object": "career_development",
+      "weight": 0.5,
+      "reason": "Ask the Foundation's guidance from your own AI assistant.",
+      "cardinality": "N:N",
+      "definition": "The Foundation MCP server is a tool a student can use for career development."
+    },
+    {
+      "id": "foundation_mcp_helps_with_networking",
+      "subject": "foundation_mcp",
+      "predicate": "helps_with",
+      "object": "networking",
+      "weight": 0.4,
+      "reason": "Ask for the Foundation's networking guidance from your own AI assistant.",
+      "cardinality": "N:N",
+      "definition": "The Foundation MCP server is a tool a student can use for networking."
     }
   ],
   "business_rules": [
@@ -22368,7 +22549,8 @@
         "first_job",
         "discover",
         "validate",
-        "receiving_feedback"
+        "receiving_feedback",
+        "teal"
       ],
       "crawl_policy": {
         "mode": "domain",
@@ -22406,7 +22588,8 @@
         "referral",
         "researching_people",
         "career_development",
-        "week_4"
+        "week_4",
+        "youspot"
       ],
       "crawl_policy": {
         "mode": "domain",
