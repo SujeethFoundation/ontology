@@ -34,7 +34,7 @@ It serves the Foundation's ontology read-only. Three other services depend on it
 
 The chat endpoint that used to live in this app is now in the `chat` repo.
 
-**Current state** (read from `ontology/ontology.json` on `main`): version `1.15.5-proposed`, 181 classes, 1,158 relationships, 19 domains. The ontology file, not this README, is the source of truth for counts. Release history is in [CHANGELOG.md](CHANGELOG.md).
+**Current state** (read from `ontology/ontology.json` on `main`): version `1.15.6-proposed`, 182 classes, 1,161 relationships, 19 domains. The ontology file, not this README, is the source of truth for counts. Release history is in [CHANGELOG.md](CHANGELOG.md).
 
 **Known gaps.** The ontology has no concepts yet for the Career Ascent online course, certificates, mentor training or Base Camp. A question about any of them returns the out-of-scope message from the MCP server. Add the concepts and source pages first.
 

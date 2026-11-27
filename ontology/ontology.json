@@ -1,5 +1,5 @@
 {
-  "ontology_version": "1.15.5-proposed",
+  "ontology_version": "1.15.6-proposed",
   "last_updated": "2026-11-19",
   "description": "Sujeeth Foundation domain ontology and governance configuration, including validated concepts used to associate approved external domains.",
   "foundation_purpose": {
@@ -1375,6 +1375,39 @@
         "ask someone for a referral",
         "employee referral",
         "referral for an internship"
+      ]
+    },
+    {
+      "id": "researching_people",
+      "name": "Researching People",
+      "category": "skill",
+      "audiences": [
+        "student",
+        "mentor"
+      ],
+      "definition": "Learning about a specific person before you contact or meet them: what they post about, what they have worked on, where they have worked, and what you have in common, so your message or questions are specific to them. It is part of networking and is practiced in Week 4 with YouSpot.",
+      "aliases": [
+        "research a person",
+        "researching a person",
+        "research someone",
+        "researching someone",
+        "researching people",
+        "research people before a meeting",
+        "learn about someone's work",
+        "what someone is interested in",
+        "find common ground",
+        "find common ground with someone",
+        "background on a person",
+        "look someone up before reaching out"
+      ],
+      "query_phrases": [
+        "how do I research a person before reaching out",
+        "how do I research someone before a networking conversation",
+        "what is this person interested in",
+        "how do I learn about someone's work",
+        "how do I find common ground with someone I want to meet",
+        "what should I know about someone before a coffee chat",
+        "how do I prepare to talk to a professional I have never met"
       ]
     },
     {
@@ -6265,6 +6298,30 @@
       "cardinality": "N:N",
       "definition": "Week 4 is where Students practice reaching out and building relationships, so Referral questions can draw on Week 4 pages.",
       "audit_status": "consistent_with_current_definitions"
+    },
+    {
+      "id": "researching_people_is_part_of_networking",
+      "subject": "researching_people",
+      "predicate": "is_part_of",
+      "object": "networking",
+      "cardinality": "N:1",
+      "definition": "Researching a person is the preparation step inside networking: you learn what someone cares about before you reach out."
+    },
+    {
+      "id": "networking_illustrates_researching_people",
+      "subject": "networking",
+      "predicate": "illustrates",
+      "object": "researching_people",
+      "cardinality": "N:N",
+      "definition": "Networking content shows why and how to research a person before reaching out, so Researching People questions can draw on Networking."
+    },
+    {
+      "id": "week_4_illustrates_researching_people",
+      "subject": "week_4",
+      "predicate": "illustrates",
+      "object": "researching_people",
+      "cardinality": "N:N",
+      "definition": "Week 4 includes the YouSpot demo on researching the people behind posts and writing a specific reply, so Researching People questions can draw on Week 4 pages."
     },
     {
       "id": "innovation_supports_job_application_strategy",
@@ -22347,6 +22404,7 @@
       "associated_concepts": [
         "networking",
         "referral",
+        "researching_people",
         "career_development",
         "week_4"
       ],
@@ -23413,7 +23471,7 @@
       }
     ],
     "review_status_counts": {
-      "consistent_with_current_definitions": 805,
+      "consistent_with_current_definitions": 808,
       "needs_confirmation": 12,
       "revised": 1
     },
