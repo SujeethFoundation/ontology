@@ -2,6 +2,22 @@
 
 Python Azure Functions v2 API. `ontology/ontology.json` is the canonical source for ontology concepts, relationships, rules, terminology, Dataverse mappings, program structure, and domain governance.
 
+## What this app does
+
+It serves the Foundation's ontology read-only. Three other services depend on it:
+
+| Caller | Uses |
+|---|---|
+| `mcp` | Reads `ontology/ontology.json` from `main` to resolve a question to concepts and approved domains. Admin tools call this app's routes |
+| `websearch` | Reads `/api/ontology/crawl-manifest` and `/api/ontology/search-manifest` to decide what to crawl and search, and caches the answer |
+| `chat` | Reads a nightly copy of the ontology to enrich questions before they reach the agent |
+
+For the full platform map, see [`architecture/`](https://github.com/SujeethFoundation/sujeethfoundation.github.io/tree/main/architecture) in the website repo. The chat endpoint that used to live in this app is now in the `chat` repo.
+
+**Current state** (read from `ontology/ontology.json` on `main`): version `1.15.5-proposed`, 181 classes, 1,158 relationships, 19 domains. The version history below is in the order changes were made, not strictly by version number. The ontology file, not this README, is the source of truth for counts.
+
+**Known gaps.** The ontology has no concepts yet for the Career Ascent online course, certificates, mentor training or Base Camp. A question about any of them returns the out-of-scope message from the MCP server. Add the concepts and source pages first.
+
 ## Version 1.13.5 changes
 
 - Normalized repeated relationship audit metadata into shared defaults, explicit overrides, and the existing needs-confirmation audit list. The API loader expands the metadata so relationship responses retain their existing shape.
@@ -16,8 +32,8 @@ Python Azure Functions v2 API. `ontology/ontology.json` is the canonical source 
 - Domain crawling and search permissions are controlled only by the ontology.
 - The crawler reads `GET /api/ontology/crawl-manifest`; search reads `GET /api/ontology/search-manifest`.
 - `crawl_enabled` and `search_enabled` are independent.
-- As of 1.3.0 all 13 domains in the registry are `crawl_enabled` and `search_enabled`. Turn a domain off by changing its flags here after review.
-- `portal.sujeeth.org` is not in the registry. Add it back only after its public-content boundary and authorization are established.
+- A domain is crawled only when `crawl_enabled` is true, and searched only when `search_enabled` is true. Turn a domain off by changing its flags here after review.
+- `manual_only` domains (`app.candid.org` and `portal.sujeeth.org`) are `search_enabled` but not `crawl_enabled`. Their pages are added by hand to the websearch index. Establish a public-content boundary and authorization before turning crawl on for `portal.sujeeth.org`.
 - A domain's `associated_concepts` must be exact class IDs (for example `donation`, not "donations"). Names that match no class are silently ignored by the services. The test suite enforces this.
 - Crawl size limits (page cap, depth) are not part of the ontology. They are settings of the websearch app.
 - A domain's `crawl_policy.exclude_paths` lists path prefixes the crawler must not fetch, for example `["/job", "/jobs"]`. A rule matches that path and everything beneath it on whole path segments (`/job` matches `/job/x`, not `/jobs`). A `*` matches any characters within one path segment, so `/career-paths/*-certifications` matches `/career-paths/snowflake-developer-certifications` but not `/career-paths/certifications-guide`. Use it to keep a section of an approved site out of the index.
@@ -39,13 +55,15 @@ All routes are prefixed by `/api` and require a Function key by default:
 - POST `/api/ontology/domain-resolution`
 - POST `/api/ontology/validate-domains`
 - GET `/api/ontology/crawl-manifest`, `/api/ontology/search-manifest`
+- GET `/api/ontology/quick-links`
+- GET `/api/ontology/feelings/{feeling}`, POST `/api/ontology/feelings/resolve` (see Feelings API below)
 
 ## Tests
 ```powershell
 pip install pytest
 python -m pytest -q tests
 ```
-The tests check that every domain concept maps to a class ID, that the registry contains no `portal.sujeeth.org` or `notes` fields, and that every domain is crawl- and search-enabled. Update them if you intentionally change those rules.
+The tests check that every domain concept maps to a class ID, that no domain record has a `notes` field, and that every domain is crawl-enabled unless it is marked `manual_only`. Update them if you intentionally change those rules.
 
 ## Local setup (Windows PowerShell)
 ```powershell
@@ -72,7 +90,7 @@ $body = @{ concepts = @("Resume Resource", "Week 3"); purpose = "search" } | Con
 Invoke-RestMethod -Method Post -Uri "http://localhost:7071/api/ontology/domain-resolution" -ContentType "application/json" -Body $body
 ```
 
-## Feelings API (proposed in PR #13)
+## Feelings API
 
 The Azure Function App serves deterministic Mood Meter resolution from the deployed `ontology/ontology.json`. These routes do not call an LLM or search service.
 
@@ -85,11 +103,11 @@ Run: `python -m unittest discover -s tests -p 'test_*.py'`.
 
 Deployment: merge and deploy the Function App before expecting these endpoints to exist. Update the MCP to call the new route and consume its ranking and guardrails. The websearch app may need restarting to refresh its cached ontology. No MCP code is changed by this PR.
 
-### Emotion-aware search routing (contract, not yet active in MCP)
+### Emotion-aware search routing
 
 The 326 emotion-to-framework `illustrates` edges remain in the ontology and remain available to the Feelings API. They now carry `retrieval.general_search_expand=false` and `retrieval.search_expansion="feelings_api_only"`. The other 41 general-purpose `illustrates` edges retain their existing search eligibility.
 
-**MCP implementation required:** Detect emotion and intent, call `POST /api/ontology/feelings/resolve`, then pass ranked framework concepts to Web Search and Wiki Search. For mixed career/emotion questions, preserve career concepts and deduplicate search inputs. **Search implementation required:** When traversing generic `illustrates` relationships, skip edges explicitly marked `general_search_expand=false`. These flags are metadata until the MCP/search code consumes them. Do not assume the exclusion is active in production just because the ontology deploys.
+**In the MCP server:** the resolver asks the model to identify feelings and one intent, and `mcp_server.py` skips edges marked `general_search_expand=false` or `search_expansion=feelings_api_only` when it expands concepts for generic search (`is_feelings_api_only_edge`, with tests in `mcp/tests/test_feelings_routing.py`). The MCP code does not call `POST /api/ontology/feelings/resolve` today, so the route's ranked frameworks do not reach answers yet. **In websearch:** no code reads these flags, so the exclusion is not active there.
 
 ## Governance and deployment
 Edit `ontology/ontology.json`, increment `ontology_version`, review, test, and deploy. Do not expose write endpoints. The crawler should periodically retrieve manifests and reconcile indexed content when domains are disabled or policies change. Crawl size limits are not set in the ontology; the websearch app's `MAX_PAGES_PER_DOMAIN` setting controls them, and the ontology only decides which domains may be crawled. Confirm domain ownership, relevance, public access, robots.txt, and site terms before production crawling. Never crawl private/authenticated content without explicit authorization.
