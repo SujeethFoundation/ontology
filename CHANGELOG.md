@@ -2,6 +2,12 @@
 
 Release notes moved out of the README. They are in the order changes were made, not strictly by version number. The current version is in `ontology/ontology.json`.
 
+## Version 1.15.6 changes
+
+- Added the `researching_people` skill: learning about a specific person (what they post, what they have worked on, what you have in common) before reaching out or meeting them. Aliases and question phrases cover "research a person", "what someone is interested in", "learn about someone's work", and "find common ground".
+- Linked it the way `referral` is linked: `researching_people` is part of `networking`; `networking` illustrates it and `week_4` illustrates it, so a match on the skill retrieves Networking and Week 4 pages (the YouSpot demo) through the existing `illustrates` expansion.
+- Added `researching_people` to the `youspot.com` domain's associated concepts. Not added to The Muse or other third-party domains, so the Week 4 YouSpot material is the on-topic source for this question.
+
 ## Slim catalog route
 
 - Added `GET /api/ontology/catalog` (`catalog.py`): the slim ontology that `mcp`, `chat` and `websearch` read to match questions, with an ETag. It drops relationship prose and the Mood Meter grid, which no matching code reads.
