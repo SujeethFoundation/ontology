@@ -2,6 +2,10 @@
 
 Release notes moved out of the README. They are in the order changes were made, not strictly by version number. The current version is in `ontology/ontology.json`.
 
+## Slim catalog route
+
+- Added `GET /api/ontology/catalog` (`catalog.py`): the slim ontology that `mcp`, `chat` and `websearch` read to match questions, with an ETag. It drops relationship prose and the Mood Meter grid, which no matching code reads.
+
 ## Version 1.13.5 changes
 
 - Normalized repeated relationship audit metadata into shared defaults, explicit overrides, and the existing needs-confirmation audit list. The API loader expands the metadata so relationship responses retain their existing shape.

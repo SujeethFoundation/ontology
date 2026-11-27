@@ -5,6 +5,7 @@ from pathlib import Path
 from urllib.parse import unquote
 import azure.functions as func
 from feeling_resolution import find_feeling, feeling_detail, resolve_feelings
+from catalog import slim_body
 
 app = func.FunctionApp(http_auth_level=func.AuthLevel.FUNCTION)
 DATA_PATH = Path(__file__).parent / "ontology" / "ontology.json"
@@ -115,6 +116,26 @@ def health(req):
 @app.route(route="ontology", methods=["GET"])
 def ontology_all(req):
     return respond(load_ontology())
+
+_slim_cache = {}  # file mtime -> (body, etag)
+
+def slim_for_file():
+    """The slim catalog's bytes and etag, rebuilt only when ontology.json changes on this instance."""
+    stamp = DATA_PATH.stat().st_mtime_ns
+    if stamp not in _slim_cache:
+        _slim_cache.clear()
+        _slim_cache[stamp] = slim_body(load_ontology())
+    return _slim_cache[stamp]
+
+@app.route(route="ontology/catalog", methods=["GET"])
+def catalog(req):
+    """What mcp, chat and websearch read to match questions: about a quarter of ontology.json. The etag lets a caller
+    send If-None-Match and get a 304 with no body when nothing it reads has changed."""
+    body, etag = slim_for_file()
+    headers = {"ETag": etag, "Cache-Control": "public, max-age=60"}
+    if req.headers.get("If-None-Match") == etag:
+        return func.HttpResponse(status_code=304, headers=headers)
+    return func.HttpResponse(body, status_code=200, mimetype="application/json", headers=headers)
 
 @app.route(route="ontology/summary", methods=["GET"])
 def summary(req):
