@@ -208,3 +208,6 @@ Edit `ontology/ontology.json`, increment `ontology_version`, review, test, and d
 
 **After deploying:** restart the websearch app (it caches the ontology).
 
+## Platform architecture
+
+This repo is one of nine in the SujeethFoundation org. The architecture docs live in the website repo's `architecture/` folder: [platform architecture](https://github.com/SujeethFoundation/sujeethfoundation.github.io/blob/main/architecture/platform-architecture.md), [data model and portal](https://github.com/SujeethFoundation/sujeethfoundation.github.io/blob/main/architecture/platform-data-model-and-portal.md) and [business architecture](https://github.com/SujeethFoundation/sujeethfoundation.github.io/blob/main/architecture/business-architecture.md). This repo is the concept graph, governance and Feelings API. See "Ontology" in the platform architecture doc. Each repo's README is listed in the platform architecture doc under "Repo READMEs".
