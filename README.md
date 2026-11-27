@@ -42,6 +42,7 @@ The chat endpoint that used to live in this app is now in the `chat` repo.
 - GitHub and `github-wiki-see.page` are removed. Continue using the existing Wiki Search service separately.
 - Domain crawling and search permissions are controlled only by the ontology.
 - The crawler reads `GET /api/ontology/crawl-manifest`; search reads `GET /api/ontology/search-manifest`.
+- `mcp`, `chat` and `websearch` match questions to concepts through `GET /api/ontology/catalog`, the slim ontology (below), so none of them downloads the 850 KB file.
 - `crawl_enabled` and `search_enabled` are independent.
 - A domain is crawled only when `crawl_enabled` is true, and searched only when `search_enabled` is true. Turn a domain off by changing its flags here after review.
 - `manual_only` domains (`app.candid.org` and `portal.sujeeth.org`) are `search_enabled` but not `crawl_enabled`. Their pages are added by hand to the websearch index. Establish a public-content boundary and authorization before turning crawl on for `portal.sujeeth.org`.
@@ -54,6 +55,7 @@ The chat endpoint that used to live in this app is now in the `chat` repo.
 ## Routes
 All routes are prefixed by `/api` and require a Function key by default:
 - GET `/api/health`, `/api/ontology`, `/api/ontology/summary`
+- GET `/api/ontology/catalog` (the slim ontology for matching questions; see below)
 - GET `/api/ontology/classes`, `/api/ontology/classes/{name}`
 - GET `/api/ontology/relationships`, `/api/ontology/relationships/summary`
 - GET `/api/ontology/concepts/{concept}/relationships?depth=2`
@@ -100,6 +102,18 @@ Domain resolution:
 $body = @{ concepts = @("Resume Resource", "Week 3"); purpose = "search" } | ConvertTo-Json
 Invoke-RestMethod -Method Post -Uri "http://localhost:7071/api/ontology/domain-resolution" -ContentType "application/json" -Body $body
 ```
+
+## Slim catalog
+
+`GET /api/ontology/catalog` returns what a service needs to match a question to concepts, about 255 KB (28 KB gzipped) against 850 KB for `ontology.json`. It is built by `catalog.py` from the same effective data the other routes serve, so edge defaults and overrides are applied and every service sees the same edges.
+
+| Kept | Dropped |
+| --- | --- |
+| Every class, whole, except the Mood Meter grid (a feeling keeps `mood_meter: {quadrant}`) | The Mood Meter grid, which only the Feelings API reads |
+| Every relationship: `id`, `subject`, `predicate`, `object`, `search_behavior`, and the retrieval flags `general_search_expand` and `search_expansion` | Relationship definitions, audit notes, provenance, cardinality |
+| `predicates`, `preferred_terminology`, `ambiguous_terms`, `source_precedence`; personas as `id` and signal language | Program structure, domains and crawl policy, content gaps, Dataverse mappings, and the rest. Ask the specific route for those |
+
+The response has an `ETag` that changes only when something in the slim content changes, so an edit to program structure or crawl policy does not make the services download again. Send `If-None-Match` to get a 304 with no body.
 
 ## Feelings API
 
