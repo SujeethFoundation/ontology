@@ -1,5 +1,5 @@
 {
-  "ontology_version": "1.15.7-proposed",
+  "ontology_version": "1.15.8-proposed",
   "last_updated": "2026-11-19",
   "description": "Sujeeth Foundation domain ontology and governance configuration, including validated concepts used to associate approved external domains.",
   "foundation_purpose": {
@@ -5093,10 +5093,12 @@
       "audiences": [
         "student"
       ],
-      "definition": "A platform that helps students find relevant professional conversations, research the people behind them, and write specific, personal replies. The Week 4 networking demo uses it.",
+      "definition": "A tool from HubSpot that helps students find relevant professional conversations, research the people behind them, and write specific, personal replies. The Foundation's Week 4 networking demo walks through it.",
       "tool": {
         "url": "https://youspot.com/",
         "kind": "mcp",
+        "provider": "HubSpot",
+        "foundation_owned": false,
         "mcp_url": "https://youspot.com/mcp",
         "available_in": [
           "Claude connector directory"
@@ -5116,6 +5118,8 @@
       "tool": {
         "url": "https://www.tealhq.com/",
         "kind": "app",
+        "provider": "Teal",
+        "foundation_owned": false,
         "connect": "Open tealhq.com in your browser.",
         "fit_when": "Writing or improving a resume or LinkedIn profile, or keeping track of applications."
       }
@@ -5131,6 +5135,8 @@
       "tool": {
         "url": "https://www.indeed.com/",
         "kind": "connector",
+        "provider": "Indeed",
+        "foundation_owned": false,
         "available_in": [
           "Claude connector directory",
           "ChatGPT"
@@ -5150,6 +5156,8 @@
       "tool": {
         "url": "https://sujeeth.org/",
         "kind": "mcp",
+        "provider": "Sujeeth Foundation",
+        "foundation_owned": true,
         "mcp_url": "https://mcp.sujeeth.org/mcp",
         "connect": "Add https://mcp.sujeeth.org/mcp as a custom MCP connector in your AI assistant.",
         "fit_when": "Asking career, networking, or interview questions inside the student's own AI assistant."

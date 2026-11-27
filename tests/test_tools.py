@@ -29,6 +29,15 @@ def test_every_tool_says_where_it_is_and_how_to_start():
         assert all(isinstance(x, str) for x in detail.get("available_in", [])), cid
 
 
+def test_every_tool_names_its_maker_and_only_the_foundations_own_is_marked_as_ours():
+    for cid, tool in TOOLS.items():
+        detail = tool["tool"]
+        assert detail["provider"].strip() and isinstance(detail["foundation_owned"], bool), cid
+    assert {cid for cid, t in TOOLS.items() if t["tool"]["foundation_owned"]} == {"foundation_mcp"}
+    assert TOOLS["youspot"]["tool"]["provider"] == "HubSpot"
+    assert TOOLS["teal"]["tool"]["provider"] == "Teal" and TOOLS["indeed"]["tool"]["provider"] == "Indeed"
+
+
 def test_the_mcp_addresses_are_the_published_ones():
     assert TOOLS["foundation_mcp"]["tool"]["mcp_url"] == "https://mcp.sujeeth.org/mcp"
     assert TOOLS["youspot"]["tool"]["mcp_url"] == "https://youspot.com/mcp"

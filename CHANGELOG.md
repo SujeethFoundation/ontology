@@ -2,6 +2,10 @@
 
 Release notes moved out of the README. They are in the order changes were made, not strictly by version number. The current version is in `ontology/ontology.json`.
 
+## Version 1.15.8 changes
+
+- Each tool now names its maker in `tool.provider` and says whether the Foundation owns it in `tool.foundation_owned`. YouSpot is from HubSpot, TealHQ and Indeed are independent companies, and only the Foundation MCP server is the Foundation's own. MCP passes both to the agent so it never calls a third-party tool the Foundation's.
+
 ## Version 1.15.7 changes
 
 - Added the `tool` class category and four tools students connect or open themselves: `youspot` (its MCP server is at https://youspot.com/mcp), `teal`, `indeed` (the Indeed connector; ChatGPT has a similar app) and `foundation_mcp` (https://mcp.sujeeth.org/mcp). Each carries a `tool` object: `url`, `kind` (`app`, `mcp` or `connector`), `connect` (what the student does to start), `fit_when`, and where it applies `mcp_url` and `available_in`.
