@@ -15,7 +15,7 @@ The Sujeeth Foundation helps college students network into their first job throu
 | [`websearch`](https://github.com/SujeethFoundation/websearch/blob/main/README.md) | Crawler and hybrid search over ontology-approved websites |
 | [`wikisearch`](https://github.com/SujeethFoundation/wikisearch/blob/main/README.md) | Keyword search over the GitHub wiki |
 | [`payments`](https://github.com/SujeethFoundation/payments/blob/main/README.md) | PayPal checkout and webhook for online courses |
-| [`shortner`](https://github.com/SujeethFoundation/shortner/blob/main/README.md) | Link shortener for go.sujeeth.org |
+| [`shortener`](https://github.com/SujeethFoundation/shortener/blob/main/README.md) | Link shortener for go.sujeeth.org |
 | [`acs-sms-bot`](https://github.com/SujeethFoundation/acs-sms-bot/blob/main/readme.md) | Texting through Azure Communication Services |
 
 Architecture docs, in the website repo's `architecture/` folder: [platform architecture](https://github.com/SujeethFoundation/sujeethfoundation.github.io/blob/main/architecture/platform-architecture.md) (repos, Azure apps, how they connect), [data model and portal](https://github.com/SujeethFoundation/sujeethfoundation.github.io/blob/main/architecture/platform-data-model-and-portal.md) (Dataverse tables, solutions, Power Pages) and [business architecture](https://github.com/SujeethFoundation/sujeethfoundation.github.io/blob/main/architecture/business-architecture.md) (vision, assumptions, tests). This block is the same in every repo's README; the canonical copy is in the platform architecture doc.
@@ -124,7 +124,6 @@ The Azure Function App serves deterministic Mood Meter resolution from the deplo
 
 The MCP should detect feeling(s) and intent from the user's question and pass canonical intent tags such as `setback`, `reflection`, `feedback`, `interview`, `values`, or `regulation`. The API ranks exact intent-tag matches before editorial relevance weights. It does **not** infer intent from natural-language questions, personalize ranking by persona, perform web search, or verify framework guidance against live sources. Persona is validated and returned as context, not used for access control or scoring. The MCP must apply its own privacy and retrieval policies.
 
-Run: `python -m unittest discover -s tests -p 'test_*.py'`.
 
 Deployment: the MCP server calls `POST /api/ontology/feelings/resolve` and returns the ranking and guardrails to the agent. Restart the websearch app after an ontology deploy, since it caches the ontology.
 
