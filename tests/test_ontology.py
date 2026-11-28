@@ -106,9 +106,10 @@ def test_relationship_audit_metadata_is_normalized_without_changing_loaded_edges
 
     loaded = function_app.load_ontology()
     counts = Counter(r["audit_status"] for r in loaded["relationships"])
+    assert counts == audit["review_status_counts"]
     assert sum(counts.values()) == len(loaded["relationships"])
-    for status in ("needs_confirmation", "revised"):
-        assert counts[status] == audit["review_status_counts"][status]
+    proposed = {r["id"] for r in raw["relationships"] if r.get("audit_status") == "proposed_for_editorial_review"}
+    assert proposed and {r["id"] for r in loaded["relationships"] if r["audit_status"] == "proposed_for_editorial_review"} == proposed
     by_id = {r["id"]: r for r in loaded["relationships"]}
     assert by_id["networking_supports_referral"]["audit_status"] == "revised"
     assert by_id["networking_supports_referral"]["audit_note"] == audit["edge_overrides"]["networking_supports_referral"]["audit_note"]

@@ -23068,7 +23068,7 @@
     "domain_association_field": "associated_concepts",
     "all_domain_concepts_must_match_class_ids": true,
     "unresolved_domain_concepts": [],
-    "validation_note": "Every associated_concepts value in every domain must reference a class id. Every relationship predicate must be listed in predicates. Every class must have a category listed in class_categories. tests/test_ontology_structure.py enforces these. Every class has audiences drawn from personas. Every persona stage lists class ids tagged for that persona and quick link ids. programs_portal is a class, so every domain that lists it resolves.",
+    "validation_note": "Every associated_concepts value in every domain must reference a class id. Every relationship predicate must be listed in predicates. Every class must have a category listed in class_categories. tests/test_ontology.py enforces these. Every class has audiences drawn from personas. Every persona stage lists class ids tagged for that persona and quick link ids. programs_portal is a class, so every domain that lists it resolves.",
     "retrieval_configuration": {
       "domain_associations_must_match_class_ids": true,
       "mcp_tool_names_must_be_runtime_discovered": true,
@@ -23662,7 +23662,8 @@
       }
     ],
     "review_status_counts": {
-      "consistent_with_current_definitions": 808,
+      "consistent_with_current_definitions": 818,
+      "proposed_for_editorial_review": 340,
       "needs_confirmation": 12,
       "revised": 1
     },
