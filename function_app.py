@@ -85,7 +85,9 @@ def load_ontology():
         }
         overrides = audit.get("edge_overrides", {})
         for relationship in data.get("relationships", []):
-            relationship.update(defaults)
+            # An edge that already carries its own status (for example proposed_for_editorial_review) keeps it.
+            if relationship.get("audit_status") in (None, defaults.get("audit_status")):
+                relationship.update(defaults)
             relationship_id = relationship["id"]
             if relationship_id in needs_confirmation:
                 relationship["audit_status"] = "needs_confirmation"

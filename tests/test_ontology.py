@@ -99,7 +99,6 @@ def test_relationship_audit_metadata_is_normalized_without_changing_loaded_edges
 
     raw = json.loads((Path(__file__).parents[1] / "ontology" / "ontology.json").read_text(encoding="utf-8"))
     audit = raw["relationship_audit"]
-    assert all("audit_status" not in r and "audit_note" not in r for r in raw["relationships"])
     assert audit["edge_defaults"] == {
         "audit_status": "consistent_with_current_definitions",
         "audit_note": "Subject, predicate, and object are internally consistent with the current class definitions and predicate meaning.",
@@ -108,6 +107,9 @@ def test_relationship_audit_metadata_is_normalized_without_changing_loaded_edges
     loaded = function_app.load_ontology()
     counts = Counter(r["audit_status"] for r in loaded["relationships"])
     assert counts == audit["review_status_counts"]
+    assert sum(counts.values()) == len(loaded["relationships"])
+    proposed = {r["id"] for r in raw["relationships"] if r.get("audit_status") == "proposed_for_editorial_review"}
+    assert proposed and {r["id"] for r in loaded["relationships"] if r["audit_status"] == "proposed_for_editorial_review"} == proposed
     by_id = {r["id"]: r for r in loaded["relationships"]}
     assert by_id["networking_supports_referral"]["audit_status"] == "revised"
     assert by_id["networking_supports_referral"]["audit_note"] == audit["edge_overrides"]["networking_supports_referral"]["audit_note"]
@@ -176,8 +178,10 @@ def test_a_week_question_reaches_the_foundations_own_site():
     """"What does each week cover?" matched only the concept `week`. With no domain attached, search ran nowhere and the answer was empty."""
     sujeeth = next(item for item in ONTOLOGY["domains"] if item["domain"] == "sujeeth.org")
     assert {"week", "agenda"} <= set(sujeeth["associated_concepts"])
+    program = next(item for item in ONTOLOGY["classes"] if item["id"] == "career_circle_program")
     week = next(item for item in ONTOLOGY["classes"] if item["id"] == "week")
-    assert {"syllabus", "curriculum"} <= set(week["aliases"])
+    assert "syllabus" in program["aliases"]
+    assert "curriculum" in week["aliases"]
 
 
 def test_what_the_program_covers_matches_the_weeks_directly():
@@ -188,9 +192,10 @@ def test_what_the_program_covers_matches_the_weeks_directly():
     assert ("career_circle_program", "contains", "week") in related
     assert ("week", "illustrates", "career_circle_program") not in related
     by_id = {c["id"]: c for c in ONTOLOGY["classes"]}
-    for cid in ("career_circle_program", "week"):
-        assert {"covered in the program", "what does the program cover", "topics covered"} <= set(by_id[cid]["query_phrases"])
-    assert {"syllabus", "curriculum"} <= set(by_id["week"]["aliases"])
+    assert {"covered in the program", "what does the program cover", "topics covered"} <= set(by_id["career_circle_program"]["query_phrases"])
+    assert {"each week", "weekly topics"} <= set(by_id["week"]["query_phrases"])
+    assert "syllabus" in by_id["career_circle_program"]["aliases"]
+    assert "curriculum" in by_id["week"]["aliases"]
 
 
 # The Search App's filler words (services/concept_resolver.py, STOPWORDS) plus question words. A phrase made only of
